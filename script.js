@@ -22,6 +22,41 @@ const observer = new IntersectionObserver((entries) => {
     });
 }, observerOptions);
 
+// Initialize Tableau embeds (consistent sizing + fixes display:none)
+function sizeTableau(viz) {
+  const vizElement = viz.querySelector('.tableauViz');
+  if (!vizElement) return;
+
+  // Make sure it's visible (your HTML sets display:none)
+  vizElement.style.display = 'block';
+  vizElement.style.width = '100%';
+
+  const w = viz.offsetWidth || 1000;
+
+  // Keep a stable height so both dashboards look aligned
+  // You can tweak these numbers if you want taller/shorter dashboards.
+  let h;
+  if (w >= 900) h = 720;
+  else if (w >= 600) h = 820;
+  else h = 950;
+
+  vizElement.style.height = h + 'px';
+}
+
+document.addEventListener('DOMContentLoaded', () => {
+  const vizElements = document.querySelectorAll('.tableauPlaceholder');
+
+  // Size once on load
+  vizElements.forEach(sizeTableau);
+
+  // Size again after a short delay (Tableau loads async; this helps alignment)
+  setTimeout(() => vizElements.forEach(sizeTableau), 600);
+
+  // Resize on window resize
+  window.addEventListener('resize', () => vizElements.forEach(sizeTableau));
+});
+
+
 // Smooth scroll (safe + consistent)
 document.querySelectorAll('a[href^="#"]').forEach(a => {
   a.addEventListener('click', (e) => {
