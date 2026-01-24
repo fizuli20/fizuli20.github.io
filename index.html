@@ -1,0 +1,336 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Fizuli Hasanov | Data Analyst Portfolio</title>
+    <link rel="stylesheet" href="style.css">
+</head>
+<body>
+    <nav id="navbar">
+        <div class="nav-container">
+            <div class="logo">FH</div>
+            <ul>
+                <li><a href="#home">Home</a></li>
+                <li><a href="#projects">Projects</a></li>
+                <li><a href="#dashboards">Dashboards</a></li>
+                <li><a href="#skills">Skills</a></li>
+                <li><a href="#contact">Contact</a></li>
+            </ul>
+        </div>
+    </nav>
+
+    <section class="hero" id="home">
+        <div class="hero-content">
+            <div class="hero-text">
+                <h1>Fizuli Hasanov</h1>
+                <h2>Aspiring Data Analyst</h2>
+                <p>Business Administration student with strong analytical skills in SQL, Python, and data visualization. Passionate about transforming data into actionable insights.</p>
+                
+                <div class="hero-stats">
+                    <div class="stat">
+                        <div class="stat-value">96.3</div>
+                        <div class="stat-label">GPA / 100</div>
+                    </div>
+                    <div class="stat">
+                        <div class="stat-value">5</div>
+                        <div class="stat-label">Projects</div>
+                    </div>
+                    <div class="stat">
+                        <div class="stat-value">6</div>
+                        <div class="stat-label">Certifications</div>
+                    </div>
+                </div>
+
+                <div class="hero-buttons">
+                    <a href="#projects" class="btn btn-primary">View Projects</a>
+                    <a href="#contact" class="btn btn-secondary">Get in Touch</a>
+                </div>
+            </div>
+            
+            <div class="hero-image">
+                <img src="profile-photo.jpg" alt="Fizuli Hasanov">
+            </div>
+        </div>
+        <div class="scroll-indicator">↓</div>
+    </section>
+
+    <section id="projects">
+        <div class="section-header">
+            <h2>Featured Projects</h2>
+            <p>Academic and personal projects demonstrating data analytics skills</p>
+        </div>
+
+        <div class="projects-grid">
+            <div class="project-card">
+                <div class="project-icon">📊</div>
+                <h3>Customer Churn & Retention Analytics</h3>
+                <div class="project-metric">End-to-End Analytics Pipeline</div>
+                <p>Built comprehensive churn monitoring system analyzing 10,000 customers over 24 months using PostgreSQL and SQL. Created Power BI dashboard for business insights.</p>
+                <div class="tech-stack">
+                    <span class="tech-tag">PostgreSQL</span>
+                    <span class="tech-tag">SQL</span>
+                    <span class="tech-tag">Power BI</span>
+                    <span class="tech-tag">Python</span>
+                </div>
+                <div class="project-links">
+                    <a href="https://github.com/fizuli20/churn-retention-project" target="_blank">View Code</a>
+                </div>
+            </div>
+
+            <div class="project-card">
+                <div class="project-icon">📈</div>
+                <h3>E-commerce Growth & Retention Analytics</h3>
+                <div class="project-metric">Data Warehouse Architecture</div>
+                <p>Designed production-style data warehouse with staging, dimensions, and fact tables using BigQuery. Built SQL pipeline and interactive Tableau dashboards.</p>
+                <div class="tech-stack">
+                    <span class="tech-tag">Google BigQuery</span>
+                    <span class="tech-tag">SQL</span>
+                    <span class="tech-tag">Tableau</span>
+                    <span class="tech-tag">Python</span>
+                </div>
+                <div class="project-links">
+                    <a href="https://github.com/fizuli20" target="_blank">View Code</a>
+                    <a href="#dashboard-5">View Dashboard</a>
+                </div>
+            </div>
+
+            <div class="project-card">
+                <div class="project-icon">🛒</div>
+                <h3>Order Segmentation & Revenue Optimization</h3>
+                <div class="project-metric">100K Orders Analyzed</div>
+                <p>Analyzed e-commerce orders using Python and Tableau. Segmented orders into behavioral groups and created executive dashboards for decision-making.</p>
+                <div class="tech-stack">
+                    <span class="tech-tag">Python</span>
+                    <span class="tech-tag">Pandas</span>
+                    <span class="tech-tag">Tableau</span>
+                    <span class="tech-tag">NumPy</span>
+                </div>
+                <div class="project-links">
+                    <a href="https://github.com/fizuli20/order-segmentation-revenue-optimization-ecommerce" target="_blank">View Code</a>
+                    <a href="#dashboard-2">View Dashboard</a>
+                </div>
+            </div>
+
+            <div class="project-card">
+                <div class="project-icon">💼</div>
+                <h3>Job Market Analysis (Data Roles)</h3>
+                <div class="project-metric">Global Market Research</div>
+                <p>Analyzed job postings across multiple countries demonstrating data cleaning, EDA, time-series analysis, and visualization skills with Python and Tableau.</p>
+                <div class="tech-stack">
+                    <span class="tech-tag">Python</span>
+                    <span class="tech-tag">Pandas</span>
+                    <span class="tech-tag">Matplotlib</span>
+                    <span class="tech-tag">Tableau</span>
+                </div>
+                <div class="project-links">
+                    <a href="https://github.com/fizuli20/job-market-analysis-data-roles" target="_blank">View Code</a>
+                    <a href="#dashboard-1">View Dashboard</a>
+                </div>
+            </div>
+
+            <div class="project-card">
+                <div class="project-icon">🤖</div>
+                <h3>Cashflow Autopilot</h3>
+                <div class="project-metric">AI Hackathon Winner</div>
+                <p>Built AI prototype at Aspire × Cayu Global Hackathon for cash leak detection with runway forecast and what-if simulation capabilities.</p>
+                <div class="tech-stack">
+                    <span class="tech-tag">AI</span>
+                    <span class="tech-tag">Analytics</span>
+                    <span class="tech-tag">Forecasting</span>
+                </div>
+                <div class="project-links">
+                    <a href="https://github.com/fizuli20" target="_blank">Learn More</a>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <section id="dashboards">
+        <div class="section-header">
+            <h2>Interactive Dashboards</h2>
+            <p>Explore live Tableau visualizations</p>
+        </div>
+
+        <div class="dashboard-container" id="dashboard-1">
+            <h3 class="dashboard-title">📊 Job Market Analysis - Data Roles 2023</h3>
+            <p class="dashboard-description">Global job postings, salary benchmarks, and skills analysis</p>
+            <div class='tableauPlaceholder' id='viz1' style='position: relative'><noscript><a href='#'><img alt='Dashboard' src='https://public.tableau.com/static/images/Da/Data_Role_Job_Postings2023_Fizuli_Hasanov/Dashboard/1_rss.png' style='border: none' /></a></noscript><object class='tableauViz' style='display:none;'><param name='host_url' value='https%3A%2F%2Fpublic.tableau.com%2F' /> <param name='embed_code_version' value='3' /> <param name='site_root' value='' /><param name='name' value='Data_Role_Job_Postings2023_Fizuli_Hasanov/Dashboard' /><param name='tabs' value='no' /><param name='toolbar' value='yes' /><param name='static_image' value='https://public.tableau.com/static/images/Da/Data_Role_Job_Postings2023_Fizuli_Hasanov/Dashboard/1.png' /> <param name='animate_transition' value='yes' /><param name='display_static_image' value='yes' /><param name='display_spinner' value='yes' /><param name='display_overlay' value='yes' /><param name='display_count' value='yes' /><param name='language' value='en-US' /></object></div>
+        </div>
+
+        <div class="dashboard-container" id="dashboard-2">
+            <h3 class="dashboard-title">📈 E-commerce KPI Overview</h3>
+            <p class="dashboard-description">Revenue metrics and order performance</p>
+            <div class='tableauPlaceholder' id='viz2' style='position: relative'><noscript><a href='#'><img alt='KPI' src='https://public.tableau.com/static/images/Or/OrderSegmentationRevenueOptimizationE-Commerce/KPInetrevenuetrend/1_rss.png' style='border: none' /></a></noscript><object class='tableauViz' style='display:none;'><param name='host_url' value='https%3A%2F%2Fpublic.tableau.com%2F' /> <param name='embed_code_version' value='3' /> <param name='site_root' value='' /><param name='name' value='OrderSegmentationRevenueOptimizationE-Commerce/KPInetrevenuetrend' /><param name='tabs' value='no' /><param name='toolbar' value='yes' /><param name='static_image' value='https://public.tableau.com/static/images/Or/OrderSegmentationRevenueOptimizationE-Commerce/KPInetrevenuetrend/1.png' /> <param name='animate_transition' value='yes' /><param name='display_static_image' value='yes' /><param name='display_spinner' value='yes' /><param name='display_overlay' value='yes' /><param name='display_count' value='yes' /><param name='language' value='en-US' /></object></div>
+        </div>
+
+        <div class="dashboard-container" id="dashboard-3">
+            <h3 class="dashboard-title">🎯 Segment Strategy Analysis</h3>
+            <p class="dashboard-description">Customer segmentation and revenue patterns</p>
+            <div class='tableauPlaceholder' id='viz3' style='position: relative'><noscript><a href='#'><img alt='Segments' src='https://public.tableau.com/static/images/Or/OrderSegmentationRevenueOptimization2E-Commerce/SegmentStrategyxRevenue/1_rss.png' style='border: none' /></a></noscript><object class='tableauViz' style='display:none;'><param name='host_url' value='https%3A%2F%2Fpublic.tableau.com%2F' /> <param name='embed_code_version' value='3' /> <param name='site_root' value='' /><param name='name' value='OrderSegmentationRevenueOptimization2E-Commerce/SegmentStrategyxRevenue' /><param name='tabs' value='no' /><param name='toolbar' value='yes' /><param name='static_image' value='https://public.tableau.com/static/images/Or/OrderSegmentationRevenueOptimization2E-Commerce/SegmentStrategyxRevenue/1.png' /> <param name='animate_transition' value='yes' /><param name='display_static_image' value='yes' /><param name='display_spinner' value='yes' /><param name='display_overlay' value='yes' /><param name='display_count' value='yes' /><param name='language' value='en-US' /></object></div>
+        </div>
+
+        <div class="dashboard-container" id="dashboard-4">
+            <h3 class="dashboard-title">⚠️ Risk Control Dashboard</h3>
+            <p class="dashboard-description">Delivery risk and discount effectiveness</p>
+            <div class='tableauPlaceholder' id='viz4' style='position: relative'><noscript><a href='#'><img alt='Risk' src='https://public.tableau.com/static/images/Or/OrderSegmentationRevenueOptimization3E-Commerce/RiskControl/1_rss.png' style='border: none' /></a></noscript><object class='tableauViz' style='display:none;'><param name='host_url' value='https%3A%2F%2Fpublic.tableau.com%2F' /> <param name='embed_code_version' value='3' /> <param name='site_root' value='' /><param name='name' value='OrderSegmentationRevenueOptimization3E-Commerce/RiskControl' /><param name='tabs' value='no' /><param name='toolbar' value='yes' /><param name='static_image' value='https://public.tableau.com/static/images/Or/OrderSegmentationRevenueOptimization3E-Commerce/RiskControl/1.png' /> <param name='animate_transition' value='yes' /><param name='display_static_image' value='yes' /><param name='display_spinner' value='yes' /><param name='display_overlay' value='yes' /><param name='display_count' value='yes' /><param name='language' value='en-US' /></object></div>
+        </div>
+
+        <div class="dashboard-container" id="dashboard-5">
+            <h3 class="dashboard-title">📊 Growth Analytics</h3>
+            <p class="dashboard-description">Revenue trends and AOV analysis</p>
+            <div class='tableauPlaceholder' id='viz5' style='position: relative'><noscript><a href='#'><img alt='Growth' src='https://public.tableau.com/static/images/ec/ecommerce-growth-analytics01/Dashboard1/1_rss.png' style='border: none' /></a></noscript><object class='tableauViz' style='display:none;'><param name='host_url' value='https%3A%2F%2Fpublic.tableau.com%2F' /> <param name='embed_code_version' value='3' /> <param name='site_root' value='' /><param name='name' value='ecommerce-growth-analytics01/Dashboard1' /><param name='tabs' value='no' /><param name='toolbar' value='yes' /><param name='static_image' value='https://public.tableau.com/static/images/ec/ecommerce-growth-analytics01/Dashboard1/1.png' /> <param name='animate_transition' value='yes' /><param name='display_static_image' value='yes' /><param name='display_spinner' value='yes' /><param name='display_overlay' value='yes' /><param name='display_count' value='yes' /><param name='language' value='en-US' /></object></div>
+        </div>
+
+        <div class="dashboard-container" id="dashboard-6">
+            <h3 class="dashboard-title">🔄 Cohort Retention</h3>
+            <p class="dashboard-description">Customer retention patterns over time</p>
+            <div class='tableauPlaceholder' id='viz6' style='position: relative'><noscript><a href='#'><img alt='Cohorts' src='https://public.tableau.com/static/images/ec/ecommerce-growth-analytics02/Dashboard2/1_rss.png' style='border: none' /></a></noscript><object class='tableauViz' style='display:none;'><param name='host_url' value='https%3A%2F%2Fpublic.tableau.com%2F' /> <param name='embed_code_version' value='3' /> <param name='site_root' value='' /><param name='name' value='ecommerce-growth-analytics02/Dashboard2' /><param name='tabs' value='no' /><param name='toolbar' value='yes' /><param name='static_image' value='https://public.tableau.com/static/images/ec/ecommerce-growth-analytics02/Dashboard2/1.png' /> <param name='animate_transition' value='yes' /><param name='display_static_image' value='yes' /><param name='display_spinner' value='yes' /><param name='display_overlay' value='yes' /><param name='display_count' value='yes' /><param name='language' value='en-US' /></object></div>
+        </div>
+    </section>
+
+    <section id="skills">
+        <div class="section-header">
+            <h2>Technical Skills</h2>
+            <p>Proficient in modern data analytics tools</p>
+        </div>
+
+        <div class="skills-grid">
+            <div class="skill-category">
+                <h3>💾 SQL & Databases</h3>
+                <ul class="skill-list">
+                    <li>PostgreSQL</li>
+                    <li>Google BigQuery</li>
+                    <li>Complex Queries</li>
+                    <li>Data Modeling</li>
+                </ul>
+            </div>
+
+            <div class="skill-category">
+                <h3>🐍 Python</h3>
+                <ul class="skill-list">
+                    <li>Pandas & NumPy</li>
+                    <li>Matplotlib</li>
+                    <li>Jupyter Notebooks</li>
+                    <li>Data Analysis</li>
+                </ul>
+            </div>
+
+            <div class="skill-category">
+                <h3>📊 Visualization</h3>
+                <ul class="skill-list">
+                    <li>Tableau Public</li>
+                    <li>Power BI</li>
+                    <li>Dashboard Design</li>
+                    <li>Storytelling</li>
+                </ul>
+            </div>
+
+            <div class="skill-category">
+                <h3>🛠️ Tools</h3>
+                <ul class="skill-list">
+                    <li>Excel</li>
+                    <li>Git & GitHub</li>
+                    <li>VS Code</li>
+                    <li>Jupyter Lab</li>
+                </ul>
+            </div>
+        </div>
+    </section>
+
+    <section id="education">
+        <div class="section-header">
+            <h2>Education & Achievements</h2>
+        </div>
+
+        <div class="timeline">
+            <div class="timeline-item">
+                <h4>Baku Higher Oil School</h4>
+                <p><strong>BBA, Business Administration</strong> | Expected 2029<br>
+                GPA: 96.3/100 | Faculty Rank: 4th<br>
+                Presidential Scholar | Top 10 Golden Students</p>
+            </div>
+            <div class="timeline-item">
+                <h4>Leadership</h4>
+                <p>Vice President - BHOS Conversation Club<br>
+                Project Manager - Multiple Clubs<br>
+                Aspire Leaders Program - Cohort 5</p>
+            </div>
+        </div>
+
+        <div class="cert-grid">
+            <div class="cert-card">
+                <div class="cert-icon">🎓</div>
+                <h4>IBM Python</h4>
+            </div>
+            <div class="cert-card">
+                <div class="cert-icon">📊</div>
+                <h4>Deloitte Analytics</h4>
+            </div>
+            <div class="cert-card">
+                <div class="cert-icon">✈️</div>
+                <h4>BA Data Science</h4>
+            </div>
+            <div class="cert-card">
+                <div class="cert-icon">💼</div>
+                <h4>EY Finance</h4>
+            </div>
+            <div class="cert-card">
+                <div class="cert-icon">🌍</div>
+                <h4>Erasmus+</h4>
+            </div>
+            <div class="cert-card">
+                <div class="cert-icon">📝</div>
+                <h4>IELTS 7.0</h4>
+            </div>
+        </div>
+    </section>
+
+    <section id="contact">
+        <div class="section-header">
+            <h2>Get In Touch</h2>
+        </div>
+
+        <div class="contact-content">
+            <div class="contact-info">
+                <div class="contact-item">
+                    <div class="contact-icon">📧</div>
+                    <div>
+                        <strong>Email</strong><br>
+                        <a href="mailto:hesenovfizuli2020@gmail.com">hesenovfizuli2020@gmail.com</a>
+                    </div>
+                </div>
+
+                <div class="contact-item">
+                    <div class="contact-icon">📱</div>
+                    <div>
+                        <strong>Phone</strong><br>
+                        <a href="tel:+994507370700">+994 50 737 07 00</a>
+                    </div>
+                </div>
+
+                <div class="contact-item">
+                    <div class="contact-icon">📍</div>
+                    <div>
+                        <strong>Location</strong><br>
+                        Baku, Azerbaijan
+                    </div>
+                </div>
+
+                <div class="social-links">
+                    <a href="https://www.linkedin.com/in/fizuli-hasanov/" target="_blank" class="social-link">💼</a>
+                    <a href="https://github.com/fizuli20" target="_blank" class="social-link">💻</a>
+                    <a href="https://public.tableau.com/app/profile/fizuli.hasanov/vizzes" target="_blank" class="social-link">📊</a>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <footer>
+        <p>&copy; 2026 Fizuli Hasanov</p>
+    </footer>
+
+    <script src='https://public.tableau.com/javascripts/api/viz_v1.js'></script>
+    <script src="script.js"></script>
+</body>
+</html>
