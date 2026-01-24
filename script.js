@@ -27,35 +27,6 @@ document.querySelectorAll('.section-header, .project-card, .dashboard-container,
     observer.observe(el);
 });
 
-// Initialize Tableau visualizations
-document.addEventListener('DOMContentLoaded', () => {
-    const vizElements = document.querySelectorAll('.tableauPlaceholder');
-    
-    vizElements.forEach(viz => {
-        const vizElement = viz.querySelector('.tableauViz');
-        const divElement = viz;
-        
-        if (divElement.offsetWidth > 800) {
-            vizElement.style.minWidth = '420px';
-            vizElement.style.maxWidth = '1150px';
-            vizElement.style.width = '100%';
-            vizElement.style.minHeight = '587px';
-            vizElement.style.maxHeight = '887px';
-            vizElement.style.height = (divElement.offsetWidth * 0.75) + 'px';
-        } else if (divElement.offsetWidth > 500) {
-            vizElement.style.minWidth = '420px';
-            vizElement.style.maxWidth = '1150px';
-            vizElement.style.width = '100%';
-            vizElement.style.minHeight = '587px';
-            vizElement.style.maxHeight = '887px';
-            vizElement.style.height = (divElement.offsetWidth * 0.75) + 'px';
-        } else {
-            vizElement.style.width = '100%';
-            vizElement.style.height = '927px';
-        }
-    });
-});
-
 // Smooth scroll for navigation links
 document.querySelectorAll('a[href^="#"]').forEach(anchor => {
     anchor.addEventListener('click', function (e) {
