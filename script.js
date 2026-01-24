@@ -22,39 +22,42 @@ const observer = new IntersectionObserver((entries) => {
     });
 }, observerOptions);
 
-// Initialize Tableau embeds (consistent sizing + fixes display:none)
-function sizeTableau(viz) {
-  const vizElement = viz.querySelector('.tableauViz');
-  if (!vizElement) return;
-
-  // Make sure it's visible (your HTML sets display:none)
-  vizElement.style.display = 'block';
-  vizElement.style.width = '100%';
-
-  const w = viz.offsetWidth || 1000;
-
-  // Keep a stable height so both dashboards look aligned
-  // You can tweak these numbers if you want taller/shorter dashboards.
-  let h;
-  if (w >= 900) h = 720;
-  else if (w >= 600) h = 820;
-  else h = 950;
-
-  vizElement.style.height = h + 'px';
-}
-
+// Initialize Tableau visualizations (prevents "shrinks to top-left")
 document.addEventListener('DOMContentLoaded', () => {
-  const vizElements = document.querySelectorAll('.tableauPlaceholder');
+  const placeholders = document.querySelectorAll('.tableauPlaceholder');
 
-  // Size once on load
-  vizElements.forEach(sizeTableau);
+  function resizeOne(ph) {
+    const obj = ph.querySelector('object.tableauViz');
+    if (!obj) return;
 
-  // Size again after a short delay (Tableau loads async; this helps alignment)
-  setTimeout(() => vizElements.forEach(sizeTableau), 600);
+    // IMPORTANT: your HTML has display:none; turn it on
+    obj.style.display = 'block';
 
-  // Resize on window resize
-  window.addEventListener('resize', () => vizElements.forEach(sizeTableau));
+    // Give the placeholder a real height (not only min-height)
+    const w = ph.clientWidth || 1000;
+
+    let h;
+    if (w >= 900) h = 720;
+    else if (w >= 600) h = 820;
+    else h = 950;
+
+    ph.style.height = h + 'px';
+
+    // Size the tableau object (Tableau will replace with iframe, CSS below will handle iframe too)
+    obj.style.width = '100%';
+    obj.style.height = h + 'px';
+  }
+
+  // Initial sizing
+  placeholders.forEach(resizeOne);
+
+  // After Tableau finishes loading, size again (common fix)
+  setTimeout(() => placeholders.forEach(resizeOne), 800);
+
+  // On resize
+  window.addEventListener('resize', () => placeholders.forEach(resizeOne));
 });
+
 
 
 // Smooth scroll (safe + consistent)
