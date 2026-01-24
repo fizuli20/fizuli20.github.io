@@ -22,6 +22,21 @@ const observer = new IntersectionObserver((entries) => {
     });
 }, observerOptions);
 
+// Smooth scroll (safe + consistent)
+document.querySelectorAll('a[href^="#"]').forEach(a => {
+  a.addEventListener('click', (e) => {
+    const href = a.getAttribute('href');
+    if (!href || href === '#') return;
+
+    const target = document.querySelector(href);
+    if (!target) return;
+
+    e.preventDefault();
+    target.scrollIntoView({ behavior: 'smooth', block: 'start' });
+  });
+});
+
+
 // Observe all animated elements
 document.querySelectorAll('.section-header, .project-card, .dashboard-container, .skill-category, .timeline-item, .cert-card, .contact-info').forEach(el => {
     observer.observe(el);
