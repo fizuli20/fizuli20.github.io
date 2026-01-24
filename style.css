@@ -377,6 +377,19 @@ section { scroll-margin-top: 90px; }
     width: 100%;
     min-height: 700px;
 }
+/* Tableau: keep final iframe from collapsing into top-left */
+.tableauPlaceholder {
+  width: 100%;
+  height: 720px; /* baseline; JS will override per screen size */
+}
+
+.tableauPlaceholder object,
+.tableauPlaceholder iframe {
+  width: 100% !important;
+  height: 100% !important;
+  display: block !important;
+}
+
 
 .skills-grid {
     display: grid;
