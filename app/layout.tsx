@@ -46,10 +46,10 @@ export const metadata: Metadata = {
     siteName: "Fizuli Hasanov",
     images: [
       {
-        url: "/profile-photo.jpg",
-        width: 800,
-        height: 800,
-        alt: "Fizuli Hasanov",
+        url: "/logo.png",
+        width: 1024,
+        height: 1024,
+        alt: "Fizuli Hasanov — Architect of Value",
       },
     ],
     locale: "en_US",
@@ -60,7 +60,7 @@ export const metadata: Metadata = {
     title: "Fizuli Hasanov — Technical Product Leader",
     description:
       "Presidential Scholar. 2× Hackathon Champion. Two active incubations. XGBoost PR-AUC 0.87 on real data.",
-    images: ["/profile-photo.jpg"],
+    images: ["/logo.png"],
   },
   robots: {
     index: true,
