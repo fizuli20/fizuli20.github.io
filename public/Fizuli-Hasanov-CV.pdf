@@ -1,0 +1,140 @@
+
+
+FIZULI HASANOV 
+Presidential Scholar  ·  Technical Product Leader  ·  Data-Driven Venture Builder 
++994 50 737 07 00  |  linkedin.com/in/fizuli-hasanov  |  github.com/fizuli20  | portfolio 
+ 
+ 
+ 
+EDUCATION 
+Baku Higher Oil School (BHOS)  —  Bachelor of Business Administration Sep 2024 – Jun 2029 
+GPA: 96.3 / 100  |  Presidential Scholar — Top 3 of 20,000+ university entrance applicants (DIM score: 686 / 700) Baku, Azerbaijan 
+Relevant Coursework: Data Analytics  ·  Business Law  ·  Statistics  ·  Calculus  ·  Economics  ·  Strategic Management 
+ 
+PROFESSIONAL EXPERIENCE 
+Business Analyst & Product Discovery Intern  —  Codveda Technologies  |  Remote Mar 2026 – Present 
+• Spearheaded a churn prediction initiative on 2,666 telecom customers — translating ML outputs (Random Forest ROC-AUC 0.91 via 
+5-fold CV) into a 5-recommendation retention playbook; identified international plan subscribers as a 3.8× higher-risk segment 
+(~42% vs. ~11% churn) and proposed a 3rd-call early-warning trigger as the single highest-impact intervention. 
+• Architected a 4-tier fraud risk-scoring framework on 284,807 real transactions (0.172% fraud rate, 577:1 imbalance) — moving 
+product thinking beyond accuracy to PR-AUC as the primary success metric; XGBoost model achieved PR-AUC 0.87, operationalized 
+as an auto-approve / CVV-challenge / block / freeze intervention ladder at threshold 0.4. 
+• Quantified $108,623 in high-risk monthly subscription revenue using a PostgreSQL behavioral risk-score model, then stress-tested a 
+15% retention uplift scenario — projecting $195,522 in annualized savings to anchor business-case conversations with stakeholders. 
+• Delivered feature-engineering decisions that eliminated four perfectly collinear variables (charge = minutes × rate), reducing model 
+noise and improving cross-validated performance — demonstrating end-to-end ownership from data discovery through deployment 
+recommendation. 
+ 
+Data Analyst Intern  (Outstanding Contributor — Top of 2,000+ Global Cohort)  —  Elevvo Pathways  |  Remote, Cairo-based
+ Feb 2026 – Mar 2026 
+• Recognized as Outstanding Contributor out of 2,000+ international participants for consistently delivering analytics work that 
+exceeded brief scope — the only BHOS student to achieve this designation in the cohort. 
+• Orchestrated an RFM customer segmentation engine on 95,000+ e-commerce customers, classifying six behavioral segments; 
+surfaced that the top two segments (Big Spenders + Loyal) account for $11.9M of total revenue — enabling direct marketing budget 
+prioritization decisions. 
+• Designed a job-market analytics product (Python, Hugging Face dataset, 100K+ postings) that produced geo-stratified salary 
+benchmarks and skill-demand rankings; key output: Data Engineer roles command highest global median salaries while Data Analyst 
+roles dominate Azerbaijan postings — a finding directly applicable to Elevvo's talent-placement product. 
+• Produced an executive-ready Power BI retail dashboard (13M revenue, 1.47M profit, ~25K orders) with KPI cards and drill-downs by 
+region, category, and product — compressing what previously required ad-hoc queries into a single stakeholder-consumable view. 
+ 
+Business & Finance Coordinator  —  International Youth Dialogue Platform  |  Baku, Azerbaijan (Hybrid) Feb 2026 – Present 
+• Oversee budget planning, financial reporting, and operational data for a multi-stakeholder youth platform; translate program-level 
+metrics into resource-allocation and partnership-strategy decisions for platform leadership. 
+• Coordinate cross-functional workstreams across hybrid delivery — managing timelines, stakeholder communications, and 
+dependency tracking across internal teams and external partners. 
+ 
+Vice President & Project Manager (3 concurrent club leadership roles)  —  BHOS — Conversation Club · Startup Club · 
+Psychology Club · History Club  |  Baku Sep 2025 – Present 
+
+• Manage concurrent project pipelines across four university clubs (15–40 members each) — owning scope definition, milestone 
+tracking, and stakeholder communication from ideation through execution; applied Agile-style iteration cycles to event planning and 
+curriculum redesign. 
+• Scaled Conversation Club session engagement through structured curriculum redesign, growing active attendance and member 
+retention; established regular feedback loops to iterate on session format and speaker quality. 
+ 
+Digital Product Growth — Content Platform  —  Self-Directed  |  Baku, Azerbaijan Oct 2024 – Aug 2025 
+• Scaled a zero-budget digital content platform to 2.1M+ total views, 70K+ likes, and 10K shares within 11 months by applying data-
+driven audience segmentation — analyzing engagement metrics (watch-time, shares, comment sentiment) to continuously refine 
+posting cadence, content format, and topic selection. 
+• Managed full product lifecycle end-to-end: ideation → content brief → production → publishing → performance analysis → 
+iteration; grew 38K profile views through audience community-building rather than paid distribution. 
+ 
+VENTURES & INNOVATION 
+Founder / Co-Founder across three concurrent ventures — two 1st-place hackathon wins in a single week (Apr 2026); three active 
+incubations. 
+HyperAutomation (AutoFlow AZ)  —  RPA + AGV Warehouse Automation 2026 – Present 
+• Accepted for active incubation at SabahHub (Sabah Incubation Program, 9th Cohort) among competitive applicants; selected to 
+pitch at PASHA Hackathon 6.0 (May 15–17, 2026) out of thousands of applicants — one of the most competitive Azerbaijani startup 
+showcases. 
+• Designed integrated RPA + Autonomous Guided Vehicle architecture for warehouse logistics targeting Azerbaijani SMEs; developed 
+unit-economics model, pilot ROI framework, and phased deployment roadmap for investor and incubator presentations. 
+ 
+EcoConcrete  —  Nano-Mineral Carbon Capture Concrete Additive Apr 2026 – Present 
+• Won 1st place out of 100 university teams in the Alternative Energy & Clean Environment track; currently under active incubation at 
+EmpowerMe Incubation and the 5th Tusi Incubation Program. 
+• Developed CO₂-sequestering concrete additive concept through nano-mineral carbonation; authored full pitch deck, go-to-market 
+strategy, and B2B financial model targeting Azerbaijani construction market entry. 
+ 
+Milli Cloud Security  —  National Data Center Infrastructure & Security Apr 2026 
+• Won 1st place (AZN 1,500 prize) at AzCON Future Tech Hackathon — hosted by Holberton School Azerbaijan and AZCON Holding — 
+for a cloud security and infrastructure solution addressing the security demands of Azerbaijan's emerging data center ecosystem. 
+ 
+LedgerLens  —  AI-Powered OCR for Handwritten Azerbaijani SME Ledgers 2025 – 2026 
+• Developed AI-OCR product concept for handwritten Azerbaijani financial record digitization; built 13-slide investor deck 
+benchmarked competitively against Google Document AI and Azure Form Recognizer on accuracy and unit-economics; submitted to 
+ABB Incubation Program and Youth Empowerment Project Incubation. 
+ 
+INDEPENDENT RESEARCH & ANALYTICS 
+Azerbaijan Economy Analysis  —  Macroeconomic Research (University Researcher) 2025 – 2026 
+• Constructed a 4-notebook end-to-end macroeconomic study (Python, pandas, scikit-learn) covering 20 years of data (2005–2024); 
+OLS regression established R²=0.509 (p<0.001), quantifying that each $1 increase in Brent crude drives ~$0.59B in GDP growth — 
+challenging the simplistic oil-price narrative. 
+• Modeled the March 2026 Hormuz Crisis as a net-positive event for Azerbaijan via the BTC pipeline bypass (+$2.35B/month 
+additional oil revenue at Brent ~$112); built a 3-scenario 2026 GDP stress test ($74.7B–$82B) anchored to the World Bank 2024 
+verified base of $74.32B. 
+• Revealed real purchasing power increased only ~8–10% (2019–2024) despite 63% nominal wage growth — attributing the gap to 
+cumulative inflation and the 2022 CPI shock (13.85%); published full analysis on GitHub with reproducible notebooks and source 
+citations (World Bank, IMF, official statistics). 
+ 
+
+COMPETITIONS & RECOGNITION 
+• 1st Place  —  AzCON Future Tech Hackathon — Milli Cloud Security:  Holberton School / AZCON Holding  ·  AZN 1,500 prize Apr 2026 
+• 1st Place  —  EcoConcrete:  1st of 100 university teams at GreenTech 3  ·  Now incubated at EmpowerMe & 5th Tusi Apr 2026 
+• 3rd Place  —  Data Driven Solutions Hackathon —  Holberton School ·  Earned additional Holberton course access Apr 2026 
+• Finalist  —  PASHA Hackathon 6.0 — HyperAutomation:  Accepted to pitch among thousands of applicants                May 15–17, 2026  
+• Incubated  —  SabahHub — Sabah Incubation Program, 9th Cohort:  HyperAutomation AZ warehouse automation 2026 
+• Incubated  —  EmpowerMe + 5th Tusi Incubation Program:  EcoConcrete carbon capture additive 2026 
+• Top 29 / 150+  —  Urban Hackathon 2026 — GreenMile B2B HR SaaS for commute emissions  ·  Ministry of Youth & Sport 2026 
+• Outstanding Contributor  —  Elevvo Pathways Global Cohort:  Recognized among 2,000+ international participants Mar 2026 
+• 5th Place / 29 Teams  —  Hult Prize BHOS On-Campus Competition:  Financial resilience & behavioral systems concept 2025 
+• Presidential Scholar  —  Ministry of Science & Education, Azerbaijan:  Top 3 of 20,000+ applicants  ·  Score 686/700 Jun 2025 
+• Finalist  —  Aspire Leaders Program, Cohort 5:  Selected: 9,988 of 54,337 global applicants — Harvard-founded program Dec 2025 
+ 
+SKILLS 
+Product Mastery: Agile / Scrum  ·  Backlog management  ·  User story writing  ·  Stakeholder management  ·  Product discovery  ·  
+Requirements documentation  ·  Go-to-market strategy  ·  Financial modeling  ·  Scenario analysis 
+Technical Fluency: Python (pandas, NumPy, scikit-learn, matplotlib, seaborn, XGBoost)  ·  SQL (PostgreSQL, BigQuery)  ·  Power BI  ·  
+Tableau  ·  ML classification (RF, LR, XGBoost, Isolation Forest)  ·  SMOTE / class-imbalance handling  ·  RFM segmentation  ·  OLS 
+regression  ·  Cohort retention analysis 
+AI & Innovation: Generative AI (Holberton School AZ, 100% scholarship)  ·  AI product owner (LedgerLens OCR, AutoFlow AZ RPA)  ·  Rapid 
+MVP prototyping  ·  Competitive AI benchmarking 
+Languages: Azerbaijani (Native)  ·  English (C1 — IELTS 7.0)  ·  Turkish (Intermediate) 
+ 
+CERTIFICATIONS & LEADERSHIP PROGRAMS 
+• Aspire Leaders Program, Cohort 5  —  Aspire Institute (Harvard-founded):  Leadership, responsible AI, negotiation, 
+entrepreneurship  ·  9,988 / 54,337 applicants selected Dec 2025 
+• GenAI Track — 100% Scholarship  —  Holberton School Azerbaijan:  Generative AI; earned ML course via hackathon 2026–27 
+• EY Strategy & Corporate Finance School  —  Ernst & Young:  Valuation, capital structure, investment decision-making, financial 
+planning Dec 2025 
+• IBM Python for Data Science  —  IBM / Coursera:  Python, data analysis, and ML foundations 2025 
+• Deloitte Data Analytics Simulation  —  Deloitte (Forage):  End-to-end analytics workflow simulation 2025 
+• IELTS Academic — Band 7.0  —  British Council:  C1 English proficiency Apr 2025 
+• 21st Century Management — Erasmus+ Youth  —  Erasmus Plus 30-hour leadership, and digital-environment management training
+ Jan 2026 
+ 
+VOLUNTEERING 
+• Volunteer Staff — Baku ID Innovation & Startup Event (Jun 2025): coordinated participant guidance, venue logistics, and 
+engagement across one of the region's flagship innovation events; gained multicultural event management experience. 
+• Translator — Studynet Group Ltd. Education Fair, Hilton Hotels & Resorts (Oct 2025): represented St. Clare's Oxford (UK) as official 
+translator at a 12-country, 150+ institution fair; received Certificate of Appreciation. 
