@@ -1,215 +1,193 @@
 "use client"
 
-import { motion } from "framer-motion"
+import { motion, useReducedMotion } from "framer-motion"
 import { SectionLabel } from "./about"
 
 type Role = {
-  num: string
-  title: string
-  company: string
-  meta: string
+  date: string
   current?: boolean
+  role: string
+  company: string
+  location: string
   keyWin: string
   bullets: string[]
-  stack: string[]
-  logoColor: string
-  initials: string
+  tags: string[]
 }
 
 const ROLES: Role[] = [
   {
-    num: "01",
-    title: "Business Analyst Intern",
-    company: "Codveda Technologies",
-    meta: "Remote · Mar 2026 – Present",
+    date: "MAR 2026 \u2014 PRESENT",
     current: true,
+    role: "Business Analyst Intern",
+    company: "Codveda Technologies",
+    location: "Remote",
     keyWin:
-      "XGBoost fraud detection — PR-AUC 0.87 on 284,807 real transactions (577:1 imbalance).",
+      "XGBoost fraud detection \u2014 PR-AUC 0.87 on 284,807 real transactions (577:1 class imbalance resolved via SMOTE)",
     bullets: [
-      "Engineered a fraud-detection pipeline on 284,807 real card transactions, hitting PR-AUC 0.87 and ROC-AUC 0.91 against a brutal 577:1 class imbalance using SMOTE + XGBoost.",
-      "Delivered an RFM customer segmentation that surfaced $7.45M in latent revenue across the loyalty cohort, translated into 4 actionable retention plays.",
-      "Shipped cohort-retention dashboards in Power BI that cut a 6-hour weekly reporting cycle to a 15-minute self-serve view for ops leadership.",
-      "Documented model assumptions, drift checks, and runbooks so non-ML stakeholders could trust and challenge the outputs.",
+      "Architected a 4-model fraud detection pipeline \u2014 XGBoost achieved PR-AUC 0.87; deployed 4-tier risk system across 284,807 transactions at threshold 0.4.",
+      "Identified international-plan users as 3.8\u00d7 higher churn risk (42% vs. 11%); translated into 5 retention actions including a 3rd-call early-warning trigger.",
+      "Quantified $108,623 in high-risk monthly revenue via SQL behavioral scoring; projected $195,522 annual savings from a 15% retention uplift simulation.",
     ],
-    stack: ["Python", "scikit-learn", "XGBoost", "SMOTE", "PostgreSQL", "Power BI"],
-    logoColor: "#2563eb",
-    initials: "CV",
+    tags: ["Python", "scikit-learn", "XGBoost", "SMOTE", "PostgreSQL"],
   },
   {
-    num: "02",
-    title: "Data Analyst Intern",
+    date: "FEB \u2014 MAR 2026",
+    role: "Data Analyst Intern",
     company: "Elevvo Pathways",
-    meta: "Remote · Feb – Mar 2026",
+    location: "Remote",
     keyWin:
-      "Outstanding Contributor — recognized among 2,000+ global participants.",
+      "Outstanding Contributor \u2014 recognized among 2,000+ global participants across the entire cohort",
     bullets: [
-      "Completed 8 production-grade data tasks across cleaning, EDA, modeling, and dashboarding inside a 6-week sprint.",
-      "Built a churn-prediction baseline that out-performed the program benchmark and was reused by other cohort members.",
-      "Earned the Outstanding Contributor recognition from a global pool of 2,000+ analysts.",
+      "Recognized as Outstanding Contributor among 2,000+ global participants \u2014 only BHOS student to achieve this designation.",
+      "Surfaced $7.45M in top-segment revenue from RFM model on 95,000+ customers; delivered direct prioritization framework.",
+      "Built executive Power BI dashboard: 13M revenue, 1.47M profit, ~25K orders with regional drill-downs.",
     ],
-    stack: ["Python", "pandas", "Tableau", "SQL"],
-    logoColor: "#10b981",
-    initials: "EP",
+    tags: ["pandas", "Power BI", "RFM", "BigQuery"],
   },
   {
-    num: "03",
-    title: "Business & Finance Coordinator",
-    company: "IYDP (Intl. Youth Development Program)",
-    meta: "Baku · Feb 2026 – Present",
-    keyWin: "Coordinating finance + business ops for a multi-track international youth program.",
+    date: "FEB 2026 \u2014 PRESENT",
+    role: "Business & Finance Coordinator",
+    company: "IYDP",
+    location: "Baku",
+    keyWin:
+      "Multi-stakeholder budget planning across hybrid international dialogue programs",
     bullets: [
-      "Own the financial planning, budget tracking, and partner reporting cycle for the program's Baku chapter.",
-      "Coordinate cross-functional ops between sponsors, mentors, and 30+ delegates across multiple tracks.",
+      "Oversee financial planning and operational reporting for multi-stakeholder youth platform across Baku and partner regions.",
+      "Synthesize program-level metrics for leadership decisions on resource allocation, event ROI, and partnership strategy.",
     ],
-    stack: ["Financial Modeling", "Stakeholder Mgmt", "Reporting"],
-    logoColor: "#f59e0b",
-    initials: "IY",
+    tags: [],
   },
   {
-    num: "04",
-    title: "VP & Project Manager (×3 clubs)",
-    company: "Baku Higher Oil School",
-    meta: "Sep 2025 – Present",
-    keyWin: "Leading three student organizations in parallel — strategy, ops, and execution.",
+    date: "SEP 2025 \u2014 PRESENT",
+    role: "VP & Project Manager \u00d73",
+    company: "BHOS Clubs",
+    location: "Baku",
+    keyWin:
+      "Four simultaneous club leadership roles, 15\u201340 members each",
     bullets: [
-      "Vice President / PM across three student clubs spanning entrepreneurship, data, and leadership.",
-      "Built recurring program cadences: events, partnerships, mentor pipelines, and member growth loops.",
+      "Lead weekly Conversation Club sessions for 30+ members; redesigned curriculum growing attendance through feedback loops.",
+      "Manage concurrent project pipelines across Startup, Psychology, and History clubs \u2014 owning scope, milestones, communications.",
     ],
-    stack: ["Leadership", "Operations", "Program Design"],
-    logoColor: "#8b5cf6",
-    initials: "BH",
+    tags: [],
   },
   {
-    num: "05",
-    title: "Digital Product Growth",
+    date: "OCT 2024 \u2014 AUG 2025",
+    role: "Digital Product Growth",
     company: "TikTok",
-    meta: "Oct 2024 – Aug 2025",
-    keyWin: "2.1M+ views, 70K+ likes in 11 months using data-driven audience segmentation.",
+    location: "Self-directed",
+    keyWin:
+      "2.1M+ views, 70K+ likes in 11 months \u2014 zero paid reach",
     bullets: [
-      "Ran a personal growth experiment as a product: hypothesis → content → measurement → iteration.",
-      "Used audience-segmentation analytics and posting-time optimization to break 2.1M+ views and 70K+ likes in 11 months.",
+      "Scaled zero-budget content platform to 2.1M+ views, 70K+ likes, 10K shares via data-driven audience segmentation.",
+      "Managed full lifecycle: ideation \u2192 brief \u2192 production \u2192 analytics \u2192 iteration. Grew 38K profile views organically.",
     ],
-    stack: ["Audience Analytics", "A/B Testing", "Content Strategy"],
-    logoColor: "#ef4444",
-    initials: "TT",
+    tags: [],
   },
 ]
 
+const easeOutExpo = [0.16, 1, 0.3, 1] as const
+
 export function Experience() {
+  const reduce = useReducedMotion()
+
   return (
     <section
       id="experience"
-      aria-label="Professional experience"
-      className="relative border-t border-[var(--color-border)] px-5 py-24 md:px-8 md:py-32"
+      aria-label="Experience"
+      className="px-6 py-24 md:px-10 md:py-32 lg:px-16"
     >
-      <div className="mx-auto max-w-5xl">
-        <SectionLabel index="02" label="Experience" />
-        <h2 className="mt-6 max-w-2xl font-serif text-[32px] leading-[1.1] tracking-tight text-foreground sm:text-[40px]">
-          Five roles. One operating system.
+      <div className="mx-auto max-w-[1120px]">
+        <SectionLabel index="02" label="EXPERIENCE" />
+        <h2
+          className="mt-2 text-white"
+          style={{
+            fontSize: "clamp(40px, 5vw, 64px)",
+            fontWeight: 700,
+            letterSpacing: "-0.03em",
+          }}
+        >
+          The bridge between business and ML.
         </h2>
-        <p className="mt-4 max-w-xl text-[15px] leading-relaxed text-[var(--color-muted)]">
-          Every role earned a measurable result. Below: the stack, the stakes, and the receipts.
-        </p>
 
-        <ol className="relative mt-16">
-          {/* timeline spine */}
-          <span
-            aria-hidden
-            className="absolute left-[18px] top-2 bottom-2 w-px bg-[var(--color-border)] md:left-[22px]"
-          />
-          {ROLES.map((r, i) => (
-            <RoleItem key={r.num} role={r} last={i === ROLES.length - 1} />
+        <hr className="mt-8 border-white/5" />
+
+        {/* Timeline */}
+        <div className="relative mt-12 border-l border-white/[0.08] pl-6">
+          {ROLES.map((role, i) => (
+            <motion.div
+              key={role.role + role.company}
+              initial={reduce ? undefined : { opacity: 0, y: 20 }}
+              whileInView={{ opacity: 1, y: 0 }}
+              viewport={{ once: true, amount: 0.1 }}
+              transition={{
+                duration: 0.5,
+                ease: easeOutExpo,
+                delay: i * 0.07,
+              }}
+              className="relative pb-12 last:pb-0"
+            >
+              {/* Timeline dot */}
+              <div className="absolute -left-[calc(1.5rem+4.5px)] top-[22px] h-2 w-2 rounded-full bg-zinc-700" />
+
+              {/* Date */}
+              <div className="flex items-center gap-3">
+                <span className="font-mono text-[11px] uppercase tracking-[0.1em] text-zinc-600">
+                  {role.date}
+                </span>
+                {role.current && (
+                  <span className="rounded-full border border-white/10 px-2 py-0.5 font-mono text-[10px] uppercase tracking-[0.1em] text-zinc-500">
+                    CURRENT
+                  </span>
+                )}
+              </div>
+
+              {/* Role + Company */}
+              <p className="mt-2 text-[16px]">
+                <span className="font-semibold text-white">{role.role}</span>
+                <span className="text-zinc-400"> &middot; {role.company}</span>
+              </p>
+
+              {/* Location */}
+              <p className="mt-1 font-mono text-[11px] uppercase tracking-[0.1em] text-zinc-600">
+                {role.location}
+              </p>
+
+              {/* Key win box */}
+              <div className="mt-3 rounded-r-md border-l-2 border-white/30 bg-white/[0.02] p-3 pl-4">
+                <p className="text-[13px] text-zinc-300">{role.keyWin}</p>
+              </div>
+
+              {/* Bullets */}
+              {role.bullets.length > 0 && (
+                <ul className="mt-4 space-y-2">
+                  {role.bullets.map((b, j) => (
+                    <li
+                      key={j}
+                      className="text-[14px] leading-[1.6] text-zinc-400 before:mr-2 before:text-zinc-700 before:content-['\u00b7']"
+                    >
+                      {b}
+                    </li>
+                  ))}
+                </ul>
+              )}
+
+              {/* Tech tags */}
+              {role.tags.length > 0 && (
+                <div className="mt-4 flex flex-wrap gap-2">
+                  {role.tags.map((tag) => (
+                    <span
+                      key={tag}
+                      className="rounded-full border border-white/[0.08] bg-zinc-900 px-2.5 py-0.5 font-mono text-[11px] text-zinc-600"
+                    >
+                      {tag}
+                    </span>
+                  ))}
+                </div>
+              )}
+            </motion.div>
           ))}
-        </ol>
+        </div>
       </div>
     </section>
-  )
-}
-
-function RoleItem({ role, last }: { role: Role; last: boolean }) {
-  return (
-    <motion.li
-      initial={{ opacity: 0, y: 20 }}
-      whileInView={{ opacity: 1, y: 0 }}
-      viewport={{ once: true, amount: 0.2 }}
-      transition={{ duration: 0.6, ease: [0.22, 1, 0.36, 1] }}
-      className={`relative pl-14 md:pl-20 ${last ? "" : "pb-12"}`}
-    >
-      {/* node */}
-      <span
-        aria-hidden
-        className={`absolute left-0 top-1.5 flex h-9 w-9 items-center justify-center rounded-full border md:h-11 md:w-11 ${
-          role.current
-            ? "border-[var(--color-accent)] bg-[var(--color-accent)]/10"
-            : "border-[var(--color-border)] bg-[var(--color-card)]"
-        }`}
-      >
-        <span
-          className="flex h-5 w-5 items-center justify-center rounded-full text-[10px] font-semibold text-white md:h-6 md:w-6"
-          style={{ backgroundColor: role.logoColor }}
-        >
-          {role.initials}
-        </span>
-      </span>
-
-      <article className="rounded-2xl border border-[var(--color-border)] bg-[var(--color-card)] p-6 transition-colors hover:border-[#2a2a2a] md:p-7">
-        <header className="flex flex-wrap items-baseline gap-x-3 gap-y-1">
-          <span className="font-mono text-[11px] tracking-[0.18em] text-[var(--color-accent)]">
-            {role.num}
-          </span>
-          <h3 className="font-serif text-xl text-foreground sm:text-2xl">{role.title}</h3>
-          {role.current && (
-            <span className="inline-flex items-center gap-1.5 rounded-full border border-[var(--color-success-border)] bg-[var(--color-success-bg)] px-2 py-0.5 font-mono text-[10px] uppercase tracking-[0.18em] text-[var(--color-success)]">
-              <span aria-hidden className="h-1 w-1 rounded-full bg-[var(--color-success)]" />
-              Current
-            </span>
-          )}
-        </header>
-
-        <div className="mt-1 flex flex-wrap items-center gap-x-3 gap-y-1 text-[13px] text-[var(--color-muted)]">
-          <span className="text-foreground">{role.company}</span>
-          <span aria-hidden className="text-[var(--color-muted-foreground)]">·</span>
-          <span className="font-mono text-[12px] text-[var(--color-muted-foreground)]">
-            {role.meta}
-          </span>
-        </div>
-
-        {/* Key win */}
-        <div className="mt-5 rounded-md border-l-[3px] border-l-[var(--color-success)] bg-[#0f1a0f] px-4 py-3">
-          <p className="font-mono text-[10px] uppercase tracking-[0.22em] text-[var(--color-success)]">
-            Key win
-          </p>
-          <p className="mt-1 text-[14px] leading-relaxed text-foreground">{role.keyWin}</p>
-        </div>
-
-        {/* Bullets */}
-        <ul className="mt-5 space-y-2.5">
-          {role.bullets.map((b) => (
-            <li
-              key={b}
-              className="relative pl-5 text-[14px] leading-relaxed text-[var(--color-muted)]"
-            >
-              <span
-                aria-hidden
-                className="absolute left-0 top-[10px] h-1 w-1 rounded-full bg-[var(--color-accent)]"
-              />
-              {b}
-            </li>
-          ))}
-        </ul>
-
-        {/* Stack pills */}
-        <div className="mt-5 flex flex-wrap gap-2">
-          {role.stack.map((s) => (
-            <span
-              key={s}
-              className="rounded-full border border-[#2a2a2a] bg-[#111] px-2.5 py-1 font-mono text-[11px] text-[var(--color-muted)]"
-            >
-              {s}
-            </span>
-          ))}
-        </div>
-      </article>
-    </motion.li>
   )
 }

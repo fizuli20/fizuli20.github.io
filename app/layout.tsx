@@ -1,27 +1,10 @@
 import type { Metadata, Viewport } from "next"
-import { Inter, Playfair_Display, JetBrains_Mono } from "next/font/google"
+import { GeistSans } from "geist/font/sans"
+import { GeistMono } from "geist/font/mono"
 import "./globals.css"
 
-const inter = Inter({
-  subsets: ["latin"],
-  variable: "--font-inter",
-  display: "swap",
-})
-
-const playfair = Playfair_Display({
-  subsets: ["latin"],
-  variable: "--font-playfair",
-  display: "swap",
-})
-
-const jetbrains = JetBrains_Mono({
-  subsets: ["latin"],
-  variable: "--font-jetbrains",
-  display: "swap",
-})
-
 export const metadata: Metadata = {
-  metadataBase: new URL("https://fizuli20.github.io"),
+  metadataBase: new URL("https://fizuli20-github-io.vercel.app"),
   title: "Fizuli Hasanov — Technical Product Leader, Data Scientist, Venture Builder",
   description:
     "Presidential Scholar (Top 3 of 20,000+). BA Intern at Codveda, Founder of EcoConcrete, PASHA Hackathon 6.0 finalist. I build data products that move revenue and ventures that win.",
@@ -41,8 +24,8 @@ export const metadata: Metadata = {
   openGraph: {
     title: "Fizuli Hasanov — Technical Product Leader, Data Scientist, Venture Builder",
     description:
-      "Presidential Scholar. 2× Hackathon Champion. Two active incubations. XGBoost PR-AUC 0.87 on real data.",
-    url: "https://fizuli20.github.io",
+      "Presidential Scholar. 2x Hackathon Champion. Two active incubations. XGBoost PR-AUC 0.87 on real data.",
+    url: "https://fizuli20-github-io.vercel.app",
     siteName: "Fizuli Hasanov",
     images: [
       {
@@ -59,7 +42,7 @@ export const metadata: Metadata = {
     card: "summary_large_image",
     title: "Fizuli Hasanov — Technical Product Leader",
     description:
-      "Presidential Scholar. 2× Hackathon Champion. Two active incubations. XGBoost PR-AUC 0.87 on real data.",
+      "Presidential Scholar. 2x Hackathon Champion. Two active incubations. XGBoost PR-AUC 0.87 on real data.",
     images: ["/profile-photo.jpg"],
   },
   robots: {
@@ -69,7 +52,7 @@ export const metadata: Metadata = {
 }
 
 export const viewport: Viewport = {
-  themeColor: "#0a0a0a",
+  themeColor: "#000000",
   width: "device-width",
   initialScale: 1,
 }
@@ -82,9 +65,9 @@ export default function RootLayout({
   return (
     <html
       lang="en"
-      className={`${inter.variable} ${playfair.variable} ${jetbrains.variable} bg-background`}
+      className={`${GeistSans.variable} ${GeistMono.variable}`}
     >
-      <body className="bg-background text-foreground antialiased">{children}</body>
+      <body className="bg-black text-white antialiased">{children}</body>
     </html>
   )
 }

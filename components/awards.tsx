@@ -1,128 +1,173 @@
 "use client"
 
-import { motion } from "framer-motion"
-import { Trophy, Medal } from "lucide-react"
+import { motion, useReducedMotion } from "framer-motion"
 import { SectionLabel } from "./about"
 
-type GoldAward = {
-  event: string
-  project: string
-  date: string
-  outcome: string
-}
-
-type Recognition = {
+type Award = {
+  tier: 1 | 2
+  top: string
   title: string
-  meta: string
+  sub: string
+  date: string
 }
 
-const GOLD: GoldAward[] = [
+const AWARDS: Award[] = [
   {
-    event: "AzCON Future Tech Hackathon",
-    project: "Milli Cloud Security",
+    tier: 1,
+    top: "1ST PLACE",
+    title: "AzCON Future Tech Hackathon",
+    sub: "Milli Cloud Security \u00b7 AZN 1,500",
     date: "Apr 2026",
-    outcome: "AZN 1,500 prize · Holberton AZ × AZCON Holding",
   },
   {
-    event: "Alternative Energy Track",
-    project: "EcoConcrete",
+    tier: 1,
+    top: "1ST PLACE",
+    title: "Alternative Energy Track",
+    sub: "EcoConcrete \u00b7 1 of 100 University Teams",
     date: "Apr 2026",
-    outcome: "1st of 100 university teams",
   },
   {
-    event: "Presidential Scholar",
-    project: "Republic of Azerbaijan",
+    tier: 1,
+    top: "PRESIDENTIAL SCHOLAR",
+    title: "Republic of Azerbaijan",
+    sub: "Top 3 of 20,000+ DIM applicants \u00b7 Score 686/700",
     date: "Jun 2025",
-    outcome: "Top 3 of 20,000+ · DIM 686/700",
+  },
+  {
+    tier: 2,
+    top: "FINALIST",
+    title: "PASHA Hackathon 6.0",
+    sub: "HyperAutomation",
+    date: "May 2026",
+  },
+  {
+    tier: 2,
+    top: "INCUBATED",
+    title: "SabahHub 9th Cohort",
+    sub: "AutoFlow AZ",
+    date: "2026",
+  },
+  {
+    tier: 2,
+    top: "INCUBATED",
+    title: "EmpowerMe + 5th Tusi",
+    sub: "EcoConcrete",
+    date: "2026",
+  },
+  {
+    tier: 2,
+    top: "FINALIST",
+    title: "Aspire Leaders Program",
+    sub: "9,988 of 54,337",
+    date: "Dec 2025",
+  },
+  {
+    tier: 2,
+    top: "OUTSTANDING",
+    title: "Elevvo Pathways",
+    sub: "2,000+ global participants",
+    date: "Mar 2026",
+  },
+  {
+    tier: 2,
+    top: "TOP 29 / 150+",
+    title: "Urban Hackathon",
+    sub: "GreenMile",
+    date: "2026",
+  },
+  {
+    tier: 2,
+    top: "3RD PLACE",
+    title: "Holberton Data Driven Hackathon",
+    sub: "HSPTS",
+    date: "Apr 2026",
+  },
+  {
+    tier: 2,
+    top: "5TH PLACE",
+    title: "Hult Prize BHOS On-Campus",
+    sub: "13 finalists of 29 teams",
+    date: "2025",
   },
 ]
 
-const ALL: Recognition[] = [
-  { title: "3rd Place — Holberton Hackathon", meta: "Holberton School Azerbaijan" },
-  { title: "PASHA Hackathon 6.0 — Finalist", meta: "May 15–17, 2026" },
-  { title: "SabahHub — Incubated", meta: "9th cohort · AutoFlow AZ" },
-  { title: "EmpowerMe + 5th Tusi — Incubated", meta: "EcoConcrete · Cleantech" },
-  { title: "Aspire Leaders — Finalist", meta: "9,988 / 54,337 globally" },
-  { title: "Outstanding Contributor — Elevvo", meta: "Top of 2,000+ analysts" },
-  { title: "Urban Hackathon — Top 29", meta: "Out of 150+ teams" },
-  { title: "Hult Prize — 5th Place", meta: "Campus round" },
-]
+const easeOutExpo = [0.16, 1, 0.3, 1] as const
 
 export function Awards() {
+  const reduce = useReducedMotion()
+  const champions = AWARDS.filter((a) => a.tier === 1)
+  const standard = AWARDS.filter((a) => a.tier === 2)
+
   return (
     <section
       id="awards"
-      aria-label="Awards and recognition"
-      className="relative border-t border-[var(--color-border)] px-5 py-24 md:px-8 md:py-32"
+      aria-label="Recognition"
+      className="px-6 py-24 md:px-10 md:py-32 lg:px-16"
     >
-      <div className="mx-auto max-w-7xl">
-        <SectionLabel index="04" label="Recognition" />
-        <h2 className="mt-6 max-w-2xl font-serif text-[32px] leading-[1.1] tracking-tight text-foreground sm:text-[40px]">
-          The receipts.
+      <div className="mx-auto max-w-[1120px]">
+        <SectionLabel index="04" label="RECOGNITION" />
+        <h2
+          className="mt-2 text-white"
+          style={{
+            fontSize: "clamp(40px, 5vw, 64px)",
+            fontWeight: 700,
+            letterSpacing: "-0.03em",
+          }}
+        >
+          Wins, finals, and scholarships.
         </h2>
 
-        {/* Tier 1 — gold */}
-        <div className="mt-12 grid grid-cols-1 gap-5 md:grid-cols-3">
-          {GOLD.map((g, i) => (
-            <motion.article
-              key={g.event}
-              initial={{ opacity: 0, y: 16 }}
+        <hr className="mt-8 border-white/5" />
+
+        {/* Tier 1 — Champion Row */}
+        <div className="mt-12 grid grid-cols-1 gap-6 md:grid-cols-3">
+          {champions.map((a, i) => (
+            <motion.div
+              key={a.title}
+              initial={reduce ? undefined : { opacity: 0, y: 20 }}
               whileInView={{ opacity: 1, y: 0 }}
-              viewport={{ once: true, amount: 0.3 }}
-              transition={{ duration: 0.6, delay: i * 0.08 }}
-              className="group relative overflow-hidden rounded-2xl border border-[var(--color-gold-border)] bg-[var(--color-gold-bg)] p-7 transition-colors"
+              viewport={{ once: true, amount: 0.1 }}
+              transition={{ duration: 0.5, ease: easeOutExpo, delay: i * 0.06 }}
+              whileHover={reduce ? undefined : { y: -3 }}
+              className="rounded-2xl border border-white/10 border-l-[3px] border-l-white bg-zinc-900 p-7 transition-all duration-200 hover:border-white/[0.12] hover:bg-zinc-800"
             >
-              <div className="flex items-start justify-between">
-                <span className="font-serif text-[44px] leading-none text-[var(--color-gold)]">
-                  1<span className="align-super text-[20px]">st</span>
-                </span>
-                <Trophy size={22} className="text-[var(--color-gold)]/70" />
-              </div>
-              <h3 className="mt-6 text-[15px] font-medium leading-snug text-foreground">
-                {g.event}
-              </h3>
-              <p className="mt-1 font-mono text-[11px] uppercase tracking-[0.16em] text-[#fbbf24]/80">
-                {g.project}
+              <p className="font-mono text-[10px] uppercase tracking-[0.1em] text-zinc-500">
+                {a.top}
               </p>
-              <div className="mt-5 flex items-center justify-between border-t border-[var(--color-gold-border)] pt-4">
-                <span className="font-mono text-[11px] uppercase tracking-[0.16em] text-[var(--color-muted)]">
-                  {g.date}
-                </span>
-                <span className="text-[12px] text-[var(--color-muted)]">{g.outcome}</span>
-              </div>
-            </motion.article>
+              <h3 className="mt-3 text-[18px] font-semibold text-white">
+                {a.title}
+              </h3>
+              <p className="mt-1 text-[14px] text-zinc-400">{a.sub}</p>
+              <p className="mt-3 font-mono text-[11px] text-zinc-600">
+                {a.date}
+              </p>
+            </motion.div>
           ))}
         </div>
 
-        {/* Tier 2 */}
-        <div className="mt-10">
-          <p className="font-mono text-[10px] uppercase tracking-[0.22em] text-[var(--color-muted-foreground)]">
-            All recognition
-          </p>
-          <div className="mt-4 grid grid-cols-1 gap-3 sm:grid-cols-2">
-            {ALL.map((r, i) => (
-              <motion.article
-                key={r.title}
-                initial={{ opacity: 0, y: 8 }}
-                whileInView={{ opacity: 1, y: 0 }}
-                viewport={{ once: true, amount: 0.4 }}
-                transition={{ duration: 0.5, delay: i * 0.04 }}
-                className="flex items-start gap-4 rounded-xl border border-[var(--color-border)] bg-[var(--color-card)] p-5 transition-colors hover:border-[#2a2a2a]"
-              >
-                <span className="mt-0.5 inline-flex h-8 w-8 shrink-0 items-center justify-center rounded-lg border border-[var(--color-border)] bg-[#111] text-[var(--color-muted)]">
-                  <Medal size={16} />
+        {/* Tier 2 — Standard Grid */}
+        <div className="mt-6 grid grid-cols-1 gap-3 md:grid-cols-2">
+          {standard.map((a, i) => (
+            <motion.div
+              key={a.title + a.sub}
+              initial={reduce ? undefined : { opacity: 0, y: 20 }}
+              whileInView={{ opacity: 1, y: 0 }}
+              viewport={{ once: true, amount: 0.1 }}
+              transition={{ duration: 0.5, ease: easeOutExpo, delay: i * 0.06 }}
+              whileHover={reduce ? undefined : { y: -3 }}
+              className="rounded-xl border border-white/[0.06] bg-zinc-900 p-5 transition-all duration-200 hover:border-white/[0.12] hover:bg-zinc-800"
+            >
+              <div className="flex items-center justify-between">
+                <h3 className="text-[15px] text-white">{a.title}</h3>
+                <span className="font-mono text-[11px] text-zinc-600">
+                  {a.date}
                 </span>
-                <div>
-                  <h4 className="text-[14px] font-medium leading-snug text-foreground">
-                    {r.title}
-                  </h4>
-                  <p className="mt-1 font-mono text-[11px] uppercase tracking-[0.14em] text-[var(--color-muted-foreground)]">
-                    {r.meta}
-                  </p>
-                </div>
-              </motion.article>
-            ))}
-          </div>
+              </div>
+              <p className="mt-1 text-[13px] text-zinc-400">
+                {a.top} &middot; {a.sub}
+              </p>
+            </motion.div>
+          ))}
         </div>
       </div>
     </section>

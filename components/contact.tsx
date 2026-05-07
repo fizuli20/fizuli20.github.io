@@ -1,160 +1,122 @@
 "use client"
 
-import { useState } from "react"
-import { motion } from "framer-motion"
-import { Mail, Linkedin, Github, Copy, Check, ArrowUpRight } from "lucide-react"
-import { SectionLabel } from "./about"
+import { useState, useCallback } from "react"
+import { motion, useReducedMotion } from "framer-motion"
+import { Mail, Linkedin, Github, Check, Copy } from "lucide-react"
+
+const easeOutExpo = [0.16, 1, 0.3, 1] as const
 
 export function Contact() {
   const [copied, setCopied] = useState(false)
+  const reduce = useReducedMotion()
 
-  const copyEmail = async () => {
-    try {
-      await navigator.clipboard.writeText("hesenovfizuli2020@gmail.com")
-      setCopied(true)
-      setTimeout(() => setCopied(false), 1800)
-    } catch {
-      /* no-op */
-    }
-  }
+  const handleCopy = useCallback(() => {
+    navigator.clipboard.writeText("hesenovfizuli2020@gmail.com")
+    setCopied(true)
+    setTimeout(() => setCopied(false), 2000)
+  }, [])
 
   return (
     <section
       id="contact"
-      aria-label="Get in touch"
-      className="relative border-t border-[var(--color-border)] px-5 py-32 md:px-8"
+      aria-label="Contact"
+      className="px-6 py-32 md:px-10 lg:px-16"
     >
-      {/* faint grid */}
-      <div className="pointer-events-none absolute inset-0 bg-grid opacity-30" aria-hidden />
-      <div className="relative mx-auto max-w-5xl text-center">
-        <SectionLabel index="05" label="Connect" />
-
+      <div className="mx-auto max-w-2xl text-center">
         <motion.h2
-          initial={{ opacity: 0, y: 12 }}
+          initial={reduce ? undefined : { opacity: 0, y: 20 }}
           whileInView={{ opacity: 1, y: 0 }}
-          viewport={{ once: true, amount: 0.4 }}
-          transition={{ duration: 0.7 }}
-          className="mx-auto mt-8 max-w-3xl text-balance font-serif text-[36px] leading-[1.05] tracking-tight text-foreground sm:text-[48px] md:text-[56px]"
+          viewport={{ once: true, amount: 0.1 }}
+          transition={{ duration: 0.5, ease: easeOutExpo }}
+          className="text-white"
+          style={{
+            fontSize: "clamp(40px, 5vw, 60px)",
+            fontWeight: 700,
+            letterSpacing: "-0.03em",
+          }}
         >
-          Let&rsquo;s build something inevitable.
+          Let&apos;s build something inevitable.
         </motion.h2>
+        <motion.p
+          initial={reduce ? undefined : { opacity: 0, y: 20 }}
+          whileInView={{ opacity: 1, y: 0 }}
+          viewport={{ once: true, amount: 0.1 }}
+          transition={{ duration: 0.5, ease: easeOutExpo, delay: 0.06 }}
+          className="mt-4 text-[15px] text-zinc-400"
+        >
+          Open to internships, founder collaborations, AI/ML research, and speaking.
+        </motion.p>
 
-        <p className="mx-auto mt-5 max-w-xl text-pretty text-[15px] leading-relaxed text-[var(--color-muted)]">
-          I read every message. The fastest way to reach me is email &mdash; expect a reply within
-          a day.
-        </p>
-
-        <div className="mt-12 grid grid-cols-1 gap-4 text-left md:grid-cols-3">
+        <div className="mt-12 grid grid-cols-1 gap-6 md:grid-cols-3">
           {/* Email */}
-          <motion.article
-            initial={{ opacity: 0, y: 12 }}
+          <motion.div
+            initial={reduce ? undefined : { opacity: 0, y: 20 }}
             whileInView={{ opacity: 1, y: 0 }}
-            viewport={{ once: true, amount: 0.3 }}
-            transition={{ duration: 0.6 }}
-            className="group rounded-2xl border border-[var(--color-border)] bg-[var(--color-card)] p-6 transition-all hover:-translate-y-1 hover:border-[var(--color-accent)]"
+            viewport={{ once: true, amount: 0.1 }}
+            transition={{ duration: 0.5, ease: easeOutExpo, delay: 0 }}
+            whileHover={reduce ? undefined : { y: -3 }}
+            className="flex flex-col items-center gap-3 rounded-xl border border-white/[0.06] bg-zinc-900 p-6 transition-all duration-200 hover:border-white/[0.12] hover:bg-zinc-800"
           >
-            <div className="flex items-center justify-between">
-              <span className="inline-flex h-9 w-9 items-center justify-center rounded-lg border border-[var(--color-border)] bg-[#111] text-[var(--color-accent)]">
-                <Mail size={16} />
-              </span>
-              <span className="rounded-full border border-[var(--color-success-border)] bg-[var(--color-success-bg)] px-2.5 py-0.5 font-mono text-[10px] uppercase tracking-[0.18em] text-[var(--color-success)]">
-                Fastest response
-              </span>
-            </div>
-            <p className="mt-5 font-mono text-[11px] uppercase tracking-[0.18em] text-[var(--color-muted-foreground)]">
-              Email
-            </p>
+            <Mail size={20} className="text-zinc-400" />
             <a
               href="mailto:hesenovfizuli2020@gmail.com"
-              className="mt-1 block break-all text-[15px] text-foreground transition-colors hover:text-[var(--color-accent)]"
+              className="text-[14px] text-zinc-300 transition-colors duration-150 hover:text-white"
             >
               hesenovfizuli2020@gmail.com
             </a>
+            <p className="font-mono text-[11px] text-zinc-600">Fastest response</p>
             <button
               type="button"
-              onClick={copyEmail}
-              className="mt-4 inline-flex items-center gap-2 rounded-full border border-[var(--color-border)] bg-[#111] px-3 py-1.5 font-mono text-[11px] tracking-[0.04em] text-[var(--color-muted)] transition-colors hover:border-[#2a2a2a] hover:text-foreground"
-              aria-live="polite"
+              onClick={handleCopy}
+              className="mt-1 inline-flex items-center gap-1.5 rounded-md border border-white/10 px-3 py-1.5 font-mono text-[11px] text-zinc-500 transition-all duration-200 hover:border-white/20 hover:text-white"
             >
-              {copied ? <Check size={12} /> : <Copy size={12} />}
-              {copied ? "Copied" : "Copy email"}
+              {copied ? (
+                <>
+                  <Check size={12} /> Copied
+                </>
+              ) : (
+                <>
+                  <Copy size={12} /> Copy
+                </>
+              )}
             </button>
-          </motion.article>
+          </motion.div>
 
           {/* LinkedIn */}
-          <ContactCard
-            icon={<Linkedin size={16} />}
-            badge="Connect directly"
-            label="LinkedIn"
-            value="/in/fizuli-hasanov"
+          <motion.a
             href="https://www.linkedin.com/in/fizuli-hasanov/"
-            delay={0.08}
-          />
+            target="_blank"
+            rel="noopener noreferrer"
+            initial={reduce ? undefined : { opacity: 0, y: 20 }}
+            whileInView={{ opacity: 1, y: 0 }}
+            viewport={{ once: true, amount: 0.1 }}
+            transition={{ duration: 0.5, ease: easeOutExpo, delay: 0.06 }}
+            whileHover={reduce ? undefined : { y: -3 }}
+            className="flex flex-col items-center gap-3 rounded-xl border border-white/[0.06] bg-zinc-900 p-6 transition-all duration-200 hover:border-white/[0.12] hover:bg-zinc-800"
+          >
+            <Linkedin size={20} className="text-zinc-400" />
+            <span className="text-[14px] text-zinc-300">/in/fizuli-hasanov</span>
+            <p className="font-mono text-[11px] text-zinc-600">Professional network</p>
+          </motion.a>
 
           {/* GitHub */}
-          <ContactCard
-            icon={<Github size={16} />}
-            badge="See my work"
-            label="GitHub"
-            value="@fizuli20"
+          <motion.a
             href="https://github.com/fizuli20"
-            delay={0.16}
-          />
+            target="_blank"
+            rel="noopener noreferrer"
+            initial={reduce ? undefined : { opacity: 0, y: 20 }}
+            whileInView={{ opacity: 1, y: 0 }}
+            viewport={{ once: true, amount: 0.1 }}
+            transition={{ duration: 0.5, ease: easeOutExpo, delay: 0.12 }}
+            whileHover={reduce ? undefined : { y: -3 }}
+            className="flex flex-col items-center gap-3 rounded-xl border border-white/[0.06] bg-zinc-900 p-6 transition-all duration-200 hover:border-white/[0.12] hover:bg-zinc-800"
+          >
+            <Github size={20} className="text-zinc-400" />
+            <span className="text-[14px] text-zinc-300">@fizuli20</span>
+            <p className="font-mono text-[11px] text-zinc-600">Code & projects</p>
+          </motion.a>
         </div>
-
-        <p className="mt-12 font-mono text-[11px] uppercase tracking-[0.2em] text-[var(--color-muted-foreground)]">
-          Open to: Internships &middot; Founder collaborations &middot; AI/ML research &middot;
-          Speaking opportunities
-        </p>
       </div>
     </section>
-  )
-}
-
-function ContactCard({
-  icon,
-  badge,
-  label,
-  value,
-  href,
-  delay,
-}: {
-  icon: React.ReactNode
-  badge: string
-  label: string
-  value: string
-  href: string
-  delay: number
-}) {
-  return (
-    <motion.a
-      initial={{ opacity: 0, y: 12 }}
-      whileInView={{ opacity: 1, y: 0 }}
-      viewport={{ once: true, amount: 0.3 }}
-      transition={{ duration: 0.6, delay }}
-      href={href}
-      target="_blank"
-      rel="noopener noreferrer"
-      className="group block rounded-2xl border border-[var(--color-border)] bg-[var(--color-card)] p-6 transition-all hover:-translate-y-1 hover:border-[var(--color-accent)]"
-    >
-      <div className="flex items-center justify-between">
-        <span className="inline-flex h-9 w-9 items-center justify-center rounded-lg border border-[var(--color-border)] bg-[#111] text-[var(--color-accent)]">
-          {icon}
-        </span>
-        <span className="rounded-full border border-[#2a2a2a] bg-[#111] px-2.5 py-0.5 font-mono text-[10px] uppercase tracking-[0.18em] text-[var(--color-muted)]">
-          {badge}
-        </span>
-      </div>
-      <p className="mt-5 font-mono text-[11px] uppercase tracking-[0.18em] text-[var(--color-muted-foreground)]">
-        {label}
-      </p>
-      <p className="mt-1 flex items-center gap-2 text-[15px] text-foreground">
-        {value}
-        <ArrowUpRight
-          size={14}
-          className="text-[var(--color-muted-foreground)] transition-transform group-hover:-translate-y-0.5 group-hover:translate-x-0.5 group-hover:text-[var(--color-accent)]"
-        />
-      </p>
-    </motion.a>
   )
 }

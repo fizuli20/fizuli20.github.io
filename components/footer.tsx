@@ -1,63 +1,37 @@
-import Image from "next/image"
-import { Github } from "lucide-react"
-
-const links = [
+const footerLinks = [
   { label: "Work", href: "#work" },
   { label: "Experience", href: "#experience" },
   { label: "Skills", href: "#skills" },
   { label: "Awards", href: "#awards" },
-  { label: "Contact", href: "#contact" },
+  { label: "Connect", href: "#contact" },
 ]
 
 export function Footer() {
   return (
-    <footer
-      role="contentinfo"
-      className="border-t border-[var(--color-border)] bg-[#0a0a0a] px-5 py-10 md:px-8"
-    >
-      <div className="mx-auto flex max-w-7xl flex-col gap-6 md:flex-row md:items-center md:justify-between">
-        <div className="flex items-center gap-3">
-          <span className="relative inline-flex h-8 w-8 items-center justify-center overflow-hidden rounded-full ring-1 ring-[var(--color-border)]">
-            <Image
-              src="/logo.png"
-              alt="Fizuli Hasanov logo"
-              width={32}
-              height={32}
-              className="h-full w-full object-cover"
-            />
-          </span>
-          <p className="font-mono text-[11px] uppercase tracking-[0.18em] text-[var(--color-muted-foreground)]">
-            Fizuli Hasanov &middot; Baku &middot; UTC+4
-          </p>
-        </div>
+    <footer className="border-t border-white/5 px-6 py-8 md:px-10 lg:px-16">
+      <div className="mx-auto grid max-w-[1120px] grid-cols-1 items-center gap-4 md:grid-cols-3">
+        {/* Left */}
+        <p className="font-mono text-[12px] text-zinc-600">
+          F.H &middot; Baku, Azerbaijan &middot; UTC+4
+        </p>
 
-        <ul className="flex flex-wrap items-center gap-x-6 gap-y-2">
-          {links.map((l) => (
-            <li key={l.href}>
-              <a
-                href={l.href}
-                className="text-[12px] uppercase tracking-[0.14em] text-[var(--color-muted)] transition-colors hover:text-foreground"
-              >
-                {l.label}
-              </a>
-            </li>
+        {/* Center */}
+        <nav className="flex items-center justify-center gap-4">
+          {footerLinks.map((l) => (
+            <a
+              key={l.href}
+              href={l.href}
+              className="font-mono text-[12px] text-zinc-700 transition-colors duration-150 hover:text-zinc-400"
+            >
+              {l.label}
+            </a>
           ))}
-        </ul>
+        </nav>
 
-        <div className="flex flex-wrap items-center gap-4">
-          <span className="font-mono text-[11px] uppercase tracking-[0.18em] text-[var(--color-muted-foreground)]">
-            Last updated May 2026
-          </span>
-          <a
-            href="https://github.com/fizuli20/fizuli20.github.io"
-            target="_blank"
-            rel="noopener noreferrer"
-            className="inline-flex items-center gap-1.5 font-mono text-[11px] uppercase tracking-[0.14em] text-[var(--color-muted)] transition-colors hover:text-foreground"
-          >
-            <Github size={12} />
-            Source
-          </a>
-        </div>
+        {/* Right */}
+        <p className="font-mono text-[12px] text-zinc-700 md:text-right">
+          &copy; 2026 Fizuli Hasanov &middot; Last updated May 2026
+        </p>
       </div>
     </footer>
   )

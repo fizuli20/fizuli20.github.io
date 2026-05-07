@@ -1,7 +1,6 @@
-import { ScrollProgress } from "@/components/scroll-progress"
 import { Nav } from "@/components/nav"
 import { Hero } from "@/components/hero"
-import { MetricsTicker } from "@/components/metrics-ticker"
+import { Bento } from "@/components/bento"
 import { About } from "@/components/about"
 import { Ventures } from "@/components/ventures"
 import { Experience } from "@/components/experience"
@@ -13,11 +12,10 @@ import { Footer } from "@/components/footer"
 export default function Page() {
   return (
     <>
-      <ScrollProgress />
       <Nav />
       <main>
         <Hero />
-        <MetricsTicker />
+        <Bento />
         <About />
         <Ventures />
         <Experience />

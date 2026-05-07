@@ -1,153 +1,179 @@
 "use client"
 
-import { useEffect, useState } from "react"
-import { motion, useReducedMotion } from "framer-motion"
-import { ArrowDown, Download } from "lucide-react"
+import { useRef } from "react"
+import { motion, useReducedMotion, useSpring, useMotionValue } from "framer-motion"
 
-const ROTATING_LINES = [
-  "Presidential Scholar. Top 3 of 20,000+.",
-  "2× Hackathon Champion. 2 active incubations.",
-  "XGBoost PR-AUC 0.87. Built on real data.",
-]
+const easeOutExpo = [0.16, 1, 0.3, 1] as const
 
-function useTypewriter(lines: string[], typeSpeed = 38, hold = 2400, fade = 500) {
-  const [index, setIndex] = useState(0)
-  const [text, setText] = useState("")
-  const [phase, setPhase] = useState<"typing" | "holding" | "erasing">("typing")
+function WordReveal({ word, delay }: { word: string; delay: number }) {
   const reduce = useReducedMotion()
 
-  useEffect(() => {
-    if (reduce) {
-      setText(lines[index])
-      const t = setTimeout(() => setIndex((i) => (i + 1) % lines.length), hold + fade)
-      return () => clearTimeout(t)
-    }
+  return (
+    <span className="inline-block overflow-hidden">
+      <motion.span
+        className="inline-block"
+        initial={reduce ? undefined : { y: "110%" }}
+        animate={{ y: "0%" }}
+        transition={{ duration: 0.7, ease: easeOutExpo, delay }}
+      >
+        {word}
+      </motion.span>
+    </span>
+  )
+}
 
-    const current = lines[index]
+function MagneticButton({
+  children,
+  href,
+  className,
+  download,
+}: {
+  children: React.ReactNode
+  href: string
+  className: string
+  download?: boolean
+}) {
+  const ref = useRef<HTMLAnchorElement>(null)
+  const x = useMotionValue(0)
+  const y = useMotionValue(0)
+  const springX = useSpring(x, { stiffness: 200, damping: 20 })
+  const springY = useSpring(y, { stiffness: 200, damping: 20 })
+  const reduce = useReducedMotion()
 
-    if (phase === "typing") {
-      if (text.length < current.length) {
-        const t = setTimeout(() => setText(current.slice(0, text.length + 1)), typeSpeed)
-        return () => clearTimeout(t)
-      }
-      const t = setTimeout(() => setPhase("holding"), hold)
-      return () => clearTimeout(t)
-    }
+  const handleMouseMove = (e: React.MouseEvent) => {
+    if (reduce || !ref.current) return
+    const rect = ref.current.getBoundingClientRect()
+    const centerX = rect.left + rect.width / 2
+    const centerY = rect.top + rect.height / 2
+    x.set((e.clientX - centerX) * 0.25)
+    y.set((e.clientY - centerY) * 0.25)
+  }
 
-    if (phase === "holding") {
-      const t = setTimeout(() => setPhase("erasing"), 0)
-      return () => clearTimeout(t)
-    }
+  const handleMouseLeave = () => {
+    x.set(0)
+    y.set(0)
+  }
 
-    // erasing
-    if (text.length > 0) {
-      const t = setTimeout(() => setText(text.slice(0, -1)), 18)
-      return () => clearTimeout(t)
-    }
-    setIndex((i) => (i + 1) % lines.length)
-    setPhase("typing")
-  }, [text, phase, index, lines, typeSpeed, hold, fade, reduce])
-
-  return text
+  return (
+    <motion.a
+      ref={ref}
+      href={href}
+      download={download || undefined}
+      style={{ x: springX, y: springY }}
+      onMouseMove={handleMouseMove}
+      onMouseLeave={handleMouseLeave}
+      className={className}
+    >
+      {children}
+    </motion.a>
+  )
 }
 
 export function Hero() {
-  const text = useTypewriter(ROTATING_LINES)
+  const reduce = useReducedMotion()
 
   return (
     <section
       id="top"
       aria-label="Introduction"
-      className="relative flex min-h-[100svh] items-center justify-center overflow-hidden px-5 pt-16 md:px-8"
+      className="relative flex min-h-[100svh] items-end overflow-hidden px-6 pb-24 pt-16 md:items-center md:px-16 md:pb-0 xl:px-24"
     >
-      {/* Faint grid */}
-      <div className="pointer-events-none absolute inset-0 bg-grid opacity-[0.55]" aria-hidden />
-      {/* Vignette */}
-      <div
-        className="pointer-events-none absolute inset-0"
-        style={{
-          background:
-            "radial-gradient(ellipse at center, transparent 0%, transparent 55%, rgba(0,0,0,0.85) 100%)",
-        }}
-        aria-hidden
-      />
-
-      <div className="relative z-10 mx-auto flex w-full max-w-5xl flex-col items-center text-center">
-        {/* Status pill */}
-        <motion.div
-          initial={{ opacity: 0, y: -8 }}
-          animate={{ opacity: 1, y: 0 }}
-          transition={{ duration: 0.6, ease: "easeOut" }}
-          className="mb-10 inline-flex items-center gap-2 rounded-full border border-[var(--color-success-border)] bg-[var(--color-success-bg)] px-4 py-1.5"
-        >
-          <span
-            aria-hidden
-            className="h-1.5 w-1.5 rounded-full bg-[var(--color-success)] animate-pulse-dot"
-          />
-          <span className="font-mono text-[11px] uppercase tracking-[0.16em] text-[var(--color-success)]">
-            Available for internships &amp; collaborations &mdash; Summer 2026
-          </span>
-        </motion.div>
-
-        {/* Name */}
-        <motion.h1
-          initial={{ opacity: 0, y: 16 }}
-          animate={{ opacity: 1, y: 0 }}
-          transition={{ duration: 0.8, ease: [0.22, 1, 0.36, 1], delay: 0.05 }}
-          className="font-serif text-[44px] leading-[0.98] tracking-[-0.025em] text-foreground sm:text-[64px] md:text-[88px] lg:text-[104px]"
-        >
-          FIZULI HASANOV
-        </motion.h1>
-
-        {/* Typewriter line */}
+      <div className="relative z-10 mx-auto w-full max-w-[1120px]">
+        {/* Metadata label */}
         <motion.p
-          initial={{ opacity: 0 }}
+          initial={reduce ? undefined : { opacity: 0 }}
           animate={{ opacity: 1 }}
-          transition={{ duration: 0.6, delay: 0.5 }}
-          className="mt-6 h-6 font-mono text-[13px] tracking-[0.04em] text-[var(--color-accent)] sm:text-sm"
-          aria-live="polite"
+          transition={{ duration: 0.3, delay: 0 }}
+          className="font-mono text-[11px] uppercase tracking-[0.1em] text-zinc-600"
         >
-          <span>{text}</span>
-          <span aria-hidden className="ml-0.5 inline-block w-[2px] -translate-y-[1px] caret-blink">
-            &nbsp;
-          </span>
+          BAKU &middot; AZERBAIJAN &middot; 2026
         </motion.p>
 
-        {/* Body line */}
+        {/* Name — Animation 1: per-word clip-path reveal */}
+        <h1 className="mt-6" style={{ lineHeight: 0.92, letterSpacing: "-0.04em" }}>
+          <span
+            className="block text-white"
+            style={{ fontSize: "clamp(80px, 11vw, 140px)", fontWeight: 800 }}
+          >
+            <WordReveal word="FIZULI" delay={0} />
+          </span>
+          <span
+            className="block text-white"
+            style={{
+              fontSize: "clamp(80px, 11vw, 140px)",
+              fontWeight: 800,
+              paddingLeft: "10%",
+            }}
+          >
+            <WordReveal word="HASANOV" delay={0.1} />
+          </span>
+        </h1>
+
+        {/* Thin rule */}
+        <motion.hr
+          initial={reduce ? undefined : { opacity: 0 }}
+          animate={{ opacity: 1 }}
+          transition={{ duration: 0.4, delay: 0.4 }}
+          className="mt-8 max-w-[120px] border-white/10"
+        />
+
+        {/* Role descriptor */}
         <motion.p
-          initial={{ opacity: 0, y: 8 }}
+          initial={reduce ? undefined : { opacity: 0, y: 8 }}
           animate={{ opacity: 1, y: 0 }}
-          transition={{ duration: 0.7, delay: 0.7 }}
-          className="mx-auto mt-8 max-w-2xl text-pretty text-[15px] leading-relaxed text-[var(--color-muted)] sm:text-base"
+          transition={{ duration: 0.5, ease: easeOutExpo, delay: 0.5 }}
+          className="mt-6 text-[16px] text-zinc-400"
         >
-          I build data products that move revenue and ventures that win competitions. Currently at
-          Codveda, founding EcoConcrete, and presenting at PASHA Hackathon 6.0.
+          Presidential Scholar &middot; Product Leader &middot; Venture Builder
+        </motion.p>
+
+        {/* Conviction statement */}
+        <motion.p
+          initial={reduce ? undefined : { opacity: 0, y: 8 }}
+          animate={{ opacity: 1, y: 0 }}
+          transition={{ duration: 0.5, ease: easeOutExpo, delay: 0.6 }}
+          className="mt-2 font-mono text-[14px] text-zinc-600"
+        >
+          Translating data into decisions. Building ventures that win.
         </motion.p>
 
         {/* CTAs */}
         <motion.div
-          initial={{ opacity: 0, y: 8 }}
+          initial={reduce ? undefined : { opacity: 0, y: 8 }}
           animate={{ opacity: 1, y: 0 }}
-          transition={{ duration: 0.7, delay: 0.9 }}
-          className="mt-10 flex flex-col items-center gap-3 sm:flex-row"
+          transition={{ duration: 0.5, ease: easeOutExpo, delay: 0.7 }}
+          className="mt-10 flex flex-col gap-4 sm:flex-row sm:items-center"
         >
-          <a
+          <MagneticButton
             href="#work"
-            className="inline-flex h-12 items-center justify-center gap-2 rounded-full bg-[var(--color-accent)] px-7 text-sm font-medium text-white transition-colors hover:bg-[var(--color-accent-hover)]"
+            className="inline-flex items-center justify-center rounded-md border border-white/[0.12] px-5 py-2.5 text-[14px] text-white transition-all duration-200 hover:bg-white hover:text-black"
           >
-            View my work
-            <ArrowDown size={16} />
-          </a>
-          <a
+            View work &darr;
+          </MagneticButton>
+          <MagneticButton
             href="/Fizuli-Hasanov-CV.pdf"
             download
-            className="inline-flex h-12 items-center justify-center gap-2 rounded-full border border-[var(--color-border)] bg-transparent px-7 text-sm font-medium text-foreground transition-colors hover:border-[#2a2a2a] hover:bg-[var(--color-card)]"
+            className="inline-flex items-center justify-center text-[14px] text-zinc-500 underline decoration-white/20 underline-offset-4 transition-all duration-200 hover:text-zinc-100 hover:decoration-white/60"
           >
-            <Download size={16} />
             Download CV
-          </a>
+          </MagneticButton>
         </motion.div>
       </div>
+
+      {/* Scroll indicator — bottom left */}
+      <motion.div
+        initial={reduce ? undefined : { opacity: 0 }}
+        animate={{ opacity: 1 }}
+        transition={{ duration: 0.5, delay: 1 }}
+        className="absolute bottom-8 left-6 hidden flex-col items-center gap-2 md:flex md:left-16 xl:left-24"
+      >
+        <div className="relative h-8 w-px bg-white/20">
+          <div className="absolute left-[-1.5px] top-0 h-1 w-1 rounded-full bg-white/60 animate-scroll-dot" />
+        </div>
+        <span className="font-mono text-[9px] uppercase tracking-[0.1em] text-zinc-700">
+          SCROLL
+        </span>
+      </motion.div>
     </section>
   )
 }

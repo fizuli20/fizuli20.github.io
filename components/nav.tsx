@@ -1,105 +1,132 @@
 "use client"
 
-import { useEffect, useState } from "react"
-import Image from "next/image"
+import { useEffect, useState, useCallback } from "react"
+import { motion, useReducedMotion } from "framer-motion"
 import { Menu, X } from "lucide-react"
 
 const links = [
-  { label: "Work", href: "#work" },
-  { label: "Experience", href: "#experience" },
-  { label: "Skills", href: "#skills" },
-  { label: "Awards", href: "#awards" },
+  { id: "work", label: "01\u00b7Work" },
+  { id: "experience", label: "02\u00b7Experience" },
+  { id: "skills", label: "03\u00b7Skills" },
+  { id: "awards", label: "04\u00b7Awards" },
+  { id: "contact", label: "05\u00b7Connect" },
 ]
 
 export function Nav() {
+  const [active, setActive] = useState("")
   const [scrolled, setScrolled] = useState(false)
   const [open, setOpen] = useState(false)
+  const reduce = useReducedMotion()
+
+  const handleScroll = useCallback(() => {
+    setScrolled(window.scrollY > 16)
+
+    const sections = links.map((l) => document.getElementById(l.id))
+    const scrollPos = window.scrollY + 120
+
+    for (let i = sections.length - 1; i >= 0; i--) {
+      const section = sections[i]
+      if (section && section.offsetTop <= scrollPos) {
+        setActive(links[i].id)
+        return
+      }
+    }
+    setActive("")
+  }, [])
 
   useEffect(() => {
-    const onScroll = () => setScrolled(window.scrollY > 16)
-    onScroll()
-    window.addEventListener("scroll", onScroll, { passive: true })
-    return () => window.removeEventListener("scroll", onScroll)
-  }, [])
+    handleScroll()
+    window.addEventListener("scroll", handleScroll, { passive: true })
+    return () => window.removeEventListener("scroll", handleScroll)
+  }, [handleScroll])
 
   return (
     <header
-      className={`fixed inset-x-0 top-0 z-50 transition-all duration-300 ${
+      className={`fixed inset-x-0 top-0 z-50 transition-colors duration-200 ${
         scrolled
-          ? "border-b border-[var(--color-border)] bg-[#0a0a0a]/85 backdrop-blur-xl"
+          ? "border-b border-white/5 bg-black/90 backdrop-blur-sm"
           : "border-b border-transparent bg-transparent"
       }`}
     >
       <nav
         aria-label="Primary"
-        className="mx-auto flex h-16 max-w-7xl items-center justify-between px-5 md:px-8"
+        className="mx-auto flex h-[52px] max-w-[1120px] items-center justify-between px-6 md:px-10 lg:px-16"
       >
+        {/* Left — monogram */}
         <a
           href="#top"
-          className="group inline-flex items-center gap-2.5"
-          aria-label="Fizuli Hasanov — home"
+          className="font-mono text-[14px] text-zinc-500 transition-colors duration-150 hover:text-zinc-100"
         >
-          <span className="relative inline-flex h-9 w-9 items-center justify-center overflow-hidden rounded-full ring-1 ring-[var(--color-border)] transition-all group-hover:ring-[var(--color-accent)]">
-            <Image
-              src="/logo.png"
-              alt=""
-              width={36}
-              height={36}
-              className="h-full w-full object-cover"
-              priority
-            />
-          </span>
-          <span className="hidden flex-col leading-none sm:flex">
-            <span className="font-serif text-[15px] tracking-tight text-foreground">
-              Fizuli Hasanov
-            </span>
-            <span className="mt-0.5 font-mono text-[9px] uppercase tracking-[0.22em] text-[var(--color-muted-foreground)]">
-              Architect of Value
-            </span>
-          </span>
+          FH
         </a>
 
-        <ul className="hidden items-center gap-8 md:flex">
+        {/* Center — links with layoutId underline */}
+        <ul className="hidden items-center gap-6 lg:flex">
           {links.map((l) => (
-            <li key={l.href}>
+            <li key={l.id} className="relative">
               <a
-                href={l.href}
-                className="text-[13px] uppercase tracking-[0.14em] text-[var(--color-muted)] transition-colors hover:text-foreground"
+                href={`#${l.id}`}
+                className={`font-mono text-[13px] transition-colors duration-150 ${
+                  active === l.id ? "text-white" : "text-zinc-500 hover:text-white"
+                }`}
               >
                 {l.label}
               </a>
+              {active === l.id && !reduce && (
+                <motion.div
+                  layoutId="nav-underline"
+                  className="absolute -bottom-1 left-0 right-0 h-[2px] bg-[#2563eb]"
+                  transition={{ type: "spring", stiffness: 400, damping: 30 }}
+                />
+              )}
+              {active === l.id && reduce && (
+                <div className="absolute -bottom-1 left-0 right-0 h-[2px] bg-[#2563eb]" />
+              )}
             </li>
           ))}
         </ul>
 
-        <div className="flex items-center gap-3">
+        {/* Right — availability + CTA */}
+        <div className="flex items-center gap-4">
+          <div className="hidden items-center gap-2 md:flex">
+            <span
+              aria-hidden
+              className="h-2 w-2 rounded-full bg-[#2563eb] animate-pulse-blue"
+            />
+            <span className="font-mono text-[12px] text-zinc-500">
+              Available &middot; Summer 2026
+            </span>
+          </div>
+
           <a
             href="#contact"
-            className="hidden rounded-full bg-[var(--color-accent)] px-5 py-2 text-[13px] font-medium text-white transition-colors hover:bg-[var(--color-accent-hover)] md:inline-flex"
+            className="hidden rounded-full border border-white/10 px-4 py-1.5 font-mono text-[13px] text-zinc-400 transition-all duration-200 hover:border-[#2563eb] hover:bg-[#2563eb] hover:text-white md:inline-flex"
           >
             Hire me &rarr;
           </a>
+
           <button
             type="button"
             aria-label={open ? "Close menu" : "Open menu"}
             aria-expanded={open}
             onClick={() => setOpen((v) => !v)}
-            className="inline-flex h-10 w-10 items-center justify-center rounded-full border border-[var(--color-border)] text-foreground md:hidden"
+            className="inline-flex h-10 w-10 items-center justify-center rounded-md border border-white/10 text-white lg:hidden"
           >
             {open ? <X size={18} /> : <Menu size={18} />}
           </button>
         </div>
       </nav>
 
+      {/* Mobile menu */}
       {open && (
-        <div className="border-t border-[var(--color-border)] bg-[#0a0a0a]/95 backdrop-blur-xl md:hidden">
-          <ul className="mx-auto flex max-w-7xl flex-col gap-1 px-5 py-4">
+        <div className="border-t border-white/5 bg-black/95 backdrop-blur-sm lg:hidden">
+          <ul className="mx-auto flex max-w-[1120px] flex-col gap-1 px-6 py-4">
             {links.map((l) => (
-              <li key={l.href}>
+              <li key={l.id}>
                 <a
-                  href={l.href}
+                  href={`#${l.id}`}
                   onClick={() => setOpen(false)}
-                  className="block rounded-md px-3 py-3 text-sm text-[var(--color-muted)] transition-colors hover:bg-[var(--color-card)] hover:text-foreground"
+                  className="block rounded-md px-3 py-3 font-mono text-[13px] text-zinc-400 transition-colors duration-150 hover:text-white"
                 >
                   {l.label}
                 </a>
@@ -109,7 +136,7 @@ export function Nav() {
               <a
                 href="#contact"
                 onClick={() => setOpen(false)}
-                className="mt-2 block rounded-full bg-[var(--color-accent)] px-5 py-3 text-center text-sm font-medium text-white"
+                className="mt-2 block rounded-md border border-white/10 px-4 py-3 text-center font-mono text-[13px] text-zinc-400 transition-all duration-200 hover:border-[#2563eb] hover:bg-[#2563eb] hover:text-white"
               >
                 Hire me &rarr;
               </a>

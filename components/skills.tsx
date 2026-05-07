@@ -1,123 +1,112 @@
 "use client"
 
-import { motion } from "framer-motion"
-import { Layers, BarChart2, Cpu } from "lucide-react"
+import { motion, useReducedMotion } from "framer-motion"
 import { SectionLabel } from "./about"
 
-type Category = {
-  icon: React.ReactNode
-  label: string
-  skills: string[]
-}
-
-const CATEGORIES: Category[] = [
-  {
-    icon: <Layers size={18} />,
-    label: "Product & Strategy",
-    skills: [
-      "Business Analysis",
-      "Agile / Scrum",
-      "Backlog Management",
-      "User Story Writing",
-      "Stakeholder Management",
-      "Financial Modeling",
-      "Scenario Analysis",
-      "Go-to-Market Strategy",
-      "Requirements Documentation",
-    ],
-  },
-  {
-    icon: <BarChart2 size={18} />,
-    label: "Data & ML",
-    skills: [
-      "Python (pandas · NumPy · scikit-learn · XGBoost)",
-      "SQL (PostgreSQL · BigQuery)",
-      "Power BI",
-      "Tableau",
-      "RFM Segmentation",
-      "Cohort Retention",
-      "OLS Regression",
-      "PR-AUC / ROC-AUC",
-      "SMOTE",
-      "Fraud Detection",
-      "Churn Prediction",
-    ],
-  },
-  {
-    icon: <Cpu size={18} />,
-    label: "AI & Ventures",
-    skills: [
-      "Generative AI (Holberton certified)",
-      "Prompt Engineering",
-      "Agentic Workflows",
-      "RPA Design",
-      "Document AI / OCR",
-      "AI Product Ownership",
-      "Rapid Prototyping",
-      "Hackathon Product Strategy",
-    ],
-  },
+const LEFT_SKILLS = [
+  { name: "Business Analysis", tag: "Strategy" },
+  { name: "Product Discovery", tag: "Strategy" },
+  { name: "Agile / Scrum", tag: "Process" },
+  { name: "Backlog Management", tag: "Process" },
+  { name: "User Story Writing", tag: "Process" },
+  { name: "Stakeholder Management", tag: "Strategy" },
+  { name: "Financial Modeling", tag: "Finance" },
+  { name: "Scenario Analysis", tag: "Finance" },
+  { name: "Go-to-Market Strategy", tag: "Strategy" },
+  { name: "OLS Regression", tag: "Statistics" },
+  { name: "Cohort Retention Analysis", tag: "Analytics" },
 ]
 
+const RIGHT_SKILLS = [
+  { name: "Python (pandas \u00b7 NumPy \u00b7 scikit-learn)", tag: "Language" },
+  { name: "XGBoost \u00b7 Random Forest \u00b7 Isolation Forest", tag: "ML" },
+  { name: "SQL \u00b7 PostgreSQL \u00b7 BigQuery", tag: "Data" },
+  { name: "Power BI \u00b7 Tableau", tag: "Viz" },
+  { name: "RFM Segmentation \u00b7 SMOTE", tag: "Analytics" },
+  { name: "Fraud Detection \u00b7 Churn Prediction", tag: "ML" },
+  { name: "Generative AI \u00b7 Prompt Engineering", tag: "AI" },
+  { name: "Agentic Workflows \u00b7 RPA \u00b7 Document AI", tag: "AI" },
+]
+
+const easeOutExpo = [0.16, 1, 0.3, 1] as const
+
+function SkillRow({ name, tag }: { name: string; tag: string }) {
+  return (
+    <div className="group flex items-center justify-between border-b border-white/5 py-3 transition-all duration-150 hover:translate-x-1 hover:text-white">
+      <span className="text-[15px] text-zinc-300 transition-colors duration-150 group-hover:text-white">
+        {name}
+      </span>
+      <span className="font-mono text-[11px] text-zinc-700">{tag}</span>
+    </div>
+  )
+}
+
 export function Skills() {
+  const reduce = useReducedMotion()
+
   return (
     <section
       id="skills"
       aria-label="Skillset"
-      className="relative border-t border-[var(--color-border)] px-5 py-24 md:px-8 md:py-32"
+      className="px-6 py-24 md:px-10 md:py-32 lg:px-16"
     >
-      <div className="mx-auto max-w-7xl">
-        <SectionLabel index="03" label="Skillset" />
-        <h2 className="mt-6 max-w-2xl font-serif text-[32px] leading-[1.1] tracking-tight text-foreground sm:text-[40px]">
-          The full stack &mdash; product, data, AI.
+      <div className="mx-auto max-w-[1120px]">
+        <SectionLabel index="03" label="SKILLSET" />
+        <h2
+          className="mt-2 text-white"
+          style={{
+            fontSize: "clamp(40px, 5vw, 64px)",
+            fontWeight: 700,
+            letterSpacing: "-0.03em",
+          }}
+        >
+          Stack and toolkit. End-to-end.
         </h2>
 
-        <div className="mt-12 grid grid-cols-1 gap-5 md:grid-cols-3">
-          {CATEGORIES.map((c, i) => (
-            <motion.article
-              key={c.label}
-              initial={{ opacity: 0, y: 16 }}
-              whileInView={{ opacity: 1, y: 0 }}
-              viewport={{ once: true, amount: 0.3 }}
-              transition={{ duration: 0.6, delay: i * 0.08 }}
-              className="rounded-2xl border border-[var(--color-border)] bg-[var(--color-card)] p-6 transition-colors hover:border-[#2a2a2a]"
-            >
-              <header className="flex items-center gap-3">
-                <span className="inline-flex h-9 w-9 items-center justify-center rounded-lg border border-[var(--color-border)] bg-[#111] text-[var(--color-accent)]">
-                  {c.icon}
-                </span>
-                <h3 className="font-serif text-xl text-foreground">{c.label}</h3>
-              </header>
-              <ul className="mt-5 flex flex-wrap gap-2">
-                {c.skills.map((s) => (
-                  <li
-                    key={s}
-                    className="rounded-full border border-[#2a2a2a] bg-[#0f0f0f] px-3 py-1.5 font-mono text-[11px] tracking-[0.02em] text-[var(--color-muted)]"
-                  >
-                    {s}
-                  </li>
-                ))}
-              </ul>
-            </motion.article>
-          ))}
-        </div>
+        <hr className="mt-8 border-white/5" />
 
-        {/* Currently learning */}
         <motion.div
-          initial={{ opacity: 0, y: 12 }}
+          initial={reduce ? undefined : { opacity: 0, y: 20 }}
           whileInView={{ opacity: 1, y: 0 }}
-          viewport={{ once: true, amount: 0.3 }}
-          transition={{ duration: 0.6, delay: 0.2 }}
-          className="mt-8 flex flex-wrap items-center gap-3 rounded-xl border border-dashed border-[#2a2a2a] bg-[#0c0c0c] px-5 py-4"
+          viewport={{ once: true, amount: 0.1 }}
+          transition={{ duration: 0.5, ease: easeOutExpo }}
+          className="mt-12 grid grid-cols-1 gap-16 md:grid-cols-2"
         >
-          <span className="font-mono text-[10px] uppercase tracking-[0.22em] text-[var(--color-accent)]">
-            Currently deepening
+          {/* Left column */}
+          <div>
+            <p className="mb-4 font-mono text-[10px] uppercase tracking-[0.1em] text-zinc-600">
+              STRATEGY & PRODUCT
+            </p>
+            {LEFT_SKILLS.map((s) => (
+              <SkillRow key={s.name} name={s.name} tag={s.tag} />
+            ))}
+          </div>
+
+          {/* Right column */}
+          <div>
+            <p className="mb-4 font-mono text-[10px] uppercase tracking-[0.1em] text-zinc-600">
+              TECHNICAL ORCHESTRATION
+            </p>
+            {RIGHT_SKILLS.map((s) => (
+              <SkillRow key={s.name} name={s.name} tag={s.tag} />
+            ))}
+          </div>
+        </motion.div>
+
+        {/* Currently deepening strip */}
+        <motion.div
+          initial={reduce ? undefined : { opacity: 0, y: 20 }}
+          whileInView={{ opacity: 1, y: 0 }}
+          viewport={{ once: true, amount: 0.1 }}
+          transition={{ duration: 0.5, ease: easeOutExpo, delay: 0.1 }}
+          className="mt-10 rounded-xl border border-white/5 bg-zinc-900 px-5 py-4"
+        >
+          <span className="font-mono text-[11px] uppercase tracking-[0.1em] text-zinc-600">
+            CURRENTLY DEEPENING &rarr;
           </span>
-          <span aria-hidden className="h-3 w-px bg-[var(--color-border)]" />
-          <p className="text-[13px] text-[var(--color-muted)]">
-            Product Management frameworks (JTBD, OKRs) &middot; LLM fine-tuning &middot; Arabic
-            (beginner)
-          </p>
+          <span className="ml-3 font-mono text-[13px] text-zinc-400">
+            Product Management (JTBD &middot; OKRs) &middot; LLM fine-tuning &middot; Azerbaijani NLP
+          </span>
         </motion.div>
       </div>
     </section>
