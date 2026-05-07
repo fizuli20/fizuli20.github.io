@@ -85,33 +85,35 @@ export function About() {
                   className="absolute -right-1 -bottom-1 h-5 w-5 border-r border-b border-[var(--color-accent)]"
                 />
 
-                {/* Brand card */}
-                <div className="relative h-full w-full overflow-hidden rounded-[20px] bg-[#0a0a0a] ring-1 ring-[var(--color-border)]">
-                  {/* Faint grid backdrop */}
-                  <div className="pointer-events-none absolute inset-0 bg-grid opacity-[0.4]" aria-hidden />
-                  {/* Spotlight */}
+                {/* Photo card */}
+                <div className="group relative h-full w-full overflow-hidden rounded-[20px] bg-[#0a0a0a] ring-1 ring-[var(--color-border)]">
+                  <Image
+                    src="/profile-photo.jpg"
+                    alt="Fizuli Hasanov"
+                    fill
+                    sizes="(max-width: 768px) 260px, 300px"
+                    className="object-cover grayscale contrast-110 transition-all duration-700 ease-out group-hover:grayscale-0 group-hover:scale-[1.03]"
+                    priority={false}
+                  />
+                  {/* Duotone tint */}
                   <div
                     aria-hidden
-                    className="pointer-events-none absolute inset-0"
+                    className="pointer-events-none absolute inset-0 mix-blend-color transition-opacity duration-700 group-hover:opacity-0"
                     style={{
                       background:
-                        "radial-gradient(ellipse at 50% 35%, rgba(37,99,235,0.18) 0%, rgba(10,10,10,0) 60%)",
+                        "linear-gradient(180deg, rgba(37,99,235,0.22) 0%, rgba(10,10,10,0) 45%, rgba(37,99,235,0.28) 100%)",
                     }}
                   />
-                  {/* Logo mark */}
-                  <div className="absolute inset-x-0 top-0 flex h-[72%] items-center justify-center">
-                    <Image
-                      src="/logo.png"
-                      alt="Fizuli Hasanov monogram"
-                      width={300}
-                      height={300}
-                      className="h-[78%] w-auto object-contain transition-transform duration-700 ease-out hover:scale-[1.03]"
-                      priority={false}
-                    />
-                  </div>
+                  {/* Faint grid */}
+                  <div className="pointer-events-none absolute inset-0 bg-grid opacity-[0.18]" aria-hidden />
+                  {/* Bottom darken */}
+                  <div
+                    aria-hidden
+                    className="pointer-events-none absolute inset-x-0 bottom-0 h-32 bg-gradient-to-t from-[#0a0a0a] via-[#0a0a0a]/70 to-transparent"
+                  />
 
-                  {/* Bottom plate */}
-                  <div className="absolute inset-x-0 bottom-0 border-t border-[var(--color-border)] bg-[#0c0c0c]/80 px-5 py-4 backdrop-blur-sm">
+                  {/* Bottom brand plate */}
+                  <div className="absolute inset-x-0 bottom-0 px-5 py-4">
                     <div className="flex items-baseline justify-between">
                       <span className="font-serif text-[15px] tracking-tight text-foreground">
                         Fizuli Hasanov
