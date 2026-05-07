@@ -2,329 +2,663 @@
 <html lang="en">
 <head>
     <meta charset="UTF-8">
-    <meta name="description" content="Fizuli Hasanov - Aspiring Data Analyst specializing in SQL, Python, Tableau, and Power BI">
-    <meta name="keywords" content="Data Analyst, SQL, Python, Tableau, Business Intelligence, Portfolio">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>Fizuli Hasanov | Data Analyst Portfolio</title>
+    <meta name="theme-color" content="#0a0a0a">
+    <meta name="description" content="Fizuli Hasanov — AI Orchestrator & Business Analyst. Presidential Scholar, hackathon winner, and founder building at the intersection of business, machine learning, and emerging tech.">
+    <meta name="keywords" content="Fizuli Hasanov, AI Orchestrator, Business Analyst, Data Analyst, EcoConcrete, FinVeda, LedgerLens, HyperAutomation, Azerbaijan">
+    <meta property="og:title" content="Fizuli Hasanov — AI Orchestrator & Founder">
+    <meta property="og:description" content="Architecting the future at the intersection of business and machine learning.">
+    <meta property="og:type" content="website">
+    <title>Fizuli Hasanov — AI Orchestrator & Founder</title>
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <link href="https://fonts.googleapis.com/css2?family=Inter:wght@300;400;500;600;700;800&family=JetBrains+Mono:wght@400;500&family=Instrument+Serif:ital@0;1&display=swap" rel="stylesheet">
     <link rel="stylesheet" href="style.css">
 </head>
 <body>
+    <!-- Background grid + spotlight -->
+    <div class="bg-grid" aria-hidden="true"></div>
+    <div class="bg-spotlight" aria-hidden="true"></div>
+    <div class="bg-noise" aria-hidden="true"></div>
+
+    <!-- Custom cursor -->
+    <div class="cursor-dot" aria-hidden="true"></div>
+    <div class="cursor-ring" aria-hidden="true"></div>
+
+    <!-- Scroll progress -->
+    <div class="scroll-progress" aria-hidden="true"></div>
+
+    <!-- Loader -->
+    <div class="loader" id="loader" aria-hidden="true">
+        <div class="loader-inner">
+            <span class="loader-mono">FH / 2026</span>
+            <span class="loader-bar"><span class="loader-bar-fill"></span></span>
+        </div>
+    </div>
+
+    <!-- Navigation -->
     <nav id="navbar">
         <div class="nav-container">
-            <div class="logo">FH</div>
-            <ul>
-                <li><a href="#home">Home</a></li>
-                <li><a href="#about">About</a></li>
-                <li><a href="#projects">Projects</a></li>
-                <li><a href="#dashboards">Dashboards</a></li>
-                <li><a href="#skills">Skills</a></li>
-                <li><a href="#contact">Contact</a></li>
+            <a href="#home" class="logo" data-magnetic>
+                <span class="logo-mark">F<span class="logo-dot">.</span>H</span>
+                <span class="logo-meta">v2026</span>
+            </a>
+            <ul class="nav-links">
+                <li><a href="#work" data-section="work"><span class="nav-num">01</span>Work</a></li>
+                <li><a href="#experience" data-section="experience"><span class="nav-num">02</span>Experience</a></li>
+                <li><a href="#skills" data-section="skills"><span class="nav-num">03</span>Skillset</a></li>
+                <li><a href="#awards" data-section="awards"><span class="nav-num">04</span>Awards</a></li>
             </ul>
+            <a href="#contact" class="nav-cta" data-magnetic>
+                <span>Get in touch</span>
+                <span class="nav-cta-dot"></span>
+            </a>
+            <button class="nav-toggle" aria-label="Toggle menu" id="navToggle">
+                <span></span><span></span>
+            </button>
         </div>
     </nav>
 
+    <!-- HERO -->
     <section class="hero" id="home">
-        <div class="hero-content">
-            <div class="hero-text">
-                <h1>Fizuli Hasanov</h1>
-                <h2>Business & Data Analytics Intern</h2>
-                <p>Business & Data Analytics Intern with a strong foundation in SQL, business intelligence, and analytical reporting. Experienced in customer churn analysis, KPI tracking, cohort retention analysis, and e-commerce performance analytics through academic and project-based work. Interested in applying data-driven insights to support business and strategic decision-making.</p>
-                
-                <div class="hero-stats">
-                    <div class="stat">
-                        <div class="stat-value">96.3</div>
-                        <div class="stat-label">GPA / 100</div>
-                    </div>
-                    <div class="stat">
-                        <div class="stat-value">5</div>
-                        <div class="stat-label">Projects</div>
-                    </div>
-                    <div class="stat">
-                        <div class="stat-value">6</div>
-                        <div class="stat-label">Certifications</div>
-                    </div>
-                </div>
+        <div class="hero-status">
+            <span class="status-dot"></span>
+            <span>Available for select opportunities — Summer 2026</span>
+        </div>
 
-                <div class="hero-buttons">
-                    <a href="#projects" class="btn btn-primary">View Projects</a>
-                    <a href="#contact" class="btn btn-secondary">Get in Touch</a>
-                </div>
+        <div class="hero-meta">
+            <div class="hero-meta-item">
+                <span class="meta-key">Location</span>
+                <span class="meta-val">Baku, Azerbaijan · UTC+4</span>
             </div>
-            
-            <div class="hero-image">
-                <img src="profile-photo.jpg" alt="Fizuli Hasanov">
+            <div class="hero-meta-item">
+                <span class="meta-key">Currently</span>
+                <span class="meta-val">BA Intern @ Codveda · Founder, EcoConcrete</span>
             </div>
         </div>
-        <div class="scroll-indicator">↓</div>
-    </section>
-    <section id="about">
-      <div class="section-header">
-        <h2>About</h2>
-        <p>SQL • Python • Tableau/Power BI — turning data into clear decisions</p>
-      </div>
 
-      <div class="dashboard-container visible" style="opacity:1; transform:none;">
-        <p>
-          I’m Fizuli Hasanov, a Business Administration student in Baku focused on Data/Business Analytics.
-          I build end-to-end projects: clean data with Python, analyze with SQL, and communicate insights with dashboards.
-          I’m currently improving advanced SQL and building internship-ready portfolio projects.
+        <h1 class="hero-title">
+            <span class="hero-line">
+                <span class="word" data-scramble="Architecting">Architecting</span>
+                <span class="word" data-scramble="the">the</span>
+            </span>
+            <span class="hero-line">
+                <span class="word italic-serif">future</span>
+                <span class="word" data-scramble="with">with</span>
+            </span>
+            <span class="hero-line">
+                <span class="word gradient-text" data-scramble="AI logic.">AI logic.</span>
+            </span>
+        </h1>
+
+        <p class="hero-sub">
+            Fizuli Hasanov — Presidential Scholar (Top 3 of 20,000+), hackathon
+            winner, and founder building at the intersection of <em>business</em>,
+            <em>machine learning</em>, and clean tech. I orchestrate AI systems,
+            ship analytics that move revenue, and translate models into decisions.
         </p>
-      </div>
-    </section>
 
-    <section id="projects">
-        <div class="section-header">
-            <h2>Featured Projects</h2>
-            <p>Academic and personal projects demonstrating data analytics skills</p>
+        <div class="hero-actions">
+            <a href="#work" class="btn btn-primary" data-magnetic>
+                <span>View ventures</span>
+                <svg width="14" height="14" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.5"><path d="M5 12h14M13 5l7 7-7 7"/></svg>
+            </a>
+            <a href="Fizuli-Hasanov-Resume.pdf" download class="btn btn-ghost" data-magnetic>
+                <svg width="14" height="14" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.5"><path d="M21 15v4a2 2 0 0 1-2 2H5a2 2 0 0 1-2-2v-4M7 10l5 5 5-5M12 15V3"/></svg>
+                <span>Download CV</span>
+            </a>
         </div>
 
-        <div class="projects-grid">
-            <div class="project-card">
-                <div class="project-icon">📊</div>
-                <h3>Customer Churn & Retention Analytics</h3>
-                <div class="project-metric">End-to-End Analytics Pipeline</div>
-                <p>Built comprehensive churn monitoring system analyzing 10,000 customers over 24 months using PostgreSQL and SQL. Created Power BI dashboard for business insights.</p>
-                <div class="tech-stack">
-                    <span class="tech-tag">PostgreSQL</span>
-                    <span class="tech-tag">SQL</span>
-                    <span class="tech-tag">Power BI</span>
-                    <span class="tech-tag">Python</span>
-                </div>
-                <div class="project-links">
-                    <a href="https://github.com/fizuli20/churn-retention-project" target="_blank">View Code</a>
-                </div>
-            </div>
-
-            <div class="project-card">
-                <div class="project-icon">📈</div>
-                <h3>E-commerce Growth & Retention Analytics</h3>
-                <div class="project-metric">Data Warehouse Architecture</div>
-                <p>Designed production-style data warehouse with staging, dimensions, and fact tables using BigQuery. Built SQL pipeline and interactive Tableau dashboards.</p>
-                <div class="tech-stack">
-                    <span class="tech-tag">Google BigQuery</span>
-                    <span class="tech-tag">SQL</span>
-                    <span class="tech-tag">Tableau</span>
-                    <span class="tech-tag">Python</span>
-                </div>
-                <div class="project-links">
-                    <a href="https://github.com/fizuli20" target="_blank">View Code</a>
-                    <a href="https://public.tableau.com/app/profile/fizuli.hasanov/vizzes" target="_blank">View Dashboards</a>
-                </div>
-            </div>
-
-            <div class="project-card">
-                <div class="project-icon">🛒</div>
-                <h3>Order Segmentation & Revenue Optimization</h3>
-                <div class="project-metric">100K Orders Analyzed</div>
-                <p>Analyzed e-commerce orders using Python and Tableau. Segmented orders into behavioral groups and created executive dashboards for decision-making.</p>
-                <div class="tech-stack">
-                    <span class="tech-tag">Python</span>
-                    <span class="tech-tag">Pandas</span>
-                    <span class="tech-tag">Tableau</span>
-                    <span class="tech-tag">NumPy</span>
-                </div>
-                <div class="project-links">
-                    <a href="https://github.com/fizuli20/order-segmentation-revenue-optimization-ecommerce" target="_blank">View Code</a>
-                    <a href="https://public.tableau.com/app/profile/fizuli.hasanov/vizzes" target="_blank">View Dashboards</a>
-                </div>
-            </div>
-
-            <div class="project-card">
-                <div class="project-icon">💼</div>
-                <h3>Job Market Analysis (Data Roles)</h3>
-                <div class="project-metric">Global Market Research</div>
-                <p>Analyzed job postings across multiple countries demonstrating data cleaning, EDA, time-series analysis, and visualization skills with Python and Tableau.</p>
-                <div class="tech-stack">
-                    <span class="tech-tag">Python</span>
-                    <span class="tech-tag">Pandas</span>
-                    <span class="tech-tag">Matplotlib</span>
-                    <span class="tech-tag">Tableau</span>
-                </div>
-                <div class="project-links">
-                    <a href="https://github.com/fizuli20/job-market-analysis-data-roles" target="_blank">View Code</a>
-                    <a href="#dashboard-1">View Dashboard</a>
-                </div>
-            </div>
-
-            <div class="project-card">
-                <div class="project-icon">🤖</div>
-                <h3>Cashflow Autopilot</h3>
-                <div class="project-metric">Hackathon Prototype</div>
-                <p>Built AI prototype at Aspire × Cayu Global Hackathon for cash leak detection with runway forecast and what-if simulation capabilities.</p>
-                <div class="tech-stack">
-                    <span class="tech-tag">AI</span>
-                    <span class="tech-tag">Analytics</span>
-                    <span class="tech-tag">Forecasting</span>
-                </div>
-                <div class="project-links">
-                    <a href="https://github.com/fizuli20" target="_blank">Learn More</a>
-                </div>
-            </div>
+        <div class="hero-scroll">
+            <span class="hero-scroll-line"></span>
+            <span class="hero-scroll-text">scroll</span>
         </div>
     </section>
 
-    <section id="dashboards">
-        <div class="section-header">
-            <h2>Interactive Dashboards</h2>
-            <p>Explore live Tableau visualizations</p>
+    <!-- STATS TICKER -->
+    <div class="ticker" aria-hidden="true">
+        <div class="ticker-track">
+            <!-- repeated twice for seamless loop -->
+            <div class="ticker-group">
+                <span class="ticker-item"><span class="ticker-num">96.3</span>GPA / 100</span>
+                <span class="ticker-item"><span class="ticker-num">Top 3</span>of 20,000+ DIM applicants</span>
+                <span class="ticker-item"><span class="ticker-num">3×</span>Hackathon winner</span>
+                <span class="ticker-item"><span class="ticker-num">2.1M+</span>Digital views</span>
+                <span class="ticker-item"><span class="ticker-num">0.91</span>ROC-AUC churn model</span>
+                <span class="ticker-item"><span class="ticker-num">$7.45M</span>RFM segment revenue</span>
+                <span class="ticker-item"><span class="ticker-num">100%</span>GenAI scholarship</span>
+                <span class="ticker-item"><span class="ticker-num">9,988 / 54,337</span>Aspire Leaders finalist</span>
+            </div>
+            <div class="ticker-group" aria-hidden="true">
+                <span class="ticker-item"><span class="ticker-num">96.3</span>GPA / 100</span>
+                <span class="ticker-item"><span class="ticker-num">Top 3</span>of 20,000+ DIM applicants</span>
+                <span class="ticker-item"><span class="ticker-num">3×</span>Hackathon winner</span>
+                <span class="ticker-item"><span class="ticker-num">2.1M+</span>Digital views</span>
+                <span class="ticker-item"><span class="ticker-num">0.91</span>ROC-AUC churn model</span>
+                <span class="ticker-item"><span class="ticker-num">$7.45M</span>RFM segment revenue</span>
+                <span class="ticker-item"><span class="ticker-num">100%</span>GenAI scholarship</span>
+                <span class="ticker-item"><span class="ticker-num">9,988 / 54,337</span>Aspire Leaders finalist</span>
+            </div>
+        </div>
+    </div>
+
+    <!-- ABOUT / BENTO -->
+    <section id="about" class="about">
+        <div class="section-label reveal">
+            <span class="label-num">00</span>
+            <span class="label-line"></span>
+            <span class="label-text">Profile</span>
         </div>
 
-        <div class="dashboard-container" id="dashboard-1">
-            <h3 class="dashboard-title">📊 Job Market Analysis - Data Roles 2023</h3>
-            <p class="dashboard-description">Global job postings, salary benchmarks, and skills analysis</p>
-            <div class='tableauPlaceholder' id='viz1' style='position: relative'><noscript><a href='#'><img alt='Dashboard' src='https://public.tableau.com/static/images/Da/Data_Role_Job_Postings2023_Fizuli_Hasanov/Dashboard/1_rss.png' style='border: none' /></a></noscript><object class='tableauViz' style='display:none;'><param name='host_url' value='https%3A%2F%2Fpublic.tableau.com%2F' /> <param name='embed_code_version' value='3' /> <param name='site_root' value='' /><param name='name' value='Data_Role_Job_Postings2023_Fizuli_Hasanov/Dashboard' /><param name='tabs' value='no' /><param name='toolbar' value='yes' /><param name='static_image' value='https://public.tableau.com/static/images/Da/Data_Role_Job_Postings2023_Fizuli_Hasanov/Dashboard/1.png' /> <param name='animate_transition' value='yes' /><param name='display_static_image' value='yes' /><param name='display_spinner' value='yes' /><param name='display_overlay' value='yes' /><param name='display_count' value='yes' /><param name='language' value='en-US' /></object></div>
-        </div>
+        <div class="about-grid">
+            <div class="about-intro reveal">
+                <h2 class="section-title">
+                    Operator-engineer hybrid.
+                    <span class="italic-serif muted">Built for ambiguity.</span>
+                </h2>
+                <p class="section-lede">
+                    I'm a Business Administration student at Baku Higher Oil School
+                    (GPA 96.3 / 100), Presidential Scholar, and founder of three
+                    incubated ventures. I move fluidly between Python pipelines,
+                    SQL warehouses, financial models, and pitch rooms — turning
+                    raw data into decisions investors and operators can act on.
+                </p>
+            </div>
 
-        <div class="dashboard-container" id="dashboard-6">
-            <h3 class="dashboard-title">🔄 Cohort Retention</h3>
-            <p class="dashboard-description">Customer retention patterns over time</p>
-            <div class='tableauPlaceholder' id='viz6' style='position: relative'><noscript><a href='#'><img alt='Cohorts' src='https://public.tableau.com/static/images/ec/ecommerce-growth-analytics02/Dashboard2/1_rss.png' style='border: none' /></a></noscript><object class='tableauViz' style='display:none;'><param name='host_url' value='https%3A%2F%2Fpublic.tableau.com%2F' /> <param name='embed_code_version' value='3' /> <param name='site_root' value='' /><param name='name' value='ecommerce-growth-analytics02/Dashboard2' /><param name='tabs' value='no' /><param name='toolbar' value='yes' /><param name='static_image' value='https://public.tableau.com/static/images/ec/ecommerce-growth-analytics02/Dashboard2/1.png' /> <param name='animate_transition' value='yes' /><param name='display_static_image' value='yes' /><param name='display_spinner' value='yes' /><param name='display_overlay' value='yes' /><param name='display_count' value='yes' /><param name='language' value='en-US' /></object></div>
+            <div class="about-photo reveal">
+                <div class="photo-frame">
+                    <img src="profile-photo.jpg" alt="Fizuli Hasanov">
+                    <div class="photo-meta">
+                        <span>F. Hasanov</span>
+                        <span class="mono">— 2026</span>
+                    </div>
+                </div>
+            </div>
+
+            <div class="about-card reveal">
+                <span class="card-num">01</span>
+                <h3>Strategic Logic</h3>
+                <p>Business law, economics, financial modeling, scenario analysis. EY Strategy School, Aspire Leaders (Harvard), Hult Prize finalist.</p>
+            </div>
+
+            <div class="about-card reveal">
+                <span class="card-num">02</span>
+                <h3>AI Orchestration</h3>
+                <p>Agentic workflows, prompt engineering, rapid prototyping. Built LedgerLens (OCR for SME ledgers) and AutoFlow AZ (RPA + AGV).</p>
+            </div>
+
+            <div class="about-card reveal">
+                <span class="card-num">03</span>
+                <h3>Technical Fluency</h3>
+                <p>Python, SQL, Power BI, Tableau, scikit-learn, XGBoost. Production ML on 284K+ transactions. PR-AUC ~0.87 fraud detection.</p>
+            </div>
         </div>
     </section>
 
-    <section id="skills">
-        <div class="section-header">
-            <h2>Technical Skills</h2>
-            <p>Proficient in modern data analytics tools</p>
+    <!-- WORK / VENTURES -->
+    <section id="work" class="work">
+        <div class="section-label reveal">
+            <span class="label-num">01</span>
+            <span class="label-line"></span>
+            <span class="label-text">Selected work</span>
+        </div>
+
+        <div class="work-header reveal">
+            <h2 class="section-title">
+                Ventures I've shipped,
+                <span class="italic-serif muted">incubated, or won with.</span>
+            </h2>
+        </div>
+
+        <div class="bento">
+            <!-- Big hero card: EcoConcrete -->
+            <a href="https://eco-concrete.vercel.app" target="_blank" rel="noopener" class="bento-item bento-large reveal" data-tilt>
+                <div class="bento-bg eco"></div>
+                <div class="bento-glow"></div>
+                <div class="bento-top">
+                    <span class="bento-tag">01 — Cleantech · Founder</span>
+                    <span class="bento-status">
+                        <span class="status-dot live"></span>Incubated · 1st Place
+                    </span>
+                </div>
+                <div class="bento-body">
+                    <h3 class="bento-title">EcoConcrete</h3>
+                    <p class="bento-desc">
+                        Nano-mineral concrete additive that sequesters CO₂ via
+                        carbonation. Won 1st of 100 university teams in the
+                        Alternative Energy track; under active incubation at
+                        EmpowerMe and 5th Tüsi Programs.
+                    </p>
+                    <div class="bento-metrics">
+                        <div><strong>1st</strong>/100 teams</div>
+                        <div><strong>2×</strong>Incubators</div>
+                        <div><strong>B2B</strong>Construction GTM</div>
+                    </div>
+                </div>
+                <div class="bento-cta">
+                    <span>Visit live site</span>
+                    <svg width="16" height="16" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><path d="M7 17L17 7M7 7h10v10"/></svg>
+                </div>
+            </a>
+
+            <!-- FinVeda -->
+            <a href="https://fin-veda-eight.vercel.app" target="_blank" rel="noopener" class="bento-item reveal" data-tilt>
+                <div class="bento-glow"></div>
+                <div class="bento-top">
+                    <span class="bento-tag">02 — Fintech</span>
+                </div>
+                <div class="bento-body">
+                    <h3 class="bento-title">FinVeda</h3>
+                    <p class="bento-desc">AI-powered financial literacy architecture for emerging-market youth. Adaptive learning meets behavioral finance.</p>
+                </div>
+                <div class="bento-cta">
+                    <span>fin-veda-eight.vercel.app</span>
+                    <svg width="14" height="14" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><path d="M7 17L17 7M7 7h10v10"/></svg>
+                </div>
+            </a>
+
+            <!-- LedgerLens -->
+            <a href="https://ledgerlenss.vercel.app/ocr" target="_blank" rel="noopener" class="bento-item reveal" data-tilt>
+                <div class="bento-glow"></div>
+                <div class="bento-top">
+                    <span class="bento-tag">03 — Agentic AI</span>
+                </div>
+                <div class="bento-body">
+                    <h3 class="bento-title">LedgerLens</h3>
+                    <p class="bento-desc">AI-OCR for handwritten Azerbaijani SME ledgers. Benchmarked against Google Document AI & Azure Form Recognizer. Applied to ABB Incubation.</p>
+                </div>
+                <div class="bento-cta">
+                    <span>ledgerlenss.vercel.app/ocr</span>
+                    <svg width="14" height="14" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><path d="M7 17L17 7M7 7h10v10"/></svg>
+                </div>
+            </a>
+
+            <!-- HyperAutomation -->
+            <div class="bento-item reveal" data-tilt>
+                <div class="bento-glow"></div>
+                <div class="bento-top">
+                    <span class="bento-tag">04 — Robotics + RPA</span>
+                    <span class="bento-status"><span class="status-dot"></span>SabahHub 9th Cohort</span>
+                </div>
+                <div class="bento-body">
+                    <h3 class="bento-title">AutoFlow AZ</h3>
+                    <p class="bento-desc">RPA + Autonomous Guided Vehicle warehouse system for Azerbaijani SMEs. Selected for PASHA Hackathon 6.0 finals out of thousands.</p>
+                </div>
+                <div class="bento-cta">
+                    <span class="muted">Pre-launch</span>
+                </div>
+            </div>
+
+            <!-- Milli Cloud Security -->
+            <div class="bento-item reveal" data-tilt>
+                <div class="bento-glow"></div>
+                <div class="bento-top">
+                    <span class="bento-tag">05 — Infrastructure</span>
+                    <span class="bento-status">1st Place · AZN 1,500</span>
+                </div>
+                <div class="bento-body">
+                    <h3 class="bento-title">Milli Cloud Security</h3>
+                    <p class="bento-desc">Cloud security & data-center infrastructure platform — won 1st at AzCON Future Tech Hackathon (Holberton AZ × AZCON Holding).</p>
+                </div>
+                <div class="bento-cta">
+                    <span class="muted">Hackathon-shipped</span>
+                </div>
+            </div>
+
+            <!-- Azerbaijan Economy Analysis -->
+            <a href="https://github.com/fizuli20" target="_blank" rel="noopener" class="bento-item bento-wide reveal" data-tilt>
+                <div class="bento-bg econ"></div>
+                <div class="bento-glow"></div>
+                <div class="bento-top">
+                    <span class="bento-tag">06 — Macroeconomic Research</span>
+                </div>
+                <div class="bento-body">
+                    <h3 class="bento-title">Azerbaijan Economy Analysis</h3>
+                    <p class="bento-desc">
+                        20-year OLS regression: each $1 Brent increase → ~$0.59B GDP.
+                        Modeled the March 2026 Hormuz Crisis as a +$2.35B/month BTC
+                        windfall. Built 3-scenario 2026 GDP stress test ($74.7B–$82B).
+                    </p>
+                    <div class="bento-metrics">
+                        <div><strong>R²=0.509</strong>p&lt;0.001</div>
+                        <div><strong>20yr</strong>Panel data</div>
+                        <div><strong>4</strong>Notebooks</div>
+                    </div>
+                </div>
+                <div class="bento-cta">
+                    <span>Read on GitHub</span>
+                    <svg width="14" height="14" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><path d="M7 17L17 7M7 7h10v10"/></svg>
+                </div>
+            </a>
+        </div>
+    </section>
+
+    <!-- EXPERIENCE TIMELINE -->
+    <section id="experience" class="experience">
+        <div class="section-label reveal">
+            <span class="label-num">02</span>
+            <span class="label-line"></span>
+            <span class="label-text">Experience</span>
+        </div>
+
+        <div class="exp-header reveal">
+            <h2 class="section-title">
+                The bridge between <span class="italic-serif muted">business and ML.</span>
+            </h2>
+        </div>
+
+        <ol class="timeline">
+            <li class="timeline-item reveal">
+                <div class="timeline-date">
+                    <span class="mono">2026 — Present</span>
+                </div>
+                <div class="timeline-card">
+                    <div class="timeline-head">
+                        <h3>Business Analyst Intern</h3>
+                        <span class="timeline-org">Codveda Technologies · Remote</span>
+                    </div>
+                    <ul class="timeline-bullets">
+                        <li>Engineered telecom churn pipeline on 2,666 customers — Random Forest <strong>ROC-AUC 0.91</strong> vs LR baseline 0.77; identified intl-plan as <strong>3.8× higher</strong> churn risk.</li>
+                        <li>Designed 4-model fraud detection on 284,807 European transactions (577:1 imbalance) — XGBoost <strong>PR-AUC ~0.87</strong>; shipped 4-tier production risk-scoring system.</li>
+                        <li>Translated ML findings into 5 retention recommendations, including a 3rd-call early-warning trigger.</li>
+                    </ul>
+                    <div class="timeline-tags">
+                        <span>Python</span><span>scikit-learn</span><span>XGBoost</span><span>SMOTE</span><span>PR-AUC</span>
+                    </div>
+                </div>
+            </li>
+
+            <li class="timeline-item reveal">
+                <div class="timeline-date">
+                    <span class="mono">Feb — Mar 2026</span>
+                </div>
+                <div class="timeline-card">
+                    <div class="timeline-head">
+                        <h3>Data Analyst Intern</h3>
+                        <span class="timeline-org">Elevvo Pathways · Remote (Egypt)</span>
+                    </div>
+                    <ul class="timeline-bullets">
+                        <li><strong>Outstanding Contributor</strong> — recognized out of 2,000+ global participants.</li>
+                        <li>Job-market analytics on 100K+ records (Hugging Face <code>data_jobs</code>): salary distributions, skills demand, geography. Found Data Engineer roles carry highest global median.</li>
+                        <li>Power BI retail dashboard on Superstore: <strong>13M revenue · 1.47M profit · ~25K orders</strong> with KPI cards & drill-downs.</li>
+                        <li>RFM segmentation on 100K orders → Big Spenders alone generated <strong>$7.45M</strong> revenue.</li>
+                    </ul>
+                    <div class="timeline-tags">
+                        <span>Pandas</span><span>Power BI</span><span>RFM</span><span>BigQuery</span>
+                    </div>
+                </div>
+            </li>
+
+            <li class="timeline-item reveal">
+                <div class="timeline-date">
+                    <span class="mono">Feb — Apr 2026</span>
+                </div>
+                <div class="timeline-card">
+                    <div class="timeline-head">
+                        <h3>Business & Finance Coordinator</h3>
+                        <span class="timeline-org">International Youth Dialogue Platform · Baku</span>
+                    </div>
+                    <ul class="timeline-bullets">
+                        <li>Coordinate financial planning, budget tracking, and operational reporting across multi-stakeholder dialogue programs.</li>
+                        <li>Synthesize data-driven insights for leadership decisions on resource allocation, event ROI, and partnership strategy.</li>
+                    </ul>
+                </div>
+            </li>
+
+            <li class="timeline-item reveal">
+                <div class="timeline-date">
+                    <span class="mono">2025 — Present</span>
+                </div>
+                <div class="timeline-card">
+                    <div class="timeline-head">
+                        <h3>Vice President · Project Manager (×3)</h3>
+                        <span class="timeline-org">BHOS Conversation / Startup / Psychology / History Clubs</span>
+                    </div>
+                    <ul class="timeline-bullets">
+                        <li>Lead weekly sessions for 30+ members; redesigned curriculum that grew membership and attendance.</li>
+                        <li>Simultaneously manage project pipelines and event execution across three university clubs (15–40 members each).</li>
+                    </ul>
+                </div>
+            </li>
+
+            <li class="timeline-item reveal">
+                <div class="timeline-date">
+                    <span class="mono">Oct 2024 — Aug 2025</span>
+                </div>
+                <div class="timeline-card">
+                    <div class="timeline-head">
+                        <h3>Content Creator & Analyst</h3>
+                        <span class="timeline-org">TikTok · Self-directed</span>
+                    </div>
+                    <ul class="timeline-bullets">
+                        <li>Built personal channel to <strong>2.1M+ views, 70K+ likes, 10K shares</strong> in 11 months.</li>
+                        <li>Applied audience segmentation analysis and data-driven posting strategies to drive continuous engagement growth.</li>
+                    </ul>
+                </div>
+            </li>
+        </ol>
+    </section>
+
+    <!-- SKILLS -->
+    <section id="skills" class="skills">
+        <div class="section-label reveal">
+            <span class="label-num">03</span>
+            <span class="label-line"></span>
+            <span class="label-text">The orchestrator skillset</span>
+        </div>
+
+        <div class="skills-header reveal">
+            <h2 class="section-title">
+                Stack & toolkit. <span class="italic-serif muted">End-to-end.</span>
+            </h2>
         </div>
 
         <div class="skills-grid">
-            <div class="skill-category">
-                <h3>💾 SQL & Databases</h3>
+            <div class="skill-block reveal">
+                <div class="skill-head">
+                    <span class="skill-num">01</span>
+                    <h3>Strategic Logic</h3>
+                </div>
                 <ul class="skill-list">
-                    <li>PostgreSQL</li>
-                    <li>Google BigQuery</li>
-                    <li>Complex Queries</li>
-                    <li>Data Modeling</li>
+                    <li>Business Analysis & Requirements</li>
+                    <li>Financial Modeling & Valuation</li>
+                    <li>Economics · Statistics · OLS</li>
+                    <li>Stakeholder Management</li>
+                    <li>Agile · Scrum · Backlog</li>
+                    <li>Scenario & Sensitivity Analysis</li>
                 </ul>
             </div>
 
-            <div class="skill-category">
-                <h3>🐍 Python</h3>
+            <div class="skill-block reveal featured">
+                <div class="skill-head">
+                    <span class="skill-num">02</span>
+                    <h3>AI Orchestration</h3>
+                </div>
                 <ul class="skill-list">
-                    <li>Pandas & NumPy</li>
-                    <li>Matplotlib</li>
-                    <li>Jupyter Notebooks</li>
-                    <li>Data Analysis</li>
+                    <li>Agentic Workflows</li>
+                    <li>Prompt Engineering</li>
+                    <li>Rapid Prototyping</li>
+                    <li>RPA · Document AI · OCR</li>
+                    <li>GenAI (Holberton certified)</li>
+                    <li>AI Product Ownership</li>
                 </ul>
             </div>
 
-            <div class="skill-category">
-                <h3>📊 Visualization</h3>
+            <div class="skill-block reveal">
+                <div class="skill-head">
+                    <span class="skill-num">03</span>
+                    <h3>Technical Fluency</h3>
+                </div>
                 <ul class="skill-list">
-                    <li>Tableau Public</li>
-                    <li>Power BI</li>
-                    <li>Dashboard Design</li>
-                    <li>Storytelling</li>
+                    <li>Python · pandas · NumPy</li>
+                    <li>scikit-learn · XGBoost</li>
+                    <li>SQL · PostgreSQL · BigQuery</li>
+                    <li>Power BI · Tableau · Excel</li>
+                    <li>matplotlib · seaborn</li>
+                    <li>SMOTE · PR/ROC-AUC · CV</li>
                 </ul>
             </div>
+        </div>
 
-            <div class="skill-category">
-                <h3>🛠️ Tools</h3>
-                <ul class="skill-list">
-                    <li>Excel</li>
-                    <li>Git & GitHub</li>
-                    <li>VS Code</li>
-                    <li>Jupyter Lab</li>
-                </ul>
+        <!-- Tag marquee -->
+        <div class="tag-marquee" aria-hidden="true">
+            <div class="tag-track">
+                <span>Python</span><span>SQL</span><span>XGBoost</span><span>Random Forest</span>
+                <span>Logistic Regression</span><span>Isolation Forest</span><span>SMOTE</span>
+                <span>Power BI</span><span>Tableau</span><span>BigQuery</span><span>PostgreSQL</span>
+                <span>RFM</span><span>Cohort Retention</span><span>OLS</span><span>Time Series</span>
+                <span>Financial Modeling</span><span>Agentic AI</span><span>RPA</span><span>OCR</span>
+                <span>Python</span><span>SQL</span><span>XGBoost</span><span>Random Forest</span>
+                <span>Logistic Regression</span><span>Isolation Forest</span><span>SMOTE</span>
+                <span>Power BI</span><span>Tableau</span><span>BigQuery</span><span>PostgreSQL</span>
+                <span>RFM</span><span>Cohort Retention</span><span>OLS</span><span>Time Series</span>
+                <span>Financial Modeling</span><span>Agentic AI</span><span>RPA</span><span>OCR</span>
             </div>
         </div>
     </section>
 
-    <section id="education">
-        <div class="section-header">
-            <h2>Education & Achievements</h2>
+    <!-- AWARDS -->
+    <section id="awards" class="awards">
+        <div class="section-label reveal">
+            <span class="label-num">04</span>
+            <span class="label-line"></span>
+            <span class="label-text">Recognition</span>
         </div>
 
-        <div class="timeline">
-            <div class="timeline-item">
-                <h4>Baku Higher Oil School</h4>
-                <p><strong>BBA, Business Administration</strong> | Expected 2029<br>
-                GPA: 96.3/100 | Faculty Rank: 4th<br>
-                Presidential Scholar | Top 10 Golden Students</p>
-            </div>
-            <div class="timeline-item">
-                <h4>Leadership</h4>
-                <p>Vice President - BHOS Conversation Club<br>
-                Project Manager - Multiple Clubs<br>
-                Aspire Leaders Program - Cohort 5</p>
-            </div>
+        <div class="awards-header reveal">
+            <h2 class="section-title">
+                Wins, finals, & <span class="italic-serif muted">scholarships.</span>
+            </h2>
         </div>
 
-        <div class="cert-grid">
-            <div class="cert-card">
-                <div class="cert-icon">🎓</div>
-                <h4>IBM Python</h4>
+        <div class="awards-list">
+            <div class="award reveal">
+                <span class="award-year mono">Apr 2026</span>
+                <div class="award-body">
+                    <h4>1st Place — AzCON Future Tech Hackathon</h4>
+                    <p>Milli Cloud Security · Holberton School AZ × AZCON Holding · AZN 1,500</p>
+                </div>
+                <span class="award-badge">01</span>
             </div>
-            <div class="cert-card">
-                <div class="cert-icon">📊</div>
-                <h4>Deloitte Analytics</h4>
+            <div class="award reveal">
+                <span class="award-year mono">Apr 2026</span>
+                <div class="award-body">
+                    <h4>1st Place — Alternative Energy & Clean Environment</h4>
+                    <p>EcoConcrete · 1st of 100 university teams nationwide</p>
+                </div>
+                <span class="award-badge">02</span>
             </div>
-            <div class="cert-card">
-                <div class="cert-icon">✈️</div>
-                <h4>BA Data Science</h4>
+            <div class="award reveal">
+                <span class="award-year mono">May 2026</span>
+                <div class="award-body">
+                    <h4>Finalist — PASHA Hackathon 6.0</h4>
+                    <p>HyperAutomation · Selected from thousands of applicants</p>
+                </div>
+                <span class="award-badge">03</span>
             </div>
-            <div class="cert-card">
-                <div class="cert-icon">💼</div>
-                <h4>EY Finance</h4>
+            <div class="award reveal">
+                <span class="award-year mono">2026</span>
+                <div class="award-body">
+                    <h4>Incubated — SabahHub 9th Cohort & EmpowerMe / 5th Tüsi</h4>
+                    <p>HyperAutomation · EcoConcrete</p>
+                </div>
+                <span class="award-badge">04</span>
             </div>
-            <div class="cert-card">
-                <div class="cert-icon">🌍</div>
-                <h4>Erasmus+</h4>
+            <div class="award reveal">
+                <span class="award-year mono">Dec 2025</span>
+                <div class="award-body">
+                    <h4>Aspire Leaders Program — Finalist</h4>
+                    <p>Aspire Institute (Harvard Business School) · 9,988 / 54,337 applicants</p>
+                </div>
+                <span class="award-badge">05</span>
             </div>
-            <div class="cert-card">
-                <div class="cert-icon">📝</div>
-                <h4>IELTS 7.0</h4>
+            <div class="award reveal">
+                <span class="award-year mono">Jun 2025</span>
+                <div class="award-body">
+                    <h4>Presidential Scholar — Republic of Azerbaijan</h4>
+                    <p>Top 3 of 20,000+ DIM applicants · score 686/700</p>
+                </div>
+                <span class="award-badge">06</span>
+            </div>
+            <div class="award reveal">
+                <span class="award-year mono">Mar 2026</span>
+                <div class="award-body">
+                    <h4>Outstanding Contributor — Elevvo Pathways</h4>
+                    <p>Recognized as Top Contributor across 2,000+ global participants</p>
+                </div>
+                <span class="award-badge">07</span>
+            </div>
+            <div class="award reveal">
+                <span class="award-year mono">2026</span>
+                <div class="award-body">
+                    <h4>Top 29 Finalist — Urban Hackathon 2026</h4>
+                    <p>GreenMile · B2B HR SaaS for sustainable urban mobility · 150+ teams</p>
+                </div>
+                <span class="award-badge">08</span>
             </div>
         </div>
     </section>
 
-    <section id="contact">
-        <div class="section-header">
-            <h2>Get In Touch</h2>
+    <!-- CONTACT -->
+    <section id="contact" class="contact">
+        <div class="section-label reveal">
+            <span class="label-num">05</span>
+            <span class="label-line"></span>
+            <span class="label-text">Connect</span>
         </div>
 
-        <div class="contact-content">
-            <div class="contact-info">
-                <div class="contact-item">
-                    <div class="contact-icon">📧</div>
-                    <div>
-                        <strong>Email</strong><br>
-                        <a href="mailto:hesenovfizuli2020@gmail.com">hesenovfizuli2020@gmail.com</a>
-                    </div>
-                </div>
+        <div class="contact-inner">
+            <h2 class="contact-title reveal">
+                Let's build <span class="italic-serif gradient-text">something inevitable.</span>
+            </h2>
+            <p class="contact-sub reveal">
+                Open to internships, founder collaborations, AI/ML research, and
+                speaking opportunities. Fastest reply by email.
+            </p>
 
-                <div class="contact-item">
-                    <div class="contact-icon">📱</div>
-                    <div>
-                        <strong>Phone</strong><br>
-                        <a href="tel:+994507370700">+994 50 737 07 00</a>
-                    </div>
-                </div>
+            <a href="mailto:hesenovfizuli2020@gmail.com" class="contact-mail reveal" data-magnetic>
+                <span>hesenovfizuli2020@gmail.com</span>
+                <svg width="20" height="20" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><path d="M7 17L17 7M7 7h10v10"/></svg>
+            </a>
 
-                <div class="contact-item">
-                    <div class="contact-icon">📍</div>
-                    <div>
-                        <strong>Location</strong><br>
-                        Baku, Azerbaijan
-                    </div>
-                </div>
-
-                <div class="social-links">
-                    <a href="Fizuli-Hasanov-Resume.pdf" download class="btn btn-primary" style="display: inline-block;">Download Resume (PDF)</a>
-                    <a href="https://www.linkedin.com/in/fizuli-hasanov/" target="_blank" class="social-link">💼</a>
-                    <a href="https://github.com/fizuli20" target="_blank" class="social-link">💻</a>
-                    <a href="https://public.tableau.com/app/profile/fizuli.hasanov/vizzes" target="_blank" class="social-link">📊</a>
-                </div>
+            <div class="contact-grid reveal">
+                <a href="https://www.linkedin.com/in/fizuli-hasanov/" target="_blank" rel="noopener" class="contact-card" data-magnetic>
+                    <span class="cc-label">LinkedIn</span>
+                    <span class="cc-handle">/in/fizuli-hasanov</span>
+                </a>
+                <a href="https://github.com/fizuli20" target="_blank" rel="noopener" class="contact-card" data-magnetic>
+                    <span class="cc-label">GitHub</span>
+                    <span class="cc-handle">@fizuli20</span>
+                </a>
+                <a href="https://public.tableau.com/app/profile/fizuli.hasanov/vizzes" target="_blank" rel="noopener" class="contact-card" data-magnetic>
+                    <span class="cc-label">Tableau</span>
+                    <span class="cc-handle">/fizuli.hasanov</span>
+                </a>
+                <a href="tel:+994507370700" class="contact-card" data-magnetic>
+                    <span class="cc-label">Phone</span>
+                    <span class="cc-handle">+994 50 737 07 00</span>
+                </a>
             </div>
         </div>
     </section>
 
-    <footer>
-        <p>&copy; 2026 Fizuli Hasanov</p>
+    <!-- FOOTER -->
+    <footer class="footer">
+        <div class="footer-inner">
+            <div class="footer-col">
+                <span class="footer-logo">F<span class="logo-dot">.</span>H</span>
+                <span class="footer-meta mono">Baku · UTC+4</span>
+            </div>
+            <div class="footer-col">
+                <span class="mono muted">© 2026 Fizuli Hasanov</span>
+            </div>
+            <div class="footer-col footer-time">
+                <span class="mono muted" id="localTime">--:--:--</span>
+            </div>
+        </div>
+        <div class="footer-mark" aria-hidden="true">FIZULI</div>
     </footer>
 
-    <script src='https://public.tableau.com/javascripts/api/viz_v1.js'></script>
     <script src="script.js"></script>
 </body>
 </html>
