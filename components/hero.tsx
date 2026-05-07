@@ -139,7 +139,7 @@ export function Hero() {
             <ArrowDown size={16} />
           </a>
           <a
-            href="/Fizuli-Hasanov-Resume.pdf"
+            href="/Fizuli-Hasanov-CV.pdf"
             download
             className="inline-flex h-12 items-center justify-center gap-2 rounded-full border border-[var(--color-border)] bg-transparent px-7 text-sm font-medium text-foreground transition-colors hover:border-[#2a2a2a] hover:bg-[var(--color-card)]"
           >

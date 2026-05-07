@@ -1,6 +1,7 @@
 "use client"
 
 import { useEffect, useState } from "react"
+import Image from "next/image"
 import { Menu, X } from "lucide-react"
 
 const links = [
@@ -35,10 +36,27 @@ export function Nav() {
       >
         <a
           href="#top"
-          className="font-serif text-xl tracking-tight text-foreground"
+          className="group inline-flex items-center gap-2.5"
           aria-label="Fizuli Hasanov — home"
         >
-          F<span className="text-[var(--color-accent)]">.</span>H
+          <span className="relative inline-flex h-9 w-9 items-center justify-center overflow-hidden rounded-full ring-1 ring-[var(--color-border)] transition-all group-hover:ring-[var(--color-accent)]">
+            <Image
+              src="/logo.png"
+              alt=""
+              width={36}
+              height={36}
+              className="h-full w-full object-cover"
+              priority
+            />
+          </span>
+          <span className="hidden flex-col leading-none sm:flex">
+            <span className="font-serif text-[15px] tracking-tight text-foreground">
+              Fizuli Hasanov
+            </span>
+            <span className="mt-0.5 font-mono text-[9px] uppercase tracking-[0.22em] text-[var(--color-muted-foreground)]">
+              Architect of Value
+            </span>
+          </span>
         </a>
 
         <ul className="hidden items-center gap-8 md:flex">

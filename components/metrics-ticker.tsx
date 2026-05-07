@@ -5,11 +5,11 @@ const METRICS: Array<{ label: string; value: string }> = [
   { label: "Elevvo", value: "Outstanding / 2,000+" },
   { label: "ROC-AUC", value: "0.91" },
   { label: "PR-AUC", value: "0.87" },
-  { label: "RFM Revenue", value: "$7.45M" },
-  { label: "TikTok Reach", value: "2.1M+ Views" },
+  { label: "RFM Revenue", value: "$11.9M" },
+  { label: "Content Reach", value: "2.1M+ Views" },
   { label: "Aspire Leaders", value: "9,988 / 54,337" },
   { label: "GenAI Scholarship", value: "100%" },
-  { label: "Active Incubations", value: "2" },
+  { label: "Active Ventures", value: "3" },
 ]
 
 function Row() {

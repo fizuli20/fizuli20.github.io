@@ -1,3 +1,4 @@
+import Image from "next/image"
 import { Github } from "lucide-react"
 
 const links = [
@@ -15,9 +16,20 @@ export function Footer() {
       className="border-t border-[var(--color-border)] bg-[#0a0a0a] px-5 py-10 md:px-8"
     >
       <div className="mx-auto flex max-w-7xl flex-col gap-6 md:flex-row md:items-center md:justify-between">
-        <p className="font-mono text-[11px] uppercase tracking-[0.18em] text-[var(--color-muted-foreground)]">
-          F.H &middot; Baku, Azerbaijan &middot; UTC+4
-        </p>
+        <div className="flex items-center gap-3">
+          <span className="relative inline-flex h-8 w-8 items-center justify-center overflow-hidden rounded-full ring-1 ring-[var(--color-border)]">
+            <Image
+              src="/logo.png"
+              alt="Fizuli Hasanov logo"
+              width={32}
+              height={32}
+              className="h-full w-full object-cover"
+            />
+          </span>
+          <p className="font-mono text-[11px] uppercase tracking-[0.18em] text-[var(--color-muted-foreground)]">
+            Fizuli Hasanov &middot; Baku &middot; UTC+4
+          </p>
+        </div>
 
         <ul className="flex flex-wrap items-center gap-x-6 gap-y-2">
           {links.map((l) => (

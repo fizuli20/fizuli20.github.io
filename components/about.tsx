@@ -42,8 +42,11 @@ export function About() {
             transition={{ duration: 0.7, ease: [0.22, 1, 0.36, 1] }}
             className="md:col-span-7"
           >
-            <h2 className="font-serif text-[32px] leading-[1.1] tracking-tight text-foreground sm:text-[40px]">
-              Operator&rsquo;s instincts.
+            <span className="font-mono text-[11px] uppercase tracking-[0.22em] text-[var(--color-accent)]">
+              Architect of Value
+            </span>
+            <h2 className="mt-4 font-serif text-[32px] leading-[1.1] tracking-tight text-foreground sm:text-[40px]">
+              Product instincts.
               <br />
               <span className="text-[var(--color-muted)]">Researcher&rsquo;s discipline.</span>
             </h2>
@@ -52,40 +55,74 @@ export function About() {
               I&rsquo;m a BBA student at Baku Higher Oil School (GPA 96.3/100) and a Presidential
               Scholar &mdash; top 3 of 20,000+ university entrance applicants in Azerbaijan. I move
               between Python pipelines, SQL warehouses, financial models, and pitch rooms &mdash;
-              turning raw data into decisions that operators and investors can act on. I&rsquo;ve
-              won two 1st-place hackathons in a single week and have two ventures under active
-              incubation.
+              owning products end-to-end from discovery through ML deployment. Two 1st-place
+              hackathons in a single week, two ventures under active incubation, and a PASHA
+              Hackathon 6.0 finalist seat.
             </p>
           </motion.div>
 
           <motion.div
-            initial={{ opacity: 0, scale: 0.95 }}
+            initial={{ opacity: 0, scale: 0.96 }}
             whileInView={{ opacity: 1, scale: 1 }}
             viewport={{ once: true, amount: 0.3 }}
-            transition={{ duration: 0.8, ease: [0.22, 1, 0.36, 1] }}
+            transition={{ duration: 0.9, ease: [0.22, 1, 0.36, 1] }}
             className="md:col-span-5"
           >
             <div className="flex justify-center md:justify-end">
-              <div className="relative h-[260px] w-[260px] sm:h-[280px] sm:w-[280px]">
+              <figure className="relative h-[300px] w-[260px] sm:h-[340px] sm:w-[300px]">
+                {/* Outer dotted frame */}
                 <div
                   aria-hidden
-                  className="absolute inset-0 rounded-full ring-2 ring-[var(--color-accent)]"
+                  className="absolute -inset-4 rounded-[28px] border border-dashed border-[var(--color-border)]"
                 />
-                <div
+                {/* Corner accents */}
+                <span
                   aria-hidden
-                  className="absolute -inset-3 rounded-full border border-[var(--color-border)]"
+                  className="absolute -left-1 -top-1 h-5 w-5 border-l border-t border-[var(--color-accent)]"
                 />
-                <div className="relative h-full w-full overflow-hidden rounded-full">
+                <span
+                  aria-hidden
+                  className="absolute -right-1 -bottom-1 h-5 w-5 border-r border-b border-[var(--color-accent)]"
+                />
+
+                {/* Photo frame */}
+                <div className="relative h-full w-full overflow-hidden rounded-[20px] bg-[#0f0f0f] ring-1 ring-[var(--color-border)]">
                   <Image
                     src="/profile-photo.jpg"
                     alt="Fizuli Hasanov"
                     fill
-                    sizes="280px"
-                    className="object-cover"
+                    sizes="(max-width: 768px) 260px, 300px"
+                    className="object-cover grayscale contrast-110 transition-all duration-700 hover:grayscale-0"
                     priority={false}
                   />
+                  {/* Duotone tint overlay */}
+                  <div
+                    aria-hidden
+                    className="pointer-events-none absolute inset-0 mix-blend-color"
+                    style={{
+                      background:
+                        "linear-gradient(180deg, rgba(37,99,235,0.18) 0%, rgba(10,10,10,0.0) 50%, rgba(37,99,235,0.22) 100%)",
+                    }}
+                  />
+                  {/* Bottom darken for label readability */}
+                  <div
+                    aria-hidden
+                    className="pointer-events-none absolute inset-x-0 bottom-0 h-28 bg-gradient-to-t from-[#0a0a0a] via-[#0a0a0a]/60 to-transparent"
+                  />
+                  {/* Faint grid */}
+                  <div className="pointer-events-none absolute inset-0 bg-grid opacity-[0.25]" aria-hidden />
+
+                  {/* Caption */}
+                  <figcaption className="absolute inset-x-4 bottom-4 flex items-center justify-between">
+                    <span className="font-mono text-[10px] uppercase tracking-[0.22em] text-[var(--color-muted-foreground)]">
+                      / 2026
+                    </span>
+                    <span className="font-mono text-[10px] uppercase tracking-[0.22em] text-[var(--color-accent)]">
+                      Architect of Value
+                    </span>
+                  </figcaption>
                 </div>
-              </div>
+              </figure>
             </div>
           </motion.div>
         </div>
