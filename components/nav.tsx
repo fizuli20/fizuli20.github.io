@@ -105,17 +105,17 @@ export function Nav() {
         <a
           href="#top"
           aria-label="Fizuli Hasanov — Home"
-          className="group flex items-center gap-2.5 transition-opacity duration-150 hover:opacity-80 lg:justify-self-start"
+          className="group flex items-center gap-3 transition-opacity duration-150 hover:opacity-80 lg:justify-self-start"
         >
-          <span className="relative block h-8 w-8 shrink-0 overflow-hidden rounded-sm ring-1 ring-white/10">
+          <span className="relative flex h-10 w-10 shrink-0 items-center justify-center overflow-hidden rounded-md bg-white/[0.03] ring-1 ring-white/10">
             <Image
               src="/personal-logo.png"
               alt=""
               fill
-              sizes="32px"
+              sizes="40px"
               priority
-              className="object-cover"
-              style={{ transform: "scale(2.4)", objectPosition: "50% 30%" }}
+              className="object-contain"
+              style={{ transform: "scale(2.05)", objectPosition: "50% 32%" }}
             />
           </span>
           <span className="hidden flex-col leading-none sm:flex">

@@ -32,10 +32,10 @@ function CascadeLine({
       <motion.span
         className="block text-white"
         style={{
-          fontSize: "clamp(36px, 6.5vw, 80px)",
+          fontSize: "clamp(48px, 9vw, 116px)",
           fontWeight: 800,
-          letterSpacing: "-0.03em",
-          lineHeight: 1.1,
+          letterSpacing: "-0.035em",
+          lineHeight: 1.05,
         }}
         initial={reduce ? undefined : { y: "108%" }}
         animate={{ y: "0%" }}
