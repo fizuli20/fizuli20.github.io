@@ -22,7 +22,7 @@ const ROLES: Role[] = [
     company: "Codveda Technologies",
     location: "Remote",
     keyWin:
-      "XGBoost fraud detection \u2014 PR-AUC 0.87 on 284,807 real transactions (577:1 class imbalance resolved via SMOTE)",
+      "XGBoost fraud detection \u2014 PR-AUC 0.87 on 284,807 real transactions (577:1 class imbalance)",
     bullets: [
       "Architected a 4-model fraud detection pipeline \u2014 XGBoost achieved PR-AUC 0.87; deployed 4-tier risk system across 284,807 transactions at threshold 0.4.",
       "Identified international-plan users as 3.8\u00d7 higher churn risk (42% vs. 11%); translated into 5 retention actions including a 3rd-call early-warning trigger.",
@@ -36,7 +36,7 @@ const ROLES: Role[] = [
     company: "Elevvo Pathways",
     location: "Remote",
     keyWin:
-      "Outstanding Contributor \u2014 recognized among 2,000+ global participants across the entire cohort",
+      "Outstanding Contributor \u2014 recognized among 2,000+ global participants across the full cohort",
     bullets: [
       "Recognized as Outstanding Contributor among 2,000+ global participants \u2014 only BHOS student to achieve this designation.",
       "Surfaced $7.45M in top-segment revenue from RFM model on 95,000+ customers; delivered direct prioritization framework.",
@@ -63,7 +63,7 @@ const ROLES: Role[] = [
     company: "BHOS Clubs",
     location: "Baku",
     keyWin:
-      "Four simultaneous club leadership roles, 15\u201340 members each",
+      "Four concurrent leadership roles \u2014 15 to 40 members each",
     bullets: [
       "Lead weekly Conversation Club sessions for 30+ members; redesigned curriculum growing attendance through feedback loops.",
       "Manage concurrent project pipelines across Startup, Psychology, and History clubs \u2014 owning scope, milestones, communications.",
@@ -76,7 +76,7 @@ const ROLES: Role[] = [
     company: "TikTok",
     location: "Self-directed",
     keyWin:
-      "2.1M+ views, 70K+ likes in 11 months \u2014 zero paid reach",
+      "2.1M+ views in 11 months \u2014 zero paid distribution",
     bullets: [
       "Scaled zero-budget content platform to 2.1M+ views, 70K+ likes, 10K shares via data-driven audience segmentation.",
       "Managed full lifecycle: ideation \u2192 brief \u2192 production \u2192 analytics \u2192 iteration. Grew 38K profile views organically.",
@@ -86,6 +86,16 @@ const ROLES: Role[] = [
 ]
 
 const easeOutExpo = [0.16, 1, 0.3, 1] as const
+
+const containerVariants = {
+  hidden: {},
+  visible: { transition: { staggerChildren: 0.08 } },
+}
+
+const itemVariants = {
+  hidden: { opacity: 0, y: 24 },
+  visible: { opacity: 1, y: 0, transition: { duration: 0.55, ease: [0.16, 1, 0.3, 1] } },
+}
 
 export function Experience() {
   const reduce = useReducedMotion()
@@ -112,18 +122,17 @@ export function Experience() {
         <hr className="mt-8 border-white/5" />
 
         {/* Timeline */}
-        <div className="relative mt-12 border-l border-white/[0.08] pl-6">
-          {ROLES.map((role, i) => (
+        <motion.div
+          variants={containerVariants}
+          initial="hidden"
+          whileInView="visible"
+          viewport={{ once: true, margin: "-80px" }}
+          className="relative mt-12 border-l border-white/[0.08] pl-6"
+        >
+          {ROLES.map((role) => (
             <motion.div
               key={role.role + role.company}
-              initial={reduce ? undefined : { opacity: 0, y: 20 }}
-              whileInView={{ opacity: 1, y: 0 }}
-              viewport={{ once: true, amount: 0.1 }}
-              transition={{
-                duration: 0.5,
-                ease: easeOutExpo,
-                delay: i * 0.07,
-              }}
+              variants={itemVariants}
               className="relative pb-12 last:pb-0"
             >
               {/* Timeline dot */}
@@ -153,19 +162,17 @@ export function Experience() {
               </p>
 
               {/* Key win box */}
-              <div className="mt-3 rounded-r-md border-l-2 border-white/30 bg-white/[0.02] p-3 pl-4">
+              <div className="mt-3 rounded-r-lg border-l-2 border-white/25 bg-white/[0.02] px-3.5 py-2.5">
                 <p className="text-[13px] text-zinc-300">{role.keyWin}</p>
               </div>
 
-              {/* Bullets */}
+              {/* Bullets — proper styled bullets */}
               {role.bullets.length > 0 && (
-                <ul className="mt-4 space-y-2">
+                <ul className="mt-4 space-y-2.5">
                   {role.bullets.map((b, j) => (
-                    <li
-                      key={j}
-                      className="text-[14px] leading-[1.6] text-zinc-400 before:mr-2 before:text-zinc-700 before:content-['\u00b7']"
-                    >
-                      {b}
+                    <li key={j} className="flex items-start gap-3 text-[14px] leading-[1.6] text-zinc-400">
+                      <span aria-hidden className="mt-[9px] block h-[5px] w-[5px] shrink-0 rounded-full bg-zinc-600" />
+                      <span>{b}</span>
                     </li>
                   ))}
                 </ul>
@@ -186,7 +193,7 @@ export function Experience() {
               )}
             </motion.div>
           ))}
-        </div>
+        </motion.div>
       </div>
     </section>
   )

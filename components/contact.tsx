@@ -24,10 +24,10 @@ export function Contact() {
     >
       <div className="mx-auto max-w-2xl text-center">
         <motion.h2
-          initial={reduce ? undefined : { opacity: 0, y: 20 }}
+          initial={reduce ? undefined : { opacity: 0, y: 24 }}
           whileInView={{ opacity: 1, y: 0 }}
-          viewport={{ once: true, amount: 0.1 }}
-          transition={{ duration: 0.5, ease: easeOutExpo }}
+          viewport={{ once: true, margin: "-80px" }}
+          transition={{ duration: 0.55, ease: easeOutExpo }}
           className="text-white"
           style={{
             fontSize: "clamp(40px, 5vw, 60px)",
@@ -38,24 +38,24 @@ export function Contact() {
           Let&apos;s build something inevitable.
         </motion.h2>
         <motion.p
-          initial={reduce ? undefined : { opacity: 0, y: 20 }}
+          initial={reduce ? undefined : { opacity: 0, y: 24 }}
           whileInView={{ opacity: 1, y: 0 }}
-          viewport={{ once: true, amount: 0.1 }}
-          transition={{ duration: 0.5, ease: easeOutExpo, delay: 0.06 }}
+          viewport={{ once: true, margin: "-80px" }}
+          transition={{ duration: 0.55, ease: easeOutExpo, delay: 0.06 }}
           className="mt-4 text-[15px] text-zinc-400"
         >
-          Open to internships, founder collaborations, AI/ML research, and speaking.
+          Open to internships &middot; Product Management roles &middot; Founder collaborations &middot; Data & AI projects &middot; Speaking opportunities
         </motion.p>
 
         <div className="mt-12 grid grid-cols-1 gap-6 md:grid-cols-3">
           {/* Email */}
           <motion.div
-            initial={reduce ? undefined : { opacity: 0, y: 20 }}
+            initial={reduce ? undefined : { opacity: 0, y: 24 }}
             whileInView={{ opacity: 1, y: 0 }}
-            viewport={{ once: true, amount: 0.1 }}
-            transition={{ duration: 0.5, ease: easeOutExpo, delay: 0 }}
-            whileHover={reduce ? undefined : { y: -3 }}
-            className="flex flex-col items-center gap-3 rounded-xl border border-white/[0.06] bg-zinc-900 p-6 transition-all duration-200 hover:border-white/[0.12] hover:bg-zinc-800"
+            viewport={{ once: true, margin: "-80px" }}
+            transition={{ duration: 0.55, ease: easeOutExpo, delay: 0 }}
+            whileHover={reduce ? undefined : { y: -4 }}
+            className="flex flex-col items-center gap-3 rounded-xl border border-white/[0.06] bg-zinc-900 p-6 transition-[border-color] duration-200 hover:border-white/[0.14] hover:bg-zinc-800"
           >
             <Mail size={20} className="text-zinc-400" />
             <a
@@ -87,12 +87,12 @@ export function Contact() {
             href="https://www.linkedin.com/in/fizuli-hasanov/"
             target="_blank"
             rel="noopener noreferrer"
-            initial={reduce ? undefined : { opacity: 0, y: 20 }}
+            initial={reduce ? undefined : { opacity: 0, y: 24 }}
             whileInView={{ opacity: 1, y: 0 }}
-            viewport={{ once: true, amount: 0.1 }}
-            transition={{ duration: 0.5, ease: easeOutExpo, delay: 0.06 }}
-            whileHover={reduce ? undefined : { y: -3 }}
-            className="flex flex-col items-center gap-3 rounded-xl border border-white/[0.06] bg-zinc-900 p-6 transition-all duration-200 hover:border-white/[0.12] hover:bg-zinc-800"
+            viewport={{ once: true, margin: "-80px" }}
+            transition={{ duration: 0.55, ease: easeOutExpo, delay: 0.06 }}
+            whileHover={reduce ? undefined : { y: -4 }}
+            className="flex flex-col items-center gap-3 rounded-xl border border-white/[0.06] bg-zinc-900 p-6 transition-[border-color] duration-200 hover:border-white/[0.14] hover:bg-zinc-800"
           >
             <Linkedin size={20} className="text-zinc-400" />
             <span className="text-[14px] text-zinc-300">/in/fizuli-hasanov</span>
@@ -104,12 +104,12 @@ export function Contact() {
             href="https://github.com/fizuli20"
             target="_blank"
             rel="noopener noreferrer"
-            initial={reduce ? undefined : { opacity: 0, y: 20 }}
+            initial={reduce ? undefined : { opacity: 0, y: 24 }}
             whileInView={{ opacity: 1, y: 0 }}
-            viewport={{ once: true, amount: 0.1 }}
-            transition={{ duration: 0.5, ease: easeOutExpo, delay: 0.12 }}
-            whileHover={reduce ? undefined : { y: -3 }}
-            className="flex flex-col items-center gap-3 rounded-xl border border-white/[0.06] bg-zinc-900 p-6 transition-all duration-200 hover:border-white/[0.12] hover:bg-zinc-800"
+            viewport={{ once: true, margin: "-80px" }}
+            transition={{ duration: 0.55, ease: easeOutExpo, delay: 0.12 }}
+            whileHover={reduce ? undefined : { y: -4 }}
+            className="flex flex-col items-center gap-3 rounded-xl border border-white/[0.06] bg-zinc-900 p-6 transition-[border-color] duration-200 hover:border-white/[0.14] hover:bg-zinc-800"
           >
             <Github size={20} className="text-zinc-400" />
             <span className="text-[14px] text-zinc-300">@fizuli20</span>

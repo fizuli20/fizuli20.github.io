@@ -9,17 +9,17 @@ const PILLARS = [
   {
     n: "01",
     title: "Strategic Logic",
-    body: "Business law, economics, financial modeling, EY Strategy, Aspire Leaders (Harvard-founded), Hult Prize finalist.",
+    body: "Business analysis, product discovery, financial modeling, and stakeholder management. EY Strategy School, Aspire Leaders (Harvard-founded), Hult Prize finalist. Agile/Scrum certified mindset \u2014 from backlog to boardroom.",
   },
   {
     n: "02",
     title: "AI Orchestration",
-    body: "LedgerLens OCR, AutoFlow AZ RPA+AGV, agentic workflows, GenAI certified (Holberton 100% scholarship).",
+    body: "Agentic workflows, prompt engineering, and rapid prototyping. Built LedgerLens (OCR for SME ledgers) and HyperAutomation (RPA + AGV warehouse automation). GenAI certified \u2014 Holberton School AZ, 100% scholarship.",
   },
   {
     n: "03",
     title: "Technical Fluency",
-    body: "Python, SQL, scikit-learn, XGBoost. PR-AUC 0.87 on 284,807 real transactions. Power BI, Tableau, BigQuery.",
+    body: "Python, SQL, Power BI, Tableau, scikit-learn, XGBoost. Production ML on 284K+ real transactions. PR-AUC 0.87 fraud detection. End-to-end product thinking from data pipeline to decision recommendation.",
   },
 ]
 
@@ -46,10 +46,10 @@ export function About() {
         <div className="mt-12 grid grid-cols-1 gap-16 md:grid-cols-[1fr_1fr]">
           {/* Left — text */}
           <motion.div
-            initial={reduce ? undefined : { opacity: 0, y: 20 }}
+            initial={reduce ? undefined : { opacity: 0, y: 24 }}
             whileInView={{ opacity: 1, y: 0 }}
-            viewport={{ once: true, amount: 0.1 }}
-            transition={{ duration: 0.5, ease: easeOutExpo }}
+            viewport={{ once: true, margin: "-80px" }}
+            transition={{ duration: 0.55, ease: easeOutExpo }}
           >
             <h2
               className="text-white"
@@ -60,11 +60,13 @@ export function About() {
 
             <p className="mt-6 max-w-[65ch] text-[15px] leading-[1.75] text-zinc-400">
               Business Administration student at Baku Higher Oil School
-              (GPA 96.3/100) and Presidential Scholar — Top 3 of 20,000+.
-              Three ventures under incubation. Two 1st-place wins in one week.
-              I move between Python pipelines, SQL warehouses, financial
-              models, and pitch rooms — turning raw data into decisions that
-              investors and operators can act on.
+              (GPA 96.3/100) and Presidential Scholar &mdash; Top 3 of 20,000+
+              university entrance applicants nationwide (DIM score 686/700).
+              Two 1st-place hackathon wins in a single week. Three ventures
+              under active incubation. I move between Python pipelines,
+              SQL warehouses, financial models, and pitch rooms &mdash; turning
+              raw data into decisions that investors and operators act on.
+              Currently building at the intersection of product, data, and AI.
             </p>
 
             {/* Three pillar rows */}
@@ -72,7 +74,7 @@ export function About() {
               {PILLARS.map((p) => (
                 <div
                   key={p.n}
-                  className="group flex items-start gap-4 border-b border-white/5 py-4 transition-transform duration-200 hover:translate-x-1"
+                  className="group flex items-start gap-4 border-b border-white/5 py-4 transition-transform duration-150 hover:translate-x-1"
                 >
                   <span className="mt-0.5 font-mono text-[11px] text-zinc-700">
                     {p.n}
@@ -90,10 +92,10 @@ export function About() {
 
           {/* Right — photo */}
           <motion.div
-            initial={reduce ? undefined : { opacity: 0, y: 20 }}
+            initial={reduce ? undefined : { opacity: 0, y: 24 }}
             whileInView={{ opacity: 1, y: 0 }}
-            viewport={{ once: true, amount: 0.1 }}
-            transition={{ duration: 0.5, ease: easeOutExpo, delay: 0.1 }}
+            viewport={{ once: true, margin: "-80px" }}
+            transition={{ duration: 0.55, ease: easeOutExpo, delay: 0.1 }}
             className="flex flex-col items-center justify-start md:items-end"
           >
             <div className="relative h-[240px] w-[240px] overflow-hidden rounded-full border border-white/10">

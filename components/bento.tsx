@@ -11,17 +11,17 @@ type StatCell = {
   decimals: number
   label: string
   span: number
+  skipCount?: boolean
 }
 
 const STATS: StatCell[] = [
   { value: "96.3", numericValue: 96.3, suffix: " / 100", decimals: 1, label: "GPA \u00b7 BHOS", span: 2 },
-  { value: "TOP 3", numericValue: 3, prefix: "TOP ", decimals: 0, label: "OF 20,000+ APPLICANTS", span: 1 },
-  { value: "2", numericValue: 2, suffix: "\u00d7", decimals: 0, label: "1ST PLACE HACKATHON", span: 1 },
-  { value: "0.91", numericValue: 0.91, decimals: 2, label: "ROC-AUC \u00b7 CHURN MODEL", span: 1 },
-  { value: "0.87", numericValue: 0.87, decimals: 2, label: "PR-AUC \u00b7 FRAUD DETECTION", span: 1 },
-  { value: "$7.45M", numericValue: 7.45, prefix: "$", suffix: "M", decimals: 2, label: "RFM REVENUE SURFACED", span: 2 },
+  { value: "TOP 3", numericValue: 3, prefix: "TOP ", decimals: 0, label: "OF 20,000+ DIM APPLICANTS", span: 1, skipCount: true },
+  { value: "2\u00d7", numericValue: 2, suffix: "\u00d7", decimals: 0, label: "HACKATHON CHAMPION", span: 1 },
   { value: "2.1M+", numericValue: 2.1, suffix: "M+", decimals: 1, label: "DIGITAL VIEWS", span: 1 },
-  { value: "9,988", numericValue: 9988, decimals: 0, label: "OF 54,337 \u00b7 ASPIRE LEADERS", span: 1 },
+  { value: "100%", numericValue: 100, suffix: "%", decimals: 0, label: "GENAI SCHOLARSHIP", span: 1 },
+  { value: "9,988", numericValue: 9988, decimals: 0, label: "ASPIRE LEADERS ALUMNI", span: 1 },
+  { value: "2", numericValue: 2, decimals: 0, label: "ACTIVE INCUBATIONS", span: 1 },
 ]
 
 function easeOutQuart(t: number): number {
@@ -38,14 +38,24 @@ function formatNumber(n: number, decimals: number, prefix?: string, suffix?: str
   return (prefix || "") + formatted + (suffix || "")
 }
 
-function CounterCell({ stat, index }: { stat: StatCell; index: number }) {
+const containerVariants = {
+  hidden: {},
+  visible: { transition: { staggerChildren: 0.07 } },
+}
+
+const itemVariants = {
+  hidden: { opacity: 0, y: 20 },
+  visible: { opacity: 1, y: 0, transition: { duration: 0.55, ease: [0.16, 1, 0.3, 1] } },
+}
+
+function CounterCell({ stat }: { stat: StatCell }) {
   const [display, setDisplay] = useState(stat.value)
   const ref = useRef<HTMLDivElement>(null)
   const hasRun = useRef(false)
   const reduce = useReducedMotion()
 
   useEffect(() => {
-    if (!ref.current || hasRun.current) return
+    if (!ref.current || hasRun.current || stat.skipCount) return
 
     const observer = new IntersectionObserver(
       ([entry]) => {
@@ -57,7 +67,7 @@ function CounterCell({ stat, index }: { stat: StatCell; index: number }) {
           return
         }
 
-        const duration = 1200
+        const duration = 1400
         const start = performance.now()
 
         const tick = (now: number) => {
@@ -87,16 +97,10 @@ function CounterCell({ stat, index }: { stat: StatCell; index: number }) {
   return (
     <motion.div
       ref={ref}
-      initial={{ opacity: 0, y: 20 }}
-      whileInView={{ opacity: 1, y: 0 }}
-      viewport={{ once: true, amount: 0.1 }}
-      transition={{
-        duration: 0.5,
-        ease: [0.16, 1, 0.3, 1],
-        delay: index * 0.06,
-      }}
-      whileHover={{ y: -3 }}
-      className={`rounded-xl border border-white/[0.06] bg-zinc-900 px-6 py-5 transition-all duration-200 hover:border-white/[0.12] hover:bg-zinc-800 ${
+      variants={itemVariants}
+      whileHover={{ y: -4 }}
+      transition={{ duration: 0.18, ease: [0.4, 0, 0.2, 1] }}
+      className={`rounded-xl border border-white/[0.06] bg-zinc-900 px-6 py-5 transition-[border-color] duration-200 hover:border-white/[0.14] hover:bg-zinc-800 ${
         stat.span === 2 ? "col-span-2" : "col-span-1"
       }`}
     >
@@ -115,15 +119,18 @@ function CounterCell({ stat, index }: { stat: StatCell; index: number }) {
 
 export function Bento() {
   return (
-    <section
-      aria-label="Key metrics"
-      className="border-y border-white/5 bg-black py-16"
-    >
-      <div className="mx-auto grid max-w-[1120px] grid-cols-2 gap-3 px-6 md:grid-cols-4 md:px-10 lg:px-16">
-        {STATS.map((stat, i) => (
-          <CounterCell key={stat.label} stat={stat} index={i} />
+    <section aria-label="Key metrics" className="border-y border-white/5 bg-black py-16">
+      <motion.div
+        variants={containerVariants}
+        initial="hidden"
+        whileInView="visible"
+        viewport={{ once: true, margin: "-80px" }}
+        className="mx-auto grid max-w-[1120px] grid-cols-2 gap-3 px-6 md:grid-cols-4 md:px-10 lg:px-16"
+      >
+        {STATS.map((stat) => (
+          <CounterCell key={stat.label} stat={stat} />
         ))}
-      </div>
+      </motion.div>
     </section>
   )
 }

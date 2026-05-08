@@ -27,10 +27,10 @@ const PROJECTS: Project[] = [
   },
   {
     category: "ROBOTICS + RPA \u00b7 CO-FOUNDER",
-    badge: "SabahHub 9th Cohort",
-    name: "AutoFlow AZ",
+    badge: "SabahHub Incubated \u00b7 PASHA 6.0 Finalist",
+    name: "HyperAutomation",
     description:
-      "Designed an RPA + AGV warehouse automation system for Azerbaijani SMEs \u2014 selected for SabahHub 9th cohort and advancing to PASHA Hackathon 6.0 finals (May 2026) from thousands of applicants.",
+      "Designed an RPA + Autonomous Guided Vehicle warehouse automation system for Azerbaijani SMEs \u2014 accepted into SabahHub 9th Cohort incubation and selected to present at PASHA Hackathon 6.0 (May 15\u201317, 2026) from thousands of applicants nationwide.",
     metrics: "SabahHub incubated \u00b7 PASHA Hackathon 6.0 \u00b7 Pre-launch",
   },
   {
@@ -72,21 +72,28 @@ const PROJECTS: Project[] = [
 
 const easeOutExpo = [0.16, 1, 0.3, 1] as const
 
-function ProjectCard({ project, index }: { project: Project; index: number }) {
+const containerVariants = {
+  hidden: {},
+  visible: { transition: { staggerChildren: 0.07 } },
+}
+
+const itemVariants = {
+  hidden: { opacity: 0, y: 20 },
+  visible: { opacity: 1, y: 0, transition: { duration: 0.55, ease: [0.16, 1, 0.3, 1] } },
+}
+
+function ProjectCard({ project }: { project: Project }) {
   const reduce = useReducedMotion()
 
   return (
     <motion.article
-      initial={reduce ? undefined : { opacity: 0, y: 20 }}
-      whileInView={{ opacity: 1, y: 0 }}
-      viewport={{ once: true, amount: 0.1 }}
-      transition={{ duration: 0.5, ease: easeOutExpo, delay: index * 0.06 }}
-      whileHover={reduce ? undefined : { y: -3 }}
-      className={`flex flex-col rounded-xl border border-white/[0.06] bg-zinc-900 p-6 transition-all duration-200 hover:border-white/[0.12] hover:bg-zinc-800 ${
+      variants={itemVariants}
+      whileHover={reduce ? undefined : { y: -4 }}
+      transition={{ duration: 0.18, ease: [0.4, 0, 0.2, 1] }}
+      className={`flex flex-col rounded-xl border border-white/[0.06] bg-zinc-900 p-6 transition-[border-color] duration-200 hover:border-white/[0.14] hover:bg-zinc-800 ${
         project.featured ? "md:col-span-2" : ""
       }`}
     >
-      {/* Top row: category + badge */}
       <div className="flex flex-wrap items-center justify-between gap-2">
         <span className="font-mono text-[11px] uppercase tracking-[0.1em] text-zinc-600">
           {project.category}
@@ -102,17 +109,14 @@ function ProjectCard({ project, index }: { project: Project; index: number }) {
         </span>
       </div>
 
-      {/* Name */}
       <h3 className="mt-3 text-[20px] font-semibold text-white">
         {project.name}
       </h3>
 
-      {/* Description */}
       <p className="mt-2 max-w-[65ch] text-[14px] leading-[1.6] text-zinc-400">
         {project.description}
       </p>
 
-      {/* Metrics row */}
       <div className="mt-auto flex items-center justify-between gap-4 border-t border-white/5 pt-4 mt-4">
         <span className="font-mono text-[13px] text-zinc-500">
           {project.metrics}
@@ -158,11 +162,17 @@ export function Ventures() {
 
         <hr className="mt-8 border-white/5" />
 
-        <div className="mt-12 grid grid-cols-1 gap-6 md:grid-cols-3">
-          {PROJECTS.map((p, i) => (
-            <ProjectCard key={p.name} project={p} index={i} />
+        <motion.div
+          variants={containerVariants}
+          initial="hidden"
+          whileInView="visible"
+          viewport={{ once: true, margin: "-80px" }}
+          className="mt-12 grid grid-cols-1 gap-6 md:grid-cols-3"
+        >
+          {PROJECTS.map((p) => (
+            <ProjectCard key={p.name} project={p} />
           ))}
-        </div>
+        </motion.div>
       </div>
     </section>
   )

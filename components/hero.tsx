@@ -5,6 +5,17 @@ import { motion, useReducedMotion, useSpring, useMotionValue } from "framer-moti
 
 const easeOutExpo = [0.16, 1, 0.3, 1] as const
 
+const TICKER_ITEMS = [
+  "96.3 GPA / 100",
+  "Top 3 of 20,000+ DIM applicants",
+  "3\u00d7 Hackathon Champion",
+  "2.1M+ Digital views",
+  "100% GenAI Scholarship \u2014 Holberton AZ",
+  "Aspire Leaders Alumni \u2014 9,988 selected of 54,337 applicants",
+  "Finalist \u2014 Aspire \u00d7 Harvard AI for Global Business Hackathon",
+  "2\u00d7 Active Incubations \u2014 SabahHub + EmpowerMe / 5th Tusi",
+]
+
 function WordReveal({ word, delay }: { word: string; delay: number }) {
   const reduce = useReducedMotion()
 
@@ -12,9 +23,9 @@ function WordReveal({ word, delay }: { word: string; delay: number }) {
     <span className="inline-block overflow-hidden">
       <motion.span
         className="inline-block"
-        initial={reduce ? undefined : { y: "110%" }}
+        initial={reduce ? undefined : { y: "105%" }}
         animate={{ y: "0%" }}
-        transition={{ duration: 0.7, ease: easeOutExpo, delay }}
+        transition={{ duration: 0.75, ease: easeOutExpo, delay }}
       >
         {word}
       </motion.span>
@@ -36,8 +47,8 @@ function MagneticButton({
   const ref = useRef<HTMLAnchorElement>(null)
   const x = useMotionValue(0)
   const y = useMotionValue(0)
-  const springX = useSpring(x, { stiffness: 200, damping: 20 })
-  const springY = useSpring(y, { stiffness: 200, damping: 20 })
+  const springX = useSpring(x, { stiffness: 180, damping: 18 })
+  const springY = useSpring(y, { stiffness: 180, damping: 18 })
   const reduce = useReducedMotion()
 
   const handleMouseMove = (e: React.MouseEvent) => {
@@ -45,8 +56,8 @@ function MagneticButton({
     const rect = ref.current.getBoundingClientRect()
     const centerX = rect.left + rect.width / 2
     const centerY = rect.top + rect.height / 2
-    x.set((e.clientX - centerX) * 0.25)
-    y.set((e.clientY - centerY) * 0.25)
+    x.set((e.clientX - centerX) * 0.28)
+    y.set((e.clientY - centerY) * 0.28)
   }
 
   const handleMouseLeave = () => {
@@ -69,6 +80,27 @@ function MagneticButton({
   )
 }
 
+function TickerStrip() {
+  const reduce = useReducedMotion()
+  const doubled = [...TICKER_ITEMS, ...TICKER_ITEMS]
+
+  return (
+    <div className="mt-14 w-full overflow-hidden border-y border-white/5 py-3">
+      <div className={reduce ? "flex gap-8 overflow-x-auto" : "flex gap-8 animate-scroll-x w-max"}>
+        {doubled.map((item, i) => (
+          <span
+            key={`${item}-${i}`}
+            className="flex shrink-0 items-center gap-3 font-mono text-[12px] text-zinc-500 whitespace-nowrap"
+          >
+            <span aria-hidden className="h-1 w-1 rounded-full bg-zinc-700" />
+            {item}
+          </span>
+        ))}
+      </div>
+    </div>
+  )
+}
+
 export function Hero() {
   const reduce = useReducedMotion()
 
@@ -76,7 +108,7 @@ export function Hero() {
     <section
       id="top"
       aria-label="Introduction"
-      className="relative flex min-h-[100svh] items-end overflow-hidden px-6 pb-24 pt-16 md:items-center md:px-16 md:pb-0 xl:px-24"
+      className="relative flex min-h-[100svh] flex-col justify-end overflow-hidden px-6 pb-0 pt-16 md:justify-center md:px-16 md:pb-0 xl:px-24"
     >
       <div className="relative z-10 mx-auto w-full max-w-[1120px]">
         {/* Metadata label */}
@@ -89,7 +121,7 @@ export function Hero() {
           BAKU &middot; AZERBAIJAN &middot; 2026
         </motion.p>
 
-        {/* Name — Animation 1: per-word clip-path reveal */}
+        {/* Name — per-word clip-path reveal */}
         <h1 className="mt-6" style={{ lineHeight: 0.92, letterSpacing: "-0.04em" }}>
           <span
             className="block text-white"
@@ -105,7 +137,7 @@ export function Hero() {
               paddingLeft: "10%",
             }}
           >
-            <WordReveal word="HASANOV" delay={0.1} />
+            <WordReveal word="HASANOV" delay={0.12} />
           </span>
         </h1>
 
@@ -113,15 +145,15 @@ export function Hero() {
         <motion.hr
           initial={reduce ? undefined : { opacity: 0 }}
           animate={{ opacity: 1 }}
-          transition={{ duration: 0.4, delay: 0.4 }}
+          transition={{ duration: 0.4, delay: 0.5 }}
           className="mt-8 max-w-[120px] border-white/10"
         />
 
         {/* Role descriptor */}
         <motion.p
-          initial={reduce ? undefined : { opacity: 0, y: 8 }}
+          initial={reduce ? undefined : { opacity: 0, y: 10 }}
           animate={{ opacity: 1, y: 0 }}
-          transition={{ duration: 0.5, ease: easeOutExpo, delay: 0.5 }}
+          transition={{ duration: 0.5, ease: easeOutExpo, delay: 0.65 }}
           className="mt-6 text-[16px] text-zinc-400"
         >
           Presidential Scholar &middot; Product Leader &middot; Venture Builder
@@ -129,9 +161,9 @@ export function Hero() {
 
         {/* Conviction statement */}
         <motion.p
-          initial={reduce ? undefined : { opacity: 0, y: 8 }}
+          initial={reduce ? undefined : { opacity: 0, y: 10 }}
           animate={{ opacity: 1, y: 0 }}
-          transition={{ duration: 0.5, ease: easeOutExpo, delay: 0.6 }}
+          transition={{ duration: 0.5, ease: easeOutExpo, delay: 0.75 }}
           className="mt-2 font-mono text-[14px] text-zinc-600"
         >
           Translating data into decisions. Building ventures that win.
@@ -139,9 +171,9 @@ export function Hero() {
 
         {/* CTAs */}
         <motion.div
-          initial={reduce ? undefined : { opacity: 0, y: 8 }}
+          initial={reduce ? undefined : { opacity: 0, y: 10 }}
           animate={{ opacity: 1, y: 0 }}
-          transition={{ duration: 0.5, ease: easeOutExpo, delay: 0.7 }}
+          transition={{ duration: 0.5, ease: easeOutExpo, delay: 0.85 }}
           className="mt-10 flex flex-col gap-4 sm:flex-row sm:items-center"
         >
           <MagneticButton
@@ -158,13 +190,16 @@ export function Hero() {
             Download CV
           </MagneticButton>
         </motion.div>
+
+        {/* Metrics ticker */}
+        <TickerStrip />
       </div>
 
       {/* Scroll indicator — bottom left */}
       <motion.div
         initial={reduce ? undefined : { opacity: 0 }}
         animate={{ opacity: 1 }}
-        transition={{ duration: 0.5, delay: 1 }}
+        transition={{ duration: 0.5, delay: 1.2 }}
         className="absolute bottom-8 left-6 hidden flex-col items-center gap-2 md:flex md:left-16 xl:left-24"
       >
         <div className="relative h-8 w-px bg-white/20">

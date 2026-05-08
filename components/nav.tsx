@@ -1,7 +1,7 @@
 "use client"
 
-import { useEffect, useState, useCallback } from "react"
-import { motion, useReducedMotion } from "framer-motion"
+import { useEffect, useState, useCallback, useRef } from "react"
+import { motion, useReducedMotion, useMotionValue, useSpring } from "framer-motion"
 import { Menu, X } from "lucide-react"
 
 const links = [
@@ -11,6 +11,53 @@ const links = [
   { id: "awards", label: "04\u00b7Awards" },
   { id: "contact", label: "05\u00b7Connect" },
 ]
+
+function MagneticLink({
+  children,
+  href,
+  className,
+  onClick,
+}: {
+  children: React.ReactNode
+  href: string
+  className: string
+  onClick?: () => void
+}) {
+  const ref = useRef<HTMLAnchorElement>(null)
+  const x = useMotionValue(0)
+  const y = useMotionValue(0)
+  const springX = useSpring(x, { stiffness: 180, damping: 18 })
+  const springY = useSpring(y, { stiffness: 180, damping: 18 })
+  const reduce = useReducedMotion()
+
+  const handleMouseMove = (e: React.MouseEvent) => {
+    if (reduce || !ref.current) return
+    const rect = ref.current.getBoundingClientRect()
+    const centerX = rect.left + rect.width / 2
+    const centerY = rect.top + rect.height / 2
+    x.set((e.clientX - centerX) * 0.28)
+    y.set((e.clientY - centerY) * 0.28)
+  }
+
+  const handleMouseLeave = () => {
+    x.set(0)
+    y.set(0)
+  }
+
+  return (
+    <motion.a
+      ref={ref}
+      href={href}
+      onClick={onClick}
+      style={{ x: springX, y: springY }}
+      onMouseMove={handleMouseMove}
+      onMouseLeave={handleMouseLeave}
+      className={className}
+    >
+      {children}
+    </motion.a>
+  )
+}
 
 export function Nav() {
   const [active, setActive] = useState("")
@@ -47,6 +94,7 @@ export function Nav() {
           ? "border-b border-white/5 bg-black/90 backdrop-blur-sm"
           : "border-b border-transparent bg-transparent"
       }`}
+      style={{ top: "1px" }}
     >
       <nav
         aria-label="Primary"
@@ -74,8 +122,8 @@ export function Nav() {
               </a>
               {active === l.id && !reduce && (
                 <motion.div
-                  layoutId="nav-underline"
-                  className="absolute -bottom-1 left-0 right-0 h-[2px] bg-[#2563eb]"
+                  layoutId="nav-active-indicator"
+                  className="absolute -bottom-1 left-0 right-0 h-[2px] w-full bg-[#2563eb]"
                   transition={{ type: "spring", stiffness: 400, damping: 30 }}
                 />
               )}
@@ -98,12 +146,12 @@ export function Nav() {
             </span>
           </div>
 
-          <a
+          <MagneticLink
             href="#contact"
             className="hidden rounded-full border border-white/10 px-4 py-1.5 font-mono text-[13px] text-zinc-400 transition-all duration-200 hover:border-[#2563eb] hover:bg-[#2563eb] hover:text-white md:inline-flex"
           >
             Hire me &rarr;
-          </a>
+          </MagneticLink>
 
           <button
             type="button"

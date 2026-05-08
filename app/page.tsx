@@ -8,10 +8,12 @@ import { Skills } from "@/components/skills"
 import { Awards } from "@/components/awards"
 import { Contact } from "@/components/contact"
 import { Footer } from "@/components/footer"
+import { ScrollProgress } from "@/components/scroll-progress"
 
 export default function Page() {
   return (
     <>
+      <ScrollProgress />
       <Nav />
       <main>
         <Hero />
