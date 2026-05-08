@@ -119,10 +119,10 @@ export function Nav() {
             />
           </span>
           <span className="hidden flex-col leading-none sm:flex">
-            <span className="font-mono text-[11px] font-semibold tracking-[0.22em] text-white">
+            <span className="font-mono text-[13px] font-semibold tracking-[0.2em] text-white">
               FIZULI HASANOV
             </span>
-            <span className="mt-1 font-mono text-[8.5px] tracking-[0.32em] text-zinc-500">
+            <span className="mt-1.5 font-mono text-[9px] tracking-[0.3em] text-zinc-500">
               ARCHITECT OF VALUE
             </span>
           </span>
@@ -156,19 +156,19 @@ export function Nav() {
 
         {/* Right — availability + CTA */}
         <div className="flex items-center gap-4 lg:justify-self-end">
-          <div className="hidden items-center gap-2 xl:flex">
+          <div className="hidden items-center gap-2 whitespace-nowrap xl:flex">
             <span
               aria-hidden
-              className="h-2 w-2 rounded-full bg-[#2563eb] animate-pulse-blue"
+              className="h-2 w-2 shrink-0 rounded-full bg-[#2563eb] animate-pulse-blue"
             />
-            <span className="font-mono text-[11px] text-zinc-500">
-              Incoming Summer Intern @ Deloitte &middot; PM &middot; Business Analyst
+            <span className="font-mono text-[11px] leading-none text-zinc-500">
+              Deloitte Summer Intern &middot; Product Owner &middot; PM &middot; BA
             </span>
           </div>
 
           <MagneticLink
             href="#contact"
-            className="hidden rounded-full border border-white/10 px-4 py-1.5 font-mono text-[13px] text-zinc-400 transition-all duration-200 hover:border-[#2563eb] hover:bg-[#2563eb] hover:text-white md:inline-flex"
+            className="hidden whitespace-nowrap rounded-full border border-white/10 px-4 py-1.5 font-mono text-[13px] leading-none text-zinc-400 transition-all duration-200 hover:border-[#2563eb] hover:bg-[#2563eb] hover:text-white md:inline-flex"
           >
             Hire me &rarr;
           </MagneticLink>
