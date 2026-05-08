@@ -44,7 +44,7 @@ export function Contact() {
           transition={{ duration: 0.55, ease: easeOutExpo, delay: 0.06 }}
           className="mt-4 text-[15px] text-zinc-400"
         >
-          Open to internships &middot; Product Management roles &middot; Founder collaborations &middot; Data & AI projects &middot; Speaking opportunities
+          Open to: Product Management &amp; PO roles &middot; Business Analysis internships &middot; Founder collaborations &middot; AI/ML research &middot; Speaking opportunities
         </motion.p>
 
         <div className="mt-12 grid grid-cols-1 gap-6 md:grid-cols-3">
@@ -113,7 +113,7 @@ export function Contact() {
           >
             <Github size={20} className="text-zinc-400" />
             <span className="text-[14px] text-zinc-300">@fizuli20</span>
-            <p className="font-mono text-[11px] text-zinc-600">Code & projects</p>
+            <p className="font-mono text-[11px] text-zinc-600">Code &amp; projects</p>
           </motion.a>
         </div>
       </div>

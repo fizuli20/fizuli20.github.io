@@ -12,16 +12,69 @@ type StatCell = {
   label: string
   span: number
   skipCount?: boolean
+  hero?: boolean
 }
 
 const STATS: StatCell[] = [
-  { value: "96.3", numericValue: 96.3, suffix: " / 100", decimals: 1, label: "GPA \u00b7 BHOS", span: 2 },
-  { value: "TOP 3", numericValue: 3, prefix: "TOP ", decimals: 0, label: "OF 20,000+ DIM APPLICANTS", span: 1, skipCount: true },
-  { value: "2\u00d7", numericValue: 2, suffix: "\u00d7", decimals: 0, label: "HACKATHON CHAMPION", span: 1 },
-  { value: "2.1M+", numericValue: 2.1, suffix: "M+", decimals: 1, label: "DIGITAL VIEWS", span: 1 },
-  { value: "100%", numericValue: 100, suffix: "%", decimals: 0, label: "GENAI SCHOLARSHIP", span: 1 },
-  { value: "9,988", numericValue: 9988, decimals: 0, label: "ASPIRE LEADERS ALUMNI", span: 1 },
-  { value: "2", numericValue: 2, decimals: 0, label: "ACTIVE INCUBATIONS", span: 1 },
+  // Tier 1 — Hero stats (col-span-2 each)
+  {
+    value: "TOP 3",
+    numericValue: 3,
+    prefix: "TOP ",
+    decimals: 0,
+    label: "PRESIDENTIAL SCHOLAR",
+    span: 2,
+    skipCount: true,
+    hero: true,
+  },
+  {
+    value: "2\u00d7",
+    numericValue: 2,
+    suffix: "\u00d7",
+    decimals: 0,
+    label: "1ST PLACE \u00b7 SINGLE WEEK",
+    span: 2,
+    hero: true,
+  },
+  // Tier 2 — Standard stats
+  {
+    value: "96.3",
+    numericValue: 96.3,
+    suffix: " / 100",
+    decimals: 1,
+    label: "GPA \u00b7 BHOS",
+    span: 1,
+  },
+  {
+    value: "2.1M+",
+    numericValue: 2.1,
+    suffix: "M+",
+    decimals: 1,
+    label: "DIGITAL VIEWS",
+    span: 1,
+  },
+  {
+    value: "100%",
+    numericValue: 100,
+    suffix: "%",
+    decimals: 0,
+    label: "GENAI SCHOLARSHIP",
+    span: 1,
+  },
+  {
+    value: "9,988",
+    numericValue: 9988,
+    decimals: 0,
+    label: "ASPIRE LEADERS ALUMNI",
+    span: 1,
+  },
+  {
+    value: "2",
+    numericValue: 2,
+    decimals: 0,
+    label: "ACTIVE INCUBATIONS",
+    span: 1,
+  },
 ]
 
 function easeOutQuart(t: number): number {
@@ -100,19 +153,35 @@ function CounterCell({ stat }: { stat: StatCell }) {
       variants={itemVariants}
       whileHover={{ y: -4 }}
       transition={{ duration: 0.18, ease: [0.4, 0, 0.2, 1] }}
-      className={`rounded-xl border border-white/[0.06] bg-zinc-900 px-6 py-5 transition-[border-color] duration-200 hover:border-white/[0.14] hover:bg-zinc-800 ${
+      className={`rounded-xl border bg-zinc-900 px-6 transition-[border-color] duration-200 hover:bg-zinc-800 ${
         stat.span === 2 ? "col-span-2" : "col-span-1"
+      } ${
+        stat.hero
+          ? "border-white/[0.12] py-7 hover:border-white/[0.2]"
+          : "border-white/[0.06] py-5 hover:border-white/[0.14]"
       }`}
+      style={stat.hero ? { minHeight: 140 } : undefined}
     >
       <div
         className="font-mono font-bold text-white"
-        style={{ fontSize: "clamp(28px, 3.5vw, 44px)" }}
+        style={{
+          fontSize: stat.hero ? "clamp(40px, 5vw, 60px)" : "clamp(28px, 3.5vw, 44px)",
+        }}
       >
         {display}
       </div>
-      <div className="mt-1.5 font-mono text-[10px] uppercase tracking-[0.1em] text-zinc-600">
+      <div
+        className={`mt-1.5 font-mono uppercase tracking-[0.1em] ${
+          stat.hero ? "text-[11px] text-zinc-500" : "text-[10px] text-zinc-600"
+        }`}
+      >
         {stat.label}
       </div>
+      {stat.hero && stat.label === "PRESIDENTIAL SCHOLAR" && (
+        <div className="mt-1 font-mono text-[10px] text-zinc-700">
+          OF 20,000+ DIM APPLICANTS
+        </div>
+      )}
     </motion.div>
   )
 }

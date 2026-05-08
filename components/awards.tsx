@@ -24,22 +24,22 @@ const AWARDS: Award[] = [
     tier: 1,
     top: "1ST PLACE",
     title: "GreenTech 3 Festival",
-    sub: "EcoConcrete \u00b7 Alternative Energy & Clean Environment Track \u00b7 1st of 100 university teams nationwide",
+    sub: "Alternative Energy & Clean Environment Track \u00b7 EcoConcrete \u00b7 1st of 100 university teams",
     date: "Apr 2026",
   },
   {
     tier: 1,
     top: "PRESIDENTIAL SCHOLAR",
     title: "Presidential Scholar",
-    sub: "Ministry of Science and Education, Republic of Azerbaijan \u00b7 Top 3 of 20,000+ DIM applicants nationwide \u00b7 Score 686/700",
+    sub: "Ministry of Science and Education, Republic of Azerbaijan \u00b7 Top 3 of 20,000+ DIM applicants \u00b7 Score 686/700",
     date: "Jun 2025",
   },
-  // Tier 2 — Standard grid
+  // Tier 2 — Standard grid (12 items, newest first)
   {
     tier: 2,
     top: "FINALIST",
     title: "PASHA Hackathon 6.0",
-    sub: "HyperAutomation \u00b7 Selected from thousands of applicants nationwide",
+    sub: "HyperAutomation \u00b7 Selected from thousands nationwide",
     date: "May 2026",
   },
   {
@@ -52,76 +52,74 @@ const AWARDS: Award[] = [
   {
     tier: 2,
     top: "INCUBATED",
-    title: "EmpowerMe + 5th Tusi Incubation Program",
+    title: "EmpowerMe + 5th Tusi Program",
     sub: "EcoConcrete \u00b7 Two simultaneous incubations",
     date: "2026",
   },
   {
     tier: 2,
     top: "OUTSTANDING",
-    title: "Elevvo Pathways",
-    sub: "Recognized among 2,000+ global participants",
+    title: "Outstanding Contributor \u2014 Elevvo Pathways",
+    sub: "Top of 2,000+ global participants \u00b7 Only BHOS student to receive this recognition",
     date: "Mar 2026",
   },
   {
     tier: 2,
     top: "ALUMNI",
     title: "Aspire Leaders Alumni",
-    sub: "Aspire Institute (Harvard-founded) \u00b7 Selected as one of 9,988 finalists from 54,337 global applicants",
+    sub: "Aspire Institute (Harvard-founded) \u00b7 9,988 selected from 54,337 global applicants",
     date: "Dec 2025",
   },
   {
     tier: 2,
     top: "FINALIST",
-    title: "Aspire \u00d7 Harvard AI for Global Business Hackathon",
-    sub: "AI-powered financial insights prototype \u00b7 Global online event",
+    title: "Aspire \u00d7 Harvard AI for Global Business",
+    sub: "AI-powered financial insights prototype \u00b7 Global hackathon",
     date: "2025\u20132026",
   },
   {
     tier: 2,
     top: "TOP 29 / 150+",
     title: "Urban Hackathon 2026",
-    sub: "GreenMile \u00b7 National Student Hackathon on Sustainable Urban Mobility \u00b7 Ministry of Youth & Sport",
+    sub: "GreenMile B2B HR SaaS \u00b7 Ministry of Youth & Sport \u00b7 National Student Hackathon on Sustainable Urban Mobility",
     date: "2026",
   },
   {
     tier: 2,
     top: "3RD PLACE",
-    title: "Holberton School AZ Data Driven Solutions Hackathon",
+    title: "Holberton School AZ Data Driven Solutions",
     sub: "HSPTS student analytics platform \u00b7 Earned additional Holberton course access",
     date: "Apr 2026",
   },
   {
     tier: 2,
     top: "5TH PLACE",
-    title: "Hult Prize BHOS On-Campus Competition",
-    sub: "Financial resilience & behavioral systems concept \u00b7 13 finalists out of 29 teams",
+    title: "Hult Prize BHOS On-Campus",
+    sub: "Financial resilience concept \u00b7 13 finalists / 29 teams",
     date: "2025",
   },
   {
     tier: 2,
     top: "3RD PLACE",
     title: "G\u0259ncV\u0130ZYON Ideathon, Digital Future & AI Track",
-    sub: "Transparent Legal Navigator \u00b7 240 youth, 40 teams, 5 tracks",
+    sub: "Transparent Legal Navigator \u00b7 240 youth, 40 teams",
     date: "2025",
   },
   {
     tier: 2,
     top: "BUILT & COMPETED",
     title: "Cursor Hackathon @ ADA University",
-    sub: "Private Audit AI \u00b7 Offline document analysis MVP",
+    sub: "Private Audit AI \u00b7 Offline document analysis MVP \u00b7 Built under live competition conditions",
     date: "2025",
   },
   {
     tier: 2,
     top: "100% SCHOLARSHIP",
     title: "GenAI Track \u2014 Holberton School Azerbaijan",
-    sub: "Selected among hundreds of applicants",
+    sub: "Selected among hundreds",
     date: "2025",
   },
 ]
-
-const easeOutExpo = [0.16, 1, 0.3, 1] as const
 
 const championVariants = {
   hidden: {},
@@ -188,9 +186,10 @@ export function Awards() {
               variants={championItem}
               whileHover={reduce ? undefined : { y: -4 }}
               transition={{ duration: 0.18, ease: [0.4, 0, 0.2, 1] }}
-              className="rounded-2xl border border-white/10 border-l-[3px] border-l-white bg-zinc-900 p-7 transition-[border-color] duration-200 hover:border-white/[0.14] hover:bg-zinc-800"
+              className="rounded-2xl border border-white/10 bg-zinc-900 p-7 transition-[border-color] duration-200 hover:border-white/[0.14] hover:bg-zinc-800"
+              style={{ borderLeft: "3px solid rgba(255,255,255,0.5)" }}
             >
-              <p className="font-mono text-[10px] uppercase tracking-[0.1em] text-zinc-500">
+              <p className="font-mono text-[11px] uppercase tracking-[0.1em] text-zinc-500">
                 {a.top}
               </p>
               <h3 className="mt-3 text-[18px] font-semibold text-white">

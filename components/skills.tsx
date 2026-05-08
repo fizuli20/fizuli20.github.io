@@ -10,12 +10,11 @@ const COL1 = [
   { name: "User Story Writing & Acceptance Criteria", tag: "Process" },
   { name: "Agile / Scrum \u00b7 Sprint Planning", tag: "Process" },
   { name: "Stakeholder Management & Communication", tag: "Strategy" },
+  { name: "OKRs & KPI Definition", tag: "Strategy" },
+  { name: "Product Roadmapping", tag: "Product" },
   { name: "Go-to-Market Strategy", tag: "Strategy" },
   { name: "Financial Modeling & Valuation", tag: "Finance" },
   { name: "Scenario & Sensitivity Analysis", tag: "Finance" },
-  { name: "Economics \u00b7 Statistics \u00b7 OLS Regression", tag: "Analytics" },
-  { name: "OKRs & KPI Definition", tag: "Strategy" },
-  { name: "Product Roadmapping", tag: "Product" },
 ]
 
 const COL2 = [
@@ -90,7 +89,7 @@ export function Skills() {
           {/* Column 1 */}
           <div>
             <p className="mb-4 font-mono text-[10px] uppercase tracking-[0.1em] text-zinc-600">
-              STRATEGIC LOGIC & PRODUCT
+              PRODUCT &amp; STRATEGY
             </p>
             {COL1.map((s) => (
               <SkillRow key={s.name} name={s.name} tag={s.tag} />
@@ -124,10 +123,10 @@ export function Skills() {
           whileInView={{ opacity: 1, y: 0 }}
           viewport={{ once: true, margin: "-80px" }}
           transition={{ duration: 0.55, ease: easeOutExpo, delay: 0.1 }}
-          className="mt-10 rounded-xl border border-white/5 bg-zinc-900 px-5 py-4"
+          className="mt-10 rounded-xl border border-white/5 bg-zinc-900 px-6 py-4"
         >
           <span className="font-mono text-[13px] text-zinc-400">
-            <span className="text-zinc-600">CURRENTLY DEEPENING &rarr;</span>
+            <span className="text-[11px] uppercase text-zinc-600">CURRENTLY DEEPENING &rarr;</span>
             &nbsp;&nbsp;Product Management (JTBD &middot; OKRs) &middot; LLM fine-tuning &middot; Azerbaijani NLP
           </span>
         </motion.div>

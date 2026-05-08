@@ -7,27 +7,45 @@ const easeOutExpo = [0.16, 1, 0.3, 1] as const
 
 const TICKER_ITEMS = [
   "96.3 GPA / 100",
-  "Top 3 of 20,000+ DIM applicants",
-  "3\u00d7 Hackathon Champion",
-  "2.1M+ Digital views",
+  "Top 3 of 20,000+ \u2014 Presidential Scholar",
+  "2\u00d7 1st Place Hackathon Champion",
+  "2.1M+ Digital Views \u2014 Zero Paid Reach",
   "100% GenAI Scholarship \u2014 Holberton AZ",
-  "Aspire Leaders Alumni \u2014 9,988 selected of 54,337 applicants",
-  "Finalist \u2014 Aspire \u00d7 Harvard AI for Global Business Hackathon",
-  "2\u00d7 Active Incubations \u2014 SabahHub + EmpowerMe / 5th Tusi",
+  "Aspire Leaders Alumni \u2014 9,988 of 54,337 selected",
+  "Finalist \u2014 Aspire \u00d7 Harvard AI for Global Business",
+  "2\u00d7 Active Incubations \u2014 SabahHub \u00b7 EmpowerMe \u00b7 5th Tusi",
 ]
 
-function WordReveal({ word, delay }: { word: string; delay: number }) {
+function CascadeLine({
+  text,
+  delay,
+  indent,
+}: {
+  text: string
+  delay: number
+  indent: string
+}) {
   const reduce = useReducedMotion()
 
   return (
-    <span className="inline-block overflow-hidden">
+    <span className="block overflow-hidden" style={{ paddingLeft: indent }}>
       <motion.span
-        className="inline-block"
-        initial={reduce ? undefined : { y: "105%" }}
+        className="block text-white"
+        style={{
+          fontSize: "clamp(36px, 6.5vw, 80px)",
+          fontWeight: 800,
+          letterSpacing: "-0.03em",
+          lineHeight: 1.1,
+        }}
+        initial={reduce ? undefined : { y: "108%" }}
         animate={{ y: "0%" }}
-        transition={{ duration: 0.75, ease: easeOutExpo, delay }}
+        transition={{
+          duration: 0.7,
+          ease: [0.16, 1, 0.3, 1],
+          delay,
+        }}
       >
-        {word}
+        {text}
       </motion.span>
     </span>
   )
@@ -121,24 +139,10 @@ export function Hero() {
           BAKU &middot; AZERBAIJAN &middot; 2026
         </motion.p>
 
-        {/* Name — per-word clip-path reveal */}
-        <h1 className="mt-6" style={{ lineHeight: 0.92, letterSpacing: "-0.04em" }}>
-          <span
-            className="block text-white"
-            style={{ fontSize: "clamp(80px, 11vw, 140px)", fontWeight: 800 }}
-          >
-            <WordReveal word="FIZULI" delay={0} />
-          </span>
-          <span
-            className="block text-white"
-            style={{
-              fontSize: "clamp(80px, 11vw, 140px)",
-              fontWeight: 800,
-              paddingLeft: "10%",
-            }}
-          >
-            <WordReveal word="HASANOV" delay={0.12} />
-          </span>
+        {/* Cascade headline — signature visual */}
+        <h1 className="mt-6 uppercase">
+          <CascadeLine text="Fizuli" delay={0} indent="0px" />
+          <CascadeLine text="Hasanov." delay={0.15} indent="clamp(24px, 6vw, 96px)" />
         </h1>
 
         {/* Thin rule */}
@@ -149,24 +153,17 @@ export function Hero() {
           className="mt-8 max-w-[120px] border-white/10"
         />
 
-        {/* Role descriptor */}
+        {/* Sub-tagline */}
         <motion.p
           initial={reduce ? undefined : { opacity: 0, y: 10 }}
           animate={{ opacity: 1, y: 0 }}
           transition={{ duration: 0.5, ease: easeOutExpo, delay: 0.65 }}
-          className="mt-6 text-[16px] text-zinc-400"
+          className="mt-6 max-w-[60ch] text-[15px] leading-[1.7] text-zinc-400"
         >
-          Presidential Scholar &middot; Product Leader &middot; Venture Builder
-        </motion.p>
-
-        {/* Conviction statement */}
-        <motion.p
-          initial={reduce ? undefined : { opacity: 0, y: 10 }}
-          animate={{ opacity: 1, y: 0 }}
-          transition={{ duration: 0.5, ease: easeOutExpo, delay: 0.75 }}
-          className="mt-2 font-mono text-[14px] text-zinc-600"
-        >
-          Translating data into decisions. Building ventures that win.
+          Top 3 of 20,000+ university applicants nationwide.
+          Two 1st-place wins in a single week. Three ventures under
+          active incubation. I build at the intersection of product,
+          data, and AI&nbsp;&mdash;&nbsp;and I ship.
         </motion.p>
 
         {/* CTAs */}
@@ -180,7 +177,7 @@ export function Hero() {
             href="#work"
             className="inline-flex items-center justify-center rounded-md border border-white/[0.12] px-5 py-2.5 text-[14px] text-white transition-all duration-200 hover:bg-white hover:text-black"
           >
-            View work &darr;
+            View ventures &darr;
           </MagneticButton>
           <MagneticButton
             href="/Fizuli-Hasanov-CV.pdf"

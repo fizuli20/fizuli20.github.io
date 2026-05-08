@@ -16,16 +16,29 @@ type Role = {
 
 const ROLES: Role[] = [
   {
+    date: "JUN 2026 \u2014 JUL 2026",
+    current: true,
+    role: "Incoming Summer Intern",
+    company: "Deloitte",
+    location: "Baku, Azerbaijan (Hybrid)",
+    keyWin:
+      "1 of 4 students selected from 150 applicants at BHOS \u00b7 Multi-dimensional evaluation based on academic excellence and leadership",
+    bullets: [
+      "Selected as 1 of 4 students among 150 students from Baku Higher Oil School for a high-intensity summer placement at Deloitte, awarded through a multi-dimensional evaluation of academic excellence (96.3 GPA), leadership behavior, and a proven track record in national innovation and technical challenges.",
+    ],
+    tags: ["Strategy", "Risk Advisory", "Innovation"],
+  },
+  {
     date: "MAR 2026 \u2014 PRESENT",
     current: true,
     role: "Business Analyst Intern",
     company: "Codveda Technologies",
     location: "Remote",
     keyWin:
-      "XGBoost fraud detection \u2014 PR-AUC 0.87 on 284,807 real transactions (577:1 class imbalance)",
+      "XGBoost PR-AUC 0.87 \u00b7 284,807 real transactions \u00b7 4-tier production risk system shipped",
     bullets: [
-      "Architected a 4-model fraud detection pipeline \u2014 XGBoost achieved PR-AUC 0.87; deployed 4-tier risk system across 284,807 transactions at threshold 0.4.",
-      "Identified international-plan users as 3.8\u00d7 higher churn risk (42% vs. 11%); translated into 5 retention actions including a 3rd-call early-warning trigger.",
+      "Directed end-to-end churn prediction initiative on 2,666 telecom customers \u2014 surfaced international-plan subscribers as 3.8\u00d7 higher risk and translated findings into 5 retention recommendations, including a 3rd-call early-warning trigger (Random Forest ROC-AUC 0.91).",
+      "Owned product design of a 4-tier fraud risk-scoring system across 284,807 real transactions \u2014 defined intervention logic (auto-approve / CVV challenge / block / freeze), selected PR-AUC over ROC-AUC as north-star metric given 577:1 class imbalance, achieved XGBoost PR-AUC 0.87.",
       "Quantified $108,623 in high-risk monthly revenue via SQL behavioral scoring; projected $195,522 annual savings from a 15% retention uplift simulation.",
     ],
     tags: ["Python", "scikit-learn", "XGBoost", "SMOTE", "PostgreSQL"],
@@ -36,7 +49,7 @@ const ROLES: Role[] = [
     company: "Elevvo Pathways",
     location: "Remote",
     keyWin:
-      "Outstanding Contributor \u2014 recognized among 2,000+ global participants across the full cohort",
+      "Outstanding Contributor \u00b7 Top of 2,000+ global cohort \u00b7 Only BHOS student recognized",
     bullets: [
       "Recognized as Outstanding Contributor among 2,000+ global participants \u2014 only BHOS student to achieve this designation.",
       "Surfaced $7.45M in top-segment revenue from RFM model on 95,000+ customers; delivered direct prioritization framework.",
@@ -50,7 +63,7 @@ const ROLES: Role[] = [
     company: "IYDP",
     location: "Baku",
     keyWin:
-      "Multi-stakeholder budget planning across hybrid international dialogue programs",
+      "Multi-stakeholder financial planning \u00b7 International dialogue programs across Baku + partner regions",
     bullets: [
       "Oversee financial planning and operational reporting for multi-stakeholder youth platform across Baku and partner regions.",
       "Synthesize program-level metrics for leadership decisions on resource allocation, event ROI, and partnership strategy.",
@@ -63,7 +76,7 @@ const ROLES: Role[] = [
     company: "BHOS Clubs",
     location: "Baku",
     keyWin:
-      "Four concurrent leadership roles \u2014 15 to 40 members each",
+      "4 concurrent leadership roles \u00b7 15\u201340 members each \u00b7 Agile-style pipeline management",
     bullets: [
       "Lead weekly Conversation Club sessions for 30+ members; redesigned curriculum growing attendance through feedback loops.",
       "Manage concurrent project pipelines across Startup, Psychology, and History clubs \u2014 owning scope, milestones, communications.",
@@ -76,7 +89,7 @@ const ROLES: Role[] = [
     company: "TikTok",
     location: "Self-directed",
     keyWin:
-      "2.1M+ views in 11 months \u2014 zero paid distribution",
+      "2.1M+ views \u00b7 70K+ likes \u00b7 11 months \u00b7 Zero paid distribution",
     bullets: [
       "Scaled zero-budget content platform to 2.1M+ views, 70K+ likes, 10K shares via data-driven audience segmentation.",
       "Managed full lifecycle: ideation \u2192 brief \u2192 production \u2192 analytics \u2192 iteration. Grew 38K profile views organically.",
@@ -84,8 +97,6 @@ const ROLES: Role[] = [
     tags: [],
   },
 ]
-
-const easeOutExpo = [0.16, 1, 0.3, 1] as const
 
 const containerVariants = {
   hidden: {},
@@ -162,11 +173,11 @@ export function Experience() {
               </p>
 
               {/* Key win box */}
-              <div className="mt-3 rounded-r-lg border-l-2 border-white/25 bg-white/[0.02] px-3.5 py-2.5">
+              <div className="mt-3 rounded-r-lg border-l-2 border-white/20 bg-white/[0.025] px-4 py-2.5" style={{ borderRadius: "0 8px 8px 0" }}>
                 <p className="text-[13px] text-zinc-300">{role.keyWin}</p>
               </div>
 
-              {/* Bullets — proper styled bullets */}
+              {/* Bullets */}
               {role.bullets.length > 0 && (
                 <ul className="mt-4 space-y-2.5">
                   {role.bullets.map((b, j) => (

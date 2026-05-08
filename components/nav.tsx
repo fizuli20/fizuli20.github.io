@@ -141,8 +141,8 @@ export function Nav() {
               aria-hidden
               className="h-2 w-2 rounded-full bg-[#2563eb] animate-pulse-blue"
             />
-            <span className="font-mono text-[12px] text-zinc-500">
-              Available &middot; Summer 2026
+            <span className="font-mono text-[11px] text-zinc-500">
+              Incoming Summer Intern @ Deloitte &middot; PM &middot; Business Analyst
             </span>
           </div>
 

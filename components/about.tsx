@@ -8,13 +8,13 @@ const easeOutExpo = [0.16, 1, 0.3, 1] as const
 const PILLARS = [
   {
     n: "01",
-    title: "Strategic Logic",
-    body: "Business analysis, product discovery, financial modeling, and stakeholder management. EY Strategy School, Aspire Leaders (Harvard-founded), Hult Prize finalist. Agile/Scrum certified mindset \u2014 from backlog to boardroom.",
+    title: "Product & Strategy",
+    body: "Product discovery, backlog management, user story writing, and stakeholder alignment. Agile/Scrum mindset from sprint planning to GTM. EY Strategy School, Aspire Leaders (Harvard-founded), Hult Prize finalist.",
   },
   {
     n: "02",
     title: "AI Orchestration",
-    body: "Agentic workflows, prompt engineering, and rapid prototyping. Built LedgerLens (OCR for SME ledgers) and HyperAutomation (RPA + AGV warehouse automation). GenAI certified \u2014 Holberton School AZ, 100% scholarship.",
+    body: "Agentic workflows, prompt engineering, rapid prototyping. Built LedgerLens (AI-OCR for SME ledgers) and HyperAutomation (RPA + AGV warehouse automation). GenAI certified \u2014 Holberton School AZ, 100% scholarship.",
   },
   {
     n: "03",
@@ -24,10 +24,27 @@ const PILLARS = [
 ]
 
 export function SectionLabel({ index, label }: { index: string; label: string }) {
+  const reduce = useReducedMotion()
+
   return (
-    <p className="font-mono text-[11px] uppercase tracking-[0.1em] text-zinc-600">
-      {index} &middot; {label}
-    </p>
+    <div className="flex items-center gap-3">
+      <motion.p
+        initial={reduce ? undefined : { opacity: 0, y: 8 }}
+        whileInView={{ opacity: 1, y: 0 }}
+        viewport={{ once: true, margin: "-80px" }}
+        transition={{ duration: 0.4, ease: easeOutExpo }}
+        className="font-mono text-[11px] uppercase tracking-[0.1em] text-zinc-600"
+      >
+        {index} &middot; {label}
+      </motion.p>
+      <motion.div
+        initial={reduce ? undefined : { scaleX: 0 }}
+        whileInView={{ scaleX: 1 }}
+        viewport={{ once: true, margin: "-80px" }}
+        transition={{ duration: 0.4, ease: easeOutExpo, delay: 0.1 }}
+        className="h-px w-10 origin-left bg-white/20"
+      />
+    </div>
   )
 }
 
@@ -58,15 +75,24 @@ export function About() {
               Operator-engineer hybrid. Built for ambiguity.
             </h2>
 
+            {/* Para 1 — identity + credential */}
             <p className="mt-6 max-w-[65ch] text-[15px] leading-[1.75] text-zinc-400">
-              Business Administration student at Baku Higher Oil School
-              (GPA 96.3/100) and Presidential Scholar &mdash; Top 3 of 20,000+
-              university entrance applicants nationwide (DIM score 686/700).
-              Two 1st-place hackathon wins in a single week. Three ventures
-              under active incubation. I move between Python pipelines,
-              SQL warehouses, financial models, and pitch rooms &mdash; turning
-              raw data into decisions that investors and operators act on.
-              Currently building at the intersection of product, data, and AI.
+              Presidential Scholar and BBA student at Baku Higher Oil
+              School (GPA 96.3/100) &mdash; ranked Top 3 of 20,000+
+              university entrance applicants by the Ministry of Science
+              and Education of the Republic of Azerbaijan. Two 1st-place
+              hackathon wins in a single week. Three ventures under
+              active incubation.
+            </p>
+
+            {/* Para 2 — operating mode */}
+            <p className="mt-4 max-w-[65ch] text-[15px] leading-[1.75] text-zinc-400">
+              I move between Python pipelines, SQL warehouses, financial
+              models, and pitch rooms. I&apos;ve led product discovery on
+              284,807-transaction fraud systems, built ventures accepted
+              into national incubation programs, and shipped data products
+              that generate decisions &mdash; not just dashboards. Currently
+              targeting Product Owner and Business Analyst roles.
             </p>
 
             {/* Three pillar rows */}

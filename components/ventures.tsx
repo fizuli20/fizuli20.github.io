@@ -1,5 +1,6 @@
 "use client"
 
+import { useRef, useState } from "react"
 import { motion, useReducedMotion } from "framer-motion"
 import { ArrowUpRight } from "lucide-react"
 import { SectionLabel } from "./about"
@@ -26,7 +27,7 @@ const PROJECTS: Project[] = [
     featured: true,
   },
   {
-    category: "ROBOTICS + RPA \u00b7 CO-FOUNDER",
+    category: "ROBOTICS + RPA \u00b7 CO-FOUNDER (HYPERAUTOMATION)",
     badge: "SabahHub Incubated \u00b7 PASHA 6.0 Finalist",
     name: "HyperAutomation",
     description:
@@ -70,8 +71,6 @@ const PROJECTS: Project[] = [
   },
 ]
 
-const easeOutExpo = [0.16, 1, 0.3, 1] as const
-
 const containerVariants = {
   hidden: {},
   visible: { transition: { staggerChildren: 0.07 } },
@@ -84,57 +83,84 @@ const itemVariants = {
 
 function ProjectCard({ project }: { project: Project }) {
   const reduce = useReducedMotion()
+  const cardRef = useRef<HTMLElement>(null)
+  const [mousePos, setMousePos] = useState({ x: 0, y: 0 })
+  const [isHovered, setIsHovered] = useState(false)
+
+  const handleMouseMove = (e: React.MouseEvent) => {
+    if (!cardRef.current || reduce) return
+    const rect = cardRef.current.getBoundingClientRect()
+    setMousePos({
+      x: e.clientX - rect.left,
+      y: e.clientY - rect.top,
+    })
+  }
 
   return (
     <motion.article
+      ref={cardRef}
       variants={itemVariants}
       whileHover={reduce ? undefined : { y: -4 }}
       transition={{ duration: 0.18, ease: [0.4, 0, 0.2, 1] }}
-      className={`flex flex-col rounded-xl border border-white/[0.06] bg-zinc-900 p-6 transition-[border-color] duration-200 hover:border-white/[0.14] hover:bg-zinc-800 ${
+      onMouseMove={handleMouseMove}
+      onMouseEnter={() => setIsHovered(true)}
+      onMouseLeave={() => setIsHovered(false)}
+      className={`relative flex flex-col rounded-xl border border-white/[0.06] bg-zinc-900 p-6 transition-[border-color] duration-200 hover:border-white/[0.14] hover:bg-zinc-800 ${
         project.featured ? "md:col-span-2" : ""
       }`}
     >
-      <div className="flex flex-wrap items-center justify-between gap-2">
-        <span className="font-mono text-[11px] uppercase tracking-[0.1em] text-zinc-600">
-          {project.category}
-        </span>
-        <span
-          className={`font-mono text-[11px] rounded-full border px-3 py-0.5 ${
-            project.badge.startsWith("1st")
-              ? "border-white/20 bg-white/5 text-zinc-100 border-l-2 border-l-white/40"
-              : "border-white/10 bg-white/[0.02] text-zinc-400"
-          }`}
-        >
-          {project.badge}
-        </span>
-      </div>
+      {/* Inner glow overlay — cursor-following radial gradient */}
+      <div
+        className="pointer-events-none absolute inset-0 z-[1] rounded-xl transition-opacity duration-200"
+        style={{
+          opacity: isHovered ? 1 : 0,
+          background: `radial-gradient(circle at ${mousePos.x}px ${mousePos.y}px, rgba(255,255,255,0.03) 0%, transparent 70%)`,
+        }}
+      />
 
-      <h3 className="mt-3 text-[20px] font-semibold text-white">
-        {project.name}
-      </h3>
-
-      <p className="mt-2 max-w-[65ch] text-[14px] leading-[1.6] text-zinc-400">
-        {project.description}
-      </p>
-
-      <div className="mt-auto flex items-center justify-between gap-4 border-t border-white/5 pt-4 mt-4">
-        <span className="font-mono text-[13px] text-zinc-500">
-          {project.metrics}
-        </span>
-        {project.link && (
-          <a
-            href={project.link.href}
-            target="_blank"
-            rel="noopener noreferrer"
-            className="group inline-flex items-center gap-1 font-mono text-[13px] text-zinc-600 transition-colors duration-200 hover:text-white"
+      <div className="relative z-[2] flex flex-1 flex-col">
+        <div className="flex flex-wrap items-center justify-between gap-2">
+          <span className="font-mono text-[11px] uppercase tracking-[0.1em] text-zinc-600">
+            {project.category}
+          </span>
+          <span
+            className={`font-mono text-[11px] rounded-full border px-3 py-0.5 ${
+              project.badge.startsWith("1st")
+                ? "border-white/20 bg-white/5 text-zinc-100 border-l-2 border-l-white/40"
+                : "border-white/10 bg-white/[0.02] text-zinc-400"
+            }`}
           >
-            {project.link.label}
-            <ArrowUpRight
-              size={14}
-              className="transition-transform duration-200 group-hover:translate-x-1"
-            />
-          </a>
-        )}
+            {project.badge}
+          </span>
+        </div>
+
+        <h3 className="mt-3 text-[20px] font-semibold text-white">
+          {project.name}
+        </h3>
+
+        <p className="mt-2 max-w-[65ch] text-[14px] leading-[1.6] text-zinc-400">
+          {project.description}
+        </p>
+
+        <div className="mt-auto flex items-center justify-between gap-4 border-t border-white/5 pt-4 mt-4">
+          <span className="font-mono text-[13px] text-zinc-500">
+            {project.metrics}
+          </span>
+          {project.link && (
+            <a
+              href={project.link.href}
+              target="_blank"
+              rel="noopener noreferrer"
+              className="group inline-flex items-center gap-1 font-mono text-[13px] text-zinc-600 transition-colors duration-200 hover:text-white"
+            >
+              {project.link.label}
+              <ArrowUpRight
+                size={14}
+                className="transition-transform duration-200 group-hover:translate-x-1"
+              />
+            </a>
+          )}
+        </div>
       </div>
     </motion.article>
   )

@@ -17,7 +17,7 @@ export const metadata: Metadata = {
     "Presidential Scholar",
     "EcoConcrete",
     "LedgerLens",
-    "AutoFlow",
+    "HyperAutomation",
     "Hackathon",
   ],
   authors: [{ name: "Fizuli Hasanov" }],
