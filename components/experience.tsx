@@ -20,7 +20,7 @@ const ROLES: Role[] = [
     current: true,
     role: "Incoming Summer Intern",
     company: "Deloitte",
-    location: "Baku, Azerbaijan (Hybrid)",
+    location: "Baku, Azerbaijan (Onsite)",
     keyWin:
       "1 of 4 students selected from 150 applicants at BHOS \u00b7 Multi-dimensional evaluation based on academic excellence and leadership",
     bullets: [

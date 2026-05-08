@@ -142,7 +142,7 @@ export function Hero() {
         {/* Cascade headline — signature visual */}
         <h1 className="mt-6 uppercase">
           <CascadeLine text="Fizuli" delay={0} indent="0px" />
-          <CascadeLine text="Hasanov." delay={0.15} indent="clamp(24px, 6vw, 96px)" />
+          <CascadeLine text="Hasanov" delay={0.15} indent="clamp(24px, 6vw, 96px)" />
         </h1>
 
         {/* Thin rule */}

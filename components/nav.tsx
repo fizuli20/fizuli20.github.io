@@ -1,6 +1,7 @@
 "use client"
 
 import { useEffect, useState, useCallback, useRef } from "react"
+import Image from "next/image"
 import { motion, useReducedMotion, useMotionValue, useSpring } from "framer-motion"
 import { Menu, X } from "lucide-react"
 
@@ -100,18 +101,24 @@ export function Nav() {
         aria-label="Primary"
         className="mx-auto flex h-[52px] max-w-[1120px] items-center justify-between px-6 md:px-10 lg:px-16"
       >
-        {/* Left — monogram */}
+        {/* Left — personal logo */}
         <a
           href="#top"
-          className="font-mono text-[14px] text-zinc-500 transition-colors duration-150 hover:text-zinc-100"
+          className="flex items-center transition-opacity duration-150 hover:opacity-80"
         >
-          FH
+          <Image
+            src="/personal-logo.png"
+            alt="Fizuli Hasanov Logo"
+            width={32}
+            height={32}
+            className="h-8 w-auto invert"
+          />
         </a>
 
         {/* Center — links with layoutId underline */}
-        <ul className="hidden items-center gap-6 lg:flex">
+        <ul className="hidden h-full items-center gap-8 lg:flex">
           {links.map((l) => (
-            <li key={l.id} className="relative">
+            <li key={l.id} className="relative flex h-full items-center">
               <a
                 href={`#${l.id}`}
                 className={`font-mono text-[13px] transition-colors duration-150 ${
@@ -123,12 +130,12 @@ export function Nav() {
               {active === l.id && !reduce && (
                 <motion.div
                   layoutId="nav-active-indicator"
-                  className="absolute -bottom-1 left-0 right-0 h-[2px] w-full bg-[#2563eb]"
+                  className="absolute -bottom-[1px] left-0 right-0 h-[2px] w-full bg-[#2563eb]"
                   transition={{ type: "spring", stiffness: 400, damping: 30 }}
                 />
               )}
               {active === l.id && reduce && (
-                <div className="absolute -bottom-1 left-0 right-0 h-[2px] bg-[#2563eb]" />
+                <div className="absolute -bottom-[1px] left-0 right-0 h-[2px] bg-[#2563eb]" />
               )}
             </li>
           ))}
