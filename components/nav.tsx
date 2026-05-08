@@ -99,24 +99,37 @@ export function Nav() {
     >
       <nav
         aria-label="Primary"
-        className="mx-auto flex h-[52px] max-w-[1120px] items-center justify-between px-6 md:px-10 lg:px-16"
+        className="mx-auto flex h-[52px] max-w-[1120px] items-center justify-between gap-6 px-6 md:px-10 lg:grid lg:grid-cols-[1fr_auto_1fr] lg:px-16"
       >
-        {/* Left — personal logo */}
+        {/* Left — personal logo + wordmark */}
         <a
           href="#top"
-          className="flex items-center transition-opacity duration-150 hover:opacity-80"
+          aria-label="Fizuli Hasanov — Home"
+          className="group flex items-center gap-2.5 transition-opacity duration-150 hover:opacity-80 lg:justify-self-start"
         >
-          <Image
-            src="/personal-logo.png"
-            alt="Fizuli Hasanov Logo"
-            width={32}
-            height={32}
-            className="h-8 w-auto invert"
-          />
+          <span className="relative block h-8 w-8 shrink-0 overflow-hidden rounded-sm ring-1 ring-white/10">
+            <Image
+              src="/personal-logo.png"
+              alt=""
+              fill
+              sizes="32px"
+              priority
+              className="object-cover"
+              style={{ transform: "scale(2.4)", objectPosition: "50% 30%" }}
+            />
+          </span>
+          <span className="hidden flex-col leading-none sm:flex">
+            <span className="font-mono text-[11px] font-semibold tracking-[0.22em] text-white">
+              FIZULI HASANOV
+            </span>
+            <span className="mt-1 font-mono text-[8.5px] tracking-[0.32em] text-zinc-500">
+              ARCHITECT OF VALUE
+            </span>
+          </span>
         </a>
 
         {/* Center — links with layoutId underline */}
-        <ul className="hidden h-full items-center gap-8 lg:flex">
+        <ul className="hidden h-full items-center gap-8 lg:flex lg:justify-self-center">
           {links.map((l) => (
             <li key={l.id} className="relative flex h-full items-center">
               <a
@@ -142,8 +155,8 @@ export function Nav() {
         </ul>
 
         {/* Right — availability + CTA */}
-        <div className="flex items-center gap-4">
-          <div className="hidden items-center gap-2 md:flex">
+        <div className="flex items-center gap-4 lg:justify-self-end">
+          <div className="hidden items-center gap-2 xl:flex">
             <span
               aria-hidden
               className="h-2 w-2 rounded-full bg-[#2563eb] animate-pulse-blue"
