@@ -1,6 +1,6 @@
 "use client"
 
-import { motion, useReducedMotion } from "framer-motion"
+import { motion } from "framer-motion"
 import { SectionLabel } from "./about"
 
 type Role = {
@@ -109,8 +109,6 @@ const itemVariants = {
 }
 
 export function Experience() {
-  const reduce = useReducedMotion()
-
   return (
     <section
       id="experience"
