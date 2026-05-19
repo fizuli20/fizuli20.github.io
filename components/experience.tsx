@@ -116,7 +116,7 @@ export function Experience() {
       className="px-6 py-24 md:px-10 md:py-32 lg:px-16"
     >
       <div className="mx-auto max-w-[1120px]">
-        <SectionLabel index="02" label="EXPERIENCE" />
+        <SectionLabel label="EXPERIENCE" />
         <h2
           className="mt-2 text-white"
           style={{

@@ -105,7 +105,7 @@ function ProjectCard({ project }: { project: Project }) {
       onMouseMove={handleMouseMove}
       onMouseEnter={() => setIsHovered(true)}
       onMouseLeave={() => setIsHovered(false)}
-      className={`relative flex flex-col rounded-xl border border-white/[0.06] bg-zinc-900 p-6 transition-[border-color] duration-200 hover:border-white/[0.14] hover:bg-zinc-800 ${
+      className={`glass-surface relative flex flex-col rounded-xl border border-white/[0.06] bg-zinc-900 p-6 transition-all duration-300 hover:border-white/[0.14] hover:bg-zinc-800 ${
         project.featured ? "md:col-span-2" : ""
       }`}
     >
@@ -114,7 +114,7 @@ function ProjectCard({ project }: { project: Project }) {
         className="pointer-events-none absolute inset-0 z-[1] rounded-xl transition-opacity duration-200"
         style={{
           opacity: isHovered ? 1 : 0,
-          background: `radial-gradient(circle at ${mousePos.x}px ${mousePos.y}px, rgba(255,255,255,0.03) 0%, transparent 70%)`,
+          background: `radial-gradient(circle at ${mousePos.x}px ${mousePos.y}px, rgba(255,255,255,0.08) 0%, rgba(255,255,255,0.025) 30%, transparent 70%)`,
         }}
       />
 
@@ -174,7 +174,7 @@ export function Ventures() {
       className="px-6 py-24 md:px-10 md:py-32 lg:px-16"
     >
       <div className="mx-auto max-w-[1120px]">
-        <SectionLabel index="01" label="SELECTED WORK" />
+        <SectionLabel label="SELECTED WORK" />
         <h2
           className="mt-2 text-white"
           style={{

@@ -158,7 +158,7 @@ export function Awards() {
       className="px-6 py-24 md:px-10 md:py-32 lg:px-16"
     >
       <div className="mx-auto max-w-[1120px]">
-        <SectionLabel index="04" label="RECOGNITION" />
+        <SectionLabel label="RECOGNITION" />
         <h2
           className="mt-2 text-white"
           style={{
@@ -186,19 +186,34 @@ export function Awards() {
               variants={championItem}
               whileHover={reduce ? undefined : { y: -4 }}
               transition={{ duration: 0.18, ease: [0.4, 0, 0.2, 1] }}
-              className="rounded-2xl border border-white/10 bg-zinc-900 p-7 transition-[border-color] duration-200 hover:border-white/[0.14] hover:bg-zinc-800"
-              style={{ borderLeft: "3px solid rgba(255,255,255,0.5)" }}
+              className="glass-surface group relative overflow-hidden rounded-2xl border border-white/10 bg-zinc-900 p-7 transition-all duration-500 hover:border-white/25 hover:bg-zinc-800/90 hover:shadow-[inset_0_1px_0_rgba(255,255,255,0.13),0_24px_80px_rgba(0,0,0,0.46),0_0_48px_rgba(255,255,255,0.06)]"
             >
-              <p className="font-mono text-[11px] uppercase tracking-[0.1em] text-zinc-500">
-                {a.top}
-              </p>
-              <h3 className="mt-3 text-[18px] font-semibold text-white">
-                {a.title}
-              </h3>
-              <p className="mt-1 text-[14px] text-zinc-400">{a.sub}</p>
-              <p className="mt-3 font-mono text-[11px] text-zinc-600">
-                {a.date}
-              </p>
+              <span
+                aria-hidden
+                className="absolute inset-y-0 left-0 w-px bg-white/35 transition-all duration-500 group-hover:w-[3px] group-hover:bg-white group-hover:shadow-[0_0_26px_rgba(255,255,255,0.78)]"
+              />
+              <span
+                aria-hidden
+                className="pointer-events-none absolute inset-0 bg-[radial-gradient(circle_at_0%_50%,rgba(255,255,255,0.16),rgba(255,255,255,0.045)_32%,transparent_58%)] opacity-0 transition-opacity duration-500 group-hover:opacity-100"
+              />
+              <span
+                aria-hidden
+                className="pointer-events-none absolute inset-x-6 top-0 h-px bg-gradient-to-r from-transparent via-white/35 to-transparent opacity-0 transition-opacity duration-500 group-hover:opacity-100"
+              />
+              <div className="relative z-10">
+                <p className="font-mono text-[11px] uppercase tracking-[0.1em] text-zinc-500 transition-colors duration-500 group-hover:text-zinc-300">
+                  {a.top}
+                </p>
+                <h3 className="mt-3 text-[18px] font-semibold text-white">
+                  {a.title}
+                </h3>
+                <p className="mt-1 text-[14px] text-zinc-400 transition-colors duration-500 group-hover:text-zinc-300">
+                  {a.sub}
+                </p>
+                <p className="mt-3 font-mono text-[11px] text-zinc-600 transition-colors duration-500 group-hover:text-zinc-500">
+                  {a.date}
+                </p>
+              </div>
             </motion.div>
           ))}
         </motion.div>
@@ -217,15 +232,19 @@ export function Awards() {
               variants={gridItem}
               whileHover={reduce ? undefined : { y: -4 }}
               transition={{ duration: 0.18, ease: [0.4, 0, 0.2, 1] }}
-              className="rounded-xl border border-white/[0.06] bg-zinc-900 p-5 transition-[border-color] duration-200 hover:border-white/[0.14] hover:bg-zinc-800"
+              className="glass-surface group relative overflow-hidden rounded-xl border border-white/[0.06] bg-zinc-900 p-5 transition-all duration-500 hover:border-white/[0.16] hover:bg-zinc-800/90"
             >
-              <div className="flex items-center justify-between">
+              <span
+                aria-hidden
+                className="pointer-events-none absolute inset-0 bg-[radial-gradient(circle_at_12%_0%,rgba(255,255,255,0.08),transparent_42%)] opacity-0 transition-opacity duration-500 group-hover:opacity-100"
+              />
+              <div className="relative z-10 flex items-center justify-between gap-4">
                 <h3 className="text-[15px] text-white">{a.title}</h3>
                 <span className="shrink-0 font-mono text-[11px] text-zinc-600">
                   {a.date}
                 </span>
               </div>
-              <p className="mt-1 text-[13px] text-zinc-400">
+              <p className="relative z-10 mt-1 text-[13px] text-zinc-400 transition-colors duration-500 group-hover:text-zinc-300">
                 {a.top} &middot; {a.sub}
               </p>
             </motion.div>

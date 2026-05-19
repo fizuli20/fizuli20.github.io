@@ -10,7 +10,7 @@
   --color-zinc-700: #3f3f46;
   --color-zinc-800: #27272a;
   --color-zinc-900: #18181b;
-  --color-accent: #2563eb;
+  --color-accent: #f5f5f7;
 
   --font-sans: var(--font-geist-sans), ui-sans-serif, system-ui, -apple-system, sans-serif;
   --font-mono: var(--font-geist-mono), ui-monospace, "SF Mono", Menlo, monospace;
@@ -41,7 +41,7 @@
 
   ::selection {
     background-color: var(--color-accent);
-    color: #ffffff;
+    color: #000000;
   }
 
   ::-webkit-scrollbar {
@@ -78,19 +78,64 @@
     animation: scroll-dot 2s ease-in-out infinite;
   }
 
-  /* Availability dot pulse — one of exactly 3 blue uses */
-  @keyframes pulse-blue {
+  @keyframes pulse-silver {
     0%, 100% {
       opacity: 1;
-      box-shadow: 0 0 0 0 rgba(37, 99, 235, 0.5);
+      box-shadow: 0 0 0 0 rgba(255, 255, 255, 0.34);
     }
     50% {
       opacity: 0.85;
-      box-shadow: 0 0 0 4px rgba(37, 99, 235, 0);
+      box-shadow: 0 0 0 4px rgba(255, 255, 255, 0);
     }
   }
-  .animate-pulse-blue {
-    animation: pulse-blue 2.2s ease-in-out infinite;
+  .animate-pulse-silver {
+    animation: pulse-silver 2.8s ease-in-out infinite;
+  }
+
+  .glass-surface {
+    box-shadow:
+      inset 0 1px 0 rgba(255, 255, 255, 0.09),
+      inset 0 -1px 0 rgba(255, 255, 255, 0.025),
+      0 22px 70px rgba(0, 0, 0, 0.38);
+  }
+
+  .edge-lit-card {
+    position: relative;
+    overflow: hidden;
+  }
+
+  .edge-lit-card::before {
+    content: "";
+    position: absolute;
+    inset: 0 auto 0 0;
+    width: 1px;
+    background: rgba(255, 255, 255, 0.32);
+    transition:
+      width 500ms ease,
+      background-color 500ms ease,
+      box-shadow 500ms ease;
+  }
+
+  .edge-lit-card::after {
+    content: "";
+    pointer-events: none;
+    position: absolute;
+    inset: 0;
+    background:
+      radial-gradient(circle at 0% 50%, rgba(255, 255, 255, 0.15), rgba(255, 255, 255, 0.045) 32%, transparent 58%),
+      linear-gradient(90deg, rgba(255, 255, 255, 0.045), transparent 36%);
+    opacity: 0;
+    transition: opacity 500ms ease;
+  }
+
+  .edge-lit-card:hover::before {
+    width: 3px;
+    background: #ffffff;
+    box-shadow: 0 0 26px rgba(255, 255, 255, 0.78);
+  }
+
+  .edge-lit-card:hover::after {
+    opacity: 1;
   }
 
   /* Marquee ticker for hero metrics */

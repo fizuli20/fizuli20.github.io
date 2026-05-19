@@ -2,6 +2,7 @@
 
 import { useRef } from "react"
 import { motion, useReducedMotion, useSpring, useMotionValue } from "framer-motion"
+import { Download } from "lucide-react"
 
 const easeOutExpo = [0.16, 1, 0.3, 1] as const
 
@@ -60,7 +61,7 @@ function MagneticButton({
   children: React.ReactNode
   href: string
   className: string
-  download?: boolean
+  download?: boolean | string
 }) {
   const ref = useRef<HTMLAnchorElement>(null)
   const x = useMotionValue(0)
@@ -128,6 +129,10 @@ export function Hero() {
       aria-label="Introduction"
       className="relative flex min-h-[100svh] flex-col justify-end overflow-hidden px-6 pb-0 pt-16 md:justify-center md:px-16 md:pb-0 xl:px-24"
     >
+      <div aria-hidden className="pointer-events-none absolute inset-x-0 top-0 h-[68svh] bg-[radial-gradient(ellipse_at_top,rgba(255,255,255,0.22),rgba(255,255,255,0.075)_28%,rgba(255,255,255,0.025)_48%,transparent_76%)]" />
+      <div aria-hidden className="pointer-events-none absolute inset-y-0 left-0 w-[36vw] bg-[radial-gradient(ellipse_at_left,rgba(255,255,255,0.1),transparent_62%)]" />
+      <div aria-hidden className="pointer-events-none absolute inset-y-0 right-0 w-[36vw] bg-[radial-gradient(ellipse_at_right,rgba(255,255,255,0.075),transparent_64%)]" />
+      <div aria-hidden className="pointer-events-none absolute left-1/2 top-[52%] h-px w-[min(1180px,calc(100vw-40px))] -translate-x-1/2 bg-gradient-to-r from-transparent via-white/45 to-transparent shadow-[0_0_64px_rgba(255,255,255,0.24),0_0_160px_rgba(255,255,255,0.08)]" />
       <div className="relative z-10 mx-auto w-full max-w-[1120px]">
         {/* Metadata label */}
         <motion.p
@@ -175,15 +180,16 @@ export function Hero() {
         >
           <MagneticButton
             href="#work"
-            className="inline-flex items-center justify-center rounded-md border border-white/[0.12] px-5 py-2.5 text-[14px] text-white transition-all duration-200 hover:bg-white hover:text-black"
+            className="inline-flex items-center justify-center rounded-md border border-white/[0.16] bg-white/[0.035] px-5 py-2.5 text-[14px] text-white shadow-[inset_0_1px_0_rgba(255,255,255,0.08),0_14px_44px_rgba(0,0,0,0.36)] transition-all duration-500 hover:border-white/50 hover:bg-white hover:text-black"
           >
             View ventures &darr;
           </MagneticButton>
           <MagneticButton
             href="/Fizuli-Hasanov-CV.pdf"
-            download
-            className="inline-flex items-center justify-center text-[14px] text-zinc-500 underline decoration-white/20 underline-offset-4 transition-all duration-200 hover:text-zinc-100 hover:decoration-white/60"
+            download="Fizuli_Hasanov_ProductOwner_CV.pdf"
+            className="inline-flex items-center justify-center gap-2 rounded-md border border-white/[0.12] bg-white/[0.04] px-5 py-2.5 text-[14px] text-zinc-300 shadow-[inset_0_1px_0_rgba(255,255,255,0.08),0_14px_44px_rgba(0,0,0,0.3)] transition-all duration-500 hover:border-white/30 hover:bg-white/[0.1] hover:text-zinc-100"
           >
+            <Download size={14} />
             Download CV
           </MagneticButton>
         </motion.div>

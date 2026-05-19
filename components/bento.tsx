@@ -153,7 +153,7 @@ function CounterCell({ stat }: { stat: StatCell }) {
       variants={itemVariants}
       whileHover={{ y: -4 }}
       transition={{ duration: 0.18, ease: [0.4, 0, 0.2, 1] }}
-      className={`rounded-xl border bg-zinc-900 px-6 transition-[border-color] duration-200 hover:bg-zinc-800 ${
+      className={`edge-lit-card glass-surface group rounded-xl border bg-zinc-900 px-6 transition-all duration-500 hover:bg-zinc-800/90 hover:shadow-[inset_0_1px_0_rgba(255,255,255,0.13),0_24px_80px_rgba(0,0,0,0.46),0_0_48px_rgba(255,255,255,0.06)] ${
         stat.span === 2 ? "col-span-2" : "col-span-1"
       } ${
         stat.hero
@@ -163,7 +163,7 @@ function CounterCell({ stat }: { stat: StatCell }) {
       style={stat.hero ? { minHeight: 140 } : undefined}
     >
       <div
-        className="font-mono font-bold text-white"
+        className="relative z-10 font-mono font-bold text-white"
         style={{
           fontSize: stat.hero ? "clamp(40px, 5vw, 60px)" : "clamp(28px, 3.5vw, 44px)",
         }}
@@ -171,14 +171,14 @@ function CounterCell({ stat }: { stat: StatCell }) {
         {display}
       </div>
       <div
-        className={`mt-1.5 font-mono uppercase tracking-[0.1em] ${
-          stat.hero ? "text-[11px] text-zinc-500" : "text-[10px] text-zinc-600"
+        className={`relative z-10 mt-1.5 font-mono uppercase tracking-[0.1em] transition-colors duration-500 ${
+          stat.hero ? "text-[11px] text-zinc-500 group-hover:text-zinc-300" : "text-[10px] text-zinc-600 group-hover:text-zinc-400"
         }`}
       >
         {stat.label}
       </div>
       {stat.hero && stat.label === "PRESIDENTIAL SCHOLAR" && (
-        <div className="mt-1 font-mono text-[10px] text-zinc-700">
+        <div className="relative z-10 mt-1 font-mono text-[10px] text-zinc-700 transition-colors duration-500 group-hover:text-zinc-500">
           OF 20,000+ DIM APPLICANTS
         </div>
       )}
