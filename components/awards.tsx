@@ -23,8 +23,8 @@ const AWARDS: Award[] = [
   {
     tier: 1,
     top: "1ST PLACE",
-    title: "GreenTech 3 Festival",
-    sub: "Alternative Energy & Clean Environment Track \u00b7 EcoConcrete \u00b7 1st of 100 university teams",
+    title: "GreenTech III Startup & Innovation Competition",
+    sub: "Alternative Energy & Clean Environment Track \u00b7 Carboryn \u00b7 1st of 100+ university teams",
     date: "Apr 2026",
   },
   {
@@ -44,6 +44,20 @@ const AWARDS: Award[] = [
   },
   {
     tier: 2,
+    top: "$400 SEED FUND",
+    title: "Aspire Institute Seed Fund",
+    sub: "FinVeda \u00b7 1 of 40 founders selected from 1,800+ global applications",
+    date: "2026",
+  },
+  {
+    tier: 2,
+    top: "FELLOW",
+    title: "Youth in Development Fellow 2026",
+    sub: "Aspire Institute \u00d7 Impact Toolbox \u00b7 1 of 20 fellows globally",
+    date: "2026",
+  },
+  {
+    tier: 2,
     top: "INCUBATED",
     title: "SabahHub 9th Cohort",
     sub: "HyperAutomation \u00b7 Accepted among competitive applicants",
@@ -51,16 +65,16 @@ const AWARDS: Award[] = [
   },
   {
     tier: 2,
-    top: "INCUBATED",
-    title: "EmpowerMe + 5th Tusi Program",
-    sub: "EcoConcrete \u00b7 Two simultaneous incubations",
+    top: "INCUBATION PATH",
+    title: "Carboryn Venture Development",
+    sub: "EmpowerMe graduate \u00b7 Startup School 4 + 5th Tusi active",
     date: "2026",
   },
   {
     tier: 2,
     top: "OUTSTANDING",
     title: "Outstanding Contributor \u2014 Elevvo Pathways",
-    sub: "Top of 2,000+ global participants \u00b7 Only BHOS student to receive this recognition",
+    sub: "Recognized among 2,000+ international participants for work exceeding the analytics brief",
     date: "Mar 2026",
   },
   {
@@ -72,10 +86,10 @@ const AWARDS: Award[] = [
   },
   {
     tier: 2,
-    top: "FINALIST",
-    title: "Aspire \u00d7 Harvard AI for Global Business",
-    sub: "AI-powered financial insights prototype \u00b7 Global hackathon",
-    date: "2025\u20132026",
+    top: "ACCEPTED",
+    title: "ABB 6th Incubation",
+    sub: "LedgerLens \u00b7 AI-OCR for handwritten Azerbaijani SME ledgers",
+    date: "2026",
   },
   {
     tier: 2,
@@ -93,23 +107,9 @@ const AWARDS: Award[] = [
   },
   {
     tier: 2,
-    top: "5TH PLACE",
-    title: "Hult Prize BHOS On-Campus",
-    sub: "Financial resilience concept \u00b7 13 finalists / 29 teams",
-    date: "2025",
-  },
-  {
-    tier: 2,
     top: "3RD PLACE",
     title: "G\u0259ncV\u0130ZYON Ideathon, Digital Future & AI Track",
     sub: "Transparent Legal Navigator \u00b7 240 youth, 40 teams",
-    date: "2025",
-  },
-  {
-    tier: 2,
-    top: "BUILT & COMPETED",
-    title: "Cursor Hackathon @ ADA University",
-    sub: "Private Audit AI \u00b7 Offline document analysis MVP \u00b7 Built under live competition conditions",
     date: "2025",
   },
   {
@@ -167,7 +167,7 @@ export function Awards() {
             letterSpacing: "-0.03em",
           }}
         >
-          Wins, finals, and scholarships.
+          Recognition for building and exploring.
         </h2>
 
         <hr className="mt-8 border-white/5" />

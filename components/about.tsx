@@ -9,17 +9,17 @@ const PILLARS = [
   {
     n: "01",
     title: "Product & Strategy",
-    body: "Product discovery, backlog management, user story writing, and stakeholder alignment. Agile/Scrum mindset from sprint planning to GTM. EY Strategy School, Aspire Leaders (Harvard-founded), Hult Prize finalist.",
+    body: "Product discovery, requirements, user stories, stakeholder alignment, and go-to-market strategy. Built and pitched ventures across AI, sustainability, finance, and automation.",
   },
   {
     n: "02",
-    title: "AI Orchestration",
-    body: "Agentic workflows, prompt engineering, rapid prototyping. Built LedgerLens (AI-OCR for SME ledgers) and HyperAutomation (RPA + AGV warehouse automation). GenAI certified \u2014 Holberton School AZ, 100% scholarship.",
+    title: "AI-Enabled Products",
+    body: "Rapid AI prototyping, prompt engineering, OCR, and RPA. Built LedgerLens for handwritten Azerbaijani SME records and HyperAutomation for warehouse operations.",
   },
   {
     n: "03",
     title: "Technical Fluency",
-    body: "Python, SQL, Power BI, Tableau, scikit-learn, XGBoost. Production ML on 284K+ real transactions. PR-AUC 0.87 fraud detection. End-to-end product thinking from data pipeline to decision recommendation.",
+    body: "Python, SQL, Power BI, Tableau, scikit-learn, and XGBoost. Applied analytics across churn, fraud, RFM, e-commerce, retention, and macroeconomic research.",
   },
 ]
 
@@ -72,27 +72,25 @@ export function About() {
               className="text-white"
               style={{ fontSize: 28, fontWeight: 600, letterSpacing: "-0.02em" }}
             >
-              Operator-engineer hybrid. Built for ambiguity.
+              Building AI-driven products, ventures, and strategies.
             </h2>
 
             {/* Para 1 — identity + credential */}
             <p className="mt-6 max-w-[65ch] text-[15px] leading-[1.75] text-zinc-400">
-              Presidential Scholar and BBA student at Baku Higher Oil
-              School (GPA 96.3/100) &mdash; ranked Top 3 of 20,000+
-              university entrance applicants by the Ministry of Science
-              and Education of the Republic of Azerbaijan. Two 1st-place
-              hackathon wins in a single week. Three ventures under
-              active incubation.
+              I am a Presidential Scholar interested in how AI and
+              innovation can solve meaningful business and societal
+              problems. My experience spans strategy research, analytics,
+              product development, startup incubation, and venture
+              building.
             </p>
 
             {/* Para 2 — operating mode */}
             <p className="mt-4 max-w-[65ch] text-[15px] leading-[1.75] text-zinc-400">
-              I move between Python pipelines, SQL warehouses, financial
-              models, and pitch rooms. I&apos;ve led product discovery on
-              284,807-transaction fraud systems, built ventures accepted
-              into national incubation programs, and shipped data products
-              that generate decisions &mdash; not just dashboards. Currently
-              targeting Product Owner and Business Analyst roles.
+              Rather than defining myself through one narrow role, I focus
+              on a consistent goal: understanding complex problems and
+              turning promising ideas into practical products, strategies,
+              and measurable outcomes. AI and data are tools I use to
+              research, design, validate, and build.
             </p>
 
             {/* Three pillar rows */}
@@ -156,10 +154,10 @@ export function About() {
                   F. Hasanov &middot; 2026
                 </p>
                 <h3 className="mt-3 text-[24px] font-semibold text-white">
-                  Architect of Value
+                  AI Innovation &amp; Product Strategy
                 </h3>
                 <p className="mx-auto mt-3 max-w-[28ch] text-[13px] leading-[1.7] text-zinc-500 transition-colors duration-500 group-hover:text-zinc-300">
-                  Product thinking, AI systems, and strategy shaped into visible outcomes.
+                  Turning emerging ideas into practical products, ventures, and strategies.
                 </p>
               </div>
             </div>

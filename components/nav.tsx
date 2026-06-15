@@ -6,7 +6,7 @@ import { motion, useReducedMotion, useMotionValue, useSpring } from "framer-moti
 import { Menu, X } from "lucide-react"
 
 const links = [
-  { id: "work", label: "Work" },
+  { id: "case-studies", label: "Case Studies" },
   { id: "experience", label: "Experience" },
   { id: "skills", label: "Skills" },
   { id: "awards", label: "Awards" },
@@ -131,7 +131,7 @@ export function Nav() {
                 aria-hidden
                 className="h-px w-5 bg-gradient-to-r from-white/50 to-transparent"
               />
-              ARCHITECT OF VALUE
+              AI &middot; INNOVATION &middot; PRODUCT STRATEGY
             </span>
           </span>
         </a>
@@ -170,7 +170,7 @@ export function Nav() {
               className="h-2 w-2 shrink-0 rounded-full bg-white animate-pulse-silver"
             />
             <span className="font-mono text-[11px] leading-none text-zinc-500">
-              Deloitte Summer Intern &middot; Product Owner &middot; PM &middot; BA
+              AI Innovation &middot; Product Strategy &middot; Venture Building
             </span>
           </div>
 
@@ -178,7 +178,7 @@ export function Nav() {
             href="#contact"
             className="hidden whitespace-nowrap rounded-full border border-white/10 bg-white/[0.035] px-4 py-2 font-mono text-[12px] leading-none text-zinc-300 shadow-[inset_0_1px_0_rgba(255,255,255,0.08),0_14px_38px_rgba(0,0,0,0.32)] transition-all duration-500 hover:border-white/25 hover:bg-white/[0.09] hover:text-white md:inline-flex"
           >
-            Hire me &rarr;
+            Connect &rarr;
           </MagneticLink>
 
           <button
@@ -214,7 +214,7 @@ export function Nav() {
                 onClick={() => setOpen(false)}
                 className="mt-2 block rounded-md border border-white/10 px-4 py-3 text-center font-mono text-[13px] text-zinc-400 transition-all duration-300 hover:border-white/25 hover:bg-white/[0.07] hover:text-white"
               >
-                Hire me &rarr;
+                Connect &rarr;
               </a>
             </li>
           </ul>

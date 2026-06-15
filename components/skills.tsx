@@ -19,10 +19,10 @@ const COL1 = [
 
 const COL2 = [
   { name: "Generative AI \u00b7 Prompt Engineering", tag: "AI" },
-  { name: "Agentic Workflows \u00b7 RPA", tag: "AI" },
+  { name: "Rapid AI MVP Prototyping \u00b7 RPA", tag: "AI" },
   { name: "Document AI \u00b7 OCR Pipelines", tag: "AI" },
-  { name: "AI Product Ownership", tag: "Product" },
-  { name: "LLM Workflow Design", tag: "AI" },
+  { name: "AI-Enabled Product Discovery", tag: "Product" },
+  { name: "AI Benchmarking & Evaluation", tag: "AI" },
 ]
 
 const COL3 = [
@@ -111,7 +111,7 @@ export function Skills() {
             letterSpacing: "-0.03em",
           }}
         >
-          Stack and toolkit. End-to-end.
+          Tools for turning ideas into impact.
         </h2>
 
         <hr className="mt-8 border-white/5" />
@@ -145,7 +145,7 @@ export function Skills() {
               Currently deepening &rarr;
             </span>
             <span className="text-zinc-300">
-              Product Management (JTBD &middot; OKRs) &middot; LLM fine-tuning &middot; Azerbaijani NLP
+              Product discovery &middot; Sustainability strategy &middot; Azerbaijani-language OCR
             </span>
           </span>
         </motion.div>

@@ -99,6 +99,339 @@
       0 22px 70px rgba(0, 0, 0, 0.38);
   }
 
+  .impact-card::before {
+    content: "";
+    pointer-events: none;
+    position: absolute;
+    inset: 0;
+    z-index: 1;
+    border-radius: inherit;
+    background:
+      linear-gradient(135deg, rgba(255, 255, 255, 0.11), transparent 24%),
+      radial-gradient(circle at 82% 12%, rgba(255, 255, 255, 0.08), transparent 30%);
+    opacity: 0.5;
+    transition: opacity 500ms ease;
+  }
+
+  .impact-card::after {
+    content: "";
+    pointer-events: none;
+    position: absolute;
+    inset: 1px;
+    z-index: 0;
+    border-radius: inherit;
+    background: linear-gradient(145deg, rgba(255, 255, 255, 0.025), transparent 46%);
+  }
+
+  .impact-card:hover::before {
+    opacity: 1;
+  }
+
+  @keyframes impact-scan {
+    0% {
+      transform: translateX(-110%);
+    }
+    100% {
+      transform: translateX(110%);
+    }
+  }
+
+  .impact-card:hover .impact-scan {
+    animation: impact-scan 1.8s var(--ease-out-expo) both;
+  }
+
+  .contact-console::before {
+    content: "";
+    pointer-events: none;
+    position: absolute;
+    inset: 0;
+    border-radius: inherit;
+    background:
+      linear-gradient(135deg, rgba(255, 255, 255, 0.09), transparent 20%),
+      radial-gradient(circle at 86% 18%, rgba(255, 255, 255, 0.08), transparent 26%);
+    opacity: 0.72;
+  }
+
+  @keyframes contact-orbit {
+    to {
+      transform: rotate(360deg);
+    }
+  }
+
+  @keyframes contact-signal {
+    0%, 100% {
+      opacity: 0.35;
+      transform: scale(0.86);
+    }
+    50% {
+      opacity: 1;
+      transform: scale(1.18);
+    }
+  }
+
+  .animate-contact-orbit {
+    animation: contact-orbit 28s linear infinite;
+  }
+
+  .animate-contact-orbit-reverse {
+    animation: contact-orbit 19s linear infinite reverse;
+  }
+
+  .animate-contact-signal {
+    animation: contact-signal 3.4s ease-in-out infinite;
+  }
+
+  .ledger-grid {
+    background-image:
+      linear-gradient(rgba(255, 255, 255, 0.025) 1px, transparent 1px),
+      linear-gradient(90deg, rgba(255, 255, 255, 0.025) 1px, transparent 1px);
+    background-size: 48px 48px;
+    mask-image: radial-gradient(ellipse at center, black, transparent 82%);
+  }
+
+  .ledger-terminal::before {
+    content: "";
+    pointer-events: none;
+    position: absolute;
+    inset: 0;
+    background:
+      linear-gradient(135deg, rgba(255, 255, 255, 0.1), transparent 20%),
+      radial-gradient(circle at 82% 14%, rgba(255, 255, 255, 0.08), transparent 28%);
+    opacity: 0.7;
+  }
+
+  @keyframes ledger-scan {
+    0% {
+      transform: translateY(-2px);
+      opacity: 0;
+    }
+    20%, 80% {
+      opacity: 0.8;
+    }
+    100% {
+      transform: translateY(42px);
+      opacity: 0;
+    }
+  }
+
+  .ledger-scan-line {
+    animation: ledger-scan 4.2s ease-in-out infinite;
+  }
+
+  @keyframes ledger-orbit {
+    to {
+      transform: rotate(360deg);
+    }
+  }
+
+  .ledger-orbit {
+    animation: ledger-orbit 26s linear infinite;
+  }
+
+  @keyframes ledger-data-packet {
+    0% {
+      transform: translate(-10px, -50%) scaleX(0.35);
+      opacity: 0;
+    }
+    20%, 75% {
+      opacity: 0.8;
+    }
+    100% {
+      transform: translate(390px, -50%) scaleX(1);
+      opacity: 0;
+    }
+  }
+
+  .ledger-data-packet {
+    animation: ledger-data-packet 4.8s var(--ease-in-out) infinite;
+  }
+
+  @keyframes ledger-confidence-pulse {
+    0%, 100% {
+      background-color: rgba(255, 255, 255, 0.08);
+      box-shadow: 0 0 0 rgba(255, 255, 255, 0);
+    }
+    50% {
+      background-color: rgba(255, 255, 255, 0.48);
+      box-shadow: 0 0 12px rgba(255, 255, 255, 0.2);
+    }
+  }
+
+  .ledger-confidence-pulse {
+    animation: ledger-confidence-pulse 2.4s ease-in-out infinite;
+  }
+
+  @keyframes case-gateway-scan {
+    0% {
+      transform: translateY(0);
+      opacity: 0;
+    }
+    15%, 80% {
+      opacity: 0.6;
+    }
+    100% {
+      transform: translateY(300px);
+      opacity: 0;
+    }
+  }
+
+  .case-gateway-scan {
+    animation: case-gateway-scan 5.5s ease-in-out infinite;
+  }
+
+  .case-gateway::before {
+    content: "";
+    pointer-events: none;
+    position: absolute;
+    inset: 0;
+    background:
+      linear-gradient(135deg, rgba(255, 255, 255, 0.1), transparent 22%),
+      radial-gradient(circle at 88% 10%, rgba(255, 255, 255, 0.09), transparent 26%);
+    opacity: 0.55;
+    transition: opacity 700ms ease;
+  }
+
+  .case-gateway:hover::before {
+    opacity: 1;
+  }
+
+  .warehouse-grid {
+    background-image:
+      linear-gradient(rgba(255, 255, 255, 0.028) 1px, transparent 1px),
+      linear-gradient(90deg, rgba(255, 255, 255, 0.028) 1px, transparent 1px);
+    background-size: 28px 28px;
+    mask-image: linear-gradient(to left, black, transparent 85%);
+  }
+
+  @keyframes warehouse-unit-move {
+    0%, 100% {
+      transform: translate(0, 0);
+    }
+    35% {
+      transform: translate(150px, 0);
+    }
+    65% {
+      transform: translate(150px, -72px);
+    }
+  }
+
+  .warehouse-unit {
+    animation: warehouse-unit-move 8s var(--ease-in-out) infinite;
+  }
+
+  @keyframes warehouse-route-pulse {
+    0%, 100% {
+      opacity: 0.2;
+      box-shadow: 0 0 0 rgba(255, 255, 255, 0);
+    }
+    50% {
+      opacity: 0.7;
+      box-shadow: 0 0 34px rgba(255, 255, 255, 0.08);
+    }
+  }
+
+  .warehouse-route {
+    animation: warehouse-route-pulse 4s ease-in-out infinite;
+  }
+
+  .carboryn-grid {
+    background-image:
+      radial-gradient(circle at center, rgba(255, 255, 255, 0.12) 1px, transparent 1.5px),
+      linear-gradient(rgba(255, 255, 255, 0.018) 1px, transparent 1px),
+      linear-gradient(90deg, rgba(255, 255, 255, 0.018) 1px, transparent 1px);
+    background-position: 0 0, 0 0, 0 0;
+    background-size: 56px 56px, 56px 56px, 56px 56px;
+    mask-image: radial-gradient(ellipse at 78% 54%, black, transparent 72%);
+  }
+
+  @keyframes carboryn-orbit {
+    to {
+      transform: rotate(360deg);
+    }
+  }
+
+  .carboryn-orbit {
+    animation: carboryn-orbit 24s linear infinite;
+  }
+
+  @keyframes carboryn-reaction {
+    0%, 100% {
+      opacity: 0.35;
+      transform: translateY(0);
+    }
+    50% {
+      opacity: 0.85;
+      transform: translateY(-5px);
+    }
+  }
+
+  .carboryn-reaction {
+    animation: carboryn-reaction 4.2s ease-in-out infinite;
+  }
+
+  @keyframes carbon-signal {
+    0% {
+      transform: translateX(-70px);
+      opacity: 0;
+    }
+    18%, 78% {
+      opacity: 0.85;
+    }
+    100% {
+      transform: translateX(260px);
+      opacity: 0;
+    }
+  }
+
+  .carbon-signal {
+    animation: carbon-signal 4.4s var(--ease-in-out) infinite;
+  }
+
+  .warehouse-console::before {
+    content: "";
+    pointer-events: none;
+    position: absolute;
+    inset: 0;
+    background:
+      linear-gradient(135deg, rgba(255, 255, 255, 0.1), transparent 20%),
+      radial-gradient(circle at 86% 12%, rgba(255, 255, 255, 0.09), transparent 28%);
+    opacity: 0.7;
+  }
+
+  @keyframes warehouse-command {
+    0% {
+      transform: translateX(-12px);
+      opacity: 0;
+    }
+    20%, 75% {
+      opacity: 0.8;
+    }
+    100% {
+      transform: translateX(280px);
+      opacity: 0;
+    }
+  }
+
+  .warehouse-command {
+    animation: warehouse-command 4.6s var(--ease-in-out) infinite;
+  }
+
+  @keyframes warehouse-node {
+    0%, 100% {
+      opacity: 0.25;
+      transform: scale(0.82);
+    }
+    50% {
+      opacity: 1;
+      transform: scale(1.15);
+      box-shadow: 0 0 18px rgba(255, 255, 255, 0.38);
+    }
+  }
+
+  .warehouse-node {
+    animation: warehouse-node 2.8s ease-in-out infinite;
+  }
+
   .edge-lit-card {
     position: relative;
     overflow: hidden;

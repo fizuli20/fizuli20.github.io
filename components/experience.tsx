@@ -18,27 +18,28 @@ const ROLES: Role[] = [
   {
     date: "JUN 2026 \u2014 JUL 2026",
     current: true,
-    role: "Incoming Summer Intern",
+    role: "SRT Summer Program Participant",
     company: "Deloitte",
-    location: "Baku, Azerbaijan (Onsite)",
+    location: "Baku, Azerbaijan (Hybrid)",
     keyWin:
-      "1 of 4 students selected from 150 applicants at BHOS \u00b7 Multi-dimensional evaluation based on academic excellence and leadership",
+      "1 of 4 BHOS students nominated for Deloitte's SRT Summer Program",
     bullets: [
-      "Selected as 1 of 4 students among 150 students from Baku Higher Oil School for a high-intensity summer placement at Deloitte, awarded through a multi-dimensional evaluation of academic excellence (96.3 GPA), leadership behavior, and a proven track record in national innovation and technical challenges.",
+      "Support managers with structured sector, company, sustainability, and certification research used to inform strategy definition across telecom, energy, transport, and green infrastructure.",
+      "Nominated by Baku Higher Oil School as 1 of 4 students for Deloitte's SRT Summer Program.",
     ],
-    tags: ["Strategy", "Risk Advisory", "Innovation"],
+    tags: ["Strategy Research", "Sustainability", "Benchmarking"],
   },
   {
     date: "MAR 2026 \u2014 PRESENT",
     current: true,
-    role: "Business Analyst Intern",
+    role: "Business Analyst & Product Discovery Intern",
     company: "Codveda Technologies",
     location: "Remote",
     keyWin:
-      "XGBoost PR-AUC 0.87 \u00b7 284,807 real transactions \u00b7 4-tier production risk system shipped",
+      "XGBoost PR-AUC 0.87 \u00b7 284,807 real transactions \u00b7 4-tier intervention framework designed",
     bullets: [
-      "Directed end-to-end churn prediction initiative on 2,666 telecom customers \u2014 surfaced international-plan subscribers as 3.8\u00d7 higher risk and translated findings into 5 retention recommendations, including a 3rd-call early-warning trigger (Random Forest ROC-AUC 0.91).",
-      "Owned product design of a 4-tier fraud risk-scoring system across 284,807 real transactions \u2014 defined intervention logic (auto-approve / CVV challenge / block / freeze), selected PR-AUC over ROC-AUC as north-star metric given 577:1 class imbalance, achieved XGBoost PR-AUC 0.87.",
+      "Spearheaded churn analysis on 2,666 telecom customers \u2014 surfaced international-plan subscribers as 3.8\u00d7 higher risk and translated findings into 5 retention recommendations, including a 3rd-call early-warning trigger (Random Forest ROC-AUC 0.91).",
+      "Architected a 4-tier fraud risk-scoring framework across 284,807 real transactions \u2014 defined intervention logic, selected PR-AUC as the primary metric for a 577:1 class imbalance, and achieved XGBoost PR-AUC 0.87.",
       "Quantified $108,623 in high-risk monthly revenue via SQL behavioral scoring; projected $195,522 annual savings from a 15% retention uplift simulation.",
     ],
     tags: ["Python", "scikit-learn", "XGBoost", "SMOTE", "PostgreSQL"],
@@ -49,9 +50,9 @@ const ROLES: Role[] = [
     company: "Elevvo Pathways",
     location: "Remote",
     keyWin:
-      "Outstanding Contributor \u00b7 Top of 2,000+ global cohort \u00b7 Only BHOS student recognized",
+      "Outstanding Contributor \u00b7 Recognized among 2,000+ international participants",
     bullets: [
-      "Recognized as Outstanding Contributor among 2,000+ global participants \u2014 only BHOS student to achieve this designation.",
+      "Recognized as an Outstanding Contributor among 2,000+ international participants for analytics work that exceeded the project brief.",
       "Surfaced $7.45M in top-segment revenue from RFM model on 95,000+ customers; delivered direct prioritization framework.",
       "Built executive Power BI dashboard: 13M revenue, 1.47M profit, ~25K orders with regional drill-downs.",
     ],
@@ -60,7 +61,7 @@ const ROLES: Role[] = [
   {
     date: "FEB 2026 \u2014 PRESENT",
     role: "Business & Finance Coordinator",
-    company: "IYDP",
+    company: "International Youth Dialogue Platform",
     location: "Baku",
     keyWin:
       "Multi-stakeholder financial planning \u00b7 International dialogue programs across Baku + partner regions",
@@ -72,7 +73,7 @@ const ROLES: Role[] = [
   },
   {
     date: "SEP 2025 \u2014 PRESENT",
-    role: "VP & Project Manager \u00d73",
+    role: "Vice President & Project Manager",
     company: "BHOS Clubs",
     location: "Baku",
     keyWin:
@@ -86,7 +87,7 @@ const ROLES: Role[] = [
   {
     date: "OCT 2024 \u2014 AUG 2025",
     role: "Digital Product Growth",
-    company: "TikTok",
+    company: "Content Platform",
     location: "Self-directed",
     keyWin:
       "2.1M+ views \u00b7 70K+ likes \u00b7 11 months \u00b7 Zero paid distribution",
@@ -125,7 +126,7 @@ export function Experience() {
             letterSpacing: "-0.03em",
           }}
         >
-          The bridge between business and ML.
+          Research and strategy behind practical innovation.
         </h2>
 
         <hr className="mt-8 border-white/5" />

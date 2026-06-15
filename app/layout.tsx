@@ -5,16 +5,21 @@ import "./globals.css"
 
 export const metadata: Metadata = {
   metadataBase: new URL("https://fizuli20-github-io.vercel.app"),
-  title: "Fizuli Hasanov — Technical Product Leader, Data Scientist, Venture Builder",
+  alternates: {
+    canonical: "/",
+  },
+  title: "Fizuli Hasanov | AI Innovation & Product Strategy",
   description:
-    "Presidential Scholar (Top 3 of 20,000+). BA Intern at Codveda, Founder of EcoConcrete, PASHA Hackathon 6.0 finalist. I build data products that move revenue and ventures that win.",
+    "Fizuli Hasanov is a Presidential Scholar building AI-driven products, ventures, and strategies through research, product thinking, and startup execution.",
   keywords: [
     "Fizuli Hasanov",
-    "Data Scientist",
+    "Product Analyst",
     "Business Analyst",
     "Product Manager",
+    "Venture Builder",
     "Azerbaijan",
     "Presidential Scholar",
+    "Carboryn",
     "EcoConcrete",
     "LedgerLens",
     "HyperAutomation",
@@ -22,9 +27,9 @@ export const metadata: Metadata = {
   ],
   authors: [{ name: "Fizuli Hasanov" }],
   openGraph: {
-    title: "Fizuli Hasanov — Technical Product Leader, Data Scientist, Venture Builder",
+    title: "Building AI-driven products, ventures, and strategies.",
     description:
-      "Presidential Scholar. 2x Hackathon Champion. Two active incubations. XGBoost PR-AUC 0.87 on real data.",
+      "Explore Fizuli Hasanov's work across AI innovation, product strategy, venture building, and business transformation.",
     url: "https://fizuli20-github-io.vercel.app",
     siteName: "Fizuli Hasanov",
     images: [
@@ -40,9 +45,9 @@ export const metadata: Metadata = {
   },
   twitter: {
     card: "summary_large_image",
-    title: "Fizuli Hasanov — Technical Product Leader",
+    title: "Building AI-driven products, ventures, and strategies.",
     description:
-      "Presidential Scholar. 2x Hackathon Champion. Two active incubations. XGBoost PR-AUC 0.87 on real data.",
+      "Explore Fizuli Hasanov's work across AI innovation, product strategy, venture building, and business transformation.",
     images: ["/profile-photo.jpg"],
   },
   robots: {

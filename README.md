@@ -37,9 +37,11 @@ The same check runs in GitHub Actions on pushes to `main` and pull requests.
 
 - Package manager: npm
 - Lockfile: `package-lock.json`
-- Vercel install command: `npm install`
+- Runtime: Node.js 22.x
+- Vercel install command: `npm ci`
 - Vercel build command: `npm run build`
 - Production branch should stay aligned with `main`
+- Pushes to `main` should trigger the Git-linked Vercel production deployment.
 
 ## Maintenance
 

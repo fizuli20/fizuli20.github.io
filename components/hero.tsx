@@ -7,14 +7,14 @@ import { Download } from "lucide-react"
 const easeOutExpo = [0.16, 1, 0.3, 1] as const
 
 const TICKER_ITEMS = [
-  "96.3 GPA / 100",
-  "Top 3 of 20,000+ \u2014 Presidential Scholar",
-  "2\u00d7 1st Place Hackathon Champion",
+  "Presidential Scholar \u2014 Top 3 of 20,000+",
+  "Deloitte SRT \u2014 Strategy Research Support",
+  "2\u00d7 1st-Place Innovation Wins \u2014 One Week",
+  "LedgerLens \u2014 ABB 6th Incubation",
+  "FinVeda \u2014 $400 Aspire Seed Fund \u00b7 1 of 40 / 1,800+",
+  "3 Incubated Ventures \u2014 Carboryn \u00b7 HyperAutomation \u00b7 LedgerLens",
+  "Youth in Development Fellow \u2014 1 of 20 Globally",
   "2.1M+ Digital Views \u2014 Zero Paid Reach",
-  "100% GenAI Scholarship \u2014 Holberton AZ",
-  "Aspire Leaders Alumni \u2014 9,988 of 54,337 selected",
-  "Finalist \u2014 Aspire \u00d7 Harvard AI for Global Business",
-  "2\u00d7 Active Incubations \u2014 SabahHub \u00b7 EmpowerMe \u00b7 5th Tusi",
 ]
 
 function CascadeLine({
@@ -165,10 +165,9 @@ export function Hero() {
           transition={{ duration: 0.5, ease: easeOutExpo, delay: 0.65 }}
           className="mt-6 max-w-[60ch] text-[15px] leading-[1.7] text-zinc-400"
         >
-          Top 3 of 20,000+ university applicants nationwide.
-          Two 1st-place wins in a single week. Three ventures under
-          active incubation. I build at the intersection of product,
-          data, and AI&nbsp;&mdash;&nbsp;and I ship.
+          I turn business and societal problems into practical solutions
+          by combining AI, product thinking, research, and venture
+          execution.
         </motion.p>
 
         {/* CTAs */}
@@ -179,10 +178,10 @@ export function Hero() {
           className="mt-10 flex flex-col gap-4 sm:flex-row sm:items-center"
         >
           <MagneticButton
-            href="#work"
+            href="#case-studies"
             className="inline-flex items-center justify-center rounded-md border border-white/[0.16] bg-white/[0.035] px-5 py-2.5 text-[14px] text-white shadow-[inset_0_1px_0_rgba(255,255,255,0.08),0_14px_44px_rgba(0,0,0,0.36)] transition-all duration-500 hover:border-white/50 hover:bg-white hover:text-black"
           >
-            View ventures &darr;
+            Explore my work &darr;
           </MagneticButton>
           <MagneticButton
             href="/Fizuli-Hasanov-CV.pdf"
