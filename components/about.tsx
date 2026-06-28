@@ -33,7 +33,7 @@ export function SectionLabel({ label }: { label: string }) {
         whileInView={{ opacity: 1, y: 0 }}
         viewport={{ once: true, margin: "-80px" }}
         transition={{ duration: 0.4, ease: easeOutExpo }}
-        className="font-mono text-[11px] uppercase tracking-[0.1em] text-zinc-600"
+        className="font-mono text-[10px] uppercase tracking-[0.11em] text-zinc-600"
       >
         {label}
       </motion.p>
@@ -70,13 +70,13 @@ export function About() {
           >
             <h2
               className="text-white"
-              style={{ fontSize: 28, fontWeight: 600, letterSpacing: "-0.02em" }}
+              style={{ fontSize: 25, fontWeight: 600, letterSpacing: "-0.02em" }}
             >
               Building AI-driven products, ventures, and strategies.
             </h2>
 
             {/* Para 1 — identity + credential */}
-            <p className="mt-6 max-w-[65ch] text-[15px] leading-[1.75] text-zinc-400">
+            <p className="mt-5 max-w-[65ch] text-[14px] leading-[1.7] text-zinc-400">
               I am a Presidential Scholar interested in how AI and
               innovation can solve meaningful business and societal
               problems. My experience spans strategy research, analytics,
@@ -85,7 +85,7 @@ export function About() {
             </p>
 
             {/* Para 2 — operating mode */}
-            <p className="mt-4 max-w-[65ch] text-[15px] leading-[1.75] text-zinc-400">
+            <p className="mt-4 max-w-[65ch] text-[14px] leading-[1.7] text-zinc-400">
               Rather than defining myself through one narrow role, I focus
               on a consistent goal: understanding complex problems and
               turning promising ideas into practical products, strategies,
@@ -113,7 +113,7 @@ export function About() {
                       <h3 className="text-[15px] font-semibold text-white">
                       {p.title}
                       </h3>
-                      <p className="mt-1 text-[14px] leading-[1.7] text-zinc-500 transition-colors duration-500 group-hover:text-zinc-300">
+                      <p className="mt-1 text-[13px] leading-[1.65] text-zinc-500 transition-colors duration-500 group-hover:text-zinc-300">
                         {p.body}
                       </p>
                     </div>
@@ -153,7 +153,7 @@ export function About() {
                 <p className="font-mono text-[11px] uppercase tracking-[0.32em] text-zinc-600 transition-colors duration-500 group-hover:text-zinc-400">
                   F. Hasanov &middot; 2026
                 </p>
-                <h3 className="mt-3 text-[24px] font-semibold text-white">
+                <h3 className="mt-3 text-[22px] font-semibold text-white">
                   AI Innovation &amp; Product Strategy
                 </h3>
                 <p className="mx-auto mt-3 max-w-[28ch] text-[13px] leading-[1.7] text-zinc-500 transition-colors duration-500 group-hover:text-zinc-300">

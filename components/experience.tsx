@@ -121,7 +121,7 @@ export function Experience() {
         <h2
           className="mt-2 text-white"
           style={{
-            fontSize: "clamp(40px, 5vw, 64px)",
+            fontSize: "clamp(34px, 4.4vw, 54px)",
             fontWeight: 700,
             letterSpacing: "-0.03em",
           }}
@@ -161,7 +161,7 @@ export function Experience() {
               </div>
 
               {/* Role + Company */}
-              <p className="mt-2 text-[16px]">
+              <p className="mt-2 text-[15px]">
                 <span className="font-semibold text-white">{role.role}</span>
                 <span className="text-zinc-400"> &middot; {role.company}</span>
               </p>
@@ -173,14 +173,14 @@ export function Experience() {
 
               {/* Key win box */}
               <div className="mt-3 rounded-r-lg border-l-2 border-white/20 bg-white/[0.025] px-4 py-2.5" style={{ borderRadius: "0 8px 8px 0" }}>
-                <p className="text-[13px] text-zinc-300">{role.keyWin}</p>
+                <p className="text-[12px] leading-[1.55] text-zinc-300">{role.keyWin}</p>
               </div>
 
               {/* Bullets */}
               {role.bullets.length > 0 && (
                 <ul className="mt-4 space-y-2.5">
                   {role.bullets.map((b, j) => (
-                    <li key={j} className="flex items-start gap-3 text-[14px] leading-[1.6] text-zinc-400">
+                    <li key={j} className="flex items-start gap-3 text-[13px] leading-[1.6] text-zinc-400">
                       <span aria-hidden className="mt-[9px] block h-[5px] w-[5px] shrink-0 rounded-full bg-zinc-600" />
                       <span>{b}</span>
                     </li>

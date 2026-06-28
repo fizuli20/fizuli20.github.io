@@ -136,16 +136,16 @@ function ProjectCard({ project }: { project: Project }) {
           </span>
         </div>
 
-        <h3 className="mt-3 text-[20px] font-semibold text-white">
+        <h3 className="mt-3 text-[19px] font-semibold text-white">
           {project.name}
         </h3>
 
-        <p className="mt-2 max-w-[65ch] text-[14px] leading-[1.6] text-zinc-400">
+        <p className="mt-2 max-w-[65ch] text-[13px] leading-[1.62] text-zinc-400">
           {project.description}
         </p>
 
         <div className="mt-auto flex items-center justify-between gap-4 border-t border-white/5 pt-4 mt-4">
-          <span className="font-mono text-[13px] text-zinc-500">
+          <span className="font-mono text-[12px] text-zinc-500">
             {project.metrics}
           </span>
           {project.link && (
@@ -154,7 +154,7 @@ function ProjectCard({ project }: { project: Project }) {
                 href={project.link.href}
                 target="_blank"
                 rel="noopener noreferrer"
-                className="group inline-flex items-center gap-1 font-mono text-[13px] text-zinc-600 transition-colors duration-200 hover:text-white"
+                className="group inline-flex items-center gap-1 font-mono text-[12px] text-zinc-600 transition-colors duration-200 hover:text-white"
               >
                 {project.link.label}
                 <ArrowUpRight
@@ -166,7 +166,7 @@ function ProjectCard({ project }: { project: Project }) {
               <Link
                 href={project.link.href}
                 prefetch
-                className="group inline-flex items-center gap-1 font-mono text-[13px] text-zinc-500 transition-colors duration-200 hover:text-white"
+                className="group inline-flex items-center gap-1 font-mono text-[12px] text-zinc-500 transition-colors duration-200 hover:text-white"
               >
                 {project.link.label}
                 <ArrowRight
@@ -194,7 +194,7 @@ export function Ventures() {
         <h2
           className="mt-2 text-white"
           style={{
-            fontSize: "clamp(40px, 5vw, 64px)",
+            fontSize: "clamp(34px, 4.4vw, 54px)",
             fontWeight: 700,
             letterSpacing: "-0.03em",
           }}
@@ -235,10 +235,10 @@ export function Ventures() {
               <p className="mt-10 font-mono text-[10px] uppercase tracking-[0.17em] text-zinc-600">
                 Climate tech · Chief AI Officer · Pilot pathway
               </p>
-              <h3 className="mt-3 text-[40px] font-semibold tracking-[-0.05em] text-white md:text-[58px]">
+              <h3 className="mt-3 text-[36px] font-semibold tracking-[-0.05em] text-white md:text-[50px]">
                 Carboryn
               </h3>
-              <p className="mt-4 max-w-[54ch] text-[14px] leading-[1.7] text-zinc-400">
+              <p className="mt-4 max-w-[54ch] text-[13px] leading-[1.65] text-zinc-400">
                 Turning industrial residue and captured carbon into useful
                 mineral products, backed by a measurable data layer.
               </p>
@@ -270,10 +270,10 @@ export function Ventures() {
               <p className="mt-10 font-mono text-[10px] uppercase tracking-[0.17em] text-zinc-600">
                 Fintech AI · ABB selected · Pre-validation
               </p>
-              <h3 className="mt-3 text-[40px] font-semibold tracking-[-0.05em] text-white md:text-[54px]">
+              <h3 className="mt-3 text-[36px] font-semibold tracking-[-0.05em] text-white md:text-[48px]">
                 LedgerLens
               </h3>
-              <p className="mt-4 max-w-[52ch] text-[14px] leading-[1.7] text-zinc-400">
+              <p className="mt-4 max-w-[52ch] text-[13px] leading-[1.65] text-zinc-400">
                 From informal SME financial records to a trust-aware AI
                 assistant for credit onboarding.
               </p>
@@ -306,10 +306,10 @@ export function Ventures() {
               <p className="mt-10 font-mono text-[10px] uppercase tracking-[0.17em] text-zinc-600">
                 RPA + Robotics · SabahHub · Investment stage
               </p>
-              <h3 className="mt-3 text-[40px] font-semibold tracking-[-0.05em] text-white md:text-[54px]">
+              <h3 className="mt-3 text-[36px] font-semibold tracking-[-0.05em] text-white md:text-[48px]">
                 HyperAutomation
               </h3>
-              <p className="mt-4 max-w-[52ch] text-[14px] leading-[1.7] text-zinc-400">
+              <p className="mt-4 max-w-[52ch] text-[13px] leading-[1.65] text-zinc-400">
                 Connecting digital warehouse workflows to physical robot
                 execution without replacing existing systems.
               </p>
@@ -323,7 +323,7 @@ export function Ventures() {
 
         <div className="mt-24">
           <SectionLabel label="SELECTED WORK" />
-          <h3 className="mt-3 text-[28px] font-semibold tracking-[-0.03em] text-white">
+          <h3 className="mt-3 text-[24px] font-semibold tracking-[-0.03em] text-white">
             More products, research, and ventures.
           </h3>
         </div>

@@ -162,7 +162,7 @@ export function Awards() {
         <h2
           className="mt-2 text-white"
           style={{
-            fontSize: "clamp(40px, 5vw, 64px)",
+            fontSize: "clamp(34px, 4.4vw, 54px)",
             fontWeight: 700,
             letterSpacing: "-0.03em",
           }}
@@ -207,7 +207,7 @@ export function Awards() {
                 <h3 className="mt-3 text-[18px] font-semibold text-white">
                   {a.title}
                 </h3>
-                <p className="mt-1 text-[14px] text-zinc-400 transition-colors duration-500 group-hover:text-zinc-300">
+                <p className="mt-1 text-[13px] leading-[1.55] text-zinc-400 transition-colors duration-500 group-hover:text-zinc-300">
                   {a.sub}
                 </p>
                 <p className="mt-3 font-mono text-[11px] text-zinc-600 transition-colors duration-500 group-hover:text-zinc-500">

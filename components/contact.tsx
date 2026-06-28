@@ -60,7 +60,7 @@ export function Contact() {
               <h2
                 className="mt-5 max-w-[13ch] text-white"
                 style={{
-                  fontSize: "clamp(44px, 6vw, 82px)",
+                  fontSize: "clamp(36px, 5.2vw, 66px)",
                   fontWeight: 750,
                   letterSpacing: "-0.045em",
                   lineHeight: 0.98,
@@ -68,7 +68,7 @@ export function Contact() {
               >
                 Let&apos;s turn emerging technology into practical impact.
               </h2>
-              <p className="mt-6 max-w-[58ch] text-[15px] leading-[1.75] text-zinc-400">
+              <p className="mt-6 max-w-[58ch] text-[14px] leading-[1.7] text-zinc-400">
                 I&apos;m open to ambitious conversations around AI products,
                 innovation strategy, venture collaboration, and international
                 programs.
@@ -92,7 +92,7 @@ export function Contact() {
 
               <a
                 href="mailto:hesenovfizuli2020@gmail.com"
-                className="group mt-9 inline-flex items-center gap-3 rounded-full border border-white/20 bg-white px-5 py-3 text-[14px] font-medium text-black shadow-[0_0_40px_rgba(255,255,255,0.12)] transition-all duration-500 hover:scale-[1.02] hover:shadow-[0_0_60px_rgba(255,255,255,0.22)]"
+                className="group mt-9 inline-flex items-center gap-3 rounded-full border border-white/20 bg-white px-5 py-3 text-[13px] font-medium text-black shadow-[0_0_40px_rgba(255,255,255,0.12)] transition-all duration-500 hover:scale-[1.02] hover:shadow-[0_0_60px_rgba(255,255,255,0.22)]"
               >
                 Start a conversation
                 <ArrowUpRight size={15} className="transition-transform duration-300 group-hover:translate-x-0.5 group-hover:-translate-y-0.5" />

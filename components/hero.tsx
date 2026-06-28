@@ -33,7 +33,7 @@ function CascadeLine({
       <motion.span
         className="block text-white"
         style={{
-          fontSize: "clamp(48px, 9vw, 116px)",
+          fontSize: "clamp(44px, 8.4vw, 104px)",
           fontWeight: 800,
           letterSpacing: "-0.035em",
           lineHeight: 1.05,
@@ -163,7 +163,7 @@ export function Hero() {
           initial={reduce ? undefined : { opacity: 0, y: 10 }}
           animate={{ opacity: 1, y: 0 }}
           transition={{ duration: 0.5, ease: easeOutExpo, delay: 0.65 }}
-          className="mt-6 max-w-[60ch] text-[15px] leading-[1.7] text-zinc-400"
+          className="mt-5 max-w-[60ch] text-[14px] leading-[1.65] text-zinc-400"
         >
           I turn business and societal problems into practical solutions
           by combining AI, product thinking, research, and venture
@@ -179,14 +179,14 @@ export function Hero() {
         >
           <MagneticButton
             href="#case-studies"
-            className="inline-flex items-center justify-center rounded-md border border-white/[0.16] bg-white/[0.035] px-5 py-2.5 text-[14px] text-white shadow-[inset_0_1px_0_rgba(255,255,255,0.08),0_14px_44px_rgba(0,0,0,0.36)] transition-all duration-500 hover:border-white/50 hover:bg-white hover:text-black"
+            className="inline-flex items-center justify-center rounded-md border border-white/[0.16] bg-white/[0.035] px-5 py-2.5 text-[13px] text-white shadow-[inset_0_1px_0_rgba(255,255,255,0.08),0_14px_44px_rgba(0,0,0,0.36)] transition-all duration-500 hover:border-white/50 hover:bg-white hover:text-black"
           >
             Explore my work &darr;
           </MagneticButton>
           <MagneticButton
             href="/Fizuli-Hasanov-CV.pdf"
             download="Fizuli_Hasanov_ProductOwner_CV.pdf"
-            className="inline-flex items-center justify-center gap-2 rounded-md border border-white/[0.12] bg-white/[0.04] px-5 py-2.5 text-[14px] text-zinc-300 shadow-[inset_0_1px_0_rgba(255,255,255,0.08),0_14px_44px_rgba(0,0,0,0.3)] transition-all duration-500 hover:border-white/30 hover:bg-white/[0.1] hover:text-zinc-100"
+            className="inline-flex items-center justify-center gap-2 rounded-md border border-white/[0.12] bg-white/[0.04] px-5 py-2.5 text-[13px] text-zinc-300 shadow-[inset_0_1px_0_rgba(255,255,255,0.08),0_14px_44px_rgba(0,0,0,0.3)] transition-all duration-500 hover:border-white/30 hover:bg-white/[0.1] hover:text-zinc-100"
           >
             <Download size={14} />
             Download CV

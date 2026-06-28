@@ -47,7 +47,7 @@ function SkillRow({ name, tag }: { name: string; tag: string }) {
         aria-hidden
         className="pointer-events-none absolute left-0 top-1/2 h-7 w-px -translate-y-1/2 bg-white/0 transition-all duration-500 group-hover/row:bg-white group-hover/row:shadow-[0_0_20px_rgba(255,255,255,0.7)]"
       />
-      <span className="relative z-10 text-[15px] text-zinc-300 transition-all duration-500 group-hover/row:translate-x-1.5 group-hover/row:text-white">
+      <span className="relative z-10 text-[14px] text-zinc-300 transition-all duration-500 group-hover/row:translate-x-1.5 group-hover/row:text-white">
         {name}
       </span>
       <div className="relative z-10 flex items-center gap-2">
@@ -106,7 +106,7 @@ export function Skills() {
         <h2
           className="mt-2 text-white"
           style={{
-            fontSize: "clamp(40px, 5vw, 64px)",
+            fontSize: "clamp(34px, 4.4vw, 54px)",
             fontWeight: 700,
             letterSpacing: "-0.03em",
           }}
@@ -140,7 +140,7 @@ export function Skills() {
             aria-hidden
             className="pointer-events-none absolute inset-y-0 right-0 w-1/3 bg-[radial-gradient(ellipse_at_right,rgba(255,255,255,0.08),transparent_60%)] opacity-70 transition-opacity duration-500 group-hover:opacity-100"
           />
-          <span className="relative z-10 flex flex-wrap items-center gap-x-4 gap-y-2 font-mono text-[13px] text-zinc-400">
+          <span className="relative z-10 flex flex-wrap items-center gap-x-4 gap-y-2 font-mono text-[12px] text-zinc-400">
             <span className="text-[11px] uppercase tracking-[0.12em] text-zinc-600 transition-colors duration-500 group-hover:text-zinc-400">
               Currently deepening &rarr;
             </span>
