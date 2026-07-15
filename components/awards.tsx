@@ -88,7 +88,7 @@ const AWARDS: Award[] = [
     tier: 2,
     top: "ACCEPTED",
     title: "ABB 6th Incubation",
-    sub: "LedgerLens \u00b7 AI-OCR for handwritten Azerbaijani SME ledgers",
+    sub: "AISE \u00b7 AI-powered HRTech for the Azerbaijani job market",
     date: "2026",
   },
   {

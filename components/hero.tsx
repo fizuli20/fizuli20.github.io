@@ -10,9 +10,9 @@ const TICKER_ITEMS = [
   "Presidential Scholar \u2014 Top 3 of 20,000+",
   "Deloitte SRT \u2014 Strategy Research Support",
   "2\u00d7 1st-Place Innovation Wins \u2014 One Week",
-  "LedgerLens \u2014 ABB 6th Incubation",
+  "AISE \u2014 ABB 6th Incubation \u00b7 HRTech",
   "FinVeda \u2014 $400 Aspire Seed Fund \u00b7 1 of 40 / 1,800+",
-  "3 Incubated Ventures \u2014 Carboryn \u00b7 HyperAutomation \u00b7 LedgerLens",
+  "3 Incubated Ventures \u2014 Carboryn \u00b7 HyperAutomation \u00b7 AISE",
   "Youth in Development Fellow \u2014 1 of 20 Globally",
   "2.1M+ Digital Views \u2014 Zero Paid Reach",
 ]

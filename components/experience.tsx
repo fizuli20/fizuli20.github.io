@@ -30,21 +30,6 @@ const ROLES: Role[] = [
     tags: ["Strategy Research", "Sustainability", "Benchmarking"],
   },
   {
-    date: "MAR 2026 \u2014 PRESENT",
-    current: true,
-    role: "Business Analyst & Product Discovery Intern",
-    company: "Codveda Technologies",
-    location: "Remote",
-    keyWin:
-      "XGBoost PR-AUC 0.87 \u00b7 284,807 real transactions \u00b7 4-tier intervention framework designed",
-    bullets: [
-      "Spearheaded churn analysis on 2,666 telecom customers \u2014 surfaced international-plan subscribers as 3.8\u00d7 higher risk and translated findings into 5 retention recommendations, including a 3rd-call early-warning trigger (Random Forest ROC-AUC 0.91).",
-      "Architected a 4-tier fraud risk-scoring framework across 284,807 real transactions \u2014 defined intervention logic, selected PR-AUC as the primary metric for a 577:1 class imbalance, and achieved XGBoost PR-AUC 0.87.",
-      "Quantified $108,623 in high-risk monthly revenue via SQL behavioral scoring; projected $195,522 annual savings from a 15% retention uplift simulation.",
-    ],
-    tags: ["Python", "scikit-learn", "XGBoost", "SMOTE", "PostgreSQL"],
-  },
-  {
     date: "FEB \u2014 MAR 2026",
     role: "Data Analyst Intern",
     company: "Elevvo Pathways",
@@ -86,8 +71,8 @@ const ROLES: Role[] = [
   },
   {
     date: "OCT 2024 \u2014 AUG 2025",
-    role: "Digital Product Growth",
-    company: "Content Platform",
+    role: "Digital Product & Growth Lead",
+    company: "Independent Content Venture",
     location: "Self-directed",
     keyWin:
       "2.1M+ views \u00b7 70K+ likes \u00b7 11 months \u00b7 Zero paid distribution",

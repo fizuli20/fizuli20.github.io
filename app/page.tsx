@@ -18,8 +18,8 @@ export default function Page() {
       <main>
         <Hero />
         <Bento />
-        <About />
         <Ventures />
+        <About />
         <Experience />
         <Skills />
         <Awards />

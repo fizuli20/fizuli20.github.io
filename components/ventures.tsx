@@ -37,6 +37,33 @@ const PROJECTS: Project[] = [
     link: { label: "Case study", href: "/work/hyperautomation" },
   },
   {
+    category: "HRTECH \u00b7 CO-FOUNDER & CEO",
+    badge: "ABB 6th Incubation \u00b7 Selected",
+    name: "AISE",
+    description:
+      "Building an Azerbaijan-focused candidate-side HRTech platform that combines cross-source vacancy discovery, personalized job matching, instant alerts, CV tailoring, and motivation-letter assistance to help candidates convert applications into interviews.",
+    metrics: "ABB 6th Incubation \u00b7 Concierge pilot \u00b7 MVP planning",
+    link: { label: "Case study", href: "/work/aise" },
+  },
+  {
+    category: "AI TOOLING \u00b7 DEVELOPER TOOLS \u00b7 FOUNDER",
+    badge: "3D Web \u00b7 Multi-Model LLM Routing",
+    name: "TechShip OS",
+    description:
+      "A 3D, holographic web dashboard replacing terminal windows for managing autonomous LLM coding agents. Users dispatch AI agents (CTO, Developer, DevOps, Security Auditor roles) into isolated E2B cloud sandboxes to write code, run tests, and open GitHub PRs \u2014 all visualized as a cinematic starship interface.",
+    metrics: "Three.js \u00b7 E2B sandboxing \u00b7 Multi-model LLM routing \u00b7 GitHub API",
+    link: { label: "View", href: "https://github.com/fizuli20" },
+  },
+  {
+    category: "CONSUMER TECH \u00b7 FOUNDER",
+    badge: "Live \u00b7 3-Tier Pricing",
+    name: "WillYouDate",
+    description:
+      "A playful date-invitation web app featuring a dodge-button mechanic, 24 visual themes, shareable invite links, and a three-tier pricing model. Built with Next.js App Router, Supabase, Resend, and Lemon Squeezy.",
+    metrics: "Next.js \u00b7 Supabase \u00b7 Lemon Squeezy \u00b7 willyoudate.online",
+    link: { label: "Visit", href: "https://willyoudate.online" },
+  },
+  {
     category: "INFRASTRUCTURE \u00b7 CO-FOUNDER",
     badge: "1st Place \u00b7 AZN 1,500",
     name: "Milli Cloud Security",
@@ -45,22 +72,31 @@ const PROJECTS: Project[] = [
     metrics: "AzCON Hackathon \u00b7 AZN 1,500 \u00b7 Holberton AZ",
   },
   {
-    category: "FINTECH AI \u00b7 CO-FOUNDER & CEO",
-    badge: "ABB 6th Incubation \u00b7 Selected",
-    name: "LedgerLens",
+    category: "AI PRODUCT \u00b7 DOCUMENT INTELLIGENCE \u00b7 FOUNDER",
+    badge: "Cursor Hackathon Baku \u00b7 Deployed",
+    name: "Auditly",
     description:
-      "Leading an early-stage AI assistant for turning informal SME financial records into structured, reviewable credit-onboarding data. Newly selected for ABB's 6th Incubation and preparing for deep expert-led validation.",
-    metrics: "AI document intelligence \u00b7 Pre-validation \u00b7 ABB selected",
-    link: { label: "Case study", href: "/work/ledgerlens" },
+      "A local-first AI app that lets users upload audit or sustainability reports, ask natural-language questions, and get evidence-backed answers with page-level references. Started at the first-ever Cursor Hackathon in Baku, later completed and deployed independently.",
+    metrics: "Streamlit \u00b7 FAISS \u00b7 BM25 \u00b7 Local embedding models \u00b7 Feb\u2013Jun 2026",
+    link: { label: "GitHub", href: "https://github.com/fizuli20/Auditly" },
+  },
+  {
+    category: "EDTECH \u00b7 IT BUSINESS ANALYSIS \u00b7 CO-FOUNDER",
+    badge: "3rd Place \u00b7 Holberton AZ Hackathon",
+    name: "CampusSync",
+    description:
+      "A full-stack platform helping mentors and academic teams detect at-risk students earlier through performance dashboards, risk scoring, admin/student flows, and AI-assisted reporting. Built for Holberton School Azerbaijan's Data Driven Solutions Hackathon.",
+    metrics: "Next.js \u00b7 NestJS \u00b7 PostgreSQL \u00b7 OpenRouter AI \u00b7 Apr\u2013May 2026",
+    link: { label: "GitHub", href: "https://github.com/fizuli20/DDS_Hackathon" },
   },
   {
     category: "MACROECONOMIC RESEARCH \u00b7 UNIVERSITY RESEARCHER",
-    badge: "4-Notebook Research Project",
+    badge: "Independent Research \u00b7 BHOS",
     name: "Azerbaijan Economy Analysis",
     description:
       "Analyzed Azerbaijan's economy from 2005\u20132024 across oil dependence, purchasing power, and diversification. OLS modeling found Brent explains 50.9% of GDP variance; a March 2026 Hormuz escalation scenario modeled a potential +$2.35B/month revenue effect.",
-    metrics: "R\u00b2=0.509 \u00b7 p<0.001 \u00b7 +$2.35B/month model",
-    link: { label: "Visit", href: "https://github.com/fizuli20" },
+    metrics: "R\u00b2=0.509 \u00b7 p<0.001 \u00b7 +$2.35B/month model \u00b7 Jan\u2013Mar 2026",
+    link: { label: "GitHub", href: "https://github.com/fizuli20/azerbaijan_economy_analysis" },
   },
   {
     category: "FINTECH \u00b7 CO-FOUNDER",
@@ -250,7 +286,7 @@ export function Ventures() {
           </Link>
 
           <Link
-            href="/work/ledgerlens"
+            href="/work/aise"
             prefetch
             className="case-gateway ledger-gateway glass-surface group relative min-h-[300px] overflow-hidden rounded-[28px] border border-white/[0.11] bg-white/[0.03] p-7 transition-all duration-700 hover:-translate-y-1 hover:border-white/[0.28] hover:bg-white/[0.055] md:p-8"
           >
@@ -268,17 +304,16 @@ export function Ventures() {
                 <ScanLine size={18} className="text-zinc-600 transition-colors duration-500 group-hover:text-white" />
               </div>
               <p className="mt-10 font-mono text-[10px] uppercase tracking-[0.17em] text-zinc-600">
-                Fintech AI · ABB selected · Pre-validation
+                HRTech AI · ABB selected · Concierge pilot
               </p>
               <h3 className="mt-3 text-[36px] font-semibold tracking-[-0.05em] text-white md:text-[48px]">
-                LedgerLens
+                AISE
               </h3>
               <p className="mt-4 max-w-[52ch] text-[13px] leading-[1.65] text-zinc-400">
-                From informal SME financial records to a trust-aware AI
-                assistant for credit onboarding.
+                A localized candidate-intelligence and application-conversion layer for the Azerbaijani job market, not a generic job aggregator.
               </p>
               <span className="mt-auto inline-flex items-center gap-2 pt-8 font-mono text-[11px] uppercase tracking-[0.15em] text-zinc-500 transition-colors duration-500 group-hover:text-white">
-                Open validation dossier
+                Open HRTech dossier
                 <ArrowRight size={14} className="transition-transform duration-500 group-hover:translate-x-1.5" />
               </span>
             </div>

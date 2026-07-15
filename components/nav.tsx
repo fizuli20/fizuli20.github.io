@@ -2,11 +2,12 @@
 
 import { useEffect, useState, useCallback, useRef } from "react"
 import Image from "next/image"
-import { motion, useReducedMotion, useMotionValue, useSpring } from "framer-motion"
+import { motion, AnimatePresence, useReducedMotion, useMotionValue, useSpring } from "framer-motion"
 import { Menu, X } from "lucide-react"
 
 const links = [
   { id: "case-studies", label: "Case Studies" },
+  { id: "about", label: "About" },
   { id: "experience", label: "Experience" },
   { id: "skills", label: "Skills" },
   { id: "awards", label: "Awards" },
@@ -194,32 +195,50 @@ export function Nav() {
       </nav>
 
       {/* Mobile menu */}
-      {open && (
-        <div className="border-t border-white/5 bg-black/95 backdrop-blur-sm lg:hidden">
-          <ul className="mx-auto flex max-w-[1120px] flex-col gap-1 px-6 py-4">
-            {links.map((l) => (
-              <li key={l.id}>
-                <a
-                  href={`#${l.id}`}
-                  onClick={() => setOpen(false)}
-                  className="block rounded-md px-3 py-3 font-mono text-[13px] text-zinc-400 transition-colors duration-150 hover:text-white"
+      <AnimatePresence>
+        {open && (
+          <motion.div
+            key="mobile-menu"
+            initial={{ opacity: 0, height: 0 }}
+            animate={{ opacity: 1, height: "auto" }}
+            exit={{ opacity: 0, height: 0 }}
+            transition={{ duration: 0.3, ease: [0.16, 1, 0.3, 1] }}
+            className="overflow-hidden border-t border-white/5 bg-black/95 backdrop-blur-sm lg:hidden"
+          >
+            <ul className="mx-auto flex max-w-[1120px] flex-col gap-1 px-6 py-4">
+              {links.map((l, i) => (
+                <motion.li
+                  key={l.id}
+                  initial={{ opacity: 0, x: -12 }}
+                  animate={{ opacity: 1, x: 0 }}
+                  transition={{ duration: 0.25, delay: i * 0.04, ease: [0.16, 1, 0.3, 1] }}
                 >
-                  {l.label}
-                </a>
-              </li>
-            ))}
-            <li>
-              <a
-                href="#contact"
-                onClick={() => setOpen(false)}
-                className="mt-2 block rounded-md border border-white/10 px-4 py-3 text-center font-mono text-[13px] text-zinc-400 transition-all duration-300 hover:border-white/25 hover:bg-white/[0.07] hover:text-white"
+                  <a
+                    href={`#${l.id}`}
+                    onClick={() => setOpen(false)}
+                    className="block rounded-md px-3 py-3 font-mono text-[13px] text-zinc-400 transition-colors duration-150 hover:text-white"
+                  >
+                    {l.label}
+                  </a>
+                </motion.li>
+              ))}
+              <motion.li
+                initial={{ opacity: 0, x: -12 }}
+                animate={{ opacity: 1, x: 0 }}
+                transition={{ duration: 0.25, delay: links.length * 0.04, ease: [0.16, 1, 0.3, 1] }}
               >
-                Connect &rarr;
-              </a>
-            </li>
-          </ul>
-        </div>
-      )}
+                <a
+                  href="#contact"
+                  onClick={() => setOpen(false)}
+                  className="mt-2 block rounded-md border border-white/10 px-4 py-3 text-center font-mono text-[13px] text-zinc-400 transition-all duration-300 hover:border-white/25 hover:bg-white/[0.07] hover:text-white"
+                >
+                  Connect &rarr;
+                </a>
+              </motion.li>
+            </ul>
+          </motion.div>
+        )}
+      </AnimatePresence>
     </header>
   )
 }

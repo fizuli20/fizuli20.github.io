@@ -4,6 +4,7 @@ import { useEffect, useState } from "react"
 
 const footerLinks = [
   { label: "Case Studies", href: "#case-studies" },
+  { label: "About", href: "#about" },
   { label: "Experience", href: "#experience" },
   { label: "Skills", href: "#skills" },
   { label: "Awards", href: "#awards" },
