@@ -21,7 +21,6 @@ const STATS: StatCell[] = [
   {
     value: "TOP 3",
     numericValue: 3,
-    prefix: "TOP ",
     decimals: 0,
     label: "PRESIDENTIAL SCHOLAR",
     detail: "TOP 3 \u00b7 20,000+ DIM APPLICANTS",
@@ -87,13 +86,7 @@ function easeOutQuart(t: number): number {
 }
 
 function formatNumber(n: number, decimals: number, prefix?: string, suffix?: string): string {
-  let formatted: string
-  if (n >= 1000 && decimals === 0) {
-    formatted = Math.round(n).toLocaleString("en-US")
-  } else {
-    formatted = n.toFixed(decimals)
-  }
-  return (prefix || "") + formatted + (suffix || "")
+  return (prefix || "") + n.toFixed(decimals) + (suffix || "")
 }
 
 const containerVariants = {

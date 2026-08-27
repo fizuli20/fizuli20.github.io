@@ -2,7 +2,7 @@
 
 import { motion, useReducedMotion } from "framer-motion"
 import { GraduationCap } from "lucide-react"
-import { SectionLabel } from "./about"
+import { SectionLabel } from "./section-label"
 
 type Program = {
   school: string

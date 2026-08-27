@@ -36,14 +36,6 @@ export const metadata: Metadata = {
       "Fizuli Hasanov — founder and CEO building ventures across AI, HRTech, climate tech, EdTech, FinTech, automation, and consumer technology.",
     url: "https://fizuli20-github-io.vercel.app",
     siteName: "Fizuli Hasanov",
-    images: [
-      {
-        url: "/profile-photo.jpg",
-        width: 800,
-        height: 800,
-        alt: "Fizuli Hasanov",
-      },
-    ],
     locale: "en_US",
     type: "website",
   },
@@ -52,7 +44,6 @@ export const metadata: Metadata = {
     title: "I build ideas into products, pilots, and companies.",
     description:
       "Fizuli Hasanov — founder and CEO building ventures across AI, HRTech, climate tech, EdTech, FinTech, automation, and consumer technology.",
-    images: ["/profile-photo.jpg"],
   },
   robots: {
     index: true,

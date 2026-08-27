@@ -28,7 +28,6 @@ export const metadata: Metadata = {
     description:
       "Real markets. Paper money. Real skill. A shipped investing-education product built solo on a $400 seed grant.",
     url: "/work/fveda",
-    images: ["/profile-photo.jpg"],
   },
 }
 

@@ -22,7 +22,6 @@ export const metadata: Metadata = {
     title: "AISE Case Study | Fizuli Hasanov",
     description: "A localized candidate-intelligence and application-conversion layer for the Azerbaijani job market, not a generic job aggregator.",
     url: "/work/aise",
-    images: ["/profile-photo.jpg"],
   },
 }
 

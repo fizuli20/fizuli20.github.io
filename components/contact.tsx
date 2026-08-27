@@ -1,20 +1,31 @@
 "use client"
 
-import { useState, useCallback } from "react"
+import { useState, useCallback, useEffect, useRef } from "react"
 import { motion, useReducedMotion } from "framer-motion"
 import { Mail, Linkedin, Github, Check, Copy, ArrowUpRight } from "lucide-react"
 
 const easeOutExpo = [0.16, 1, 0.3, 1] as const
+const EMAIL = "hesenovfizuli2020@gmail.com"
 
 export function Contact() {
   const [copied, setCopied] = useState(false)
   const reduce = useReducedMotion()
+  const resetTimer = useRef<number | undefined>(undefined)
 
-  const handleCopy = useCallback(() => {
-    navigator.clipboard.writeText("hesenovfizuli2020@gmail.com")
-    setCopied(true)
-    setTimeout(() => setCopied(false), 2000)
+  // Only report success once the write actually resolves — it rejects in
+  // insecure contexts and when a browser denies clipboard permission.
+  const handleCopy = useCallback(async () => {
+    try {
+      await navigator.clipboard.writeText(EMAIL)
+      setCopied(true)
+      window.clearTimeout(resetTimer.current)
+      resetTimer.current = window.setTimeout(() => setCopied(false), 2000)
+    } catch {
+      setCopied(false)
+    }
   }, [])
+
+  useEffect(() => () => window.clearTimeout(resetTimer.current), [])
 
   return (
     <section
@@ -91,7 +102,7 @@ export function Contact() {
               </div>
 
               <a
-                href="mailto:hesenovfizuli2020@gmail.com"
+                href={`mailto:${EMAIL}`}
                 className="group mt-9 inline-flex items-center gap-3 rounded-full border border-white/20 bg-white px-5 py-3 text-[13px] font-medium text-black shadow-[0_0_40px_rgba(255,255,255,0.12)] transition-all duration-500 hover:scale-[1.02] hover:shadow-[0_0_60px_rgba(255,255,255,0.22)]"
               >
                 Start a conversation
@@ -120,9 +131,9 @@ export function Contact() {
                 <span className="flex h-10 w-10 shrink-0 items-center justify-center rounded-full border border-white/10 bg-white/[0.035] text-zinc-500 transition-colors duration-500 group-hover:text-white">
                   <Mail size={17} />
                 </span>
-                <a href="mailto:hesenovfizuli2020@gmail.com" className="min-w-0 flex-1">
+                <a href={`mailto:${EMAIL}`} className="min-w-0 flex-1">
                   <span className="block font-mono text-[9px] uppercase tracking-[0.18em] text-zinc-700">Direct channel</span>
-                  <span className="mt-1 block truncate text-[13px] text-zinc-300 transition-colors duration-500 group-hover:text-white">hesenovfizuli2020@gmail.com</span>
+                  <span className="mt-1 block truncate text-[13px] text-zinc-300 transition-colors duration-500 group-hover:text-white">{EMAIL}</span>
                 </a>
                 <button
                   type="button"

@@ -1,7 +1,7 @@
 "use client"
 
 import { motion } from "framer-motion"
-import { SectionLabel } from "./about"
+import { SectionLabel } from "./section-label"
 
 type Role = {
   date: string

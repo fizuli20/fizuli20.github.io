@@ -29,6 +29,8 @@
     background-color: #000000;
     color: #ffffff;
     scroll-behavior: smooth;
+    /* Clears the fixed 58px header so anchor jumps do not land under it. */
+    scroll-padding-top: 76px;
     -webkit-font-smoothing: antialiased;
     -moz-osx-font-smoothing: grayscale;
   }

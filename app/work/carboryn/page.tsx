@@ -32,7 +32,6 @@ export const metadata: Metadata = {
     description:
       "A circular materials venture connecting mineralization chemistry with measurable product and data strategy.",
     url: "/work/carboryn",
-    images: ["/profile-photo.jpg"],
   },
 }
 

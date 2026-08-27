@@ -28,7 +28,6 @@ export const metadata: Metadata = {
     description:
       "An early-stage platform connecting digital warehouse workflows with physical robot execution.",
     url: "/work/hyperautomation",
-    images: ["/profile-photo.jpg"],
   },
 }
 

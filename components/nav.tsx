@@ -1,9 +1,10 @@
 "use client"
 
-import { useEffect, useState, useCallback, useRef } from "react"
+import { useEffect, useState } from "react"
 import Image from "next/image"
-import { motion, AnimatePresence, useReducedMotion, useMotionValue, useSpring } from "framer-motion"
+import { motion, AnimatePresence, useReducedMotion } from "framer-motion"
 import { Menu, X } from "lucide-react"
+import { MagneticLink } from "./magnetic"
 
 const links = [
   { id: "case-studies", label: "Case Studies" },
@@ -15,80 +16,53 @@ const links = [
   { id: "contact", label: "Connect" },
 ]
 
-function MagneticLink({
-  children,
-  href,
-  className,
-  onClick,
-}: {
-  children: React.ReactNode
-  href: string
-  className: string
-  onClick?: () => void
-}) {
-  const ref = useRef<HTMLAnchorElement>(null)
-  const x = useMotionValue(0)
-  const y = useMotionValue(0)
-  const springX = useSpring(x, { stiffness: 180, damping: 18 })
-  const springY = useSpring(y, { stiffness: 180, damping: 18 })
-  const reduce = useReducedMotion()
-
-  const handleMouseMove = (e: React.MouseEvent) => {
-    if (reduce || !ref.current) return
-    const rect = ref.current.getBoundingClientRect()
-    const centerX = rect.left + rect.width / 2
-    const centerY = rect.top + rect.height / 2
-    x.set((e.clientX - centerX) * 0.28)
-    y.set((e.clientY - centerY) * 0.28)
-  }
-
-  const handleMouseLeave = () => {
-    x.set(0)
-    y.set(0)
-  }
-
-  return (
-    <motion.a
-      ref={ref}
-      href={href}
-      onClick={onClick}
-      style={{ x: springX, y: springY }}
-      onMouseMove={handleMouseMove}
-      onMouseLeave={handleMouseLeave}
-      className={className}
-    >
-      {children}
-    </motion.a>
-  )
-}
-
 export function Nav() {
   const [active, setActive] = useState("")
   const [scrolled, setScrolled] = useState(false)
   const [open, setOpen] = useState(false)
   const reduce = useReducedMotion()
 
-  const handleScroll = useCallback(() => {
-    setScrolled(window.scrollY > 16)
-
-    const sections = links.map((l) => document.getElementById(l.id))
-    const scrollPos = window.scrollY + 120
-
-    for (let i = sections.length - 1; i >= 0; i--) {
-      const section = sections[i]
-      if (section && section.offsetTop <= scrollPos) {
-        setActive(links[i].id)
-        return
-      }
-    }
-    setActive("")
-  }, [])
-
   useEffect(() => {
-    handleScroll()
-    window.addEventListener("scroll", handleScroll, { passive: true })
-    return () => window.removeEventListener("scroll", handleScroll)
-  }, [handleScroll])
+    // offsetTop is a static layout property — it only changes when the page
+    // reflows, so it is measured once here instead of on every scroll event.
+    let offsets: { id: string; top: number }[] = []
+
+    const measure = () => {
+      offsets = links.flatMap((l) => {
+        const el = document.getElementById(l.id)
+        return el ? [{ id: l.id, top: el.offsetTop }] : []
+      })
+    }
+
+    // Pure arithmetic on cached offsets: no DOM reads, so no forced layout.
+    const update = () => {
+      setScrolled(window.scrollY > 16)
+
+      const scrollPos = window.scrollY + 120
+      let current = ""
+      for (let i = offsets.length - 1; i >= 0; i--) {
+        if (offsets[i].top <= scrollPos) {
+          current = offsets[i].id
+          break
+        }
+      }
+      setActive(current)
+    }
+
+    const onResize = () => {
+      measure()
+      update()
+    }
+
+    measure()
+    update()
+    window.addEventListener("scroll", update, { passive: true })
+    window.addEventListener("resize", onResize, { passive: true })
+    return () => {
+      window.removeEventListener("scroll", update)
+      window.removeEventListener("resize", onResize)
+    }
+  }, [])
 
   return (
     <header

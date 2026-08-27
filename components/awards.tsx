@@ -1,7 +1,7 @@
 "use client"
 
 import { motion, useReducedMotion } from "framer-motion"
-import { SectionLabel } from "./about"
+import { SectionLabel } from "./section-label"
 
 type Award = {
   tier: 1 | 2

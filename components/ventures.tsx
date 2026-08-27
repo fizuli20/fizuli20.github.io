@@ -4,7 +4,7 @@ import { useRef, useState } from "react"
 import Link from "next/link"
 import { motion, useReducedMotion } from "framer-motion"
 import { ArrowRight, ArrowUpRight, Atom, LineChart, ScanLine } from "lucide-react"
-import { SectionLabel } from "./about"
+import { SectionLabel } from "./section-label"
 
 type Project = {
   category: string

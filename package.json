@@ -14,14 +14,12 @@
     "check": "npm run lint && npm run typecheck && npm run build"
   },
   "dependencies": {
-    "clsx": "^2.1.1",
     "framer-motion": "^11.11.17",
     "geist": "^1.7.0",
     "lucide-react": "^0.460.0",
     "next": "^15.5.4",
     "react": "^19.0.0",
-    "react-dom": "^19.0.0",
-    "tailwind-merge": "^2.5.4"
+    "react-dom": "^19.0.0"
   },
   "devDependencies": {
     "@eslint/eslintrc": "^3.3.5",

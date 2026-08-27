@@ -1,8 +1,8 @@
 "use client"
 
-import { useRef } from "react"
-import { motion, useReducedMotion, useSpring, useMotionValue } from "framer-motion"
+import { motion, useReducedMotion } from "framer-motion"
 import { Download } from "lucide-react"
+import { MagneticLink as MagneticButton } from "./magnetic"
 
 const easeOutExpo = [0.16, 1, 0.3, 1] as const
 
@@ -51,53 +51,6 @@ function CascadeLine({
         {text}
       </motion.span>
     </span>
-  )
-}
-
-function MagneticButton({
-  children,
-  href,
-  className,
-  download,
-}: {
-  children: React.ReactNode
-  href: string
-  className: string
-  download?: boolean | string
-}) {
-  const ref = useRef<HTMLAnchorElement>(null)
-  const x = useMotionValue(0)
-  const y = useMotionValue(0)
-  const springX = useSpring(x, { stiffness: 180, damping: 18 })
-  const springY = useSpring(y, { stiffness: 180, damping: 18 })
-  const reduce = useReducedMotion()
-
-  const handleMouseMove = (e: React.MouseEvent) => {
-    if (reduce || !ref.current) return
-    const rect = ref.current.getBoundingClientRect()
-    const centerX = rect.left + rect.width / 2
-    const centerY = rect.top + rect.height / 2
-    x.set((e.clientX - centerX) * 0.28)
-    y.set((e.clientY - centerY) * 0.28)
-  }
-
-  const handleMouseLeave = () => {
-    x.set(0)
-    y.set(0)
-  }
-
-  return (
-    <motion.a
-      ref={ref}
-      href={href}
-      download={download || undefined}
-      style={{ x: springX, y: springY }}
-      onMouseMove={handleMouseMove}
-      onMouseLeave={handleMouseLeave}
-      className={className}
-    >
-      {children}
-    </motion.a>
   )
 }
 
