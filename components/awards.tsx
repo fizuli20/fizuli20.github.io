@@ -34,7 +34,14 @@ const AWARDS: Award[] = [
     sub: "Ministry of Science and Education, Republic of Azerbaijan \u00b7 Top 3 of 20,000+ DIM applicants \u00b7 Score 686/700",
     date: "Jun 2025",
   },
-  // Tier 2 — Standard grid (12 items, newest first)
+  // Tier 2 — Standard grid (newest first)
+  {
+    tier: 2,
+    top: "SELECTED",
+    title: "Vistar Excellence Program 2026",
+    sub: "IDDA \u00d7 Azercosmos \u00d7 Israel Aerospace Industries \u00d7 Holon Institute of Technology \u00b7 Space technology & entrepreneurship",
+    date: "Jul 2026",
+  },
   {
     tier: 2,
     top: "FINALIST",
@@ -46,7 +53,7 @@ const AWARDS: Award[] = [
     tier: 2,
     top: "$400 SEED FUND",
     title: "Aspire Institute Seed Fund",
-    sub: "FinVeda \u00b7 1 of 40 founders selected from 1,800+ global applications",
+    sub: "FVeda \u00b7 1 of 40 founders selected from 1,800+ global applications",
     date: "2026",
   },
   {
@@ -59,7 +66,7 @@ const AWARDS: Award[] = [
   {
     tier: 2,
     top: "INCUBATED",
-    title: "SabahHub 9th Cohort",
+    title: "SABAH.HUB 9th Cohort",
     sub: "HyperAutomation \u00b7 Accepted among competitive applicants",
     date: "2026",
   },

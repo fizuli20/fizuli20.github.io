@@ -16,71 +16,129 @@ type Role = {
 
 const ROLES: Role[] = [
   {
-    date: "JUN 2026 \u2014 JUL 2026",
+    date: "AUG 2026 \u2014 PRESENT",
     current: true,
-    role: "SRT Summer Program Participant",
-    company: "Deloitte",
+    role: "Head of Sales & Business Development",
+    company: "Mentioned",
     location: "Baku, Azerbaijan (Hybrid)",
     keyWin:
-      "1 of 4 BHOS students nominated for Deloitte's SRT Summer Program",
+      "Leading sales and BD for an AI visibility monitoring product tracking brand presence across ChatGPT, Gemini, Claude, and Perplexity",
     bullets: [
-      "Support managers with structured sector, company, sustainability, and certification research used to inform strategy definition across telecom, energy, transport, and green infrastructure.",
-      "Nominated by Baku Higher Oil School as 1 of 4 students for Deloitte's SRT Summer Program.",
+      "Own outbound, pipeline, and commercial strategy for a generative-engine-optimization SaaS moving from free scans to paid tiers.",
+      "Translate a technical AI-visibility product into a buyer-facing story for brands that need to know whether AI assistants recommend them.",
     ],
-    tags: ["Strategy Research", "Sustainability", "Benchmarking"],
+    tags: ["Sales", "Business Development", "GEO", "B2B SaaS"],
   },
   {
-    date: "FEB \u2014 MAR 2026",
+    date: "AUG 2026 \u2014 PRESENT",
+    current: true,
+    role: "Co-Founder & CSO",
+    company: "EarthXLab",
+    location: "Baku, Azerbaijan",
+    keyWin:
+      "Co-founding a satellite-imagery education platform born out of the Vistar Excellence Program",
+    bullets: [
+      "Set strategy for a planetary-science platform where learners compare before-and-after satellite imagery, record observations, and earn mission certificates.",
+      "Drive positioning for both independent learners and the educator channel, plus the evidence and sourcing methodology the product is built on.",
+    ],
+    tags: ["Strategy", "EdTech", "Satellite Imagery", "Go-to-Market"],
+  },
+  {
+    date: "JUL 2026 \u2014 PRESENT",
+    current: true,
+    role: "Vistar Trainee",
+    company: "Vistar Excellence Program",
+    location: "Baku, Azerbaijan (On-site)",
+    keyWin:
+      "Selected for the space-technology excellence program run by IDDA, Azercosmos, Israel Aerospace Industries, and Holon Institute of Technology",
+    bullets: [
+      "Train across space technology, satellite data, and entrepreneurship with mentors from Israel Aerospace Industries and Holon Institute of Technology.",
+      "Incubated EarthXLab inside the program, taking it from concept to a live product.",
+    ],
+    tags: ["Space Tech", "Entrepreneurship", "Azercosmos", "IAI"],
+  },
+  {
+    date: "JUL 2026 \u2014 PRESENT",
+    current: true,
+    role: "Co-Founder & CEO",
+    company: "AISE",
+    location: "Baku, Azerbaijan (Hybrid)",
+    keyWin:
+      "Selected for ABB Innovation's 6th Incubation Program \u00b7 running a concierge pilot",
+    bullets: [
+      "Lead an Azerbaijan-focused, candidate-side HRTech platform built around one metric: application-to-interview conversion.",
+      "Drive ABB incubation discovery \u2014 mapping candidate pain points, recruiter workflows, and platform gaps into an evidence-led roadmap.",
+    ],
+    tags: ["CEO", "HRTech", "Product Strategy", "ABB Innovation"],
+  },
+  {
+    date: "APR 2026 \u2014 PRESENT",
+    current: true,
+    role: "Co-Founder & Product Strategy Lead",
+    company: "Carboryn.az",
+    location: "Baku, Azerbaijan (Remote)",
+    keyWin:
+      "1st place of 100+ university teams at GreenTech III \u00b7 EmpowerMe graduate",
+    bullets: [
+      "Own product strategy for a circular mineralization venture converting industrial residue and captured CO\u2082 into useful materials.",
+      "Contribute financial modeling, AI and data systems, website development, and business-development validation.",
+    ],
+    tags: ["Product Strategy", "Climate Tech", "Financial Modeling"],
+  },
+  {
+    date: "JUN 2026 \u2014 JUL 2026",
+    role: "Business Analyst Mentee",
+    company: "Deloitte",
+    location: "Baku, Azerbaijan (On-site)",
+    keyWin:
+      "1 of 4 BHOS students nominated \u00b7 Strategy, Risk & Transactions \u2014 Sustainability & Climate Change Advisory \u00b7 received a Letter of Recommendation",
+    bullets: [
+      "Supported enterprise clients developing long-term decarbonization and net-zero roadmaps.",
+      "Assisted in climate risk assessments and ESG data collection for corporate sustainability reporting.",
+      "Researched market trends, green regulations, and environmental impacts to inform strategy definition.",
+    ],
+    tags: ["Strategy Research", "Sustainability", "ESG", "Climate Risk"],
+  },
+  {
+    date: "APR 2026 \u2014 JUL 2026",
+    role: "Founder",
+    company: "HyperAutomation.az",
+    location: "Baku, Azerbaijan (Hybrid)",
+    keyWin:
+      "Selected for SABAH.HUB's 9th incubation cohort \u00b7 PASHA Hackathon finalist \u00b7 paused after the cohort concluded",
+    bullets: [
+      "Built an AI-driven warehouse automation platform targeting logistics inefficiencies in retail supply chains, connecting RPA workflows to AGV/AMR execution.",
+      "Completed structured mentorship, product design sprints, and an investor-facing demo day through SABAH.HUB Cohort 9.",
+      "Earned an opportunity through PASHA Hackathon 6.0 to test the product at Bravo.",
+    ],
+    tags: ["RPA", "Robotics", "SABAH.HUB", "Supply Chain"],
+  },
+  {
+    date: "FEB 2026 \u2014 MAR 2026",
     role: "Data Analyst Intern",
     company: "Elevvo Pathways",
-    location: "Remote",
+    location: "Cairo, Egypt (Remote)",
     keyWin:
-      "Outstanding Contributor \u00b7 Recognized among 2,000+ international participants",
+      "Outstanding Contributor \u00b7 recognized among 2,000+ international participants",
     bullets: [
       "Recognized as an Outstanding Contributor among 2,000+ international participants for analytics work that exceeded the project brief.",
-      "Surfaced $7.45M in top-segment revenue from RFM model on 95,000+ customers; delivered direct prioritization framework.",
-      "Built executive Power BI dashboard: 13M revenue, 1.47M profit, ~25K orders with regional drill-downs.",
+      "Surfaced $7.45M in top-segment revenue from an RFM model on 95,000+ customers; delivered a direct prioritization framework.",
+      "Built an executive Power BI dashboard: 13M revenue, 1.47M profit, ~25K orders with regional drill-downs.",
     ],
     tags: ["pandas", "Power BI", "RFM", "BigQuery"],
   },
   {
-    date: "FEB 2026 \u2014 PRESENT",
-    role: "Business & Finance Coordinator",
-    company: "International Youth Dialogue Platform",
-    location: "Baku",
+    date: "JAN 2026 \u2014 MAR 2026",
+    role: "Undergraduate Research Fellow",
+    company: "Baku Higher Oil School",
+    location: "Baku, Azerbaijan",
     keyWin:
-      "Multi-stakeholder financial planning \u00b7 International dialogue programs across Baku + partner regions",
+      "Econometric research on Azerbaijan's hydrocarbon dependence, supervised by the Head of the Business Administration Department",
     bullets: [
-      "Oversee financial planning and operational reporting for multi-stakeholder youth platform across Baku and partner regions.",
-      "Synthesize program-level metrics for leadership decisions on resource allocation, event ROI, and partnership strategy.",
+      "Built a Python econometric framework analyzing Azerbaijan's structural oil dependence (R\u00b2\u22480.51, historical correlation 0.71) and domestic purchasing power from 2005 to 2024.",
+      "Engineered a March 2026 geopolitical stress scenario modeling transmission channels \u2014 BTC pipeline isolation against imported inflation vectors \u2014 to evaluate national economic resilience.",
     ],
-    tags: [],
-  },
-  {
-    date: "SEP 2025 \u2014 PRESENT",
-    role: "Vice President & Project Manager",
-    company: "BHOS Clubs",
-    location: "Baku",
-    keyWin:
-      "4 concurrent leadership roles \u00b7 15\u201340 members each \u00b7 Agile-style pipeline management",
-    bullets: [
-      "Lead weekly Conversation Club sessions for 30+ members; redesigned curriculum growing attendance through feedback loops.",
-      "Manage concurrent project pipelines across Startup, Psychology, and History clubs \u2014 owning scope, milestones, communications.",
-    ],
-    tags: [],
-  },
-  {
-    date: "OCT 2024 \u2014 AUG 2025",
-    role: "Digital Product & Growth Lead",
-    company: "Independent Content Venture",
-    location: "Self-directed",
-    keyWin:
-      "2.1M+ views \u00b7 70K+ likes \u00b7 11 months \u00b7 Zero paid distribution",
-    bullets: [
-      "Scaled zero-budget content platform to 2.1M+ views, 70K+ likes, 10K shares via data-driven audience segmentation.",
-      "Managed full lifecycle: ideation \u2192 brief \u2192 production \u2192 analytics \u2192 iteration. Grew 38K profile views organically.",
-    ],
-    tags: [],
+    tags: ["Python", "Econometrics", "OLS", "Scenario Modeling"],
   },
 ]
 
@@ -111,7 +169,7 @@ export function Experience() {
             letterSpacing: "-0.03em",
           }}
         >
-          Research and strategy behind practical innovation.
+          Building, leading, and validating from zero to one.
         </h2>
 
         <hr className="mt-8 border-white/5" />

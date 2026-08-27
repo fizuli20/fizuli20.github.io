@@ -255,10 +255,9 @@ export default function CarborynCaseStudy() {
               products.
             </p>
             <p className="mt-4 max-w-[62ch] text-[14px] leading-[1.75] text-zinc-500">
-              As Co-Founder & Chief AI Officer, I lead the AI and data
-              direction while contributing to product strategy, financial
-              modeling, digital execution, and business-development
-              validation.
+              As Co-Founder & Product Strategy Lead, I own product direction
+              while contributing to AI and data systems, financial modeling,
+              digital execution, and business-development validation.
             </p>
           </div>
 
@@ -323,7 +322,7 @@ export default function CarborynCaseStudy() {
       <section className="border-y border-white/[0.06] bg-white/[0.018] px-6 py-10 md:px-10 lg:px-16">
         <div className="mx-auto grid max-w-[1120px] gap-3 md:grid-cols-4">
           {[
-            ["Role", "Co-Founder & Chief AI Officer"],
+            ["Role", "Co-Founder & Product Strategy Lead"],
             ["Recognition", "1st of 100+ teams"],
             ["Programs", "EmpowerMe graduate · 2 active"],
             ["Next milestone", "Controlled industrial pilot"],
@@ -433,7 +432,7 @@ export default function CarborynCaseStudy() {
         <div className="mx-auto grid max-w-[1120px] gap-12 lg:grid-cols-[0.72fr_1.28fr]">
           <SectionHeader
             eyebrow="03 · My contribution"
-            title="Co-Founder & Chief AI Officer"
+            title="Co-Founder & Product Strategy Lead"
             body="I work across the intelligent product layer and the venture strategy around it, helping the team convert technical work into evidence, digital products, and a credible commercial pathway."
           />
 

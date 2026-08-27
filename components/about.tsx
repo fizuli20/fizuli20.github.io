@@ -8,13 +8,13 @@ const easeOutExpo = [0.16, 1, 0.3, 1] as const
 const PILLARS = [
   {
     n: "01",
-    title: "Product & Strategy",
-    body: "Product discovery, requirements, user stories, stakeholder alignment, and go-to-market strategy. Built and pitched ventures across AI, sustainability, finance, and automation.",
+    title: "Venture Building & Strategy",
+    body: "Zero-to-one execution: market validation, business modeling, partnerships, investor pitching, and go-to-market. Led ventures through ABB Innovation, SABAH.HUB, and EmpowerMe incubation programs.",
   },
   {
     n: "02",
     title: "AI-Enabled Products",
-    body: "Rapid AI prototyping, prompt engineering, OCR, and RPA. Built LedgerLens for handwritten Azerbaijani SME records and HyperAutomation for warehouse operations.",
+    body: "Rapid AI prototyping, prompt engineering, document AI, and RPA. Built FVeda's guarded AI coach and HyperAutomation's warehouse automation layer.",
   },
   {
     n: "03",
@@ -72,25 +72,33 @@ export function About() {
               className="text-white"
               style={{ fontSize: 25, fontWeight: 600, letterSpacing: "-0.02em" }}
             >
-              Building AI-driven products, ventures, and strategies.
+              I build ideas into products, pilots, and companies.
             </h2>
 
-            {/* Para 1 — identity + credential */}
+            {/* Para 1 — what the work is */}
             <p className="mt-5 max-w-[65ch] text-[14px] leading-[1.7] text-zinc-400">
-              I am a Presidential Scholar interested in how AI and
-              innovation can solve meaningful business and societal
-              problems. My experience spans strategy research, analytics,
-              product development, startup incubation, and venture
-              building.
+              My work sits at the intersection of innovation, technology,
+              business strategy, and venture building &mdash; leading
+              early-stage projects from zero to one, validating markets,
+              building partnerships, pitching, and turning concepts into
+              something people can actually use.
             </p>
 
-            {/* Para 2 — operating mode */}
+            {/* Para 2 — credentials */}
             <p className="mt-4 max-w-[65ch] text-[14px] leading-[1.7] text-zinc-400">
-              Rather than defining myself through one narrow role, I focus
-              on a consistent goal: understanding complex problems and
-              turning promising ideas into practical products, strategies,
-              and measurable outcomes. AI and data are tools I use to
-              research, design, validate, and build.
+              So far: Presidential Scholar, Aspire (HBS) Seed Fund winner,
+              Global Youth in Development Fellow, 1st place at the AzCON
+              Future Tech Hackathon, 1st place at the GreenTech III Startup
+              Competition, and many more hackathons, demo days, and
+              challenges.
+            </p>
+
+            {/* Para 3 — now + invitation */}
+            <p className="mt-4 max-w-[65ch] text-[14px] leading-[1.7] text-zinc-400">
+              Currently building and scaling ventures across AI, HRTech,
+              climate tech, EdTech, FinTech, automation, and consumer
+              technology. Always interested in ambitious people building
+              things that matter.
             </p>
 
             {/* Three pillar rows */}
@@ -154,10 +162,10 @@ export function About() {
                   F. Hasanov &middot; 2026
                 </p>
                 <h3 className="mt-3 text-[22px] font-semibold text-white">
-                  AI Innovation &amp; Product Strategy
+                  Founder &middot; Strategy &amp; Innovation
                 </h3>
                 <p className="mx-auto mt-3 max-w-[28ch] text-[13px] leading-[1.7] text-zinc-500 transition-colors duration-500 group-hover:text-zinc-300">
-                  Turning emerging ideas into practical products, ventures, and strategies.
+                  Building ideas into products, pilots, and companies.
                 </p>
               </div>
             </div>

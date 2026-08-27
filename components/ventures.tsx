@@ -18,23 +18,32 @@ type Project = {
 
 const PROJECTS: Project[] = [
   {
-    category: "CLIMATE TECH \u00b7 CO-FOUNDER & CHIEF AI OFFICER",
+    category: "CLIMATE TECH \u00b7 CO-FOUNDER & PRODUCT STRATEGY LEAD",
     badge: "EmpowerMe Graduate \u00b7 2 Active Incubations",
     name: "Carboryn",
     description:
-      "Co-building a circular mineralization venture that turns industrial residue and captured CO\u2082 into useful materials. As Chief AI Officer, I lead AI and data systems while contributing to product strategy, financial modeling, website development, and business-development validation.",
+      "Co-building a circular mineralization venture that turns industrial residue and captured CO\u2082 into useful materials. I lead product strategy alongside financial modeling, AI and data systems, website development, and business-development validation.",
     metrics: "1st of 100+ \u00b7 EmpowerMe graduate \u00b7 Startup School 4 + 5th Tusi active",
     link: { label: "Case study", href: "/work/carboryn" },
     featured: true,
   },
   {
-    category: "ROBOTICS + RPA \u00b7 CO-FOUNDER & CEO",
-    badge: "SabahHub Incubated \u00b7 Near Graduation",
-    name: "HyperAutomation",
+    category: "AI VISIBILITY SAAS \u00b7 HEAD OF SALES & BUSINESS DEVELOPMENT",
+    badge: "Joined Aug 2026 \u00b7 Live",
+    name: "Mentioned",
     description:
-      "Leading a digital-to-physical warehouse automation platform connecting RPA workflows with AGV/AMR execution. Selected for SabahHub incubation and earned an opportunity through PASHA Hackathon to test the product at Bravo.",
-    metrics: "SabahHub incubated \u00b7 Bravo test opportunity \u00b7 Seeking investment",
-    link: { label: "Case study", href: "/work/hyperautomation" },
+      "AI visibility monitoring for brands \u2014 tracking whether ChatGPT, Gemini, Claude, and Perplexity actually recommend you, surfacing competitors that appear in AI answers, and prioritizing what to fix next. I lead sales and business development.",
+    metrics: "Generative engine optimization \u00b7 Free scan \u2192 paid tiers \u00b7 mentionedby.world",
+    link: { label: "Visit", href: "https://www.mentionedby.world" },
+  },
+  {
+    category: "SPACE EDTECH \u00b7 CO-FOUNDER & CSO",
+    badge: "Live \u00b7 Vistar Excellence Program",
+    name: "EarthXLab",
+    description:
+      "Co-building an interactive planetary-science platform that turns real satellite imagery into evidence-led missions. Learners compare before-and-after imagery, record their own observations, answer assessments, and earn mission certificates. Emerged from the Vistar Excellence Program.",
+    metrics: "Satellite imagery \u00b7 Guided missions \u00b7 Educator tooling \u00b7 earthxlab.space",
+    link: { label: "Visit", href: "https://earthxlab.space" },
   },
   {
     category: "HRTECH \u00b7 CO-FOUNDER & CEO",
@@ -44,6 +53,24 @@ const PROJECTS: Project[] = [
       "Building an Azerbaijan-focused candidate-side HRTech platform that combines cross-source vacancy discovery, personalized job matching, instant alerts, CV tailoring, and motivation-letter assistance to help candidates convert applications into interviews.",
     metrics: "ABB 6th Incubation \u00b7 Concierge pilot \u00b7 MVP planning",
     link: { label: "Case study", href: "/work/aise" },
+  },
+  {
+    category: "FINTECH \u00b7 FOUNDER",
+    badge: "Live \u00b7 Rebuilt from FinVeda",
+    name: "FVeda",
+    description:
+      "A financial-education web app for 18\u201327 year-olds. Trade 23 real assets at live prices with $10,000 of paper money, learn through 21 written lessons, and get coached by an AI that explains concepts but is architecturally forbidden from ever recommending a specific buy or sell. Funded by the $400 Aspire seed grant.",
+    metrics: "Next.js \u00b7 Supabase \u00b7 76 tests \u00b7 Guarded AI coach \u00b7 fveda.site",
+    link: { label: "Visit", href: "https://fveda.site" },
+  },
+  {
+    category: "ROBOTICS + RPA \u00b7 FOUNDER",
+    badge: "SABAH.HUB Cohort 9 \u00b7 Paused",
+    name: "HyperAutomation",
+    description:
+      "Built a digital-to-physical warehouse automation platform connecting RPA workflows with AGV/AMR execution. Selected for SABAH.HUB's 9th incubation cohort and earned an opportunity through PASHA Hackathon to test the product at Bravo. Paused after the cohort concluded in July 2026.",
+    metrics: "SABAH.HUB Cohort 9 \u00b7 Bravo test opportunity \u00b7 Paused Jul 2026",
+    link: { label: "Case study", href: "/work/hyperautomation" },
   },
   {
     category: "AI TOOLING \u00b7 DEVELOPER TOOLS \u00b7 FOUNDER",
@@ -90,22 +117,13 @@ const PROJECTS: Project[] = [
     link: { label: "GitHub", href: "https://github.com/fizuli20/DDS_Hackathon" },
   },
   {
-    category: "MACROECONOMIC RESEARCH \u00b7 UNIVERSITY RESEARCHER",
+    category: "MACROECONOMIC RESEARCH \u00b7 UNDERGRADUATE RESEARCH FELLOW",
     badge: "Independent Research \u00b7 BHOS",
     name: "Azerbaijan Economy Analysis",
     description:
       "Analyzed Azerbaijan's economy from 2005\u20132024 across oil dependence, purchasing power, and diversification. OLS modeling found Brent explains 50.9% of GDP variance; a March 2026 Hormuz escalation scenario modeled a potential +$2.35B/month revenue effect.",
     metrics: "R\u00b2=0.509 \u00b7 p<0.001 \u00b7 +$2.35B/month model \u00b7 Jan\u2013Mar 2026",
     link: { label: "GitHub", href: "https://github.com/fizuli20/azerbaijan_economy_analysis" },
-  },
-  {
-    category: "FINTECH \u00b7 CO-FOUNDER",
-    badge: "$400 Aspire Seed Fund",
-    name: "FinVeda",
-    description:
-      "Building a financial wellness and AI coaching concept for young users. Awarded $400 in Seed Fund support by Aspire Institute after selection as 1 of 40 founders from 1,800+ global applications.",
-    metrics: "$400 seed fund \u00b7 1 of 40 / 1,800+ \u00b7 AI coaching",
-    link: { label: "Visit", href: "https://fin-veda-eight.vercel.app" },
   },
 ]
 
@@ -269,7 +287,7 @@ export function Ventures() {
                 <Atom size={18} className="text-zinc-600 transition-colors duration-500 group-hover:text-white" />
               </div>
               <p className="mt-10 font-mono text-[10px] uppercase tracking-[0.17em] text-zinc-600">
-                Climate tech · Chief AI Officer · Pilot pathway
+                Climate tech · Product Strategy Lead · Pilot pathway
               </p>
               <h3 className="mt-3 text-[36px] font-semibold tracking-[-0.05em] text-white md:text-[50px]">
                 Carboryn
@@ -288,9 +306,9 @@ export function Ventures() {
           <Link
             href="/work/aise"
             prefetch
-            className="case-gateway ledger-gateway glass-surface group relative min-h-[300px] overflow-hidden rounded-[28px] border border-white/[0.11] bg-white/[0.03] p-7 transition-all duration-700 hover:-translate-y-1 hover:border-white/[0.28] hover:bg-white/[0.055] md:p-8"
+            className="case-gateway aise-gateway glass-surface group relative min-h-[300px] overflow-hidden rounded-[28px] border border-white/[0.11] bg-white/[0.03] p-7 transition-all duration-700 hover:-translate-y-1 hover:border-white/[0.28] hover:bg-white/[0.055] md:p-8"
           >
-            <div aria-hidden className="ledger-grid pointer-events-none absolute inset-0 opacity-35 transition-opacity duration-700 group-hover:opacity-65" />
+            <div aria-hidden className="aise-grid pointer-events-none absolute inset-0 opacity-35 transition-opacity duration-700 group-hover:opacity-65" />
             <div aria-hidden className="case-gateway-scan pointer-events-none absolute inset-x-0 top-0 h-px bg-gradient-to-r from-transparent via-white/80 to-transparent shadow-[0_0_28px_rgba(255,255,255,0.5)]" />
             <div className="relative z-10 flex h-full flex-col">
               <div className="flex items-center justify-between gap-4">
@@ -339,13 +357,13 @@ export function Ventures() {
                 <Warehouse size={18} className="text-zinc-600 transition-colors duration-500 group-hover:text-white" />
               </div>
               <p className="mt-10 font-mono text-[10px] uppercase tracking-[0.17em] text-zinc-600">
-                RPA + Robotics · SabahHub · Investment stage
+                RPA + Robotics · SABAH.HUB Cohort 9 · Paused
               </p>
               <h3 className="mt-3 text-[36px] font-semibold tracking-[-0.05em] text-white md:text-[48px]">
                 HyperAutomation
               </h3>
               <p className="mt-4 max-w-[52ch] text-[13px] leading-[1.65] text-zinc-400">
-                Connecting digital warehouse workflows to physical robot
+                Connected digital warehouse workflows to physical robot
                 execution without replacing existing systems.
               </p>
               <span className="mt-auto inline-flex items-center gap-2 pt-8 font-mono text-[11px] uppercase tracking-[0.15em] text-zinc-500 transition-colors duration-500 group-hover:text-white">

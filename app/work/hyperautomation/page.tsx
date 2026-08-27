@@ -57,8 +57,8 @@ const productFlow = [
 
 const evidence = [
   {
-    title: "SabahHub selection",
-    body: "Selected through a competitive incubation process in April 2026 and now approaching program graduation.",
+    title: "SABAH.HUB selection",
+    body: "Selected through a competitive incubation process in April 2026. The cohort ran to July 2026 and concluded with an investor-facing demo day.",
   },
   {
     title: "Bravo test opportunity",
@@ -105,25 +105,25 @@ const investmentUse = [
 ]
 
 const roleItems = [
-  "Own the product thesis, venture strategy, positioning, and investment narrative.",
-  "Lead partner discovery and translate warehouse pain points into a focused first deployment.",
-  "Align software, robotics, operations, and business workstreams around measurable evidence.",
-  "Move the venture from incubation learning toward a fundable, testable product.",
+  "Owned the product thesis, venture strategy, positioning, and investment narrative.",
+  "Led partner discovery and translated warehouse pain points into a focused first deployment.",
+  "Aligned software, robotics, operations, and business workstreams around measurable evidence.",
+  "Moved the venture from incubation learning toward a fundable, testable product thesis.",
 ]
 
 const roadmap = [
   {
     phase: "April 2026",
     title: "Selected",
-    body: "Entered SabahHub incubation through a competitive selection process.",
+    body: "Entered SABAH.HUB incubation through a competitive selection process.",
   },
   {
-    phase: "Now",
-    title: "Graduate & focus",
-    body: "Complete incubation, narrow the first workflow, and refine the technical and commercial plan.",
+    phase: "July 2026",
+    title: "Cohort concluded",
+    body: "Completed incubation, demo day, and a narrowed first-workflow thesis. The venture is paused from here."
   },
   {
-    phase: "Next",
+    phase: "If resumed",
     title: "Fund & build",
     body: "Secure investment to build the final testable system and required integration layer.",
   },
@@ -185,13 +185,13 @@ export default function HyperAutomationCaseStudy() {
               <span className="absolute inset-0 animate-ping rounded-full bg-white/30" />
               <span className="relative h-2 w-2 rounded-full bg-white/75 shadow-[0_0_14px_rgba(255,255,255,0.65)]" />
             </span>
-            Near incubation graduation
+            Cohort concluded &middot; Paused
           </div>
           <Link
             href="/#contact"
             className="group inline-flex items-center gap-2 rounded-full border border-white/10 bg-white/[0.035] px-4 py-2 font-mono text-[11px] text-zinc-400 transition-all duration-300 hover:border-white/25 hover:bg-white/[0.08] hover:text-white"
           >
-            Investment stage
+            Discuss the venture
             <ArrowRight size={13} className="transition-transform duration-300 group-hover:translate-x-0.5" />
           </Link>
         </nav>
@@ -209,7 +209,7 @@ export default function HyperAutomationCaseStudy() {
                 Robotics + RPA
               </span>
               <span className="rounded-full border border-white/[0.12] bg-white/[0.035] px-3 py-1.5 font-mono text-[10px] uppercase tracking-[0.14em] text-zinc-400">
-                SabahHub · Selected April 2026
+                SABAH.HUB · Selected April 2026
               </span>
             </div>
             <p className="mt-8 font-mono text-[10px] uppercase tracking-[0.2em] text-zinc-600">
@@ -234,10 +234,10 @@ export default function HyperAutomationCaseStudy() {
               execution.
             </p>
             <p className="mt-4 max-w-[62ch] text-[14px] leading-[1.75] text-zinc-500">
-              The venture is approaching SabahHub incubation graduation. A
-              PASHA Hackathon connection created an opportunity to explore
-              testing at Bravo; the immediate goal is to secure investment and
-              build the final testable system.
+              The venture completed SABAH.HUB Cohort 9 in July 2026 and is
+              currently paused. A PASHA Hackathon connection created an
+              opportunity to explore testing at Bravo. Resuming would mean
+              funding the integration layer and a controlled first test.
             </p>
           </div>
 
@@ -300,9 +300,9 @@ export default function HyperAutomationCaseStudy() {
         <div className="mx-auto grid max-w-[1120px] gap-3 md:grid-cols-4">
           {[
             ["Role", "Co-Founder & CEO"],
-            ["Stage", "Near incubation graduation"],
-            ["Program", "SabahHub · April 2026"],
-            ["Next milestone", "Investment-backed testable build"],
+            ["Stage", "Paused after Cohort 9"],
+            ["Program", "SABAH.HUB Cohort 9 · Apr–Jul 2026"],
+            ["If resumed", "Integration layer + controlled test"],
           ].map(([label, value]) => (
             <div
               key={label}
@@ -383,7 +383,7 @@ export default function HyperAutomationCaseStudy() {
                 Confirmed today
               </p>
               <p className="relative z-10 mt-4 text-[28px] font-semibold tracking-[-0.03em] text-white">
-                SabahHub incubated with a Bravo testing opportunity
+                SABAH.HUB incubated with a Bravo testing opportunity
               </p>
               <p className="relative z-10 mt-4 text-[14px] leading-[1.7] text-zinc-500">
                 The opportunity emerged through PASHA Hackathon networking. It
@@ -491,9 +491,9 @@ export default function HyperAutomationCaseStudy() {
       <section className="px-6 py-24 md:px-10 md:py-32 lg:px-16">
         <div className="mx-auto max-w-[1120px]">
           <SectionHeader
-            eyebrow="05 · Why investment matters"
+            eyebrow="05 · What resuming would require"
             title="Capital should buy the next layer of evidence."
-            body="The immediate funding purpose is to move from a well-framed architecture and valuable partner access to a testable product. The final capital requirement and commercial terms are still being refined."
+            body="Restarting would mean moving from a well-framed architecture and valuable partner access to a testable product. Capital requirements and commercial terms were never finalized."
           />
 
           <div className="mt-12 overflow-hidden rounded-[28px] border border-white/[0.08]">
@@ -570,10 +570,10 @@ export default function HyperAutomationCaseStudy() {
               The access exists. Now the product must earn deployment.
             </h2>
             <p className="relative z-10 mt-6 max-w-[66ch] text-[15px] leading-[1.75] text-zinc-400">
-              HyperAutomation is moving from incubation toward a testable
-              product. The next chapter is investment-backed building,
-              disciplined partner validation, and evidence from a controlled
-              warehouse workflow.
+              HyperAutomation reached a well-framed architecture and real
+              partner access before pausing in July 2026. Restarting it would
+              take investment-backed building, disciplined partner validation,
+              and evidence from a controlled warehouse workflow.
             </p>
             <div className="relative z-10 mt-9 flex flex-wrap gap-3">
               <Link
@@ -593,10 +593,10 @@ export default function HyperAutomationCaseStudy() {
           </div>
 
           <p className="mt-7 text-[11px] leading-[1.7] text-zinc-700">
-            Stage note: architecture, product capabilities, target markets,
-            business model, pricing, and pilot metrics are proposed hypotheses
-            unless explicitly described as confirmed. They must be refined
-            through funded product development and controlled validation.
+            Stage note: this venture is paused as of July 2026. Architecture,
+            product capabilities, target markets, business model, pricing, and
+            pilot metrics are proposed hypotheses unless explicitly described as
+            confirmed \u2014 none were validated through a completed pilot.
           </p>
         </div>
       </section>

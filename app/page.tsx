@@ -4,6 +4,7 @@ import { Bento } from "@/components/bento"
 import { About } from "@/components/about"
 import { Ventures } from "@/components/ventures"
 import { Experience } from "@/components/experience"
+import { Education } from "@/components/education"
 import { Skills } from "@/components/skills"
 import { Awards } from "@/components/awards"
 import { Contact } from "@/components/contact"
@@ -21,6 +22,7 @@ export default function Page() {
         <Ventures />
         <About />
         <Experience />
+        <Education />
         <Skills />
         <Awards />
         <Contact />

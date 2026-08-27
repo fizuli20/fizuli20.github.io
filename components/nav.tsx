@@ -9,6 +9,7 @@ const links = [
   { id: "case-studies", label: "Case Studies" },
   { id: "about", label: "About" },
   { id: "experience", label: "Experience" },
+  { id: "education", label: "Education" },
   { id: "skills", label: "Skills" },
   { id: "awards", label: "Awards" },
   { id: "contact", label: "Connect" },
@@ -132,7 +133,7 @@ export function Nav() {
                 aria-hidden
                 className="h-px w-5 bg-gradient-to-r from-white/50 to-transparent"
               />
-              AI &middot; PRODUCT &middot; STRATEGY
+              FOUNDER &middot; STRATEGY &middot; VENTURES
             </span>
           </span>
         </a>
@@ -171,7 +172,7 @@ export function Nav() {
               className="h-2 w-2 shrink-0 rounded-full bg-white animate-pulse-silver"
             />
             <span className="font-mono text-[10px] leading-none text-zinc-500">
-              AI Innovation &middot; Product Strategy &middot; Venture Building
+              Founder &middot; Strategy &amp; Innovation &middot; Venture Building
             </span>
           </div>
 

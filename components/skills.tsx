@@ -4,34 +4,27 @@ import { motion, useReducedMotion } from "framer-motion"
 import { SectionLabel } from "./about"
 
 const COL1 = [
-  { name: "Product Discovery & User Research", tag: "Product" },
-  { name: "Business Analysis & Requirements", tag: "Strategy" },
-  { name: "Backlog Management & Prioritization", tag: "Process" },
-  { name: "User Story Writing & Acceptance Criteria", tag: "Process" },
-  { name: "Agile / Scrum \u00b7 Sprint Planning", tag: "Process" },
-  { name: "Stakeholder Management & Communication", tag: "Strategy" },
-  { name: "OKRs & KPI Definition", tag: "Strategy" },
-  { name: "Product Roadmapping", tag: "Product" },
-  { name: "Go-to-Market Strategy", tag: "Strategy" },
+  { name: "Zero-to-One Venture Building", tag: "Venture" },
+  { name: "Business Analysis & Requirements", tag: "Business" },
+  { name: "Product Discovery & Roadmapping", tag: "Product" },
+  { name: "Go-to-Market & Partnerships", tag: "Strategy" },
   { name: "Financial Modeling & Valuation", tag: "Finance" },
-  { name: "Scenario & Sensitivity Analysis", tag: "Finance" },
 ]
 
 const COL2 = [
-  { name: "Generative AI \u00b7 Prompt Engineering", tag: "AI" },
-  { name: "Rapid AI MVP Prototyping \u00b7 RPA", tag: "AI" },
-  { name: "Document AI \u00b7 OCR Pipelines", tag: "AI" },
-  { name: "AI-Enabled Product Discovery", tag: "Product" },
-  { name: "AI Benchmarking & Evaluation", tag: "AI" },
+  { name: "Prompt Engineering & System Design", tag: "GenAI" },
+  { name: "Rapid AI MVP Prototyping", tag: "GenAI" },
+  { name: "Multi-Model LLM Routing", tag: "GenAI" },
+  { name: "Document AI \u00b7 OCR Pipelines", tag: "GenAI" },
+  { name: "AI Evaluation & Guardrails", tag: "GenAI" },
 ]
 
 const COL3 = [
-  { name: "Python (pandas \u00b7 NumPy \u00b7 scikit-learn)", tag: "Language" },
-  { name: "XGBoost \u00b7 Random Forest \u00b7 Isolation Forest", tag: "ML" },
+  { name: "Python (pandas \u00b7 NumPy)", tag: "Language" },
   { name: "SQL \u00b7 PostgreSQL \u00b7 BigQuery", tag: "Data" },
+  { name: "Next.js \u00b7 React \u00b7 TypeScript", tag: "Web" },
+  { name: "Supabase \u00b7 REST APIs", tag: "Backend" },
   { name: "Power BI \u00b7 Tableau", tag: "Viz" },
-  { name: "RFM Segmentation \u00b7 SMOTE", tag: "Analytics" },
-  { name: "Fraud Detection \u00b7 Churn Prediction", tag: "ML" },
 ]
 
 const easeOutExpo = [0.16, 1, 0.3, 1] as const
@@ -124,7 +117,7 @@ export function Skills() {
           className="mt-12 grid grid-cols-1 gap-5 md:grid-cols-3"
         >
           <SkillColumn title="PRODUCT & STRATEGY" skills={COL1} />
-          <SkillColumn title="AI ORCHESTRATION" skills={COL2} />
+          <SkillColumn title="GENERATIVE AI" skills={COL2} />
           <SkillColumn title="TECHNICAL FLUENCY" skills={COL3} />
         </motion.div>
 

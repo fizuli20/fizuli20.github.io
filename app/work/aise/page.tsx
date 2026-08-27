@@ -96,7 +96,7 @@ export default function AISECaseStudy() {
 
       <section className="relative flex min-h-[100svh] items-end overflow-hidden px-6 pb-16 pt-28 md:px-10 md:pb-24 lg:px-16">
         <div aria-hidden className="pointer-events-none absolute inset-0 bg-[radial-gradient(ellipse_at_top_right,rgba(255,255,255,0.12),transparent_42%),radial-gradient(ellipse_at_bottom_left,rgba(255,255,255,0.055),transparent_52%)]" />
-        <div aria-hidden className="ledger-grid pointer-events-none absolute inset-0 opacity-45" />
+        <div aria-hidden className="aise-grid pointer-events-none absolute inset-0 opacity-45" />
         <div aria-hidden className="pointer-events-none absolute left-1/2 top-[54%] h-px w-[110%] -translate-x-1/2 bg-gradient-to-r from-transparent via-white/30 to-transparent shadow-[0_0_70px_rgba(255,255,255,0.16)]" />
         <div className="relative mx-auto grid w-full max-w-[1120px] gap-12 lg:grid-cols-[1.08fr_0.92fr] lg:items-end">
           <div>
@@ -115,7 +115,7 @@ export default function AISECaseStudy() {
               Selected through ABB&apos;s competitive 6th Incubation process. Currently in concierge pilot phase.
             </p>
           </div>
-          <div className="ledger-terminal glass-surface relative overflow-hidden rounded-[28px] border border-white/[0.1] bg-white/[0.025] p-4 backdrop-blur-2xl md:p-5">
+          <div className="aise-terminal glass-surface relative overflow-hidden rounded-[28px] border border-white/[0.1] bg-white/[0.025] p-4 backdrop-blur-2xl md:p-5">
             <div className="flex items-center justify-between border-b border-white/[0.07] pb-4">
               <div className="flex items-center gap-2">
                 <span className="h-1.5 w-1.5 rounded-full bg-white/70 shadow-[0_0_14px_rgba(255,255,255,0.7)]" />
@@ -145,12 +145,12 @@ export default function AISECaseStudy() {
               </div>
             </div>
             <div className="relative overflow-hidden rounded-xl border border-white/[0.08] bg-black/25 px-4 py-3">
-              <div aria-hidden className="ledger-scan-line absolute inset-x-0 top-0 h-px bg-gradient-to-r from-transparent via-white/70 to-transparent shadow-[0_0_18px_rgba(255,255,255,0.45)]" />
+              <div aria-hidden className="aise-scan-line absolute inset-x-0 top-0 h-px bg-gradient-to-r from-transparent via-white/70 to-transparent shadow-[0_0_18px_rgba(255,255,255,0.45)]" />
               <p className="font-mono text-[9px] uppercase tracking-[0.16em] text-zinc-600">Candidate controls every application</p>
             </div>
             <div aria-hidden className="mt-3 flex items-center gap-2">
               {[0,1,2,3,4,5].map((item) => (
-                <span key={item} className="ledger-confidence-pulse h-1 flex-1 rounded-full bg-white/10" style={{ animationDelay: item * 180 + "ms" }} />
+                <span key={item} className="aise-confidence-pulse h-1 flex-1 rounded-full bg-white/10" style={{ animationDelay: item * 180 + "ms" }} />
               ))}
             </div>
           </div>

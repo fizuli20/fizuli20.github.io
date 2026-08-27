@@ -8,13 +8,15 @@ const easeOutExpo = [0.16, 1, 0.3, 1] as const
 
 const TICKER_ITEMS = [
   "Presidential Scholar \u2014 Top 3 of 20,000+",
-  "Deloitte SRT \u2014 Strategy Research Support",
+  "Mentioned \u2014 Head of Sales & Business Development",
+  "EarthXLab \u2014 Co-Founder & CSO \u00b7 Satellite EdTech",
+  "Vistar Excellence \u2014 IDDA \u00b7 Azercosmos \u00b7 IAI \u00b7 HIT",
+  "AISE \u2014 Co-Founder & CEO \u00b7 ABB 6th Incubation",
+  "Carboryn \u2014 Co-Founder & Product Strategy Lead",
+  "Aspire (HBS) Seed Fund \u2014 $400 \u00b7 1 of 40 / 1,800+",
   "2\u00d7 1st-Place Innovation Wins \u2014 One Week",
-  "AISE \u2014 ABB 6th Incubation \u00b7 HRTech",
-  "FinVeda \u2014 $400 Aspire Seed Fund \u00b7 1 of 40 / 1,800+",
-  "3 Incubated Ventures \u2014 Carboryn \u00b7 HyperAutomation \u00b7 AISE",
   "Youth in Development Fellow \u2014 1 of 20 Globally",
-  "2.1M+ Digital Views \u2014 Zero Paid Reach",
+  "Deloitte SR&T \u2014 Sustainability & Climate Advisory",
 ]
 
 function CascadeLine({
@@ -165,9 +167,9 @@ export function Hero() {
           transition={{ duration: 0.5, ease: easeOutExpo, delay: 0.65 }}
           className="mt-5 max-w-[60ch] text-[14px] leading-[1.65] text-zinc-400"
         >
-          I turn business and societal problems into practical solutions
-          by combining AI, product thinking, research, and venture
-          execution.
+          I build ideas into products, pilots, and companies &mdash; leading
+          early-stage ventures from zero to one across innovation,
+          technology, and business strategy.
         </motion.p>
 
         {/* CTAs */}

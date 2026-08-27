@@ -8,28 +8,32 @@ export const metadata: Metadata = {
   alternates: {
     canonical: "/",
   },
-  title: "Fizuli Hasanov | AI Innovation & Product Strategy",
+  title: "Fizuli Hasanov | Founder & CEO · Innovation & Venture Building",
   description:
-    "Fizuli Hasanov is a Presidential Scholar building AI-driven products, ventures, and strategies through research, product thinking, and startup execution.",
+    "Fizuli Hasanov is a Presidential Scholar and founder who builds ideas into products, pilots, and companies — leading early-stage ventures across AI, HRTech, climate tech, EdTech, and FinTech from zero to one.",
   keywords: [
     "Fizuli Hasanov",
-    "Product Analyst",
-    "Business Analyst",
-    "Product Manager",
+    "Founder",
+    "CEO",
     "Venture Builder",
+    "Innovation Strategy",
+    "Business Strategy",
+    "Product Strategy",
     "Azerbaijan",
     "Presidential Scholar",
+    "AISE",
     "Carboryn",
-    "EcoConcrete",
-    "LedgerLens",
+    "EarthXLab",
+    "FVeda",
+    "Mentioned",
     "HyperAutomation",
-    "Hackathon",
+    "Vistar Excellence Program",
   ],
   authors: [{ name: "Fizuli Hasanov" }],
   openGraph: {
-    title: "Building AI-driven products, ventures, and strategies.",
+    title: "I build ideas into products, pilots, and companies.",
     description:
-      "Explore Fizuli Hasanov's work across AI innovation, product strategy, venture building, and business transformation.",
+      "Fizuli Hasanov — founder and CEO building ventures across AI, HRTech, climate tech, EdTech, FinTech, automation, and consumer technology.",
     url: "https://fizuli20-github-io.vercel.app",
     siteName: "Fizuli Hasanov",
     images: [
@@ -45,9 +49,9 @@ export const metadata: Metadata = {
   },
   twitter: {
     card: "summary_large_image",
-    title: "Building AI-driven products, ventures, and strategies.",
+    title: "I build ideas into products, pilots, and companies.",
     description:
-      "Explore Fizuli Hasanov's work across AI innovation, product strategy, venture building, and business transformation.",
+      "Fizuli Hasanov — founder and CEO building ventures across AI, HRTech, climate tech, EdTech, FinTech, automation, and consumer technology.",
     images: ["/profile-photo.jpg"],
   },
   robots: {

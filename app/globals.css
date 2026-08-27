@@ -181,7 +181,7 @@
     animation: contact-signal 3.4s ease-in-out infinite;
   }
 
-  .ledger-grid {
+  .aise-grid {
     background-image:
       linear-gradient(rgba(255, 255, 255, 0.025) 1px, transparent 1px),
       linear-gradient(90deg, rgba(255, 255, 255, 0.025) 1px, transparent 1px);
@@ -189,7 +189,7 @@
     mask-image: radial-gradient(ellipse at center, black, transparent 82%);
   }
 
-  .ledger-terminal::before {
+  .aise-terminal::before {
     content: "";
     pointer-events: none;
     position: absolute;
@@ -200,7 +200,7 @@
     opacity: 0.7;
   }
 
-  @keyframes ledger-scan {
+  @keyframes aise-scan {
     0% {
       transform: translateY(-2px);
       opacity: 0;
@@ -214,39 +214,11 @@
     }
   }
 
-  .ledger-scan-line {
-    animation: ledger-scan 4.2s ease-in-out infinite;
+  .aise-scan-line {
+    animation: aise-scan 4.2s ease-in-out infinite;
   }
 
-  @keyframes ledger-orbit {
-    to {
-      transform: rotate(360deg);
-    }
-  }
-
-  .ledger-orbit {
-    animation: ledger-orbit 26s linear infinite;
-  }
-
-  @keyframes ledger-data-packet {
-    0% {
-      transform: translate(-10px, -50%) scaleX(0.35);
-      opacity: 0;
-    }
-    20%, 75% {
-      opacity: 0.8;
-    }
-    100% {
-      transform: translate(390px, -50%) scaleX(1);
-      opacity: 0;
-    }
-  }
-
-  .ledger-data-packet {
-    animation: ledger-data-packet 4.8s var(--ease-in-out) infinite;
-  }
-
-  @keyframes ledger-confidence-pulse {
+  @keyframes aise-confidence-pulse {
     0%, 100% {
       background-color: rgba(255, 255, 255, 0.08);
       box-shadow: 0 0 0 rgba(255, 255, 255, 0);
@@ -257,8 +229,8 @@
     }
   }
 
-  .ledger-confidence-pulse {
-    animation: ledger-confidence-pulse 2.4s ease-in-out infinite;
+  .aise-confidence-pulse {
+    animation: aise-confidence-pulse 2.4s ease-in-out infinite;
   }
 
   @keyframes case-gateway-scan {
