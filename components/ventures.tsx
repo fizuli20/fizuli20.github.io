@@ -3,7 +3,7 @@
 import { useRef, useState } from "react"
 import Link from "next/link"
 import { motion, useReducedMotion } from "framer-motion"
-import { ArrowRight, ArrowUpRight, Atom, ScanLine, Warehouse } from "lucide-react"
+import { ArrowRight, ArrowUpRight, Atom, LineChart, ScanLine } from "lucide-react"
 import { SectionLabel } from "./about"
 
 type Project = {
@@ -18,6 +18,25 @@ type Project = {
 
 const PROJECTS: Project[] = [
   {
+    category: "HRTECH \u00b7 CO-FOUNDER & CEO",
+    badge: "ABB 6th Incubation \u00b7 Selected",
+    name: "AISE",
+    description:
+      "Building an Azerbaijan-focused candidate-side HRTech platform that combines cross-source vacancy discovery, personalized job matching, instant alerts, CV tailoring, and motivation-letter assistance to help candidates convert applications into interviews.",
+    metrics: "ABB 6th Incubation \u00b7 Concierge pilot \u00b7 MVP planning",
+    link: { label: "Case study", href: "/work/aise" },
+    featured: true,
+  },
+  {
+    category: "FINTECH \u00b7 FOUNDER",
+    badge: "Live \u00b7 Rebuilt from FinVeda",
+    name: "FVeda",
+    description:
+      "A financial-education web app for 18\u201327 year-olds. Trade 23 real assets at live prices with $10,000 of paper money, learn through 21 written lessons, and get coached by an AI that explains concepts but is architecturally forbidden from ever recommending a specific buy or sell. Funded by the $400 Aspire seed grant.",
+    metrics: "Next.js \u00b7 Supabase \u00b7 76 tests \u00b7 Guarded AI coach \u00b7 fveda.site",
+    link: { label: "Case study", href: "/work/fveda" },
+  },
+  {
     category: "CLIMATE TECH \u00b7 CO-FOUNDER & PRODUCT STRATEGY LEAD",
     badge: "EmpowerMe Graduate \u00b7 2 Active Incubations",
     name: "Carboryn",
@@ -25,7 +44,6 @@ const PROJECTS: Project[] = [
       "Co-building a circular mineralization venture that turns industrial residue and captured CO\u2082 into useful materials. I lead product strategy alongside financial modeling, AI and data systems, website development, and business-development validation.",
     metrics: "1st of 100+ \u00b7 EmpowerMe graduate \u00b7 Startup School 4 + 5th Tusi active",
     link: { label: "Case study", href: "/work/carboryn" },
-    featured: true,
   },
   {
     category: "AI VISIBILITY SAAS \u00b7 HEAD OF SALES & BUSINESS DEVELOPMENT",
@@ -46,24 +64,6 @@ const PROJECTS: Project[] = [
     link: { label: "Visit", href: "https://earthxlab.space" },
   },
   {
-    category: "HRTECH \u00b7 CO-FOUNDER & CEO",
-    badge: "ABB 6th Incubation \u00b7 Selected",
-    name: "AISE",
-    description:
-      "Building an Azerbaijan-focused candidate-side HRTech platform that combines cross-source vacancy discovery, personalized job matching, instant alerts, CV tailoring, and motivation-letter assistance to help candidates convert applications into interviews.",
-    metrics: "ABB 6th Incubation \u00b7 Concierge pilot \u00b7 MVP planning",
-    link: { label: "Case study", href: "/work/aise" },
-  },
-  {
-    category: "FINTECH \u00b7 FOUNDER",
-    badge: "Live \u00b7 Rebuilt from FinVeda",
-    name: "FVeda",
-    description:
-      "A financial-education web app for 18\u201327 year-olds. Trade 23 real assets at live prices with $10,000 of paper money, learn through 21 written lessons, and get coached by an AI that explains concepts but is architecturally forbidden from ever recommending a specific buy or sell. Funded by the $400 Aspire seed grant.",
-    metrics: "Next.js \u00b7 Supabase \u00b7 76 tests \u00b7 Guarded AI coach \u00b7 fveda.site",
-    link: { label: "Visit", href: "https://fveda.site" },
-  },
-  {
     category: "ROBOTICS + RPA \u00b7 FOUNDER",
     badge: "SABAH.HUB Cohort 9 \u00b7 Paused",
     name: "HyperAutomation",
@@ -74,12 +74,12 @@ const PROJECTS: Project[] = [
   },
   {
     category: "AI TOOLING \u00b7 DEVELOPER TOOLS \u00b7 FOUNDER",
-    badge: "3D Web \u00b7 Multi-Model LLM Routing",
+    badge: "Live \u00b7 Bring Your Own Keys",
     name: "TechShip OS",
     description:
-      "A 3D, holographic web dashboard replacing terminal windows for managing autonomous LLM coding agents. Users dispatch AI agents (CTO, Developer, DevOps, Security Auditor roles) into isolated E2B cloud sandboxes to write code, run tests, and open GitHub PRs \u2014 all visualized as a cinematic starship interface.",
-    metrics: "Three.js \u00b7 E2B sandboxing \u00b7 Multi-model LLM routing \u00b7 GitHub API",
-    link: { label: "View", href: "https://github.com/fizuli20" },
+      "Command an AI engineering crew from orbit. Describe what you want built; a CTO agent breaks it down, assigns the crew, and reports back when it ships. Agents run in isolated cloud sandboxes to write code, run tests, and open GitHub PRs \u2014 all visualized as a cinematic 3D starship interface, with your own model keys and free tiers supported.",
+    metrics: "Three.js \u00b7 Sandboxed agents \u00b7 Multi-model routing \u00b7 techship-os.vercel.app",
+    link: { label: "Visit", href: "https://techship-os.vercel.app" },
   },
   {
     category: "CONSUMER TECH \u00b7 FOUNDER",
@@ -89,14 +89,6 @@ const PROJECTS: Project[] = [
       "A playful date-invitation web app featuring a dodge-button mechanic, 24 visual themes, shareable invite links, and a three-tier pricing model. Built with Next.js App Router, Supabase, Resend, and Lemon Squeezy.",
     metrics: "Next.js \u00b7 Supabase \u00b7 Lemon Squeezy \u00b7 willyoudate.online",
     link: { label: "Visit", href: "https://willyoudate.online" },
-  },
-  {
-    category: "INFRASTRUCTURE \u00b7 CO-FOUNDER",
-    badge: "1st Place \u00b7 AZN 1,500",
-    name: "Milli Cloud Security",
-    description:
-      "Co-built a cloud security and infrastructure concept addressing emerging national data-center needs, winning 1st place at the AzCON Future Tech Hackathon and an AZN 1,500 prize.",
-    metrics: "AzCON Hackathon \u00b7 AZN 1,500 \u00b7 Holberton AZ",
   },
   {
     category: "AI PRODUCT \u00b7 DOCUMENT INTELLIGENCE \u00b7 FOUNDER",
@@ -115,6 +107,14 @@ const PROJECTS: Project[] = [
       "A full-stack platform helping mentors and academic teams detect at-risk students earlier through performance dashboards, risk scoring, admin/student flows, and AI-assisted reporting. Built for Holberton School Azerbaijan's Data Driven Solutions Hackathon.",
     metrics: "Next.js \u00b7 NestJS \u00b7 PostgreSQL \u00b7 OpenRouter AI \u00b7 Apr\u2013May 2026",
     link: { label: "GitHub", href: "https://github.com/fizuli20/DDS_Hackathon" },
+  },
+  {
+    category: "INFRASTRUCTURE \u00b7 CO-FOUNDER",
+    badge: "1st Place \u00b7 AZN 1,500",
+    name: "Milli Cloud Security",
+    description:
+      "Co-built a cloud security and infrastructure concept addressing emerging national data-center needs, winning 1st place at the AzCON Future Tech Hackathon and an AZN 1,500 prize.",
+    metrics: "AzCON Hackathon \u00b7 AZN 1,500 \u00b7 Holberton AZ",
   },
   {
     category: "MACROECONOMIC RESEARCH \u00b7 UNDERGRADUATE RESEARCH FELLOW",
@@ -260,9 +260,98 @@ export function Ventures() {
 
         <div className="mt-12 grid gap-5 lg:grid-cols-2">
           <Link
+            href="/work/aise"
+            prefetch
+            className="case-gateway aise-gateway glass-surface group relative min-h-[340px] overflow-hidden rounded-[28px] border border-white/[0.11] bg-white/[0.03] p-7 transition-all duration-700 hover:-translate-y-1 hover:border-white/[0.28] hover:bg-white/[0.055] md:p-8 lg:col-span-2"
+          >
+            <div aria-hidden className="aise-grid pointer-events-none absolute inset-0 opacity-35 transition-opacity duration-700 group-hover:opacity-65" />
+            <div aria-hidden className="case-gateway-scan pointer-events-none absolute inset-x-0 top-0 h-px bg-gradient-to-r from-transparent via-white/80 to-transparent shadow-[0_0_28px_rgba(255,255,255,0.5)]" />
+            <div aria-hidden className="pointer-events-none absolute bottom-[22%] right-[10%] hidden items-center gap-3 font-mono text-[11px] text-zinc-600 md:flex">
+              <span>Vacancy</span>
+              <span className="h-px w-10 bg-gradient-to-r from-white/10 to-white/45" />
+              <span>Match</span>
+              <ArrowRight size={13} />
+              <span className="text-zinc-300">Interview</span>
+            </div>
+            <div className="relative z-10 flex h-full flex-col">
+              <div className="flex items-center justify-between gap-4">
+                <div className="flex items-center gap-2 font-mono text-[9px] uppercase tracking-[0.18em] text-zinc-500">
+                  <span className="relative flex h-2 w-2">
+                    <span className="absolute inset-0 animate-ping rounded-full bg-white/25" />
+                    <span className="relative h-2 w-2 rounded-full bg-white/70 shadow-[0_0_14px_rgba(255,255,255,0.6)]" />
+                  </span>
+                  Case study 01
+                </div>
+                <ScanLine size={18} className="text-zinc-600 transition-colors duration-500 group-hover:text-white" />
+              </div>
+              <p className="mt-10 font-mono text-[10px] uppercase tracking-[0.17em] text-zinc-600">
+                HRTech AI · Co-Founder &amp; CEO · ABB 6th Incubation
+              </p>
+              <h3 className="mt-3 text-[36px] font-semibold tracking-[-0.05em] text-white md:text-[50px]">
+                AISE
+              </h3>
+              <p className="mt-4 max-w-[54ch] text-[13px] leading-[1.65] text-zinc-400">
+                A localized candidate-intelligence and application-conversion
+                layer for the Azerbaijani job market, not a generic aggregator.
+              </p>
+              <span className="mt-auto inline-flex items-center gap-2 pt-8 font-mono text-[11px] uppercase tracking-[0.15em] text-zinc-500 transition-colors duration-500 group-hover:text-white">
+                Open HRTech dossier
+                <ArrowRight size={14} className="transition-transform duration-500 group-hover:translate-x-1.5" />
+              </span>
+            </div>
+          </Link>
+
+          <Link
+            href="/work/fveda"
+            prefetch
+            className="case-gateway glass-surface group relative min-h-[300px] overflow-hidden rounded-[28px] border border-white/[0.11] bg-white/[0.03] p-7 transition-all duration-700 hover:-translate-y-1 hover:border-white/[0.28] hover:bg-white/[0.055] md:p-8"
+          >
+            <div
+              aria-hidden
+              className="pointer-events-none absolute inset-0 bg-[linear-gradient(rgba(255,255,255,0.032)_1px,transparent_1px),linear-gradient(90deg,rgba(255,255,255,0.032)_1px,transparent_1px)] bg-[size:34px_34px] opacity-40 transition-opacity duration-700 [mask-image:linear-gradient(to_top,black,transparent)] group-hover:opacity-70"
+            />
+            <div aria-hidden className="pointer-events-none absolute bottom-[26%] right-[10%] hidden items-end gap-1.5 md:flex">
+              {[38, 62, 30, 74, 50, 88].map((h, i) => (
+                <span
+                  key={h}
+                  className="w-1 rounded-full bg-gradient-to-t from-white/10 to-white/45 transition-all duration-700 group-hover:from-white/20 group-hover:to-white/70"
+                  style={{ height: h + "px", transitionDelay: i * 40 + "ms" }}
+                />
+              ))}
+            </div>
+            <div aria-hidden className="pointer-events-none absolute bottom-[24%] right-[9%] h-px w-[26%] rotate-[-26deg] bg-gradient-to-r from-transparent via-white/40 to-white/60 shadow-[0_0_18px_rgba(255,255,255,0.28)]" />
+            <div className="relative z-10 flex h-full flex-col">
+              <div className="flex items-center justify-between gap-4">
+                <div className="flex items-center gap-2 font-mono text-[9px] uppercase tracking-[0.18em] text-zinc-500">
+                  <span className="relative flex h-2 w-2">
+                    <span className="absolute inset-0 animate-ping rounded-full bg-white/25" />
+                    <span className="relative h-2 w-2 rounded-full bg-white/70 shadow-[0_0_14px_rgba(255,255,255,0.6)]" />
+                  </span>
+                  Case study 02
+                </div>
+                <LineChart size={18} className="text-zinc-600 transition-colors duration-500 group-hover:text-white" />
+              </div>
+              <p className="mt-10 font-mono text-[10px] uppercase tracking-[0.17em] text-zinc-600">
+                FinTech · Founder · Live product
+              </p>
+              <h3 className="mt-3 text-[36px] font-semibold tracking-[-0.05em] text-white md:text-[48px]">
+                FVeda
+              </h3>
+              <p className="mt-4 max-w-[52ch] text-[13px] leading-[1.65] text-zinc-400">
+                Real markets, paper money, real skill — with an AI coach
+                architecturally forbidden from ever giving advice.
+              </p>
+              <span className="mt-auto inline-flex items-center gap-2 pt-8 font-mono text-[11px] uppercase tracking-[0.15em] text-zinc-500 transition-colors duration-500 group-hover:text-white">
+                Open FinTech dossier
+                <ArrowRight size={14} className="transition-transform duration-500 group-hover:translate-x-1.5" />
+              </span>
+            </div>
+          </Link>
+
+          <Link
             href="/work/carboryn"
             prefetch
-            className="case-gateway carboryn-gateway glass-surface group relative min-h-[340px] overflow-hidden rounded-[28px] border border-white/[0.11] bg-white/[0.03] p-7 transition-all duration-700 hover:-translate-y-1 hover:border-white/[0.28] hover:bg-white/[0.055] md:p-8 lg:col-span-2"
+            className="case-gateway carboryn-gateway glass-surface group relative min-h-[300px] overflow-hidden rounded-[28px] border border-white/[0.11] bg-white/[0.03] p-7 transition-all duration-700 hover:-translate-y-1 hover:border-white/[0.28] hover:bg-white/[0.055] md:p-8"
           >
             <div aria-hidden className="carboryn-grid pointer-events-none absolute inset-0 opacity-35 transition-opacity duration-700 group-hover:opacity-65" />
             <div aria-hidden className="carboryn-orbit pointer-events-none absolute -bottom-24 right-[8%] h-72 w-72 rounded-full border border-dashed border-white/[0.14]">
@@ -282,92 +371,22 @@ export function Ventures() {
                     <span className="absolute inset-0 animate-ping rounded-full bg-white/25" />
                     <span className="relative h-2 w-2 rounded-full bg-white/70 shadow-[0_0_14px_rgba(255,255,255,0.6)]" />
                   </span>
-                  Case study 01
+                  Case study 03
                 </div>
                 <Atom size={18} className="text-zinc-600 transition-colors duration-500 group-hover:text-white" />
               </div>
               <p className="mt-10 font-mono text-[10px] uppercase tracking-[0.17em] text-zinc-600">
                 Climate tech · Product Strategy Lead · Pilot pathway
               </p>
-              <h3 className="mt-3 text-[36px] font-semibold tracking-[-0.05em] text-white md:text-[50px]">
+              <h3 className="mt-3 text-[36px] font-semibold tracking-[-0.05em] text-white md:text-[48px]">
                 Carboryn
               </h3>
-              <p className="mt-4 max-w-[54ch] text-[13px] leading-[1.65] text-zinc-400">
+              <p className="mt-4 max-w-[52ch] text-[13px] leading-[1.65] text-zinc-400">
                 Turning industrial residue and captured carbon into useful
                 mineral products, backed by a measurable data layer.
               </p>
               <span className="mt-auto inline-flex items-center gap-2 pt-8 font-mono text-[11px] uppercase tracking-[0.15em] text-zinc-500 transition-colors duration-500 group-hover:text-white">
                 Open climate-tech dossier
-                <ArrowRight size={14} className="transition-transform duration-500 group-hover:translate-x-1.5" />
-              </span>
-            </div>
-          </Link>
-
-          <Link
-            href="/work/aise"
-            prefetch
-            className="case-gateway aise-gateway glass-surface group relative min-h-[300px] overflow-hidden rounded-[28px] border border-white/[0.11] bg-white/[0.03] p-7 transition-all duration-700 hover:-translate-y-1 hover:border-white/[0.28] hover:bg-white/[0.055] md:p-8"
-          >
-            <div aria-hidden className="aise-grid pointer-events-none absolute inset-0 opacity-35 transition-opacity duration-700 group-hover:opacity-65" />
-            <div aria-hidden className="case-gateway-scan pointer-events-none absolute inset-x-0 top-0 h-px bg-gradient-to-r from-transparent via-white/80 to-transparent shadow-[0_0_28px_rgba(255,255,255,0.5)]" />
-            <div className="relative z-10 flex h-full flex-col">
-              <div className="flex items-center justify-between gap-4">
-                <div className="flex items-center gap-2 font-mono text-[9px] uppercase tracking-[0.18em] text-zinc-500">
-                  <span className="relative flex h-2 w-2">
-                    <span className="absolute inset-0 animate-ping rounded-full bg-white/25" />
-                    <span className="relative h-2 w-2 rounded-full bg-white/70 shadow-[0_0_14px_rgba(255,255,255,0.6)]" />
-                  </span>
-                  Case study 02
-                </div>
-                <ScanLine size={18} className="text-zinc-600 transition-colors duration-500 group-hover:text-white" />
-              </div>
-              <p className="mt-10 font-mono text-[10px] uppercase tracking-[0.17em] text-zinc-600">
-                HRTech AI · ABB selected · Concierge pilot
-              </p>
-              <h3 className="mt-3 text-[36px] font-semibold tracking-[-0.05em] text-white md:text-[48px]">
-                AISE
-              </h3>
-              <p className="mt-4 max-w-[52ch] text-[13px] leading-[1.65] text-zinc-400">
-                A localized candidate-intelligence and application-conversion layer for the Azerbaijani job market, not a generic job aggregator.
-              </p>
-              <span className="mt-auto inline-flex items-center gap-2 pt-8 font-mono text-[11px] uppercase tracking-[0.15em] text-zinc-500 transition-colors duration-500 group-hover:text-white">
-                Open HRTech dossier
-                <ArrowRight size={14} className="transition-transform duration-500 group-hover:translate-x-1.5" />
-              </span>
-            </div>
-          </Link>
-
-          <Link
-            href="/work/hyperautomation"
-            prefetch
-            className="case-gateway hyper-gateway glass-surface group relative min-h-[300px] overflow-hidden rounded-[28px] border border-white/[0.11] bg-white/[0.03] p-7 transition-all duration-700 hover:-translate-y-1 hover:border-white/[0.28] hover:bg-white/[0.055] md:p-8"
-          >
-            <div aria-hidden className="warehouse-grid pointer-events-none absolute inset-0 opacity-30 transition-opacity duration-700 group-hover:opacity-60" />
-            <div aria-hidden className="warehouse-route pointer-events-none absolute bottom-[22%] right-[8%] h-[42%] w-[54%] rounded-[26px] border border-dashed border-white/[0.13]" />
-            <div aria-hidden className="warehouse-unit pointer-events-none absolute bottom-[28%] right-[44%] h-5 w-8 rounded-md border border-white/25 bg-white/[0.06] shadow-[0_0_24px_rgba(255,255,255,0.18)]" />
-            <div className="relative z-10 flex h-full flex-col">
-              <div className="flex items-center justify-between gap-4">
-                <div className="flex items-center gap-2 font-mono text-[9px] uppercase tracking-[0.18em] text-zinc-500">
-                  <span className="relative flex h-2 w-2">
-                    <span className="absolute inset-0 animate-ping rounded-full bg-white/25" />
-                    <span className="relative h-2 w-2 rounded-full bg-white/70 shadow-[0_0_14px_rgba(255,255,255,0.6)]" />
-                  </span>
-                  Case study 03
-                </div>
-                <Warehouse size={18} className="text-zinc-600 transition-colors duration-500 group-hover:text-white" />
-              </div>
-              <p className="mt-10 font-mono text-[10px] uppercase tracking-[0.17em] text-zinc-600">
-                RPA + Robotics · SABAH.HUB Cohort 9 · Paused
-              </p>
-              <h3 className="mt-3 text-[36px] font-semibold tracking-[-0.05em] text-white md:text-[48px]">
-                HyperAutomation
-              </h3>
-              <p className="mt-4 max-w-[52ch] text-[13px] leading-[1.65] text-zinc-400">
-                Connected digital warehouse workflows to physical robot
-                execution without replacing existing systems.
-              </p>
-              <span className="mt-auto inline-flex items-center gap-2 pt-8 font-mono text-[11px] uppercase tracking-[0.15em] text-zinc-500 transition-colors duration-500 group-hover:text-white">
-                Open execution dossier
                 <ArrowRight size={14} className="transition-transform duration-500 group-hover:translate-x-1.5" />
               </span>
             </div>
